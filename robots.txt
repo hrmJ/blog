@@ -1,0 +1,4 @@
+Sitemap: https://hrmJ.github.io/blog/sitemapindex.xml
+
+User-Agent: *
+Host: hrmJ.github.io

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NotSoTechnical (Posts about lapply)</title><link>https://hrmJ.github.io/blog/</link><description></description><atom:link href="https://hrmJ.github.io/blog/categories/lapply.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2018 &lt;a href="mailto:juho.harme@gmail.com"&gt;Juho Härme&lt;/a&gt; </copyright><lastBuildDate>Wed, 17 Jan 2018 19:08:11 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The setNames + (l)apply pattern</title><link>https://hrmJ.github.io/blog/posts/the-setnames-%2B-lapply-pattern/</link><dc:creator>Juho Härme</dc:creator><description>&lt;div&gt;&lt;p&gt;My research is, most of the time, about the differences and similarities
+between two languages, Finnish and Russian. Most of the stuff I deal with
+is quantitative by methodology and I tend to have large datasets in 
+the following format:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;lang  &lt;/th&gt;
+&lt;th&gt;variable_A  &lt;/th&gt;
+&lt;th&gt;variable_B  &lt;/th&gt;
+&lt;th&gt;variable_C&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;fi&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;category a&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fi&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;category a&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fi&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;td&gt;category b&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fi&lt;/td&gt;
+&lt;td&gt;z&lt;/td&gt;
+&lt;td&gt;51&lt;/td&gt;
+&lt;td&gt;category b&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ru&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;category b&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ru&lt;/td&gt;
+&lt;td&gt;z&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;category a&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ru&lt;/td&gt;
+&lt;td&gt;z&lt;/td&gt;
+&lt;td&gt;88&lt;/td&gt;
+&lt;td&gt;category a&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ru&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;category a&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fi&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;td&gt;category b&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fi&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;td&gt;category b&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ru&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;category a&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;My usual way of getting some quick numbers out of the data for both of the
+languages is to use lists rather than single variables. E.g.
+instead of  having:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;    number_of_xyz_FI &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;nrow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;subset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;mydata&lt;span class="p"&gt;,&lt;/span&gt;lang &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'fi'&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; variable_A &lt;span class="o"&gt;==&lt;/span&gt; x &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; variable_B &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    number_of_xyz_RU &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;nrow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;subset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;mydata&lt;span class="p"&gt;,&lt;/span&gt;lang &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'ru'&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; variable_A &lt;span class="o"&gt;==&lt;/span&gt; x &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; variable_B &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;I prefer:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;    number_of_xyz &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kt"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="s"&gt;"fi"&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;nrow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;subset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;mydata&lt;span class="p"&gt;,&lt;/span&gt;lang &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'fi'&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; variable_A &lt;span class="o"&gt;==&lt;/span&gt; x &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; variable_B &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="s"&gt;"ru"&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;nrow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;subset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;mydata&lt;span class="p"&gt;,&lt;/span&gt;lang &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'ru'&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; variable_A &lt;span class="o"&gt;==&lt;/span&gt; x &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; variable_B &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Now I can reference the data in my inline text with &lt;code&gt;number_of_xyz$fi&lt;/code&gt; and &lt;code&gt;number_of_xyz$ru&lt;/code&gt;.
+This makes the global namespace less messy and looks more logical, in my opinion, at least.
+There is still one downside to all of this: from the perspective of reproducibility 
+of the code and in order not to break the &lt;a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself"&gt;DRY&lt;/a&gt;
+principle, it would be good to have the members of the list set up inside a loop.
+So I usually end up using  &lt;code&gt;lapply&lt;/code&gt;, acting on a vector of language codes:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;    number_of_xyz &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;lapply&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"fi"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;"ru"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="kr"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;thislang&lt;span class="p"&gt;){&lt;/span&gt;
+        &lt;span class="kp"&gt;nrow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;subset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;mydata&lt;span class="p"&gt;,&lt;/span&gt;lang &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'fi'&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; variable_A &lt;span class="o"&gt;==&lt;/span&gt; x &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; variable_B &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="p"&gt;})&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;This still has the downside, that I have to manually set the names of the produced list, i.e.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="kp"&gt;names&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;number_of_xyz&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"fi"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;"ru"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;which is somewhat annoying. Of course -- in the spirit of DRY, once again -- it's better to have
+the language codes set up as a separate variable beforehand, so that the whole thing becomes&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;langs &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"fi"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;"ru"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+number_of_xyz &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;lapply&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;langs&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="kr"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;thislang&lt;span class="p"&gt;){&lt;/span&gt;
+    &lt;span class="kp"&gt;nrow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;subset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;mydata&lt;span class="p"&gt;,&lt;/span&gt;lang &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'fi'&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; variable_A &lt;span class="o"&gt;==&lt;/span&gt; x &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; variable_B &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="p"&gt;})&lt;/span&gt;
+
+&lt;span class="kp"&gt;names&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;number_of_xyz&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; langs
+&lt;/pre&gt;
+
+
+&lt;p&gt;Luckily, some time ago I found at StackOverflow a neater way to do this. The trick is 
+to use the &lt;code&gt;setNames&lt;/code&gt; function:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;langs &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"fi"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;"ru"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+number_of_xyz &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; setNames&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;lapply&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;langs&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="kr"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;thislang&lt;span class="p"&gt;){&lt;/span&gt;
+    &lt;span class="kp"&gt;nrow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;subset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;mydata&lt;span class="p"&gt;,&lt;/span&gt;lang &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'fi'&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; variable_A &lt;span class="o"&gt;==&lt;/span&gt; x &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; variable_B &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="p"&gt;},&lt;/span&gt;langs&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;...and this whole pattern has become a real habit for me, so that every time I do a comparison,
+I almost immediately write &lt;code&gt;setNames(lang,function(thislang),langs)&lt;/code&gt;. A bit strange, though, that
+it seems like this actually is the most straight-forward of naming the list resulting from
+lapply.&lt;/p&gt;&lt;/div&gt;</description><category>contrastive linguistics</category><category>lapply</category><category>r</category><guid>https://hrmJ.github.io/blog/posts/the-setnames-%2B-lapply-pattern/</guid><pubDate>Sat, 13 Jan 2018 11:28:19 GMT</pubDate></item></channel></rss>
