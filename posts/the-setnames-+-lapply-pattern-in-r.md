@@ -64,7 +64,7 @@ So I usually end up using  `lapply`, acting on a vector of language codes:
 ```r
 
     number_of_xyz <- lapply(c("fi","ru"),function(thislang){
-        nrow(subset(mydata,lang = 'fi' & variable_A == x & variable_B > 10))
+        nrow(subset(mydata,lang == thislang & variable_A == x & variable_B > 10))
     })
 
 ```
@@ -87,7 +87,7 @@ the language codes set up as a separate variable beforehand, so that the whole t
 langs <- c("fi","ru")
 
 number_of_xyz <- lapply(langs,function(thislang){
-    nrow(subset(mydata,lang = 'fi' & variable_A == x & variable_B > 10))
+    nrow(subset(mydata,lang == thislang & variable_A == x & variable_B > 10))
 })
 
 names(number_of_xyz) <- langs
@@ -104,7 +104,7 @@ to use the `setNames` function:
 langs <- c("fi","ru")
 
 number_of_xyz <- setNames(lapply(langs,function(thislang){
-    nrow(subset(mydata,lang = 'fi' & variable_A == x & variable_B > 10))
+    nrow(subset(mydata,lang == thislang & variable_A == x & variable_B > 10))
 },langs)
 
 ```
