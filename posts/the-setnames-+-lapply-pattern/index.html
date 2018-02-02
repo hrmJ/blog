@@ -196,7 +196,7 @@ of the code and in order not to break the <a href="https://en.wikipedia.org/wiki
 principle, it would be good to have the members of the list set up inside a loop.
 So I usually end up using  <code>lapply</code>, acting on a vector of language codes:</p>
 <pre class="code literal-block"><span></span>    number_of_xyz <span class="o">&lt;-</span> <span class="kp">lapply</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">"fi"</span><span class="p">,</span><span class="s">"ru"</span><span class="p">),</span><span class="kr">function</span><span class="p">(</span>thislang<span class="p">){</span>
-        <span class="kp">nrow</span><span class="p">(</span><span class="kp">subset</span><span class="p">(</span>mydata<span class="p">,</span>lang <span class="o">=</span> <span class="s">'fi'</span> <span class="o">&amp;</span> variable_A <span class="o">==</span> x <span class="o">&amp;</span> variable_B <span class="o">&gt;</span> <span class="m">10</span><span class="p">))</span>
+        <span class="kp">nrow</span><span class="p">(</span><span class="kp">subset</span><span class="p">(</span>mydata<span class="p">,</span>lang <span class="o">==</span> thislang <span class="o">&amp;</span> variable_A <span class="o">==</span> x <span class="o">&amp;</span> variable_B <span class="o">&gt;</span> <span class="m">10</span><span class="p">))</span>
     <span class="p">})</span>
 </pre>
 
@@ -211,7 +211,7 @@ the language codes set up as a separate variable beforehand, so that the whole t
 <pre class="code literal-block"><span></span>langs <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">"fi"</span><span class="p">,</span><span class="s">"ru"</span><span class="p">)</span>
 
 number_of_xyz <span class="o">&lt;-</span> <span class="kp">lapply</span><span class="p">(</span>langs<span class="p">,</span><span class="kr">function</span><span class="p">(</span>thislang<span class="p">){</span>
-    <span class="kp">nrow</span><span class="p">(</span><span class="kp">subset</span><span class="p">(</span>mydata<span class="p">,</span>lang <span class="o">=</span> <span class="s">'fi'</span> <span class="o">&amp;</span> variable_A <span class="o">==</span> x <span class="o">&amp;</span> variable_B <span class="o">&gt;</span> <span class="m">10</span><span class="p">))</span>
+    <span class="kp">nrow</span><span class="p">(</span><span class="kp">subset</span><span class="p">(</span>mydata<span class="p">,</span>lang <span class="o">==</span> thislang <span class="o">&amp;</span> variable_A <span class="o">==</span> x <span class="o">&amp;</span> variable_B <span class="o">&gt;</span> <span class="m">10</span><span class="p">))</span>
 <span class="p">})</span>
 
 <span class="kp">names</span><span class="p">(</span>number_of_xyz<span class="p">)</span> <span class="o">&lt;-</span> langs
@@ -223,7 +223,7 @@ to use the <code>setNames</code> function:</p>
 <pre class="code literal-block"><span></span>langs <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">"fi"</span><span class="p">,</span><span class="s">"ru"</span><span class="p">)</span>
 
 number_of_xyz <span class="o">&lt;-</span> setNames<span class="p">(</span><span class="kp">lapply</span><span class="p">(</span>langs<span class="p">,</span><span class="kr">function</span><span class="p">(</span>thislang<span class="p">){</span>
-    <span class="kp">nrow</span><span class="p">(</span><span class="kp">subset</span><span class="p">(</span>mydata<span class="p">,</span>lang <span class="o">=</span> <span class="s">'fi'</span> <span class="o">&amp;</span> variable_A <span class="o">==</span> x <span class="o">&amp;</span> variable_B <span class="o">&gt;</span> <span class="m">10</span><span class="p">))</span>
+    <span class="kp">nrow</span><span class="p">(</span><span class="kp">subset</span><span class="p">(</span>mydata<span class="p">,</span>lang <span class="o">==</span> thislang <span class="o">&amp;</span> variable_A <span class="o">==</span> x <span class="o">&amp;</span> variable_B <span class="o">&gt;</span> <span class="m">10</span><span class="p">))</span>
 <span class="p">},</span>langs<span class="p">)</span>
 </pre>
 
