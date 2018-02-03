@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="As a frequent user of ebooks I've developed plenty of experience in tailoring my scans into a format suitable for kindle etc.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting readable pdfs from scans | NotSoTechnical</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://hrmJ.github.io/blog/posts/getting-readable-pdfs-from-scans/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Juho Härme">
+<link rel="prev" href="../the-setnames-%2B-lapply-pattern/" title="The setNames + (l)apply pattern" type="text/html">
+<meta property="og:site_name" content="NotSoTechnical">
+<meta property="og:title" content="Getting readable pdfs from scans">
+<meta property="og:url" content="https://hrmJ.github.io/blog/posts/getting-readable-pdfs-from-scans/">
+<meta property="og:description" content="As a frequent user of ebooks I've developed plenty of experience in tailoring my scans into a format suitable for kindle etc.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-02-02T16:33:25+02:00">
+<meta property="article:tag" content="ebooks">
+<meta property="article:tag" content="onyx boox">
+<meta property="article:tag" content="pdf">
+<meta property="article:tag" content="scanning">
+<meta property="article:tag" content="scantailor">
+<meta property="article:tag" content="tif">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://hrmJ.github.io/blog/">
+
+                <span id="blog-title">NotSoTechnical</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../categories/">Tags</a>
+                </li>
+<li>
+<a href="../../rss.xml">RSS feed</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="index.md" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Getting readable pdfs from scans</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    Juho Härme
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2018-02-02T16:33:25+02:00" itemprop="datePublished" title="2018-02-02 16:33">2018-02-02 16:33</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/getting-readable-pdfs-from-scans.html">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="index.md" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>Buying the Onyx boox N96ml reader (with 9 inch display and android os)
+last spring quite literally revolutionized my reading of
+ebooks. It's not so often nowadays that I face  a situation
+where I actually need to <em>scan</em> a book in order to have it
+as a digital version. Sometimes this still happens,
+however -- especially with certain not--so--recent dissertations that are not available
+in our university library. This was the case with 
+Knud Lambrecht's seminal <em>Information structure and sentence form: Topic, focus, and the mental representations of discourse referents</em>
+(from 1996), which I acquired through an interlibrary loan and 
+only had a limited time to read. I had actually 
+scanned the book long ago, but ended up with just a raw 
+unedited pdf with two pages per sheet -- certainly
+not ideal for e-ink displays.</p>
+<p>So I finally got tired of reading the book on 
+a desktop computer and decided I could try
+to improve the file a bit. In the past I 
+had been working a lot with a utility called <a href="http://scantailor.org/">ScanTailor</a>.
+This is a tool that takes multi-color tif files as input and 
+outputs (in the ideal case) nice and clear black--and--white
+tifs with nothing but the actual text left. ScanTailor tries to strip
+away all noise such as illuminations and shadows. It automatically splits
+pages, adjusts their orientation and, finally, tries to 
+ "dewarp" and "despeckle" the
+pages. </p>
+<p>Here's my work flow with ScanTailor, if I'm starting with a multi-page pdf.</p>
+<h3>1. Convert the pdf to a single multi-page tif</h3>
+<p>As I noted above, ScanTailor doesn't accept pdfs as input, so I had to convert
+my pdf to tif. Here's a trick I've learned with ghostscript:</p>
+<pre class="code literal-block"><span></span>gs -sDEVICE<span class="o">=</span>tiff24nc -r300x300 -sOutputFile<span class="o">=</span>my_new_tif.tif -- my_original_pdf.pdf<span class="sb">`</span>
+</pre>
+
+
+<h3>2. Split the multi-page tif to individual files</h3>
+<p>I used to use ScanTailor's GUI version, which let's you tweak with individual pages
+and see the results immediately. This was rather laborious, and you actually had to
+go through every single page (in my current case it would have meant 396 pages).
+It wasn't until recently that I actually discovered that ScanTailor
+also has a command line version called scantailor-cli. The command-line version
+cannot handle multi-page input, so I had to add an extra step to my work flow,
+namely, converting the multi-page tif I just got from ghostscript to 
+multiple single-page tifs. This turned out to be harder than I first thought,
+mainly because the tif was so large. I finally found this solution from StackOverflow
+and modified it a bit.
+It requires you to specify the number of pages in the tif.</p>
+<pre class="code literal-block"><span></span>mkdir split
+<span class="nv">END</span><span class="o">=</span>&lt;NUMBER_OF_PAGES&gt;<span class="p">;</span> 
+<span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">1</span><span class="p">;</span>i&lt;<span class="o">=</span>END<span class="p">;</span>i++<span class="o">))</span>
+<span class="k">do</span> 
+    <span class="nb">echo</span> <span class="nv">$i</span> 
+    convert my_new_tif.tif<span class="o">[</span><span class="nv">$i</span><span class="o">]</span> -scene <span class="m">1</span> split/my_new_tif_<span class="nv">$i</span>.tif
+<span class="k">done</span>
+</pre>
+
+
+<h3>3. Running scantailor</h3>
+<p>So I ended up having a folder named <code>split</code> full of individual tifs, which
+is exactly what scantailor-cli needed. The command line version has a lot of 
+options you can tweak, but for me the default settings worked like a charm.</p>
+<pre class="code literal-block"><span></span>mkdir output
+scantailor-cli split output
+</pre>
+
+
+<h3>4. Modifying the file names</h3>
+<p>As a result of the previous command, I got a bunch of nicely formatted black
+and white tif files in a folder called <code>output</code>. Before I could try to merge
+these into a single file again, I had to do some renaming. Oh, by the way,
+forgot to mention: all this is done on a linux machine (ubuntu 17.10).
+I had to install the packages <code>libtiff-tools</code>, <code>pdftk</code> and <code>rename</code> for the next two
+steps to work.</p>
+<p>This is what I did to rename my tifs so that they could be merged in exactly
+the right order (found the solution <a href="https://askubuntu.com/questions/473236/renaming-hundreds-of-files-at-once-for-proper-sorting">from askubuntu</a>):</p>
+<pre class="code literal-block"><span></span>rename <span class="s1">'s/\d+/sprintf("%05d", $&amp;)/e'</span> *.tif
+</pre>
+
+
+<h3>5. Combining  and converting</h3>
+<p>After the renaming, I just combined the tifs with <code>tiffcp</code>:</p>
+<pre class="code literal-block"><span></span>tiffcp *tif output.tif
+</pre>
+
+
+<p>The last step was to convert the tiff back to pdf:</p>
+<pre class="code literal-block"><span></span>tiff2pdf output.tif -o output.pdf
+</pre>
+
+
+<p>All this resulted in a nice 16MB (396 pages) pdf file that
+was perfectly fine for reading with an e-ink device.</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/ebooks/" rel="tag">ebooks</a></li>
+            <li><a class="tag p-category" href="../../categories/onyx-boox/" rel="tag">onyx boox</a></li>
+            <li><a class="tag p-category" href="../../categories/pdf/" rel="tag">pdf</a></li>
+            <li><a class="tag p-category" href="../../categories/scanning/" rel="tag">scanning</a></li>
+            <li><a class="tag p-category" href="../../categories/scantailor/" rel="tag">scantailor</a></li>
+            <li><a class="tag p-category" href="../../categories/tif/" rel="tag">tif</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../the-setnames-%2B-lapply-pattern/" rel="prev" title="The setNames + (l)apply pattern">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="notsotechnical",
+            disqus_url="https://hrmJ.github.io/blog/posts/getting-readable-pdfs-from-scans/",
+        disqus_title="Getting readable pdfs from scans",
+        disqus_identifier="cache/posts/getting-readable-pdfs-from-scans.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="notsotechnical";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2018         <a href="mailto:juho.harme@gmail.com">Juho Härme</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NotSoTechnical (Posts about scanning)</title><link>https://hrmJ.github.io/blog/</link><description></description><atom:link href="https://hrmJ.github.io/blog/categories/scanning.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2018 &lt;a href="mailto:juho.harme@gmail.com"&gt;Juho Härme&lt;/a&gt; </copyright><lastBuildDate>Sat, 03 Feb 2018 06:39:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Getting readable pdfs from scans</title><link>https://hrmJ.github.io/blog/posts/getting-readable-pdfs-from-scans/</link><dc:creator>Juho Härme</dc:creator><description>&lt;div&gt;&lt;p&gt;Buying the Onyx boox N96ml reader (with 9 inch display and android os)
+last spring quite literally revolutionized my reading of
+ebooks. It's not so often nowadays that I face  a situation
+where I actually need to &lt;em&gt;scan&lt;/em&gt; a book in order to have it
+as a digital version. Sometimes this still happens,
+however -- especially with certain not--so--recent dissertations that are not available
+in our university library. This was the case with 
+Knud Lambrecht's seminal &lt;em&gt;Information structure and sentence form: Topic, focus, and the mental representations of discourse referents&lt;/em&gt;
+(from 1996), which I acquired through an interlibrary loan and 
+only had a limited time to read. I had actually 
+scanned the book long ago, but ended up with just a raw 
+unedited pdf with two pages per sheet -- certainly
+not ideal for e-ink displays.&lt;/p&gt;
+&lt;p&gt;So I finally got tired of reading the book on 
+a desktop computer and decided I could try
+to improve the file a bit. In the past I 
+had been working a lot with a utility called &lt;a href="http://scantailor.org/"&gt;ScanTailor&lt;/a&gt;.
+This is a tool that takes multi-color tif files as input and 
+outputs (in the ideal case) nice and clear black--and--white
+tifs with nothing but the actual text left. ScanTailor tries to strip
+away all noise such as illuminations and shadows. It automatically splits
+pages, adjusts their orientation and, finally, tries to 
+ "dewarp" and "despeckle" the
+pages. &lt;/p&gt;
+&lt;p&gt;Here's my work flow with ScanTailor, if I'm starting with a multi-page pdf.&lt;/p&gt;
+&lt;h3&gt;1. Convert the pdf to a single multi-page tif&lt;/h3&gt;
+&lt;p&gt;As I noted above, ScanTailor doesn't accept pdfs as input, so I had to convert
+my pdf to tif. Here's a trick I've learned with ghostscript:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;gs -sDEVICE&lt;span class="o"&gt;=&lt;/span&gt;tiff24nc -r300x300 -sOutputFile&lt;span class="o"&gt;=&lt;/span&gt;my_new_tif.tif -- my_original_pdf.pdf&lt;span class="sb"&gt;`&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;h3&gt;2. Split the multi-page tif to individual files&lt;/h3&gt;
+&lt;p&gt;I used to use ScanTailor's GUI version, which let's you tweak with individual pages
+and see the results immediately. This was rather laborious, and you actually had to
+go through every single page (in my current case it would have meant 396 pages).
+It wasn't until recently that I actually discovered that ScanTailor
+also has a command line version called scantailor-cli. The command-line version
+cannot handle multi-page input, so I had to add an extra step to my work flow,
+namely, converting the multi-page tif I just got from ghostscript to 
+multiple single-page tifs. This turned out to be harder than I first thought,
+mainly because the tif was so large. I finally found this solution from StackOverflow
+and modified it a bit.
+It requires you to specify the number of pages in the tif.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;mkdir split
+&lt;span class="nv"&gt;END&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&amp;lt;NUMBER_OF_PAGES&amp;gt;&lt;span class="p"&gt;;&lt;/span&gt; 
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;i&amp;lt;&lt;span class="o"&gt;=&lt;/span&gt;END&lt;span class="p"&gt;;&lt;/span&gt;i++&lt;span class="o"&gt;))&lt;/span&gt;
+&lt;span class="k"&gt;do&lt;/span&gt; 
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$i&lt;/span&gt; 
+    convert my_new_tif.tif&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;$i&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; -scene &lt;span class="m"&gt;1&lt;/span&gt; split/my_new_tif_&lt;span class="nv"&gt;$i&lt;/span&gt;.tif
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;h3&gt;3. Running scantailor&lt;/h3&gt;
+&lt;p&gt;So I ended up having a folder named &lt;code&gt;split&lt;/code&gt; full of individual tifs, which
+is exactly what scantailor-cli needed. The command line version has a lot of 
+options you can tweak, but for me the default settings worked like a charm.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;mkdir output
+scantailor-cli split output
+&lt;/pre&gt;
+
+
+&lt;h3&gt;4. Modifying the file names&lt;/h3&gt;
+&lt;p&gt;As a result of the previous command, I got a bunch of nicely formatted black
+and white tif files in a folder called &lt;code&gt;output&lt;/code&gt;. Before I could try to merge
+these into a single file again, I had to do some renaming. Oh, by the way,
+forgot to mention: all this is done on a linux machine (ubuntu 17.10).
+I had to install the packages &lt;code&gt;libtiff-tools&lt;/code&gt;, &lt;code&gt;pdftk&lt;/code&gt; and &lt;code&gt;rename&lt;/code&gt; for the next two
+steps to work.&lt;/p&gt;
+&lt;p&gt;This is what I did to rename my tifs so that they could be merged in exactly
+the right order (found the solution &lt;a href="https://askubuntu.com/questions/473236/renaming-hundreds-of-files-at-once-for-proper-sorting"&gt;from askubuntu&lt;/a&gt;):&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;rename &lt;span class="s1"&gt;'s/\d+/sprintf("%05d", $&amp;amp;)/e'&lt;/span&gt; *.tif
+&lt;/pre&gt;
+
+
+&lt;h3&gt;5. Combining  and converting&lt;/h3&gt;
+&lt;p&gt;After the renaming, I just combined the tifs with &lt;code&gt;tiffcp&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;tiffcp *tif output.tif
+&lt;/pre&gt;
+
+
+&lt;p&gt;The last step was to convert the tiff back to pdf:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;tiff2pdf output.tif -o output.pdf
+&lt;/pre&gt;
+
+
+&lt;p&gt;All this resulted in a nice 16MB (396 pages) pdf file that
+was perfectly fine for reading with an e-ink device.&lt;/p&gt;&lt;/div&gt;</description><category>ebooks</category><category>onyx boox</category><category>pdf</category><category>scanning</category><category>scantailor</category><category>tif</category><guid>https://hrmJ.github.io/blog/posts/getting-readable-pdfs-from-scans/</guid><pubDate>Fri, 02 Feb 2018 14:33:25 GMT</pubDate></item></channel></rss>

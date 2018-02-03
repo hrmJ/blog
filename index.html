@@ -10,7 +10,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://hrmJ.github.io/blog/">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/the-setnames-%2B-lapply-pattern/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/getting-readable-pdfs-from-scans/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -63,7 +63,113 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/the-setnames-%2B-lapply-pattern/" class="u-url">The setNames + (l)apply pattern</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/getting-readable-pdfs-from-scans/" class="u-url">Getting readable pdfs from scans</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Juho Härme
+            </span></p>
+            <p class="dateline"><a href="posts/getting-readable-pdfs-from-scans/" rel="bookmark"><time class="published dt-published" datetime="2018-02-02T16:33:25+02:00" title="2018-02-02 16:33">2018-02-02 16:33</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/getting-readable-pdfs-from-scans/#disqus_thread" data-disqus-identifier="cache/posts/getting-readable-pdfs-from-scans.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>Buying the Onyx boox N96ml reader (with 9 inch display and android os)
+last spring quite literally revolutionized my reading of
+ebooks. It's not so often nowadays that I face  a situation
+where I actually need to <em>scan</em> a book in order to have it
+as a digital version. Sometimes this still happens,
+however -- especially with certain not--so--recent dissertations that are not available
+in our university library. This was the case with 
+Knud Lambrecht's seminal <em>Information structure and sentence form: Topic, focus, and the mental representations of discourse referents</em>
+(from 1996), which I acquired through an interlibrary loan and 
+only had a limited time to read. I had actually 
+scanned the book long ago, but ended up with just a raw 
+unedited pdf with two pages per sheet -- certainly
+not ideal for e-ink displays.</p>
+<p>So I finally got tired of reading the book on 
+a desktop computer and decided I could try
+to improve the file a bit. In the past I 
+had been working a lot with a utility called <a href="http://scantailor.org/">ScanTailor</a>.
+This is a tool that takes multi-color tif files as input and 
+outputs (in the ideal case) nice and clear black--and--white
+tifs with nothing but the actual text left. ScanTailor tries to strip
+away all noise such as illuminations and shadows. It automatically splits
+pages, adjusts their orientation and, finally, tries to 
+ "dewarp" and "despeckle" the
+pages. </p>
+<p>Here's my work flow with ScanTailor, if I'm starting with a multi-page pdf.</p>
+<h3>1. Convert the pdf to a single multi-page tif</h3>
+<p>As I noted above, ScanTailor doesn't accept pdfs as input, so I had to convert
+my pdf to tif. Here's a trick I've learned with ghostscript:</p>
+<pre class="code literal-block"><span></span>gs -sDEVICE<span class="o">=</span>tiff24nc -r300x300 -sOutputFile<span class="o">=</span>my_new_tif.tif -- my_original_pdf.pdf<span class="sb">`</span>
+</pre>
+
+
+<h3>2. Split the multi-page tif to individual files</h3>
+<p>I used to use ScanTailor's GUI version, which let's you tweak with individual pages
+and see the results immediately. This was rather laborious, and you actually had to
+go through every single page (in my current case it would have meant 396 pages).
+It wasn't until recently that I actually discovered that ScanTailor
+also has a command line version called scantailor-cli. The command-line version
+cannot handle multi-page input, so I had to add an extra step to my work flow,
+namely, converting the multi-page tif I just got from ghostscript to 
+multiple single-page tifs. This turned out to be harder than I first thought,
+mainly because the tif was so large. I finally found this solution from StackOverflow
+and modified it a bit.
+It requires you to specify the number of pages in the tif.</p>
+<pre class="code literal-block"><span></span>mkdir split
+<span class="nv">END</span><span class="o">=</span>&lt;NUMBER_OF_PAGES&gt;<span class="p">;</span> 
+<span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">1</span><span class="p">;</span>i&lt;<span class="o">=</span>END<span class="p">;</span>i++<span class="o">))</span>
+<span class="k">do</span> 
+    <span class="nb">echo</span> <span class="nv">$i</span> 
+    convert my_new_tif.tif<span class="o">[</span><span class="nv">$i</span><span class="o">]</span> -scene <span class="m">1</span> split/my_new_tif_<span class="nv">$i</span>.tif
+<span class="k">done</span>
+</pre>
+
+
+<h3>3. Running scantailor</h3>
+<p>So I ended up having a folder named <code>split</code> full of individual tifs, which
+is exactly what scantailor-cli needed. The command line version has a lot of 
+options you can tweak, but for me the default settings worked like a charm.</p>
+<pre class="code literal-block"><span></span>mkdir output
+scantailor-cli split output
+</pre>
+
+
+<h3>4. Modifying the file names</h3>
+<p>As a result of the previous command, I got a bunch of nicely formatted black
+and white tif files in a folder called <code>output</code>. Before I could try to merge
+these into a single file again, I had to do some renaming. Oh, by the way,
+forgot to mention: all this is done on a linux machine (ubuntu 17.10).
+I had to install the packages <code>libtiff-tools</code>, <code>pdftk</code> and <code>rename</code> for the next two
+steps to work.</p>
+<p>This is what I did to rename my tifs so that they could be merged in exactly
+the right order (found the solution <a href="https://askubuntu.com/questions/473236/renaming-hundreds-of-files-at-once-for-proper-sorting">from askubuntu</a>):</p>
+<pre class="code literal-block"><span></span>rename <span class="s1">'s/\d+/sprintf("%05d", $&amp;)/e'</span> *.tif
+</pre>
+
+
+<h3>5. Combining  and converting</h3>
+<p>After the renaming, I just combined the tifs with <code>tiffcp</code>:</p>
+<pre class="code literal-block"><span></span>tiffcp *tif output.tif
+</pre>
+
+
+<p>The last step was to convert the tiff back to pdf:</p>
+<pre class="code literal-block"><span></span>tiff2pdf output.tif -o output.pdf
+</pre>
+
+
+<p>All this resulted in a nice 16MB (396 pages) pdf file that
+was perfectly fine for reading with an e-ink device.</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/the-setnames-%2B-lapply-pattern/" class="u-url">The setNames + (l)apply pattern</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Juho Härme
