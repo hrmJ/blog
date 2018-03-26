@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/archive.html</loc>
-  <lastmod>2018-03-26T09:36:00Z</lastmod>
+  <lastmod>2018-03-26T09:41:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/categories/</loc>
@@ -66,12 +66,12 @@
   <lastmod>2018-02-03T06:27:00Z</lastmod>
  </url>
  <url>
-  <loc>https://hrmJ.github.io/blog/pages/pres/</loc>
-  <lastmod>2018-03-26T09:17:00Z</lastmod>
+  <loc>https://hrmJ.github.io/blog/pages/</loc>
+  <lastmod>2018-03-26T09:43:00Z</lastmod>
  </url>
  <url>
-  <loc>https://hrmJ.github.io/blog/pages/pres/index.src.html</loc>
-  <lastmod>2018-03-26T09:30:00Z</lastmod>
+  <loc>https://hrmJ.github.io/blog/pages/a-test-pres/</loc>
+  <lastmod>2018-03-26T09:41:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/posts/getting-readable-pdfs-from-scans/</loc>
@@ -80,6 +80,10 @@
  <url>
   <loc>https://hrmJ.github.io/blog/posts/the-setnames-%2B-lapply-pattern/</loc>
   <lastmod>2018-01-17T19:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://hrmJ.github.io/blog/pres/syntaksikurssi.html</loc>
+  <lastmod>2018-03-26T09:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/pres/tutkimusetiikka.html</loc>
