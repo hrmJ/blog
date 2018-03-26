@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://hrmJ.github.io/blog/</loc>
-  <lastmod>2018-03-26T08:55:00Z</lastmod>
+  <lastmod>2018-03-26T09:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/2018/</loc>
@@ -72,9 +72,5 @@
  <url>
   <loc>https://hrmJ.github.io/blog/posts/the-setnames-%2B-lapply-pattern/</loc>
   <lastmod>2018-01-17T19:08:00Z</lastmod>
- </url>
- <url>
-  <loc>https://hrmJ.github.io/blog/presentations/syntaksikurssi.html</loc>
-  <lastmod>2018-02-22T06:57:00Z</lastmod>
  </url>
 </urlset>
