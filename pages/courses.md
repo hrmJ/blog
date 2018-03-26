@@ -22,3 +22,7 @@ has certainly changed quite a bit since I collected these materials.
 ### 2015-2016
 
 - [Russian aspect + motion verbs](/courses/aspekti)
+
+### 2015, 2017
+
+- [Trados and other translation technologies](http://hrmj.github.io/kaannostyopaja/trados_opas.html)
