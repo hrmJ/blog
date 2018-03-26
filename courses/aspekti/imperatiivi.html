@@ -1,0 +1,659 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="finnish" xml:lang="finnish">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="../jquery-latest.js"></script>
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/theme/sky.css" id="theme">
+  <style type='text/css'>
+  
+  /* General Demo Style */
+  @import url(http://fonts.googleapis.com/css?family=Lato:300,700);
+  
+  .main {
+  	width: 100%;
+  	max-width: 960px;
+  	padding: 40px;
+  	text-shadow: 0 2px 0 rgba(255,255,255,0.7);
+  }
+  
+  .main p {
+  	font-size: 16px;
+  	line-height: 1.4;
+  	text-align: justify;
+  }
+  
+  .main p:nth-of-type(2){
+  	-moz-column-gap: 20px;
+  	-webkit-column-gap: 20px;
+  	-ms-column-gap: 20px;
+  	-o-column-gap: 20px;
+  	column-gap: 20px;
+  }
+  
+  .main p:nth-of-type(4){
+  	-moz-column-gap: 15px;
+  	-o-column-count: 3;
+  	-o-column-gap: 15px;
+  	-ms-column-count: 3;
+  	-ms-column-gap: 15px;
+  	-webkit-column-gap: 15px;
+  	column-count: 3;
+  	column-gap: 15px;
+  }
+  
+  
+  
+  html *
+  {
+     /*font-family: Arial !important;*/
+  }
+  
+  
+  p.header {
+      font-size: 46px;
+      line-height: 40px;
+      text-align:left;
+      border-bottom: 2px solid black;
+      padding-bottom:5px;
+      margin-bottom:5em;
+  }
+  
+  h1 {
+      font-size: 36px;
+      line-height: 40px;
+  }
+  
+  h2 {
+      font-size: 30px;
+      line-height: 40px;
+  }
+  
+  h3 {
+      font-size: 24px;
+      line-height: 40px;
+  }
+  
+  h4 {
+      font-size: 18px;
+      line-height: 20px;
+  }
+  
+  /* Won't be used here */
+  
+  h5 {
+      font-size: 14px;
+      line-height: 20px;
+  }
+  
+  h6 {
+      font-size: 12px;
+      line-height: 20px;
+  }
+  
+  
+  .main {
+  	counter-reset: section-1, section-2, section-3, section-4;
+  }
+  
+  .main h1 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 36px;
+  	line-height: 40px;
+  	counter-increment: section-1;
+  	counter-reset: section-2 section-3 section-4;
+  }
+  
+  .main h2 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 30px;
+  	line-height: 40px;
+  	counter-increment: section-2;
+  	counter-reset: section-3 section-4;
+  	border-bottom: 1px solid #fff;
+  	box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+  	padding-bottom: 10px;
+  }
+  
+  .main h3 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 24px;
+  	line-height: 40px;
+  	counter-increment: section-3;
+  	counter-reset: section-4;
+  }
+  
+  .main h4 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 18px;
+  	line-height: 20px;
+  	counter-increment: section-4;
+  }
+  
+  a:link{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:active{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:visited{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:hover{
+  color:#000000;
+  text-decoration:underline;
+  }
+  
+  #TOC{
+  position:absolute;
+  width:17%;
+  font-size:89%;
+  margin-top:30px;
+  /*height:70%;*/
+  /*box-shadow: 3px 7px 5px 0px;*/
+  padding:5px;
+  overflow:auto;
+  /*border-radius:10px;
+  border: 1px black dashed;*/
+  }
+  
+  #TOC > ul{
+  list-style-type: none;
+  }
+  
+  
+  #TOC ul
+  {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  }
+  
+  #TOC a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #036;
+  /*width: 9em;*/
+  padding: 3px 12px 3px 8px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: bold;
+  }
+  
+  #TOC a:hover
+  {
+  background-color: #369;
+  color: #FFF;
+  }
+  
+  #TOC li li a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #69C;
+  /*width: 9em;*/
+  padding: 3px 3px 3px 17px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: normal;
+  }
+  
+  
+  .container{
+      height: 100%;
+      margin-top: 50px;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 9%;
+      padding-top: 10%;
+      background: white;
+      border-radius:25px;
+      }
+  
+  .references{
+      margin-top: 2%;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      background: white;
+      }
+  
+  
+  
+  #topbar{
+  position:absolute;
+  top:0;
+  left:-20px;
+  /*background:yellow;*/
+  background-color: #C5A05B;
+  margin-bottom:10px;
+  padding-left:25px;
+  /*
+  padding-right:25px;
+  padding-top:5px;
+  */
+  padding-bottom:2px;
+  border-bottom: 1px dashed white;
+  border-right: 1px dashed white;
+  }
+  
+  .r {color:red;}
+  .b {color:blue;}
+  .g {color:grey;}
+  .gre {color:green;}
+  
+  .definition {
+      background: beige;
+      /*background: #DABC83;*/
+      padding-left: 1px;
+      margin-left: 2em;
+      padding-right: 1px;
+  }
+  
+  .defheader{
+      width: 100%;
+      /* padding-right: 10px; */
+      /* margin-right: 10px; */
+      border-bottom: 1px dashed black;
+      background: aliceblue;
+      /*background: #B0D0EC;*/
+  }
+  
+  .definition > p {
+      /* color: red; */
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 1em;
+      font-style: italic;
+  }
+  
+  article.bubble{
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 2em;
+  border-radius: 7px;
+  margin-left: 14px;
+  color:black;
+  }
+  
+  
+  article.bubblenob{
+  float: left;
+  width:30%;
+  }
+  
+  
+  article.mmbubble{
+  text-align: left;
+  border: 2px dotted black;
+  padding: 4px;
+  border-radius: 7px;
+  margin:1%;
+  color:black;
+  }
+  
+  article.nfbubble{
+  font-size:90%;
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 1.5em;
+  border-radius: 7px;
+  margin:4%;
+  box-shadow: 10px 10px 5px #888888;
+  color:black;
+  }
+  
+  article.bgred{background: rgba(222, 184, 135, 0.64);}
+  article.bgblue{background: rgba(100, 149, 237, 0.45);}
+  article.bggreen{background: darkseagreen;}
+  article.bgcyan{background: rgba(255, 215, 0, 0.25);}
+  
+  span#triangle {
+      display: inline-block;
+      margin: 72px;
+      border-right: 24px solid; border-bottom: 24px solid;
+      width: 50px; height: 50px;
+      transform: rotate(-45deg);
+  }
+  
+  span.right-arrow {
+      display: inline-block;
+      position: relative;
+      background: #E8EFED;
+      padding: 3px;
+  }
+  
+  span.right-arrow:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      margin-top: -10px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid #151514;
+  }
+  
+  span.afterarrow {
+      background: rgb(193, 243, 255);
+      margin-left: 9px;
+      padding: 3px;
+  }
+  
+  article#tocmain{
+  background:none;
+  }
+  
+  #topbar a:hover{
+  background-color: #8A6C34;
+  color: #FFF;
+  }
+  
+  #topbar a{
+  padding:3px;
+  color: #FFF;
+  text-decoration: none;
+  /*border-right:1px dashed white;*/
+  }
+  
+  #inlinemenu{
+  padding:0;
+  margin:0;
+  }
+  
+  .inline{
+  display:inline;
+  }
+  
+  #topbar li{list-style-type: none;
+      line-height:130%;
+  }
+  
+  a.dropdown-link { 
+      color:#044264;
+      text-decoration:none; 
+  }
+  
+  ul#quotes-bar-menu {
+      margin: 0; padding: 0;
+      float:left;
+      width: 100%;
+      list-style: none;
+  }
+  
+  ul#quotes-bar-menu li {
+      display:inline;
+      float:left;
+      position:relative;
+      margin:0;
+      padding:7px 15px 7px 0;
+  }
+  
+  /* sub menu class */
+  ul#quotes-bar-menu li .sub-menu {
+      background-color: #C5A05B;
+      display:none;
+      left:0;
+      margin:0;
+      font-size:11;
+      padding:0;
+      position:absolute;
+      top:29px;
+      width:320px;
+      z-index:999;
+  }
+  
+  ul#quotes-bar-menu li .single { 
+      /*width:150px !important;*/
+  }
+  
+  ul#quotes-bar-menu li{
+      color:#fff;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu ul {
+      float:left;
+      list-style:none;
+      display: block;
+      width:205px;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li {
+      width:135px;
+      margin:0; 
+      font-size:11px;
+      padding:1px 1px 0;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li a { color: white;
+  text-decoration: none;
+  }
+  ul#quotes-bar-menu li .sub-menu li a:hover { text-decoration: none; }
+  
+  
+  .invisible{
+  display:none;
+  }
+  .menubox{
+      background-color: #C5A05B;
+      padding: 0.12em;
+      border: 1px dashed white;
+      padding-left: 0.5em;
+  }
+  
+  
+  #topbar .menulauncher a{
+  border-right: 1px dashed white;
+  padding-right:3px;
+  }
+  
+  .menubox a{
+  width:80%;
+  display:inline-block;
+  margin-bottom:1%;
+  padding:0.2em;
+  cursor: pointer; cursor: hand;
+  font-family: arial;
+  font-size: 12;
+  text-decoration: underline;
+  }
+  </style>
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#imperatiivi-ja-yleiset-aspektuaaliset-erotrassudova"><span class="toc-section-number">1</span> Imperatiivi ja yleiset aspektuaaliset erot</a></li>
+<li><a href="#modaaliset-erot-imperatiivin-käytössä"><span class="toc-section-number">2</span> Modaaliset erot imperatiivin käytössä</a><ul>
+<li><a href="#retorinen-kehotus-vai-pyyntö"><span class="toc-section-number">2.1</span> Retorinen kehotus vai pyyntö</a></li>
+<li><a href="#odotettu-tai-mainittu-toiminta"><span class="toc-section-number">2.2</span> Odotettu tai mainittu toiminta</a></li>
+<li><a href="#neuvo-tai-toive"><span class="toc-section-number">2.3</span> Neuvo tai toive</a></li>
+</ul></li>
+<li><a href="#imperfektisen-aspektin-erityispiirteitä"><span class="toc-section-number">3</span> Imperfektisen aspektin erityispiirteitä</a></li>
+<li><a href="#perfektiivisen-aspektin-erityispiirteitä"><span class="toc-section-number">4</span> Perfektiivisen aspektin erityispiirteitä</a></li>
+</ul>
+</div>
+<article id="topbar">
+<a href='javascript:void(0)' id='menu1' class='menulauncher' >Aspekti- ja liikeverbiteoria |</a>
+<div id="menu1box" class="invisible menubox">
+<p><a href='../index.html'>Sisällys</a> <a href='kurssin_esittely.html'>Kurssin esittely</a> <a href='kurssin_aikataulu.html'>Kurssin aikataulu</a> <a href='https://learning2.uta.fi/course/view.php?id=7339'>Moodle</a></p>
+</div>
+<a href='javascript:void(0)' id='menu2' class='menulauncher' >Aspekti |</a>
+<div id="menu2box" class="invisible menubox">
+<p><a href='invariantit_merkitykset.html'>Aspektuaalisuus ja aspektin invariantit merkitykset</a> <a href='aspektin_muodostus.html'>Aspektin/aspektiparin muodostaminen sekä aspektin valintaan vaikuttavat tekijät</a> <a href='erityismerkitykset.html'>Aspektien erityismerkitykset</a></p>
+</div>
+<a href='javascript:void(0)' id='menu3' class='menulauncher' >Aspektin vaikuttavat tekijät vuorovaikutuksessa</a>
+<div id="menu3box" class="invisible menubox">
+<p><a href='aspekti_menneen_ajan_verbimuodoilla.html'>Aspekti menneen ajan verbimuodoilla</a> <a href='aspekti_futuurisilla_verbimuodoilla.html'>Aspekti futuurin verbimuodoilla</a> <a href='imperatiivi.html'>Aspekti imperatiivissa</a> <a href='infinitiivi.html'>Aspekti infinitiivissä</a></p>
+</div>
+<script>
+function showmenu(obj) {
+
+    // .position() uses position relative to the offset parent, 
+    var pos = $(obj).position();
+
+    // .outerWidth() takes into account border and padding.
+    var width = $(obj).outerWidth();
+    var height = $(obj).outerHeight();
+    var menuid = "#" + $(obj).attr('id') + 'box';
+
+    //show the menu directly over the placeholder
+    $(menuid).css({
+        position: "absolute",
+        top: pos.top + height + "px",
+        left: (pos.left) + "px"
+    }).show();
+    
+}
+
+$('.menulauncher').hover(function(event) {showmenu(this); });
+$('.menubox').mouseleave(function(event) {$('.menubox').hide();});
+
+</script>
+</article>
+<article class="container">
+<section class="main">
+<p class="header">
+Aspekti imperatiivimuodoilla
+</p>
+<p>Aspektin käyttöön imperatiivimuodoissa liittyy eräitä ominaispiirteitä. Tästä huolimatta myös tavalliset aspektien väliset erot ovat edelleen läsnä.</p>
+<h1 id="imperatiivi-ja-yleiset-aspektuaaliset-erotrassudova"><span class="header-section-number">1</span> Imperatiivi ja yleiset aspektuaaliset erot<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></h1>
+<p>Aivan kuten indikatiivissa, myös imperatiivissa kummallakin aspektilla pätevät aspektien <a href="invariantit_merkitykset.html#monis-maar">invarianttien merkitysten yhteydessä</a> määritellyt tyypilliset, epätyypilliset ja mahdottomat piirteet. Perfektiiviselle aspektille on edelleen ominaista ilmaista sisäisesti rajattua, totaalista toimintaa ja imperfektiivisen aspektin osalta toiminnan rajattuus jätetään edelleen auki, niin että tyypillistä ovat prosessuaalisuus ja toisto.</p>
+<p>Konkreettis-faktisen ja konkreettis-prosessuaalisen merkityksen välinen normaali ero näkyy virkkeissä 1–2:</p>
+<ol style="list-style-type: decimal">
+<li>Поработай, а потом пойдем гулять.</li>
+<li>Стойте здесь, никуда не уходите.</li>
+</ol>
+<p>Esimerkissä 1 perfektiivinen aspekti ilmaisee kahta toimintaa, joiden sisäiset rajat on selvästi hahmotettavissa. Tämä korostuu siinä, että kyseessä on peräkkäisten toimintojan sarja.</p>
+<p>Esimerkissä 2 esitetään myös kaksi toimintaa, mutta on hyvin selvää, ettei toimintojen kestoon tai totaalisuuteen oteta kantaa, vaan kyseessä on kaksi jotakuinkin samanaikaista ja määrittelemättömän kestoista toimintaa.</p>
+<p>Myös konkreettis-faktisen ja rajattoman toiston erityismerkitysten välinen oppositio toteutuu normaalisti imperatiivissa. Tämä näkyy esimerkeissä 3–4:</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Перед началом работы проветрите комнату</li>
+<li>Перед началом работы проветривайте комнату</li>
+</ol>
+<p>Esimerkissä 4 imperfektiivinen aspekti tuo mukanaan toiminnan tulkitsemisen toistuvana.</p>
+<h1 id="modaaliset-erot-imperatiivin-käytössä"><span class="header-section-number">2</span> Modaaliset erot imperatiivin käytössä</h1>
+<p>Imperatiivin aspektin käyttöön liittyvät ominaispiirteet johtuvat sävyeroista, joita valinta I:n ja P:n välillä aiheuttaa. Tärkeään rooliin merkitysten tulkinnassa nousevat sekä konteksti että intonaatio <span class="citation">(Rassudova 1984: 178)</span>.</p>
+<div class="definition">
+<div class="defheader">
+Määritelmä 1.
+</div>
+<p>Aspektien välinen perusero on, että imperfektiivisen verbin imperatiivimuoto on kauttaaltaan neutraalimpi ja ikään kuin pyytää viestin vastaanottajaa tekemään vähemmän tai <em>vähemmän yllättäviä</em> asioita kuin perfektiivisen aspektin imperatiivimuoto. Perfektiivisen aspektin verbit puolestaan usein sisältävät tiukemman pyynnön tai käskyn ja niillä on todellista sisältöä, eikä niitä käytetä ainoastaan retorisesti tai sosiaalisten konventioiden täyttämiseksi. Imperfektiivisen aspektin käskymuodoissa on usein kyse <em>kehotuksesta</em> tai rajoitetummissa tapauksissa <em>neuvosta</em> tai <em>toiveesta</em>, kun taas perfektiivisen aspektin imperatiivimuodot ovat usein selkeämmin <em>pyyntöjä</em> tai varsinaisia <em>käskyjä</em>.</p>
+</div>
+<h2 id="retorinen-kehotus-vai-pyyntö"><span class="header-section-number">2.1</span> Retorinen kehotus vai pyyntö</h2>
+<p>Tarkastellaan aspektien välistä peruseroa esimerkkien 5–6 avulla.</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Проходите, пожалуйста.</li>
+</ol>
+<p>Esimerkin 5 kehotukselle voidaan kuvitella kontekstiksi, että lentokentällä on juuri annettu kuulutus tietyn lennon matkustajille, että koneeseen voi nousta. Kuulutuksen jälkeen ovella seisova lentoemäntä toistaa muodollisesti kehotuksen käydä eteenpäin kohti istumapaikkoja. Vastaavasti esimerkissä 6 voidaan ajatella, että joku matkustajista seisoo keskellä matkustamon käytävää, ja lentoemäntä pyytää häntä siirtymään ja menemään paikalleen:</p>
+<ol start="6" style="list-style-type: decimal">
+<li>Пройдите, пожалуйста, на своё место.</li>
+</ol>
+<p>Esimerkissä 6 kyseessä ei ole vain retorinen kehotus, vaan selkeä pyyntö, jonka toteuttamiseksi pyynnön kohteen on toimittava tavalla, joka tuo selkeän muutoksen siihen, miten hän olisi toiminut ilman pyyntöä.</p>
+<p>Asiakaspalvelutilanteissa vastaava retorisen kehotuksen ja pyynnön ero tulee usein ilmi. Jos asiakas lähestyy myyjää tennismailahyllyn luona ja pyytää näyttämään vaihtoehtoja, myyjä saattaa vastata imperfektiivisen aspektin verbillä:</p>
+<ol start="7" style="list-style-type: decimal">
+<li>­- Вот такие у нас есть.. Выбирайте!</li>
+</ol>
+<p>Jos taas asiakas astuu suureen tavarataloon, jossa myyjä ei voi etukäteen tietää, onko asiakas etsimässä urheiluvarusteita vai juhlavaatteita, asiakkaan pyyntö myyjälle on loogista esittää perfektiivisen aspektin verbillä:</p>
+<ol start="8" style="list-style-type: decimal">
+<li>– Пожалуйста, покажите мне теннисные ракетки.</li>
+</ol>
+<p>Imperfektiivisen aspektin neutraali luonne näkyy siinä, että puhuja voi ilmaista välinpitämättömyytensä tai neutraalin suhtautumisensa johonkin pyyntöön käyttämällä imperfektiivistä aspektia:</p>
+<ol start="9" style="list-style-type: decimal">
+<li>– Я хочу сходить сегодня к Саше. - Ну что же, <span class="r">иди.</span></li>
+</ol>
+<h2 id="odotettu-tai-mainittu-toiminta"><span class="header-section-number">2.2</span> Odotettu tai mainittu toiminta</h2>
+<p>Imperfektiivisen aspektin imperatiivi pitää usein sisällään ajatuksen siitä, että toiminta on jollain tapaa odotettua ja jossain mielessä voisi toteutua myös ilman erillistä pyyntöä. Tämä tulee ilmi, kun vertaa esimerkkejä 10 ja 11:</p>
+<ol start="10" style="list-style-type: decimal">
+<li>Как прошел экзамен? Рассказывай!</li>
+<li>Расскажи, как прошел экзамен.</li>
+</ol>
+<p>Esimerkissä 10 kehotuksen kohde osaa odottaa pyyntöä ja kummatkin dialogin osapuolista ikään kuin olettavat, että asiasta tullaan puhumaan – se on kummankin mielessä. Sen sijaan esimerkki 11 on sisällöltään vastaanottajalle yllättävämpi/odottamattomampi, eikä ennen virkkeen 11 lausumista ollut selvää, mistä asiasta tullaan puhumaan.</p>
+<p>Tässä suhteessa aspektit toimivat imperatiivissa eri tavoin kuin <a href="aspekti_menneen_ajan_verbimuodoilla.html#odotettusuor">edellä</a> tarkasteltaessa menneessä ajassa tapahtuvaa kerrontaa vastaanottajalta odotetusta toiminnasta. Vertaa esimerkkejä 12 ja 13:</p>
+<ol start="12" style="list-style-type: decimal">
+<li>Ты помыл посуду?</li>
+<li>Ты помыл посуду? Нет? Ну, давай, <span class="r">мой</span>!</li>
+</ol>
+<p>Odotetun toiminnan käsitteeseen liittyy myös ajatus siitä, että jokin pyyntö ikään kuin “leijuu ilmassa” ja odottaa vastaustaan. Tällöin ensimmäinen pyyntö on saatettu esittää perfektiivisellä aspektilla, mutta kun vastausta ei kuulu, kehotus toistetaan imperfektiivisellä aspektilla. Samantapainen tilanne on läsnä, kun kehotuksen kohde epäröi tai ujostelee kehottajan mielestä ilman syytä:</p>
+<ol start="14" style="list-style-type: decimal">
+<li>– <span class="r">Войдите…..</span> Ну что же ты? Не бойся, <span class="r">входи</span>, входи! (15) - Читайте, читайте, вы мне не мешаете.</li>
+<li>– Возьмите.. Берите, берите, у меня есть еще одня ручка.</li>
+</ol>
+<p>Sama ilmiö on nähtävissä myös, kun kehottaja käy kärsimättömäksi:</p>
+<ol start="16" style="list-style-type: decimal">
+<li>– <span class="r">Запиши</span> мой телефон… <span class="r">Записывай</span>, пожалуйста, я очень тороплюсь.</li>
+</ol>
+<h2 id="neuvo-tai-toive"><span class="header-section-number">2.3</span> Neuvo tai toive</h2>
+<p>Imperfektiivisen aspektin imperatiivin tyypillinen rooli odotettuna kehotuksena näkyy myös, kun pohditaan, mitä jossakin asiassa tulisi tehdä, ja päädytään johonkin vaihtoehtoon, josta on jo aiemmin keskusteltu:</p>
+<ol start="17" style="list-style-type: decimal">
+<li>Я думал, как вам поступить? Знаете, что? <span class="r">Соглашайтесь</span>, поезжайте в новое место!</li>
+</ol>
+<p>Jos neuvo tulee ikään kuin pyytämättä ja odottamatta, perfektiivinen aspekti on todennäköinen:</p>
+<ol start="18" style="list-style-type: decimal">
+<li>– Проиграй нарочно, посмотрим, как он на это реагирует.</li>
+</ol>
+<p>Jos imperatiivilla ilmaistava pyyntö on ennemminkin toive, käyteään myös imperfektiivistä aspektia:</p>
+<ol start="19" style="list-style-type: decimal">
+<li>– Приходи сегодня домой пораньше.</li>
+</ol>
+<h1 id="imperfektisen-aspektin-erityispiirteitä"><span class="header-section-number">3</span> Imperfektisen aspektin erityispiirteitä</h1>
+<p>Kun huomio kiinnitetään toiminnan tapaan, on todennäköistä käyttää imperfektiivistä aspektia:</p>
+<ol start="20" style="list-style-type: decimal">
+<li>Пиши аккуратнее, а то цифры не разобрать!</li>
+</ol>
+<p>Imperfektiivisen aspektin voi ajallisesti katsoa viittaavan välittömään puhehetkeen ja toiminnan aloittamiseen:</p>
+<ol start="21" style="list-style-type: decimal">
+<li>– Чего вы ждете? Начинайте!</li>
+</ol>
+<h1 id="perfektiivisen-aspektin-erityispiirteitä"><span class="header-section-number">4</span> Perfektiivisen aspektin erityispiirteitä</h1>
+<p>Jos imperatiiviin liittyy muu kuin puhehetkeen viittaava ajanilmaus, perfektiivinen aspekti on tavallisesti ainoa vaihtoehto:</p>
+<ol start="22" style="list-style-type: decimal">
+<li>– Сделайте эту работу сегодня / к двум часам / к субботе.</li>
+</ol>
+<p>Tämä on loogista, kun ajattelee, että ajanilmaus tuo mukanaan ajatuksen siitä, että toiminta käsitetään totaalisena: sen loppumisen on myös mahduttava aikamääreen sisälle.</p>
+</section>
+</article>
+<div class="references">
+<div id="ref-rassudova1984">
+<p>RASSUDOVA, O. 1984. <em>Aspectual usage in modern russian</em>. Moskova: Russky Yazyk.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Tämän osion esimerkit peräisin Rassudovalta <span class="citation">(1984)</span>, ellei toisin mainita.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+</body>
+</html>

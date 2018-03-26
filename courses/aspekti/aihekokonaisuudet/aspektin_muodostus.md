@@ -1,0 +1,317 @@
+---
+bibliography: ../lahteet.bib
+csl: ../bratislava.csl
+numbersections: true
+---
+
+<article id='topbar'>
+Apekti- ja liikeverbiteoria > Aspekti > Aspektin muodostus ja aspektin valinta
+</article>
+
+
+<article class='container'>
+
+<section class='main'>
+
+Aspektiparin käsite
+===================
+
+Imperfektiivisen ja perfektiivisen aspektin välinen oppositio on läsnä kahdella
+tasolla. Ensiksikin voidaan tarkastella kaikkia imperfektiivisen aspektin verbejä
+suhteessa kaikkiin perfektiivisen aspektin verbeihin eli tutkia
+[invarianttien merkitysten]() eroja sinänsä. Toiseksi voidaan tarkastella
+oppositiota sanatasolla ja miettiä, onko jokin tietty verbi (kuten открывать) aspektuaalisessa
+oppositiossa jonkin tietyn verbin (kuten открыть) kanssa. Jälkimmäisessä tapauksessa 
+puhutaan <span class='r'>aspektiparin</span> käsitteestä.
+
+Nikunlassin [-@nikunlassi2002, 177] mukaan perinteinen aspektiparin määritelmä on
+tavallisesti ollut seuraavanlainen:
+
+<div class='definition'>
+<div class='defheader'>Määritelmä 1.</div> 
+termillä *aspektipari* viitataan kahteen verbiin, joiden leksikaalinen merkitys on
+identtinen, ja jotka eroavat toisistaan vain aspektien ilmaisemien
+merkitysten osalta.
+</div>
+
+Ei kuitenkaan läheskään aina ole helppoa sanoa, miten leksikaalinen ja aspektuaalinen
+merkitys voidaan erottaa toisistaan[^lisam]. Jo lähtökohtaisesti on selvää, etteivät
+kaikki verbit muodosta aspektiparia. Aspektiparillisuuden suhteen venäjän verbit
+voi jakaa käytännössä neljään eri luokkaan:
+
+## Verbit, joilla on varsinainen aspektipari
+
+Selkeimmin tähän ryhmään kuuluvat tapaukset, joissa perfektiivisen aspektin
+verbistä on [suffiksaation]() avulla muodostettu imperfektiivisen aspektin
+verbejä. Tällaisia aspektipareja ovat esimerkiksi прочитывать-прочитать,
+открывать-открыть, давать-дать, проглядывать-проглядеть jne.
+
+## Verbit, jotka muodostavat laimeamman, "semanttisen parin"
+
+Vaikka suffiksaation avulla muodostettavat aspektiparit ovat usein
+leksikaalisesti lähimpänä toisiaan ja siten selkeimmin varsinaisia
+aspektipareja, paljon tavallisempi verbinmuodostustapa on [prefiksaatio](),
+jossa imperfektiivisen aspektin verbistä
+muodostetaan perfektiivisen aspektin verbi lisäämällä vartalon eteen jokin
+prefiksi (kuten до, от, по, с, из, об, пере jne.). Sanojen merkitys ei tällöin
+kuitenkaan yleensä pysy identtisenä, vaan prefiksi tuo mukanaan lisämerkityksiä
+ja nyansseja -- joskus selkeitä, joskus merkityksettömämpiä.
+
+Pohdi esimerkiksi verbejä *сидеть* ja *посидеть*. Jälkimmäinen on muodostettu
+edellisestä prefiksaation avulla, mutta edustaa [delimitatiivista teonlaatua]()
+ja sisältää erotuksena edellisestä muun muassa lisämerkityksen 'pikkaisen, vähän
+aikaa'. Verbien leksikaaliseet merkitykset siis eroavat, niin ettei
+kyseessä ole termin tiukassa merkityksessä varsinainen aspektipari. Selkeämpi
+ero voidaan havaita esimerkiksi verbien резать ja разрезать välillä: prefiksi
+раз tuo mukanaan lisämerkityksiä (esim. leikata jokin paloiksi) verrattuna
+neutraalimpaan prefiksittömään verbiin.
+
+Esimerkkejä merkitykseltään läheisistä prefiksaatiolla muodostetuista verbeistä
+ovat muun muassa звонить-позвонить, рисовать-нарисовать sekä erityisesti
+verbit, joissa prefiksin lisääminen tuo mukanaan ainoastaan toiminnan kuvaamisen kertaluontoisena, 
+kuten verbeillä лгать-солгать, благодарить-поблагодарить jne [tarkemmin ks. @rassudova1984, 24].
+
+Kun verbit eivät muodosta aspektiparia, mutta ovat
+leksikaaliselta merkitykseltään lähellä toisiaan, niistä voidaan käyttää nimitystä
+*semanttinen pari* erotuksena varsinaisesta aspektiparista, jossa verbien
+välinen ero on puhtaasti aspektuaalinen.
+
+
+[^lisam]: Katso vaihtoehtoisia ja tarkempia määritelmiä esimerkiksi [@nikunlassi2002, 177]
+
+## Verbit, joilla ei ole aspektiparia
+
+On olemassa myös koko joukko verbejä, joilla ei ole minkäänlaista aspektiparia.
+Nämä ovat useimmiten imperfektiivisen aspektin verbejä (joskus näihin viitataan
+termillä *imperfectiva tantum*) kuten  иметь, значить,
+находиться, зависеть. Näiltä verbeiltä puuttuu monia edellä luetelluista
+imperfektiiviselle aspektille tyypillisistä ominaisuuksista. 
+
+Esimerkkejä verbeistä, jotka edustavat perfektiivistä aspektia ja joilta puuttuu
+tyystin vastaava imperfektiivisen aspektin verbipari (näihin voidaan viitata
+termillä *perfektiva tantum*) ovat понадобиться, сконяаться, очнуться 
+[tarkemmin ks. @forsyth1970, 32]
+
+
+## Verbit, joilla on osittainen aspektipari
+
+Eräillä verbeillä aspektipari joko on tai puuttuu riippuen merkityksestä, jossa
+verbiä käytetään. Näin esimerkiksi verbillä отвечать on aspektipari (ответить), kun verbiä
+käytetään merkityksessä 'vastata johonkin, esim. kysymykseen'. Sen sijaan, kun
+verbiä käytetään merkityksessä 'vastata jotakin, esim. vaatimuksia', aspektipari
+puuttuu:
+
+(@ee_vastata) Нынешний флагманский продукт XGI― VolariV 8 Ultra вполне <span class='r'>отвечает</span> современным требованиям к графическим акселераторам для высокопроизводительных настольных ПК [@otvets]
+(@ee_vastata2) Кстати, на том ресурсе, откуда ссылка, очень много полезной информации, а хозяйка сайта <span class='r'>отвечает</span> на вопросы в форумах и по почте [@ots2]
+
+Aspektin muodostustavat
+=======================
+
+Seuraavassa luodaan katsaus kolmeen tapaan, joilla imprefektiivisen
+tai perfektiivisen aspektin verbejä venäjässä muodostetaan. Näitä ovat
+*imperfektivaatio*, *perfektivaatio* sekä *suppletiivisuus.*
+
+Imperfektivaatio
+----------------
+
+<div class='definition'>
+<div class='defheader'>Määritelmä 2.</div> 
+*Imperfektivaatiolla* tarkoitetaan ilmiötä, jossa perfektiivisen aspektin verbistä
+muodostetaan imperfektiivisen aspektin verbi. 
+</div>
+
+Esimerkiksi verbi <span class='r'>просиживать</span> on
+muodostettu verbistä <span class='b'>просидеть</span>, jolloin prosessia voidaan
+kutsua imperfektivaatioksi. 
+
+Tarkastellaan edellä kuvattua imperfektivaatiotapausta hieman tarkemmin.
+Mitä eroja tai yhtäläisyyksiä mainituilla kahdella verbillä on *morfologisella* tasolla?
+Yhtäläisyydet ovat seuraavanlaisia:
+
+- kummallakin verbillä on infinitiivimuodossa infinitiivin tunnus ть.
+- kumpikin verbi alkaa *про*-prefiksillä
+- sanojen vartalot muistuttavat toisiaan (сиде / сижива)
+
+Verbit kuuluvat eri konjugaatioihin, joten niiden persoonissa taipuvat
+indikatiivimuodot eroavat, mutta tämä johtuu konjugaatioiden eroista ennemmin
+kuin kyseessä olevien verbilekseemien välisistä eroista. Ainoa vaarsinainen
+eroavaisuus on siis se, että vartalot vain muistuttavat toisiaan, eivätkä ole
+identtisiä. Просиживать-verbi on muodostettu просидеть-verbistä *suffiksaation*
+avulla: сиде-vartaloon on lisätty ива-suffiksi ja samalla on tapahtunut
+äänteenmuutos д > ж.
+
+<div class='definition'>
+<div class='defheader'>Määritelmä 3.</div> 
+*suffiksaatio* on sananmuodostuskeino, joka luo uusia sanoja lisäämällä
+sananvartaloon suffiksin. Samalla saattaa tapahtua äänteenmuutoksia, ja myös
+sanapaino saattaa muuttua. Imperfektivaatio tapahtuu käytännössä aina
+suffiksaation avulla.
+</div>
+
+Edellä mainittu ива-suffiksi on yksi tavallisimmista imprefektivaatiossa
+käytetyistä suffikseista. Seuraavassa on esitetty 
+Nikunlassin [-@nikunlassi2002, 167] pohjalta lista tärkeimmistä imperfektivaatiossa
+käytettävistä suffikseista.
+
+### Tärkeimmät imperfektivaatiossa käytettävät suffiksit
+
+
+#### <span class='right-arrow'>а, е, и</span> <span class='afterarrow'>ива</span>
+
+Ensimmäiseen ryhmään kuuluvat tapaukset, joissa vartaloon lisätään ива-suffiksi.
+Huomaa, että jos vartalon viimeisenä äänteenä on /э/, se saattaa muuttua
+/и/-äänteeksi. Myös muut vokaalinmuutokset ovat mahdollisia, samoin kuin muutos
+sanapainossa.
+
+- вы́<span class='r'>и</span>грать - выѝгр<span class='r'>ива</span>ть
+- просмотр<span class='r'>ѐ</span>ть - просма́тр<span class='r'>ива</span>ть
+- уговор<span class='r'>ѝ</span>ть - угава́р<span class='r'>ива</span>ть
+
+#### <span class='right-arrow'>а, е, и</span> <span class='afterarrow'>ева</span>
+
+Toinen ryhmä kattaa tapaukset, joissa ива-suffiksin sijaan imperfektivaatio
+saadaan aikaan ева-suffiksilla.
+
+- застр<span class='r'>я́</span>ть - застр<span class='r'>ева́</span>ть
+- забол<span class='r'>ѐ</span>ть - забол<span class='r'>ева́</span>ть
+- продл<span class='r'>ѝ</span>ть - продл<span class='r'>ева́</span>ть
+
+#### <span class='right-arrow'>и</span> <span class='afterarrow'>á</span>
+
+Kolmanneksi ryhmäksi Nikunlassi erottelee tapaukset, joissa vartalon
+/и/ muuttuu painolliseksi /а/:ksi:
+
+- обуч<span class='r'>ѝ</span>ть - обуч<span class='r'>á</span>ть
+- замѐт<span class='r'>и</span>ть - замеч<span class='r'>á</span>ть
+
+#### <span class='right-arrow'>a</span> <span class='afterarrow'>á</span>
+
+Imperfektivaatio voi myös tapahtua vain sillä, että perfektiivisen verbivartalon
+painoton /а/ muuttuu imperfektiivisessä verbivartalossa painolliseksi.
+Huomaa näissä tapauksissa mahdolliset sekaannukset muihin, semanttisiin
+aspektipareihin, kuten рѐзать - разрѐзать, засыпа́ть - засну́ть.
+
+- разрѐз<span class='r'>а</span>ть - разрез<span class='r'>á</span>ть
+- засы́п<span class='r'>а</span>ть - засып<span class='r'>á</span>ть
+
+#### <span class='right-arrow'>ну</span> <span class='afterarrow'>á</span>
+
+Seuraavat kaksi ryhmää liittyvät perfektiivisen aspektin verbeihin, joiden
+vartalo päättyy äänneyhdiselmään /ну/. Ensimmäisessä ryhmässä tämän tilalle tulee painollinen
+/а/-äänne:
+
+- толк<span class='r'>ну́</span>ть - толк<span class='r'>á</span>ть
+- улыб<span class='r'>ну́</span>ться - улыб<span class='r'>á</span>тьсяся
+
+#### <span class='right-arrow'>ну</span> <span class='afterarrow'>ива</span>
+
+Toisessa ryhmässä /ну/-äänneyhdistelmä vaihtuu jo ensimmäisen tapausryppään
+kohdalla käsiteltyyn /ива/-suffiksiin:
+
+- затро́<span class='r'>ну́</span>ть - затра́г<span class='r'>ива</span>ть
+- промах<span class='r'>ну́</span>ться - прома́х<span class='r'>ива</span>ться
+
+#### <span class='right-arrow'>я</span> <span class='afterarrow'>вá</span>
+
+Viimeisessä tyypillisessä imperfektivaatiotapauksessa vartalon
+(j)/a/-äänneyhdistelmä vaihtuu (v)/a/-äänneyhdistelmään:
+
+- засѐ<span class='r'>я</span>ть - засе<span class='r'>вá</span>ть
+
+Perfektivaatio
+----------------
+
+<div class='definition'>
+<div class='defheader'>Määritelmä 2.</div> 
+*Perfektivaatiolla* tarkoitetaan ilmiötä, jossa imperfektiivisen aspektin verbistä
+muodostetaan perfektiivisen aspektin verbi. 
+</div>
+
+Perfektivaatio on imperfektivaatioon nähden päinvastainen prosessi. Siinä missä
+imperfektivaatiossa käytettävä ssananmuodostus keino on suffiksaatio,
+muodostetaan perfektivaatiossa sanoja *prefiksaation* kautta. Näin esimerkiksi
+imperfektiivisestä готовить-verbistä saadaan perfektiivisen aspektin verbi
+приготовить lisäämllä siihen prefiksi *при*. Infinitiivimuotoja vertaamalla
+näkee heti, että ainoa morfologinen ero verbimuotojen välillä on juuri
+perfektiivisen verbin prefiksi.
+
+Kuten edellä huomautettiin, perfektivaation avulla ei periaatteessa muodostu
+tiukassa mielessä varsinaisia aspektipareja vaan ainoastaan semanttisesti
+samanlaisia, joskin paikoin leksikaalisestikin *lähes* identtisiä verbipareja.
+
+Nikunlassin [-@nikunlassi2002, 167] mukaan venäjässä on 16 prefiksiä, jotka
+voivat toimia varsinaisessa aspektinmuodostustarkoituksessa.
+Nämä on lueteltu Nikunlassin antamien esimerkkin pohjalta seuraavassa listassa:
+
+- потеть - <span class='r'>вс</span>потеть
+- препятствовать - <span class='r'>вос</span>препятствовать
+- купать - <span class='r'>вы</span>купать
+- асфальтировать - <span class='r'>за</span>асфальтировать
+- пугать - <span class='r'>и</span>спугать
+- писать - <span class='r'>на</span>писать
+- слепнуть - <span class='r'>о</span>слепнуть
+- радоваьбся - <span class='r'>об</span>радоваться
+- редактировать - <span class='r'>от</span>редактировать
+- темнеть - <span class='r'>по</span>темнеть
+- считать - <span class='r'>под</span>чситать
+- готовить - <span class='r'>при</span>готовить
+- сверлить - <span class='r'>про</span>сверлить
+- будить - <span class='r'>раз</span>будить
+- делать - <span class='r'>с</span>делать
+- совершенствовать - <span class='r'>у</span>совершенствовать
+
+Erikoistapauksia
+----------------
+
+### Suppletiiviset vartalot
+
+Aspektipareja ei aina muodosteta, kuten edellä, johtamalla tai muilla
+sananmuodostuksellisilla keinoilla. On olemassa myös koko joukko verbejä, jotka
+ovat aspektuaalisessa oppositiossa keskenään, vaikka ne ovat morfologisesti
+erilaisia, niillä on eri sanavartalot ja eri etymologia.
+Tällaisia pareja ovat mm. брать - взять, говорить - сказать, класть -
+положить.
+
+
+### Kaksiaspektiset verbit
+
+On myös olemassa joukko verbejä, jotka on tulkittava joko imperfektiivisiksi tai
+perfektiivisiksi kontekstista riippuen. Tähän kaksiaspektisten[^dvuv] luokkaan kuuluu toisaalta
+slaavilaisperäisiä verbejä kuten велеть, венчать, родиться, ранить, toisaalta
+vierasperäisiä verbejä kuten стартовать, реализовать jne. Huomaa, että
+jälkimmäinen tyyppi (ова-suffiksilla muodostettuja verbejä) on produktiivinen,
+toisin sanoen vastaavia verbejä syntyy nykyvenäjässä paljon.
+
+Kaksiaspetkisilla verbeillä aspektin paljastavaksi kontekstiksi voi riittää
+esimerkiksi ajan adverbiaali, kuten lauseessa *Атакуем завтра* [@forsyth1970,
+33]. On huomattava, että osalle kaksiaspektisista verbeistä on kehittynyt
+aspektipari. Nikunlassi [-@nikunlassi2002, 169] mainitsee esimerkiksi verbin
+жениться, joka merkityksessä 'mennä keskenään naimisiin' on nykyisin
+imperfektiivisen aspektin verbi ja saa parikseen по-prefiksillä muodostetun
+perfektiivisen aspektin verbin.
+
+[^dvuv] двувидовые глагоы
+
+### Liikeverbit
+
+Liikeverbit ovat erikoistapaus siinä mielessä, että etuliitteisten liikeverbien
+osalta aspektipari muodostetaan liittämällä sama prefiksi eri verbivartaloihin.
+Imperfektiivisen aspektin verbi muodostetaan liittämällä prefiksi iteratiivisen
+liikeverbin vartaloon (esimerkiksi <span class='r'>вы</span>ходить) ja
+perfektiivisen aspektin verbi puolestaan liittämällä prefiksi duratiivisen
+liikeverbin vartaloon (esimerkiksi <span class='r'>вы</span>йти). Liikeverbien
+aspektiparien muodostamiseen pureudutaan tarkemmin liikeverbejä käsittelevässä
+kurssin osassa.
+
+Aspektin valintaan vaikuttavat tekijät
+======================================
+
+Pragmaattiset tekijät
+---------------------
+
+Lingvistiset tekijät
+--------------------
+
+
+</section>
+</article>

@@ -1,0 +1,748 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="finnish" xml:lang="finnish">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="../jquery-latest.js"></script>
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/theme/sky.css" id="theme">
+  <style type='text/css'>
+  
+  /* General Demo Style */
+  @import url(http://fonts.googleapis.com/css?family=Lato:300,700);
+  
+  .main {
+  	width: 100%;
+  	max-width: 960px;
+  	padding: 40px;
+  	text-shadow: 0 2px 0 rgba(255,255,255,0.7);
+  }
+  
+  .main p {
+  	font-size: 16px;
+  	line-height: 1.4;
+  	text-align: justify;
+  }
+  
+  .main p:nth-of-type(2){
+  	-moz-column-gap: 20px;
+  	-webkit-column-gap: 20px;
+  	-ms-column-gap: 20px;
+  	-o-column-gap: 20px;
+  	column-gap: 20px;
+  }
+  
+  .main p:nth-of-type(4){
+  	-moz-column-gap: 15px;
+  	-o-column-count: 3;
+  	-o-column-gap: 15px;
+  	-ms-column-count: 3;
+  	-ms-column-gap: 15px;
+  	-webkit-column-gap: 15px;
+  	column-count: 3;
+  	column-gap: 15px;
+  }
+  
+  
+  
+  html *
+  {
+     /*font-family: Arial !important;*/
+  }
+  
+  
+  p.header {
+      font-size: 46px;
+      line-height: 40px;
+      text-align:left;
+      border-bottom: 2px solid black;
+      padding-bottom:5px;
+      margin-bottom:5em;
+  }
+  
+  h1 {
+      font-size: 36px;
+      line-height: 40px;
+  }
+  
+  h2 {
+      font-size: 30px;
+      line-height: 40px;
+  }
+  
+  h3 {
+      font-size: 24px;
+      line-height: 40px;
+  }
+  
+  h4 {
+      font-size: 18px;
+      line-height: 20px;
+  }
+  
+  /* Won't be used here */
+  
+  h5 {
+      font-size: 14px;
+      line-height: 20px;
+  }
+  
+  h6 {
+      font-size: 12px;
+      line-height: 20px;
+  }
+  
+  
+  .main {
+  	counter-reset: section-1, section-2, section-3, section-4;
+  }
+  
+  .main h1 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 36px;
+  	line-height: 40px;
+  	counter-increment: section-1;
+  	counter-reset: section-2 section-3 section-4;
+  }
+  
+  .main h2 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 30px;
+  	line-height: 40px;
+  	counter-increment: section-2;
+  	counter-reset: section-3 section-4;
+  	border-bottom: 1px solid #fff;
+  	box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+  	padding-bottom: 10px;
+  }
+  
+  .main h3 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 24px;
+  	line-height: 40px;
+  	counter-increment: section-3;
+  	counter-reset: section-4;
+  }
+  
+  .main h4 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 18px;
+  	line-height: 20px;
+  	counter-increment: section-4;
+  }
+  
+  a:link{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:active{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:visited{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:hover{
+  color:#000000;
+  text-decoration:underline;
+  }
+  
+  #TOC{
+  position:absolute;
+  width:17%;
+  font-size:89%;
+  margin-top:30px;
+  /*height:70%;*/
+  /*box-shadow: 3px 7px 5px 0px;*/
+  padding:5px;
+  overflow:auto;
+  /*border-radius:10px;
+  border: 1px black dashed;*/
+  }
+  
+  #TOC > ul{
+  list-style-type: none;
+  }
+  
+  
+  #TOC ul
+  {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  }
+  
+  #TOC a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #036;
+  /*width: 9em;*/
+  padding: 3px 12px 3px 8px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: bold;
+  }
+  
+  #TOC a:hover
+  {
+  background-color: #369;
+  color: #FFF;
+  }
+  
+  #TOC li li a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #69C;
+  /*width: 9em;*/
+  padding: 3px 3px 3px 17px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: normal;
+  }
+  
+  
+  .container{
+      height: 100%;
+      margin-top: 50px;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 9%;
+      padding-top: 10%;
+      background: white;
+      border-radius:25px;
+      }
+  
+  .references{
+      margin-top: 2%;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      background: white;
+      }
+  
+  
+  
+  #topbar{
+  position:absolute;
+  top:0;
+  left:-20px;
+  /*background:yellow;*/
+  background-color: #C5A05B;
+  margin-bottom:10px;
+  padding-left:25px;
+  /*
+  padding-right:25px;
+  padding-top:5px;
+  */
+  padding-bottom:2px;
+  border-bottom: 1px dashed white;
+  border-right: 1px dashed white;
+  }
+  
+  .r {color:red;}
+  .b {color:blue;}
+  .g {color:grey;}
+  .gre {color:green;}
+  
+  .definition {
+      background: beige;
+      /*background: #DABC83;*/
+      padding-left: 1px;
+      margin-left: 2em;
+      padding-right: 1px;
+  }
+  
+  .defheader{
+      width: 100%;
+      /* padding-right: 10px; */
+      /* margin-right: 10px; */
+      border-bottom: 1px dashed black;
+      background: aliceblue;
+      /*background: #B0D0EC;*/
+  }
+  
+  .definition > p {
+      /* color: red; */
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 1em;
+      font-style: italic;
+  }
+  
+  article.bubble{
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 2em;
+  border-radius: 7px;
+  margin-left: 14px;
+  color:black;
+  }
+  
+  
+  article.bubblenob{
+  float: left;
+  width:30%;
+  }
+  
+  
+  article.mmbubble{
+  text-align: left;
+  border: 2px dotted black;
+  padding: 4px;
+  border-radius: 7px;
+  margin:1%;
+  color:black;
+  }
+  
+  article.nfbubble{
+  font-size:90%;
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 1.5em;
+  border-radius: 7px;
+  margin:4%;
+  box-shadow: 10px 10px 5px #888888;
+  color:black;
+  }
+  
+  article.bgred{background: rgba(222, 184, 135, 0.64);}
+  article.bgblue{background: rgba(100, 149, 237, 0.45);}
+  article.bggreen{background: darkseagreen;}
+  article.bgcyan{background: rgba(255, 215, 0, 0.25);}
+  
+  span#triangle {
+      display: inline-block;
+      margin: 72px;
+      border-right: 24px solid; border-bottom: 24px solid;
+      width: 50px; height: 50px;
+      transform: rotate(-45deg);
+  }
+  
+  span.right-arrow {
+      display: inline-block;
+      position: relative;
+      background: #E8EFED;
+      padding: 3px;
+  }
+  
+  span.right-arrow:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      margin-top: -10px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid #151514;
+  }
+  
+  span.afterarrow {
+      background: rgb(193, 243, 255);
+      margin-left: 9px;
+      padding: 3px;
+  }
+  
+  article#tocmain{
+  background:none;
+  }
+  
+  #topbar a:hover{
+  background-color: #8A6C34;
+  color: #FFF;
+  }
+  
+  #topbar a{
+  padding:3px;
+  color: #FFF;
+  text-decoration: none;
+  /*border-right:1px dashed white;*/
+  }
+  
+  #inlinemenu{
+  padding:0;
+  margin:0;
+  }
+  
+  .inline{
+  display:inline;
+  }
+  
+  #topbar li{list-style-type: none;
+      line-height:130%;
+  }
+  
+  a.dropdown-link { 
+      color:#044264;
+      text-decoration:none; 
+  }
+  
+  ul#quotes-bar-menu {
+      margin: 0; padding: 0;
+      float:left;
+      width: 100%;
+      list-style: none;
+  }
+  
+  ul#quotes-bar-menu li {
+      display:inline;
+      float:left;
+      position:relative;
+      margin:0;
+      padding:7px 15px 7px 0;
+  }
+  
+  /* sub menu class */
+  ul#quotes-bar-menu li .sub-menu {
+      background-color: #C5A05B;
+      display:none;
+      left:0;
+      margin:0;
+      font-size:11;
+      padding:0;
+      position:absolute;
+      top:29px;
+      width:320px;
+      z-index:999;
+  }
+  
+  ul#quotes-bar-menu li .single { 
+      /*width:150px !important;*/
+  }
+  
+  ul#quotes-bar-menu li{
+      color:#fff;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu ul {
+      float:left;
+      list-style:none;
+      display: block;
+      width:205px;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li {
+      width:135px;
+      margin:0; 
+      font-size:11px;
+      padding:1px 1px 0;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li a { color: white;
+  text-decoration: none;
+  }
+  ul#quotes-bar-menu li .sub-menu li a:hover { text-decoration: none; }
+  
+  
+  .invisible{
+  display:none;
+  }
+  .menubox{
+      background-color: #C5A05B;
+      padding: 0.12em;
+      border: 1px dashed white;
+      padding-left: 0.5em;
+  }
+  
+  
+  #topbar .menulauncher a{
+  border-right: 1px dashed white;
+  padding-right:3px;
+  }
+  
+  .menubox a{
+  width:80%;
+  display:inline-block;
+  margin-bottom:1%;
+  padding:0.2em;
+  cursor: pointer; cursor: hand;
+  font-family: arial;
+  font-size: 12;
+  text-decoration: underline;
+  }
+  </style>
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#aspektiparin-käsite"><span class="toc-section-number">1</span> Aspektiparin käsite</a><ul>
+<li><a href="#verbit-joilla-on-varsinainen-aspektipari"><span class="toc-section-number">1.1</span> Verbit, joilla on varsinainen aspektipari</a></li>
+<li><a href="#verbit-jotka-muodostavat-laimeamman-semanttisen-parin"><span class="toc-section-number">1.2</span> Verbit, jotka muodostavat laimeamman, “semanttisen parin”</a></li>
+<li><a href="#verbit-joilla-ei-ole-aspektiparia"><span class="toc-section-number">1.3</span> Verbit, joilla ei ole aspektiparia</a></li>
+<li><a href="#verbit-joilla-on-osittainen-aspektipari"><span class="toc-section-number">1.4</span> Verbit, joilla on osittainen aspektipari</a></li>
+</ul></li>
+<li><a href="#aspektin-muodostustavat"><span class="toc-section-number">2</span> Aspektin muodostustavat</a><ul>
+<li><a href="#imperfektivaatio"><span class="toc-section-number">2.1</span> Imperfektivaatio</a><ul>
+<li><a href="#tärkeimmät-imperfektivaatiossa-käytettävät-suffiksit"><span class="toc-section-number">2.1.1</span> Tärkeimmät imperfektivaatiossa käytettävät suffiksit</a></li>
+</ul></li>
+<li><a href="#perfektivaatio"><span class="toc-section-number">2.2</span> Perfektivaatio</a></li>
+<li><a href="#erikoistapauksia"><span class="toc-section-number">2.3</span> Erikoistapauksia</a><ul>
+<li><a href="#suppletiiviset-vartalot"><span class="toc-section-number">2.3.1</span> Suppletiiviset vartalot</a></li>
+<li><a href="#kaksiaspektiset-verbit"><span class="toc-section-number">2.3.2</span> Kaksiaspektiset verbit</a></li>
+<li><a href="#liikeverbit"><span class="toc-section-number">2.3.3</span> Liikeverbit</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#aspektin-valintaan-vaikuttavat-tekijät"><span class="toc-section-number">3</span> Aspektin valintaan vaikuttavat tekijät</a><ul>
+<li><a href="#pragmaattiset-tekijät"><span class="toc-section-number">3.1</span> Pragmaattiset tekijät</a></li>
+<li><a href="#kielelliset-tekijät"><span class="toc-section-number">3.2</span> Kielelliset tekijät</a></li>
+</ul></li>
+</ul>
+</div>
+<article id="topbar">
+<a href='javascript:void(0)' id='menu1' class='menulauncher' >Aspekti- ja liikeverbiteoria |</a>
+<div id="menu1box" class="invisible menubox">
+<p><a href='../index.html'>Sisällys</a> <a href='kurssin_esittely.html'>Kurssin esittely</a> <a href='kurssin_aikataulu.html'>Kurssin aikataulu</a> <a href='https://learning2.uta.fi/course/view.php?id=7339'>Moodle</a></p>
+</div>
+<a href='javascript:void(0)' id='menu2' class='menulauncher' >Aspekti |</a>
+<div id="menu2box" class="invisible menubox">
+<p><a href='invariantit_merkitykset.html'>Aspektuaalisuus ja aspektin invariantit merkitykset</a> <a href='aspektin_muodostus.html'>Aspektin/aspektiparin muodostaminen sekä aspektin valintaan vaikuttavat tekijät</a> <a href='erityismerkitykset.html'>Aspektien erityismerkitykset</a></p>
+</div>
+<a href='javascript:void(0)' id='menu3' class='menulauncher' >Aspektin vaikuttavat tekijät vuorovaikutuksessa</a>
+<div id="menu3box" class="invisible menubox">
+<p><a href='aspekti_menneen_ajan_verbimuodoilla.html'>Aspekti menneen ajan verbimuodoilla</a> <a href='aspekti_futuurisilla_verbimuodoilla.html'>Aspekti futuurin verbimuodoilla</a> <a href='imperatiivi.html'>Aspekti imperatiivissa</a> <a href='infinitiivi.html'>Aspekti infinitiivissä</a></p>
+</div>
+<script>
+function showmenu(obj) {
+
+    // .position() uses position relative to the offset parent, 
+    var pos = $(obj).position();
+
+    // .outerWidth() takes into account border and padding.
+    var width = $(obj).outerWidth();
+    var height = $(obj).outerHeight();
+    var menuid = "#" + $(obj).attr('id') + 'box';
+
+    //show the menu directly over the placeholder
+    $(menuid).css({
+        position: "absolute",
+        top: pos.top + height + "px",
+        left: (pos.left) + "px"
+    }).show();
+    
+}
+
+$('.menulauncher').hover(function(event) {showmenu(this); });
+$('.menubox').mouseleave(function(event) {$('.menubox').hide();});
+
+</script>
+</article>
+<article class="container">
+<section class="main">
+<p class="header">
+Aspektin muodostus ja aspektin valintaan vaikuttavat tekijät
+</p>
+<h1 id="aspektiparin-käsite"><span class="header-section-number">1</span> Aspektiparin käsite</h1>
+<p>Imperfektiivisen ja perfektiivisen aspektin välinen oppositio on läsnä kahdella tasolla. Ensiksikin voidaan tarkastella kaikkia imperfektiivisen aspektin verbejä suhteessa kaikkiin perfektiivisen aspektin verbeihin eli tutkia <a href="">invarianttien merkitysten</a> eroja sinänsä. Toiseksi voidaan tarkastella oppositiota sanatasolla ja miettiä, onko jokin tietty verbi (kuten открывать) aspektuaalisessa oppositiossa jonkin tietyn verbin (kuten открыть) kanssa. Jälkimmäisessä tapauksessa puhutaan <span class="r">aspektiparin</span> käsitteestä.</p>
+<p>Nikunlassin <span class="citation">(2002: 177)</span> mukaan perinteinen aspektiparin määritelmä on tavallisesti ollut seuraavanlainen:</p>
+<div class="definition">
+<div class="defheader">
+Määritelmä 1.
+</div>
+<p>termillä <em>aspektipari</em> viitataan kahteen verbiin, joiden leksikaalinen merkitys on identtinen, ja jotka eroavat toisistaan vain aspektien ilmaisemien merkitysten osalta.</p>
+</div>
+<p>Ei kuitenkaan läheskään aina ole helppoa sanoa, miten leksikaalinen ja aspektuaalinen merkitys voidaan erottaa toisistaan<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. Jo lähtökohtaisesti on selvää, etteivät kaikki verbit muodosta aspektiparia. Aspektiparillisuuden suhteen venäjän verbit voi jakaa käytännössä neljään eri luokkaan:</p>
+<h2 id="verbit-joilla-on-varsinainen-aspektipari"><span class="header-section-number">1.1</span> Verbit, joilla on varsinainen aspektipari</h2>
+<p>Selkeimmin tähän ryhmään kuuluvat tapaukset, joissa perfektiivisen aspektin verbistä on <a href="">suffiksaation</a> avulla muodostettu imperfektiivisen aspektin verbejä. Tällaisia aspektipareja ovat esimerkiksi прочитывать-прочитать, открывать-открыть, давать-дать, проглядывать-проглядеть jne.</p>
+<h2 id="verbit-jotka-muodostavat-laimeamman-semanttisen-parin"><span class="header-section-number">1.2</span> Verbit, jotka muodostavat laimeamman, “semanttisen parin”</h2>
+<p>Vaikka suffiksaation avulla muodostettavat aspektiparit ovat usein leksikaalisesti lähimpänä toisiaan ja siten selkeimmin varsinaisia aspektipareja, paljon tavallisempi verbinmuodostustapa on <a href="">prefiksaatio</a>, jossa imperfektiivisen aspektin verbistä muodostetaan perfektiivisen aspektin verbi lisäämällä vartalon eteen jokin prefiksi (kuten до, от, по, с, из, об, пере jne.). Sanojen merkitys ei tällöin kuitenkaan yleensä pysy identtisenä, vaan prefiksi tuo mukanaan lisämerkityksiä ja nyansseja – joskus selkeitä, joskus merkityksettömämpiä.</p>
+<p>Pohdi esimerkiksi verbejä <em>сидеть</em> ja <em>посидеть</em>. Jälkimmäinen on muodostettu edellisestä prefiksaation avulla, mutta edustaa <a href="">delimitatiivista teonlaatua</a> ja sisältää erotuksena edellisestä muun muassa lisämerkityksen ‘pikkaisen, vähän aikaa’. Verbien leksikaaliseet merkitykset siis eroavat, niin ettei kyseessä ole termin tiukassa merkityksessä varsinainen aspektipari. Selkeämpi ero voidaan havaita esimerkiksi verbien резать ja разрезать välillä: prefiksi раз tuo mukanaan lisämerkityksiä (esim. leikata jokin paloiksi) verrattuna neutraalimpaan prefiksittömään verbiin.</p>
+<p>Esimerkkejä merkitykseltään läheisistä prefiksaatiolla muodostetuista verbeistä ovat muun muassa звонить-позвонить, рисовать-нарисовать sekä erityisesti verbit, joissa prefiksin lisääminen tuo mukanaan ainoastaan toiminnan kuvaamisen kertaluontoisena, kuten verbeillä лгать-солгать, благодарить-поблагодарить jne <span class="citation">(tarkemmin ks. Rassudova 1984: 24)</span>.</p>
+<p>Kun verbit eivät muodosta aspektiparia, mutta ovat leksikaaliselta merkitykseltään lähellä toisiaan, niistä voidaan käyttää nimitystä <em>semanttinen pari</em> erotuksena varsinaisesta aspektiparista, jossa verbien välinen ero on puhtaasti aspektuaalinen.</p>
+<h2 id="verbit-joilla-ei-ole-aspektiparia"><span class="header-section-number">1.3</span> Verbit, joilla ei ole aspektiparia</h2>
+<p>On olemassa myös koko joukko verbejä, joilla ei ole minkäänlaista aspektiparia. Nämä ovat useimmiten imperfektiivisen aspektin verbejä (joskus näihin viitataan termillä <em>imperfectiva tantum</em>) kuten иметь, значить, находиться, зависеть. Näiltä verbeiltä puuttuu monia edellä luetelluista imperfektiiviselle aspektille tyypillisistä ominaisuuksista.</p>
+<p>Esimerkkejä verbeistä, jotka edustavat perfektiivistä aspektia ja joilta puuttuu tyystin vastaava imperfektiivisen aspektin verbipari (näihin voidaan viitata termillä <em>perfektiva tantum</em>) ovat понадобиться, скончаться, очнуться <span class="citation">(tarkemmin ks. Forsyth 1970: 32)</span></p>
+<h2 id="verbit-joilla-on-osittainen-aspektipari"><span class="header-section-number">1.4</span> Verbit, joilla on osittainen aspektipari</h2>
+<p>Eräillä verbeillä aspektipari joko on tai puuttuu riippuen merkityksestä, jossa verbiä käytetään. Näin esimerkiksi verbillä отвечать on aspektipari (ответить), kun verbiä käytetään merkityksessä ‘vastata johonkin, esim. kysymykseen’. Sen sijaan, kun verbiä käytetään merkityksessä ‘vastata jotakin, esim. vaatimuksia’, aspektipari puuttuu:</p>
+<ol style="list-style-type: decimal">
+<li>Нынешний флагманский продукт XGI― VolariV 8 Ultra вполне <span class="r">отвечает</span> современным требованиям к графическим акселераторам для высокопроизводительных настольных ПК <span class="citation">(Соболев 2014)</span></li>
+<li>Кстати, на том ресурсе, откуда ссылка, очень много полезной информации, а хозяйка сайта <span class="r">отвечает</span> на вопросы в форумах и по почте <span class="citation">(Forumpost 2004)</span></li>
+</ol>
+<h1 id="aspektin-muodostustavat"><span class="header-section-number">2</span> Aspektin muodostustavat</h1>
+<p>Seuraavassa luodaan katsaus kolmeen tapaan, joilla imprefektiivisen tai perfektiivisen aspektin verbejä venäjässä muodostetaan. Näitä ovat <em>imperfektivaatio</em>, <em>perfektivaatio</em> sekä <em>suppletiivisuus.</em></p>
+<h2 id="imperfektivaatio"><span class="header-section-number">2.1</span> Imperfektivaatio</h2>
+<div class="definition">
+<div class="defheader">
+Määritelmä 2.
+</div>
+<p><em>Imperfektivaatiolla</em> tarkoitetaan ilmiötä, jossa perfektiivisen aspektin verbistä muodostetaan imperfektiivisen aspektin verbi.</p>
+</div>
+<p>Esimerkiksi verbi <span class="r">просиживать</span> on muodostettu verbistä <span class="b">просидеть</span>, jolloin prosessia voidaan kutsua imperfektivaatioksi.</p>
+<p>Tarkastellaan edellä kuvattua imperfektivaatiotapausta hieman tarkemmin. Mitä eroja tai yhtäläisyyksiä mainituilla kahdella verbillä on <em>morfologisella</em> tasolla? Yhtäläisyydet ovat seuraavanlaisia:</p>
+<ul>
+<li>kummallakin verbillä on infinitiivimuodossa infinitiivin tunnus ть.</li>
+<li>kumpikin verbi alkaa <em>про</em>-prefiksillä</li>
+<li>sanojen vartalot muistuttavat toisiaan (сиде / сижива)</li>
+</ul>
+<p>Verbit kuuluvat eri konjugaatioihin, joten niiden persoonissa taipuvat indikatiivimuodot eroavat, mutta tämä johtuu konjugaatioiden eroista ennemmin kuin kyseessä olevien verbilekseemien välisistä eroista. Ainoa vaarsinainen eroavaisuus on siis se, että vartalot vain muistuttavat toisiaan, eivätkä ole identtisiä. Просиживать-verbi on muodostettu просидеть-verbistä <em>suffiksaation</em> avulla: сиде-vartaloon on lisätty ива-suffiksi ja samalla on tapahtunut äänteenmuutos д &gt; ж.</p>
+<div class="definition">
+<div class="defheader">
+Määritelmä 3.
+</div>
+<p><em>suffiksaatio</em> on sananmuodostuskeino, joka luo uusia sanoja lisäämällä sananvartaloon suffiksin. Samalla saattaa tapahtua äänteenmuutoksia, ja myös sanapaino saattaa muuttua. Imperfektivaatio tapahtuu käytännössä aina suffiksaation avulla.</p>
+</div>
+<p>Edellä mainittu ива-suffiksi on yksi tavallisimmista imprefektivaatiossa käytetyistä suffikseista. Seuraavassa on esitetty Nikunlassin <span class="citation">(2002: 167)</span> pohjalta lista tärkeimmistä imperfektivaatiossa käytettävistä suffikseista.</p>
+<h3 id="tärkeimmät-imperfektivaatiossa-käytettävät-suffiksit"><span class="header-section-number">2.1.1</span> Tärkeimmät imperfektivaatiossa käytettävät suffiksit</h3>
+<h4 id="а-е-и-ива"><span class="header-section-number">2.1.1.1</span> <span class="right-arrow">а, е, и</span> <span class="afterarrow">ива</span></h4>
+<p>Ensimmäiseen ryhmään kuuluvat tapaukset, joissa vartaloon lisätään ива-suffiksi. Huomaa, että jos vartalon viimeisenä äänteenä on /э/, se saattaa muuttua /и/-äänteeksi. Myös muut vokaalinmuutokset ovat mahdollisia, samoin kuin muutos sanapainossa.</p>
+<ul>
+<li>вы́<span class="r">и</span>грать - выѝгр<span class="r">ива</span>ть</li>
+<li>просмотр<span class="r">ѐ</span>ть - просма́тр<span class="r">ива</span>ть</li>
+<li>уговор<span class="r">ѝ</span>ть - угава́р<span class="r">ива</span>ть</li>
+</ul>
+<h4 id="а-е-и-ева"><span class="header-section-number">2.1.1.2</span> <span class="right-arrow">а, е, и</span> <span class="afterarrow">ева</span></h4>
+<p>Toinen ryhmä kattaa tapaukset, joissa ива-suffiksin sijaan imperfektivaatio saadaan aikaan ева-suffiksilla.</p>
+<ul>
+<li>застр<span class="r">я́</span>ть - застр<span class="r">ева́</span>ть</li>
+<li>забол<span class="r">ѐ</span>ть - забол<span class="r">ева́</span>ть</li>
+<li>продл<span class="r">ѝ</span>ть - продл<span class="r">ева́</span>ть</li>
+</ul>
+<h4 id="и-á"><span class="header-section-number">2.1.1.3</span> <span class="right-arrow">и</span> <span class="afterarrow">á</span></h4>
+<p>Kolmanneksi ryhmäksi Nikunlassi erottelee tapaukset, joissa vartalon /и/ muuttuu painolliseksi /а/:ksi:</p>
+<ul>
+<li>обуч<span class="r">ѝ</span>ть - обуч<span class="r">á</span>ть</li>
+<li>замѐт<span class="r">и</span>ть - замеч<span class="r">á</span>ть</li>
+</ul>
+<h4 id="a-á"><span class="header-section-number">2.1.1.4</span> <span class="right-arrow">a</span> <span class="afterarrow">á</span></h4>
+<p>Imperfektivaatio voi myös tapahtua vain sillä, että perfektiivisen verbivartalon painoton /а/ muuttuu imperfektiivisessä verbivartalossa painolliseksi. Huomaa näissä tapauksissa mahdolliset sekaannukset muihin, semanttisiin aspektipareihin, kuten рѐзать - разрѐзать, засыпа́ть - засну́ть.</p>
+<ul>
+<li>разрѐз<span class="r">а</span>ть - разрез<span class="r">á</span>ть</li>
+<li>засы́п<span class="r">а</span>ть - засып<span class="r">á</span>ть</li>
+</ul>
+<h4 id="ну-á"><span class="header-section-number">2.1.1.5</span> <span class="right-arrow">ну</span> <span class="afterarrow">á</span></h4>
+<p>Seuraavat kaksi ryhmää liittyvät perfektiivisen aspektin verbeihin, joiden vartalo päättyy äänneyhdiselmään /ну/. Ensimmäisessä ryhmässä tämän tilalle tulee painollinen /а/-äänne:</p>
+<ul>
+<li>толк<span class="r">ну́</span>ть - толк<span class="r">á</span>ть</li>
+<li>улыб<span class="r">ну́</span>ться - улыб<span class="r">á</span>тьсяся</li>
+</ul>
+<h4 id="ну-ива"><span class="header-section-number">2.1.1.6</span> <span class="right-arrow">ну</span> <span class="afterarrow">ива</span></h4>
+<p>Toisessa ryhmässä /ну/-äänneyhdistelmä vaihtuu jo ensimmäisen tapausryppään kohdalla käsiteltyyn /ива/-suffiksiin:</p>
+<ul>
+<li>затро́<span class="r">ну́</span>ть - затра́г<span class="r">ива</span>ть</li>
+<li>промах<span class="r">ну́</span>ться - прома́х<span class="r">ива</span>ться</li>
+</ul>
+<h4 id="я-вá"><span class="header-section-number">2.1.1.7</span> <span class="right-arrow">я</span> <span class="afterarrow">вá</span></h4>
+<p>Viimeisessä tyypillisessä imperfektivaatiotapauksessa vartalon (j)/a/-äänneyhdistelmä vaihtuu (v)/a/-äänneyhdistelmään:</p>
+<ul>
+<li>засѐ<span class="r">я</span>ть - засе<span class="r">вá</span>ть</li>
+</ul>
+<h2 id="perfektivaatio"><span class="header-section-number">2.2</span> Perfektivaatio</h2>
+<div class="definition">
+<div class="defheader">
+Määritelmä 2.
+</div>
+<p><em>Perfektivaatiolla</em> tarkoitetaan ilmiötä, jossa imperfektiivisen aspektin verbistä muodostetaan perfektiivisen aspektin verbi.</p>
+</div>
+<p>Perfektivaatio on imperfektivaatioon nähden päinvastainen prosessi. Siinä missä imperfektivaatiossa käytettävä ssananmuodostus keino on suffiksaatio, muodostetaan perfektivaatiossa sanoja <em>prefiksaation</em> kautta. Näin esimerkiksi imperfektiivisestä готовить-verbistä saadaan perfektiivisen aspektin verbi приготовить lisäämllä siihen prefiksi <em>при</em>. Infinitiivimuotoja vertaamalla näkee heti, että ainoa morfologinen ero verbimuotojen välillä on juuri perfektiivisen verbin prefiksi.</p>
+<p>Kuten edellä huomautettiin, perfektivaation avulla ei periaatteessa muodostu tiukassa mielessä varsinaisia aspektipareja vaan ainoastaan semanttisesti samanlaisia, joskin paikoin leksikaalisestikin <em>lähes</em> identtisiä verbipareja.</p>
+<p>Nikunlassin <span class="citation">(2002: 167)</span> mukaan venäjässä on 16 prefiksiä, jotka voivat toimia varsinaisessa aspektinmuodostustarkoituksessa. Nämä on lueteltu Nikunlassin antamien esimerkkien pohjalta seuraavassa listassa:</p>
+<ul>
+<li>потеть - <span class="r">вс</span>потеть</li>
+<li>препятствовать - <span class="r">вос</span>препятствовать</li>
+<li>купать - <span class="r">вы</span>купать</li>
+<li>асфальтировать - <span class="r">за</span>асфальтировать</li>
+<li>пугать - <span class="r">и</span>спугать</li>
+<li>писать - <span class="r">на</span>писать</li>
+<li>слепнуть - <span class="r">о</span>слепнуть</li>
+<li>радоваьбся - <span class="r">об</span>радоваться</li>
+<li>редактировать - <span class="r">от</span>редактировать</li>
+<li>темнеть - <span class="r">по</span>темнеть</li>
+<li>считать - <span class="r">под</span>чситать</li>
+<li>готовить - <span class="r">при</span>готовить</li>
+<li>сверлить - <span class="r">про</span>сверлить</li>
+<li>будить - <span class="r">раз</span>будить</li>
+<li>делать - <span class="r">с</span>делать</li>
+<li>совершенствовать - <span class="r">у</span>совершенствовать</li>
+</ul>
+<h2 id="erikoistapauksia"><span class="header-section-number">2.3</span> Erikoistapauksia</h2>
+<h3 id="suppletiiviset-vartalot"><span class="header-section-number">2.3.1</span> Suppletiiviset vartalot</h3>
+<p>Aspektipareja ei aina muodosteta, kuten edellä, johtamalla tai muilla sananmuodostuksellisilla keinoilla. On olemassa myös koko joukko verbejä, jotka ovat aspektuaalisessa oppositiossa keskenään, vaikka ne ovat morfologisesti erilaisia, niillä on eri sanavartalot ja eri etymologia. Tällaisia pareja ovat mm. брать - взять, говорить - сказать, класть - положить.</p>
+<h3 id="kaksiaspektiset-verbit"><span class="header-section-number">2.3.2</span> Kaksiaspektiset verbit</h3>
+<p>On myös olemassa joukko verbejä, jotka on tulkittava joko imperfektiivisiksi tai perfektiivisiksi kontekstista riippuen. Tähän kaksiaspektisten<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> luokkaan kuuluu toisaalta slaavilaisperäisiä verbejä kuten велеть, венчать, родиться, ранить, toisaalta vierasperäisiä verbejä kuten стартовать, реализовать jne. Huomaa, että jälkimmäinen tyyppi (ова-suffiksilla muodostettuja verbejä) on produktiivinen, toisin sanoen vastaavia verbejä syntyy nykyvenäjässä paljon.</p>
+<p>Kaksiaspetkisilla verbeillä aspektin paljastavaksi kontekstiksi voi riittää esimerkiksi ajan adverbiaali, kuten lauseessa <em>Атакуем завтра</em> <span class="citation">(Forsyth 1970: 33)</span>. On huomattava, että osalle kaksiaspektisista verbeistä on kehittynyt aspektipari. Nikunlassi <span class="citation">(2002: 169)</span> mainitsee esimerkiksi verbin жениться, joka merkityksessä ‘mennä keskenään naimisiin’ on nykyisin imperfektiivisen aspektin verbi ja saa parikseen по-prefiksillä muodostetun perfektiivisen aspektin verbin.</p>
+<h3 id="liikeverbit"><span class="header-section-number">2.3.3</span> Liikeverbit</h3>
+<p>Liikeverbit ovat erikoistapaus siinä mielessä, että etuliitteisten liikeverbien osalta aspektipari muodostetaan liittämällä sama prefiksi eri verbivartaloihin. Imperfektiivisen aspektin verbi muodostetaan liittämällä prefiksi iteratiivisen liikeverbin vartaloon (esimerkiksi <span class="r">вы</span>ходить) ja perfektiivisen aspektin verbi puolestaan liittämällä prefiksi duratiivisen liikeverbin vartaloon (esimerkiksi <span class="r">вы</span>йти). Liikeverbien aspektiparien muodostamiseen pureudutaan tarkemmin liikeverbejä käsittelevässä kurssin osassa.</p>
+<h1 id="aspektin-valintaan-vaikuttavat-tekijät"><span class="header-section-number">3</span> Aspektin valintaan vaikuttavat tekijät</h1>
+<p><em>Aspektille</em> annettiin <a href="invariantit_merkitykset.html#aspektuaalisuus">edellä</a> lavea määritelmä, jonka mukaan aspektilla luodaan näkökulma toiminnan rakenteeseen. Tästä määritelmästä seuraa, että näkökulman valitsija, puhuja, on yleensä olennaisessa asemassa, kun mietitään, miksi jokin tapahtuma tai toiminta on esitetty juuri tietyn aspektin avulla. Pohdittaessa tekijöitä, jotka liittyvät puhujan (tai kielenkäyttäjän ylipäätään) valitsemiin näkökulmiin ja siihen, missä valossa tai millä suhtautumisella jokin toiminta esitetään, käsitellään aspektin valintaan vaikuttavia <em>pragmaattisia tekijöitä</em>.</p>
+<h2 id="pragmaattiset-tekijät"><span class="header-section-number">3.1</span> Pragmaattiset tekijät</h2>
+<p>Useinkaan ei voida normatiivisesti määrittää, että lause x on mahdoton tai väärin. Sen sijaan on kysyttävä, mitä puhuja on halunnut sanoa, ja mikä näkökulma hänen on tarkoitus ottaa kuvaamaansa toimintaan. Ajattele esimerkkejä 3 ja 4.</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>—Вы сейчас свободны?<br />
+ —Да, я зaкончил работу</p></li>
+<li><p>—Почему вы не пошли? —Я не мог, я заканчивал работу</p></li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<p>Ei ole mielekestä sanoa, että lause <em>я закончил работу</em> tai lause <em>я заканчивал работу</em> ovat väärin tai mahdottomia. Aspektin valinta edellä olevissa esimerkeissä riippuu siitä, onko puhujan tarkoitus ilmaista toiminta rajattuna (3) vai toimintana, jossa rajaa ei vielä ole saavutettu (4). Tämän mukaisesti, tätä funktiota toteuttamaan, on valittava joko imperfektiivisen tai perfektiivisen aspektin verbimuoto.</p>
+<p>Pragmaattisten tekijöiden tutkimiseen liittyy kuitenkin usein paljon enemmän tulkintaa kuin edellä. Ajattele impefrektiivisen aspektin käyttöä esimerkissä 5:</p>
+<ol start="5" style="list-style-type: decimal">
+<li>– Ну, рассказывай, что ты видел.</li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<p>Esimerkin 5 taustalle voidaan kuvitella tilanne, jossa molemmat keskustelun osapuolet tietävät, että kysymyksen vastaanottaja on ollut vaikkapa matkalla. I:n käytöllä on se modaalinen lisämerkitys, että kysyjä odottaa kuulevansa jotain matkasta. Tällaisen <em>odotetun toiminnan</em> tilanteen konstruoiminen on jo huomattavasti hienovaraisempi pragmaattinen selitys aspektin valinnalle.</p>
+<p>Toisaalta voidaan löytää myös tilanteita, joissa perfektiivinen aspekti ilmaisee, että puhuja on olettanut toisen henkilön suorittavan jonkin toiminnon:</p>
+<ol start="6" style="list-style-type: decimal">
+<li>Ты обратился к стоматологу?</li>
+</ol>
+<p>Molemmilla aspekteilla onkin joukko vastaavia tyypillisiä käyttökonteksteja, joissa aspektia käytetään hyvin spesifillä tavalla. Näitä tilanteita voidaan ryhmitellä erityismerkityksiksi, joita käsitellään tarkemmin <a href="erityismerkitykset.html">kurssin seuraavassa osiossa</a>.</p>
+<h2 id="kielelliset-tekijät"><span class="header-section-number">3.2</span> Kielelliset tekijät</h2>
+<p>Aspektivalintojen taustalla vaikuttavia syitä ei kuitenkaan voida rajoittaa vain pragmaattisiin syihin. Onkin tarkasteltava lisäksi <em>kielellisiä tekijöitä</em>, ennen kaikkea tempusta (aikamuotoa) ja modusta(tapaluokkaa), joissa kerronta tapahtuu sekä kunkin verbin leksikaalisia, sanatason ominaisuuksia, kuten <em>teonlaatua.</em></p>
+<p>Sanatasolla on esimerkiksi selvää, etteivät sellaiset verbit kuin <em>толкнуть</em> voi ilmaista toimintaa muuna kuin välittömänä, <em>momentaanisena</em>. Tällaisissa tapauksissa jo verbin leksikaalinen sisältö antaa paljon vihjeitä ja perustaa aspektin valinnalle: vertaa tilannetta vaikka verbeihin разрешать ja разрешить, jotka eivät kanna mukanaan vastaavia nyansseja <span class="citation">(tarkemmin ks. Rassudova 1984: 20)</span>.</p>
+<p>Aspekti ja aikamuoto liittyvät tunnetusti erottamattomasti toisiinsa. Vaikka aikamuodon ja aspektin suhde on monimutkainen, aikamuotoa voi usein käyttää rajaavana tekijänä, jonka avulla oikean aspektin valinta ainakin jossain määrin helpottuu: voidaan esimerkiksi todeta, että imperfektiivisen aspektin käyttö futuurissa on rajatumpaa kuin menneessä ajassa, ja kontekstit, joissa I esiintyy futuurissa, ovat spesifimpejä.</p>
+<p>Muita merkittäviä kielellisiä tekijöitä ovat lauseen esiintyminen myöntö- tai kieltomuodossa sekä se, esiintyykö verbi indikatiivissa, imperatiivissa vai kenties infinitiivissä, jonka käyttöön liittyy monia erityistekijöitä.</p>
+<p>Kurssin osiossa <a href="aspekti_menneen_ajan_verbimuodoilla.html">Aspektin valintaan vaikuttavat tekijät vuorovaikutuksessa</a> luodaan tarkempi katsaus siihen, miten kaikki nämä tekijät yhdessä vaikuttavat aspektin valintaan.</p>
+</section>
+</article>
+<div class="references">
+<div id="ref-forsyth1970">
+<p>FORSYTH, J. 1970. <em>A grammar of aspect: Usage and meaning in the russian verb</em> Vol. 1970. Cambridge University Press.</p>
+</div>
+<div id="ref-ots2">
+<p>FORUMPOST 2004. Forumpost. <em>Форум: Наши дети</em>.</p>
+</div>
+<div id="ref-nikunlassi2002">
+<p>NIKUNLASSI, A. 2002. <em>Johdatus venäjän kieleen ja sen tutkimukseen</em>. Helsinki: Finn Lectura.</p>
+</div>
+<div id="ref-rassudova1984">
+<p>RASSUDOVA, O. 1984. <em>Aspectual usage in modern russian</em>. Moskova: Russky Yazyk.</p>
+</div>
+<div id="ref-otvets">
+<p>СОБОЛЕВ, В. 2014. Есть ли шансы у xGI. <em>«Computerworld»</em>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Katso vaihtoehtoisia ja tarkempia määritelmiä esimerkiksi <span class="citation">(Nikunlassi 2002: 177)</span><a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>двувидовые глагоы<a href="#fnref2">↩</a></p></li>
+</ol>
+</div>
+</body>
+</html>

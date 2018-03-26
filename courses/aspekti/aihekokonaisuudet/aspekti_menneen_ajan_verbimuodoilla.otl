@@ -1,0 +1,345 @@
+aspekti_menneen_ajan_verbimuodoilla.Rmd
+	...
+1. konkreettis-faktuaalinen merkitys vs. konkreettis-prosessuaalinen merkitys
+	1.1 Yleisiä huomioita
+		- vahva oppositio: merkitystä erottava funktio
+		- Imperfektiivisen käyttöala laajempi
+		- Kunkin verbin leksikaaliset ominaisuudet vaikuttavat, mikä piirre läsnä
+			- vrt. teonlaadut
+				statiivinen
+					лежать, висеть
+				inkoatiivinen
+					гаснуть, исчезать
+				muita
+					толкать, дергать, махать
+					переговариваться
+				vrt. расспрашивать и спрашивать
+	1.2 k-f. ja k-p. vertailu
+		a. eri asiantilat (vrt. muut kielet)
+			(@ee_mennyt1) Самолет возвращался на аэродром.
+			(@ee_mennyt2) Самолет возвратился на аэродром.
+			(@ee_mennyt3) Билеты уже продавали.
+			(@ee_mennyt4) Билеты уже продали
+			(@ee_mennyt9) Зрители усаживались на свои места
+			(@ee_mennyt10) Зрители уселись на свои места
+			- erityisesti aik. sivulause
+				(@ee_mennyt5) Пианист волновался, когда выступал
+				(@ee_mennyt6) Когда он выступил, он neрестал волноваться
+				(@ee_mennyt11) Мы вошли в аудиторию, когда заседание ученого совета только начиналось
+				(@ee_mennyt12) Мы вошли в аудиторию, когда заседание ученого совета началось
+			- johtaa eri lokaatioihin
+				(@ee_mennyt7) Когда мы проходили мимо кинотеатра, мы купили билеты
+				(@ee_mennyt8) Когда мы прошли мимо кинотеатра, мы вспомнилир, что собирались купить билеты
+		b. lähestyminen kohti rajaa vs. rajan ylittäminen
+			(@ee_mennyt_rajal) заканчивался август
+			(@ee_mennyt_raja2) костер догорал
+			(@ee_mennyt_raja3) липы уже отцветали.
+			(@ee_mennyt_raja4) Мальчик засыпал
+			(@ee_mennyt_raja5) Я забывал Асью
+			(@ee_mennyt_raja6) Статья получалась
+			(@ee_mennyt_raja7) Он догадывался, что ему говорят не все
+			(@ee_mennyt_raja8) Мы успевали на поезд
+			(@ee_mennyt_raja9) Машина останавливалась
+			(@ee_mennyt_raja10) Поезд отходил через пять минут
+		c. puhujan näkökulmana toiminta vai tulos?
+			(@ee_mennyt_huomio1) 
+				—   Вы можете вернуть мне книгу?
+				—	Да, я ее прочитал.
+				—	Вам не скучно было ехать так долго в поезде?
+				—	Нет, я читал интересную книгу.
+			(@ee_mennyt_huomio2) 
+				—   Олег уехал?
+				—	Да, вчера мы его проводили.
+				—	Где вы вчера задержались?
+				—	Провожали Олега, он вчера уехал.
+			(@ee_mennyt_huomio3)
+				—   Ваш доклад готов?
+				—	Да, я его написал.
+				—	Почему вы не были вчера на стадионе?
+				—	Я писал доклад.
+			(@ee_mennyt_huomio4)
+				—   Андрей дома?
+				—	Да, он уже вернулся.
+				—	Вы устали?
+				—	Да, я возвращался домой пешком.
+			(@ee_mennyt_huomio5)
+				—   Вас можно поздравить?
+				—	Да, я защитил сегодня диплом.
+				—	Что это у вас?
+				—	Чертежи. Я защищал сегодня диплом.
+	1.3. Syitä käyttää imperfektiivistä aspektia
+		- Selkeä keston ilmaisin
+			(@ee_mennyt_pm1) с каждой минутой видимость на дороге улучшалось, туман рассеивался
+			(@ee_mennyt_pm1) в сентябре и октябре собирали урожай винограда
+			(@ee_mennyt_eikesto) Кругом все улыбались
+				- vrt. myös määrittelemätön kesto
+		- persoonattomat rak.
+			(@ee_mennyt13) Темнело
+			(@ee_mennyt14) Разгуливалось
+		- temporaaliset konjunktiot
+			(@ee_mennyt_konj) Мы гуляли, пока не стемнело
+		- geneeris-resultatiivinen teonlaatu / konatiivinen merkitys
+			(@ee_kona1) долго вспоминал, но так и не вспомнил
+			(@ee_kona2) Изучал язык, но так и не изучил
+		- agentin osallisuus
+			(@ee_mennyt_agentti1) Она рассказывала, а я слушал, закурив после ужина
+			(@ee_mennyt_agentti2) Вечером составляли телеграмму в Москву: Шурка писал, бабка диктовала
+		- Puhujan osallisuus
+			(@ee_mennyt_osallisuus) 
+				- где вы были?
+					- Встречал знакомого.
+					- Относил книгу в библиотеку
+			(@ee_mennyt_osallisuus2) 
+				в своем докладе он говорил..
+				в записке она отвечала на его вопросы
+		- selittävä funktio
+			(@ee_mennyt_selittava)
+				:Во время полета возле его кресла раздался мягкий гудок радиотелефона.
+				:Вызывали с земли.
+			(@ee_mennyt_selittava2)
+				:В одно тихое, теплое утро в больницу принесли
+				:письмо. Вера Иосифовна писа-лаДмитрию Ионычу,
+				:что очень соскучилась по нем.
+	1.4 Aspekti ja tapahtumien suhteet ajassa
+		a. Peräkkäiset tapahtumat ilmaistaan tavallisesti aina perfektiivisellä aspektilla
+			(@ee_mennyt_perakk1) Федя поужинал, собрал игрушки с пола, почистил зубы, и лег спать.
+			a.1 kuitenkin imperfektiivistä voi käyttää painottamaan peräkkäisiä prosesseja, jos mukana on kontekstuaalisia vihjeitä:
+				(@ee_mennyt_perakk1b) Сначала Федя ужинал, потом он долга собирал свои игрушки и наконец-то стал по-тихоньку думать о том, что ему пара спать.
+		b. Samanaikaiset tapahtumat ilmaistaan tavallisesti aina Imperfektiivisellä aspektilla
+			(@ee_mennyt_simu1) Вечером я ел гамбургеры и смотрел телевизор.
+		c. Imperfektiivinen aspekti voi ilmaista taustan, jota vasten tapahtuva tominta kuvataan perfektiivisellä a:lla
+			(@ee_mennyt_simu2) Пока мы играли в шахматы, кто-то постучал в дверь.
+			c.1 Kyseessä voi olla myös pidempiaikainen prosessi, isompi mittakaava
+				(@ee_mennyt_simu3) Мама и папа познакомились, когда папа ездил в Петербург
+			c.2 Imperfektiivinen aspekti voi ilmaista pian koittavaa toimintaa
+				(@ee_mennyt_koittava) Вечером все собрались у Аркадия, который через день отправлялся в Париж
+				(@ee_mennyt_koittava2) Он много работал, так как вечером выступал перед большой аудиторией
+	1.5 Aspektien välinen kilpailu
+		- harvinaista
+		- tavallisinta seuraavissa tapauksissa
+			1. adverbiaalimääritteet kuten подробно
+				- рассказал | рассказывал подробно
+			2. как-konjunktio
+				- видел, как он уходит | ушел
+			3. temporaalinen sivulause
+				- пока ты покупал книги, я купил клей
+			4. за то время
+				- за то время, когда он собирался, я успел сделать тысячу дел
+2. Aspektin käyttö toiston merkityksessä
+	Yleistä
+		- Imperfektiivinen voi ilmaista totaalista, rajattua toimintaa
+		- vahva oppositio: konkreettis-faktuaalinen vs. rajoittamaton toisto
+	2.1 Milloin imperfektiivinen aspekti toisto eikä prosessi?
+		- vaatii enemmän kontekstia kuin prosessi
+			(@ee_mennyt_tp1)
+				- Солнце садилось 
+				- в это время года солнце садилось рано.
+		- monikko tuottaa usein toiston:
+			(@ee_mennyt_montoisto) На этой станции скорые поезда останавливались
+		- Satunnaista (!) (= en tietoisesti ollut vastassa, vaan joka kerta törmäsin..)
+			(@ee_mennyt_piirt_sat) каждый раз встречал его около нашего дома
+			(@ee_mennyt_piirt_sat) каждую неделю получал письмо от сестры
+			(@ee_mennyt_tietoinen) Встречал на вокзале знакомых
+				- vrt: tietoinen toiminta prosessuaalista
+			- Jotkut verbit kumpaakin > prosessuaalisuus / yleinen toteaminen / toisto
+				(@ee_mennyt_piirt) Когда я узнавал в справочном бюро цену билета, я разговорился с одним человеком.
+				(@ee_mennyt_piirt2) Ты узнавал цены на билеты?
+				(@ee_mennyt_piirt3) Он первым узнавал от него новости
+		- Ehto saa aikaan toiston merkityksen:
+			(@ee_mennyt_ehtotoisto) Когда я попадал на каток, я вспоминал Марусю
+			(@ee_mennyt_ehtotoisto2) При нем она становилась совсем другая, смеялась и даже начинала так же длинно говорить, как и он
+			(@ee_mennyt_ehtotoisto3) Если я опаздывал, он меня никогда не ругал
+	2.2 Konkreettis-faktuaalinen merkitys vs. rajoittamattoman toiston merkitys
+		a. yksi rajattu toiminta vs. toisto
+			(@ee_mennyt_toisto_opp1) «Я рад» ,—сказал он просто, как говорил все и всегда
+			(@ee_mennyt_toisto_opp2) Он поздоровался, а она ответила сдержанно и все-таки совсем иначе, чем отвечала раньше
+			(@ee_mennyt_toisto_opp3) 
+				- К вечеру больному стало хуже
+				- К вечеру больному становилось хуже
+			(@ee_mennyt_toisto_opp4) К десяти часам утра, не выдержав неслыханной нагрузки, портились все телефоны. 
+				- mukana ajanmääre, joka asettaa kiinnekohdan, jota vasten toiminta kuvataan
+			(@ee_mennyt_toisto_opp4) Он знал за собой эту мальчишескую страсть к приключениям. Она возникала нечаянно, вдруг
+		b. Tapahtumien sarja
+			(@ee_mennyt_sarjatoisto1) 
+				- Как только докладчик поднимался на трибуну, раздавались аплодисменты
+				- Как только докладчик поднялся на трибуну, раздались аплодисменты
+			(@ee_mennyt_sarjatoisto2) 
+				- Когда ветер усилился, грести стало труднее
+				- Когда ветер усиливался, грести становилось труднее
+		c. kun mukana keston adverbiaali
+			(@ee_mennyt_kestona)
+				- Он читал 30 страниц два часа.
+				- Он прочитывал 30 страниц за два часа
+				- Он прочитал за два часа 30 страниц
+		d. tietyissä teonlaaduissa
+			(@ee_mennyt_toisto_teonlaatu1) 
+				- он просидел над статьей не менее десяти часов
+				- он просиживал над статьей не менее десяти часов
+			(@ee_mennyt_toisto_teonlaatu2) 
+				- здесь нашли старинные монеты
+				- здесь находили старинные монеты
+	2.3 Summatiivinen merkitys vs. rajoittamattoman toiston merkitys
+		Summatiivinen 
+			- yleensä selkeitä leksikaalisia ilmaisimia
+				- про, -ну-, пере
+					(@ee_mennyt_summa1) Он несколько раз перечитал записку, вдумываясь в ее смысл
+					(@ee_mennyt_summa2) Студенты прослушали запись три раза, и все равно поняли не все
+					(@ee_mennyt_summa2) Несколько раз подмигнул ему
+			- vaatii lisävihjeitä kontekstista
+				- несколько раз итд
+			- kilpailua?
+				- никогда, ни разу итд
+					(@ee_mennyt_summakilp1) Он никогда не выбрасывал нужные бумаги
+					(@ee_mennyt_summakilp2) Он никогда не выбросил ни одной нужной бумаги
+3. Konkreettis-faktuaalinen vs. yleisesti toteava (geneeris-faktuaalinen) merkitys
+	3.1 konkreettis-faktuaalinen ja yleisesti toteava erityismerkitys ilmaisevat samankaltaisia asioita etenkin menneessä ajassa
+		- kumpikin kertoo jostakin konkreettisesta faktasta menneisyydessä
+		- välillä on hyvin vaikeaa valita tämänkaltaisissa tilanteissa, kumpaa käyttää
+	3.2 kummallakin erityismerkityksellä on kuitenkin omia tyypillisiä funktioitaan, joiden perusteella usein voidaan erottaa
+		a. Imperfektiivinen aspekti
+			1. toteava(deklaratiivinen) funktio
+			2. ei ota kantaa muuta kuin siihen, tapahtuiko toiminta vai ei
+				- ei kerrota, onko toistoa
+				- ei kerrota, mikä oli tulos
+				- ei kerrota, oliko odotettu vai ei
+				- esimerkkejä
+					(@ee_mennyt_yt1) Он предупреждал меня
+					(@ee_mennyt_yt) Я знаю, что Никитин поступал в университет
+				- tarkemmat yksityiskohdat voitaisiin kyllä ilmaista, mutta usein viestintätavoitteet eivät sitä vaadi
+					- Однажды он предупреждал меня.
+					- Он предупреждал меня, и не раз.
+					- Скажитер, он хоть раз пре-дупреждал вас?
+					- Никитин поступал в уни-верситет, но не прошел' по конкурсу.
+					- Он поступал в университет и очень хорошо сдалр все экзамены.
+					- I:llä on toteava
+				- Voidaan usein korvata rakenteella [быть + substantiivi]
+			3. toiminnan mitätöimisen erityismerkitys
+				- toiminnan mitätöimisen erityismerkitys on läsnä tietyillä verbeillä
+				- kyseessä verbit tyyppiä открывать, подниматься, включать, приходить 
+					- olennaista, että toiminnalla on selkeä vastakohta
+					- laajassa käsityksessä "liikeverbejä"
+					- selkeä merkitystä erottava funktio verrattuna perfektiin
+				vrt.
+					(@ee_mennyt_mitat1) 
+						- Почему в аудитории так холодно? Вы не открывали окно?
+						- Почему вы открыли окно? На улице минус двадцать пять, вы с ума сошли?
+					(@ee_mennyt_mitat1) 
+						- кто-нибудь включал компьютер? Я ведь запретил..
+						- не понимаю эту свою привычку: опять, кажется, первым делом включил комьпютер, даже не замечая.
+					(@ee_mennyt_mitat3) 
+						- в третий день мы наконец-то поднимались на "Киилопяя".
+						- Ну и молодцы! Поднялись на "Киилопяя". Какой вид!
+					(@ee_mennyt_mitat4)
+						- Он что, проснулся?
+						- Просыпался, но потом, слава богу, опять заснул.
+					(@ee_mennyt_mitat5)
+						- Папа вчера приезжал.
+						- Папа приехал, он в гостиной, иди поздоровывайся.
+			4. Tapahtumien sarjassa I sijaitsee usein kauempana menneisyydessä
+				(@ee_mennyt_kauempana1) Я не сразу понял, что это та книга, о которой ты мне уже говорил
+				(@ee_mennyt_kauempana2) Я, признаюсь, так и рассчитывал, что, может быть Елиэавета Прокофьевна вспомнит, что я ей писал
+			5. Tyypillisiä konteksteja:
+				- Toiminna suorittaminen riippuen siitä, onko se jo tapahtunut.
+					(@ee_mennyt_jotap) Надо полить цеты? Или ты уже поливал?
+					(@ee_mennyt_jotap2) Вы проветривали комнату?
+				- Kieltäytyminen ehdotuksesta
+					(@ee_mennyt_jotap3) Давай пойдем на "Войну звезд". - Не хочу, я его уже смотрел.
+				- Oletuksen vahvistaminen
+					(@ee_mennyt_vahv) Миша сказал, что это Аршавин забил. Он на самом деле забивал?
+				- Jokin toiminta tuttua
+					(@ee_mennyt_tuttu) Не бойтесь, я водил машину. было это, правда, давно.
+				- Puhuja etsii jotakin
+					(@ee_mennyt_etsii) Вы не брали журнал с моего стола?
+		b. Perfektiivinen aspekti
+			1. narratiivinen funktio
+				- P:llä on narratiivinen funktio 
+				- P ilmaisee äkkinäistä muutosta
+			2. konteksti on tarkempi, tunnusmerkillinen
+				- usein ilmaistaan jokin ajallinen kiinnekohta
+					(@ee_mennyt_ajallinenkiinn) 1-го Мая в Доме Дружбы собрались представители общественности
+					(@ee_mennyt_ajallinenkiinn2) В начале 1943 года Шатров получил от Виктора письмо
+			3. äkillinen muutos toimintaan
+				(@ee_mennyt_muutos) Прохожий обернулся
+				(@ee_mennyt_muutos) Вошедший снял плащ
+				(@ee_mennyt_muutos) Машина свернула направо
+			4. odotetun toiminnan suorittaminen
+				(@ee_mennyt_odotettutoim1) Вы позвонили своему научному руководителю? 
+				(@ee_mennyt_odotettutoim2) Вы приняли лекарство?
+				(@ee_mennyt_odotettutoim3) Вы поговорили с ним?
+			5. perfektin erityismerkitys
+				- perfektinen erityismerkitys on olemassa vain menneen ajan muodoilla
+				- koska P ilmaisee totaalisuutta ja sisäistä rajaa, korostuu rajan saavuttaminen 
+					- tästä seuraa, että voidaan korostaa myös sitä, että raja on juuri saavutettu ja tulos on aktuaalinen / voimassa
+				- I ilmaisee etäisyyttä nykyhetkestä, P läheisyyttä nykyhetkeen
+				- vrt.
+					(@ee_mennyt_perf1) 
+						- Я уже заполнял анкету
+						- Я заполнил анкету, он лежит на вашем столе.
+					(@ee_mennyt_perf2)
+						- Вы меня помните? Мы ведь встречались...
+						- Вспомнил! Вы изменились.
+							- ensimmäisessä tapauksessa raja juuri saavutettu ennen nykyhetkeä
+							- jälkimmäisessä tapauksessa selkeä yhteys nykyhetkeen (tulos voimassa)
+							- KUVA!
+					(@ee_mennyt_perf3)
+						- Аршавин в этом сезоне забивал?
+						- Какой счет? - 0-1, забил Аршавин.
+					(@ee_mennyt_perf4)
+						- Это ты включил компьютер?
+	3.3 Kilpailu melko tavallista
+		1. molemmat sopivat уже-adverbin kanssa
+			(@ee_mennyt_uzhe1) 
+				- Вы уже рассказывали мне об этом
+				- Этот вопрос мы уже обсудили
+		2. Yleensä perfektisen ja yleisesti toteavan erityismerkityksen välillä:
+			(@ee_mennyt_uzhe1) 
+				- Аршавина мы уже брали в качестве примера
+				- Аршавина мы уже взяли в качестве примера
+		3. Molemmat voivat olla samassa lauseessa
+			- (@ee_mennyt_ytkilp) Я уже писал ей, что я получил двухнедельный отпуск
+			- (@ee_mennyt_ytkilp)Все уже было рассказано: отца забрали в тюрьму мы подавали прошение
+4. Mennyt aika + kieltomuoto
+	5.1. Yleistä
+		- Kielteisissä lauseissa I:n käyttöala jonkin verran laajenee ja P:n supistuu
+	5.2. I:n käytön erityispiirteitä
+		- toiminta ei koskaan edes ala
+			(@ee_mennyt_eiala1) билеты еще не продавали
+			(@ee_mennyt_eiala2) на 60-м минуте Зенит еще не выигривал
+			(@ee_mennyt_eiala3) В 40-ые годы кварки не изучали.
+		- ei muutosta toimintaan
+			(@ee_mennyt_eimuut1) Дождь не переставал.
+			(@ee_mennyt_eimuut2) Костер не гас.
+			(@ee_mennyt_eimuut3) Компьютер не включался.
+			(@ee_mennyt_eimuut4) Шла уже 80-ая минута матча, но Роналду не забивал.
+		- Toiminnan puuttumisen kestäminen (myös verbit, jotka tavallisesti eivät ilmaise kestoa)
+			(@ee_mennyt_puutkest1) Ученые долго не находили ответа на вопрос о том, почему значение гравитационной постоянной составвляет именно 6,67408(31)·10−11 м3·с−2·кг−1, или Н·м²·кг−2
+	5.3. Aspektien välinen kilpailu
+		- aspekti saattaa tuoda vain pienen kestoon vivahtavan nyanssin
+			(@ee_kestny) Я подошел и остановился в двух шагах. Они не замечали меня
+			(@ee_kestny2) Егор, что ты? Так и не ложился?
+		- ytm/kfm-oppositio entistä heikompi
+			- tavallisesti eron tuo se, että P ilmaisee sisäisen rajan
+			- kun todetaan yleisesti toiminnan puuttuminen, rajan läsnä/poissaolo menettää merkitystään
+				(@ee_ytmkielto1) Меня никто не встретил/ встречал.
+				(@ee_ytmkielto2) Автобус не останавливался / остановился?
+				(@ee_ytmkielto3) Он не сообщил / сообщал о своем приезде.
+				(@ee_ytmkielto4) Сегодня я не купила / покупала фруктов.
+		- P:n käytön erityispiirteitä:
+			- puhujalta odotettu toiminta, jota ei sittenkään suoritettu
+	- toiminta ei alkanut vs. toiminta alkanut, muttei loppunut
+	5.1. Aspektin merkitystä erottava funktio
+	5.2. Aspektien välinen kilpailu
+(5. Huomion kohteena toiminnan tekijä / ajankohta / syy / paikka) 
+	-tavallisesti I
+		- puhuja ikään kuin mielessään palaa toiminnan suorittamisen hetkeen ja avaa prosessin
+			(@ee_mennyt_tasp1) Откуда ты взял эти лижы? Не знаю, это муж брал
+			(@ee_mennyt_tasp2) Маша, это ты убирала комнату? Тебе не поадались мои часы?
+		- teko oli turha
+			- зачем ты брал у него словарь?
+	- P tavallinen seuraavissa:
+		- perfektinen ilmaisee usein näissä yhteyksissä perfektiä
+		- кто разбил чашку?
+		- кто изобрел телевидение?
+		- кто так чисто убрал комнату?
+			(@ee_mennyt_tasp3) Где построили новые здания?
+	- получить | получать

@@ -1,0 +1,10 @@
+
+section#secmain ol, section#secmain ul, section#secmain li, section#secmain a{
+color: #006782;
+}
+
+section#secmain a{
+font-size:20px;
+line-height:150%;
+color: #006782;
+}

@@ -1,0 +1,403 @@
+---
+bibliography: ../lahteet.bib
+csl: ../bratislava.csl
+numbersections: true
+---
+
+<article class='container'>
+Apekti- ja liikeverbiteoria > Aspekti 
+Aspektin sijaintiin vaikuttavat tekijät > Pragmaattiset tekijät > Konteksti
+venäjänkielinen termi: частные видовые значения
+
+<section class='main'>
+
+Määritelmä{#ekaots}
+==========
+
+Sen lisäksi, että aspektologiassa erotetaan aspektien [invariantit merkitykset](invariantit_merkitykset.html),
+voidaan sekä imperfektiivinen että perfektiivinen aspekti jakaa edelleen
+tapausryppäisiin, jotka muistuttavat merkitykseltään ja käyttötilanteiltaan
+toisiaan. Jokainen tällainen tapausrypäs, erityismerkitys[^em], heijastaa omalla
+tavallaan ko. aspektille tyypillisiä semanttisia piirteitä kuten toiminnan
+sisäistä rajaa, sidonnaisuutta aikaan tai prosessuaalisuutta. Kuitenkin jotkin
+piirteet tai ominaisuudet tulevat selvemmin esille kuin toiset.
+
+[^em]: частные видовые значения
+
+Ei ole olemassa tarkkaa määritelmää tai yksimielisyyttä siitä, mitä kaikkia
+erityismerkityksia aspekteilla on. Esimerkiksi V. A. Bondarko 
+[-@bondarko2015, 238--246] erottaa kaikkiaan kuusi imperfektiivisen ja neljä perfektiivisen
+aspektin erityismerkitystä, kun taas Ahti Nikunlassi [-@nikunlassi2002, 178--187]
+luettelee peräti yhdeksän erityismerkityksen pääluokkaa, jotka lisäksi
+jakautuvat muutamiin alaluokkiin. Aspektologian klassikko Ju. S. Maslov
+[-@maslov1959] puolestaan erottaa kummallekin aspektille kolme *tärkeintä*
+erityismerkitystä.
+
+Mainittujen luokitusten erot johtuvat pääosin siitä, että toisissa analyyseissa
+jokin erityismerkitys jaetaan useaksi alamerkityksesi kun taas toisissa
+käytetään laveampaa luokittelua. Ei toki ole niin, että esimerkiksi Maslovin
+suppeassa luokituksessa jätettäisiin jotkin merkitykset kokonaan huomiotta: ne
+vain ryhmitellään osaksi laajempaa kokonaisuutta kuin muissa luokituksissa.
+
+Tällä kurssilla keskitytään vain valikoituun määrään erityismerkityksiä, niin että 
+painotus on käytetyimmissä ja laajimmin sovellettavissa olevissa luokissa.
+
+Yleisiä periaatteita
+====================
+
+Erityismerkityksiä käsiteltäessä on muistettava, että ne ovat ennen kaikkea
+tutkijoiden konstruktioita, joilla pyritään selittämään tietyntyyppisiä
+verbeillä luotavia merkityksiä. Tämän vuoksi erityismerkitysten määrä ja usein
+nimet vaihtelevat ja niihin sisältyy paljon tulkinnanvaraisuutta. Ne
+kannattaakin mieltää analyysissa ja ymmärtämisessä avustavaksi käsiteverkoksi, 
+jonka avulla pystytään paremmin ottamaan huomioon verbeillä ilmaistavan aspektuaalisuuden
+moniulotteisuus: kuten [edellä](invariantit_merkitykset.html#monis-maar) todettiin,
+sen paremmin imperfektiivistä kuin perfektiivistä aspektia ei voi luonnehtia
+vain yhden ominaisuuden perusteella, vaan niihin liittyy monia
+merkityspiirteitä, jotka ovat tilanteesta riippuen läsnä joko selkeämmin tai
+laimeammin.
+
+Kaikki imperfektiivisen aspektin verbit eivät esiinny kaikissa
+imperfektiiviselle aspektille esitetyistä erityismerkityksissä eivätkä kaikki
+perfektiivisen aspektin verbit esiinny kaikissa perfektiivisen aspektin
+erityismerkityksissä. Lisäksi joillekin verbeille tietyt erityismerkitykset ovat
+tyypillisempiä kuin toisille. Esimerkiksi imperfektiivisen aspektin yleisesti
+toteavassa erityismerkityksessä esiintyvät useimmiten verbit, jotka ilmaisevat
+konkreettista fysikaalista toimintaa, puhujan tahtoa, kommunikaatiota ja
+havaintoja (ks. tarkemmin osiossa [aspekti menneen ajan
+verbimuodoilla](aspekti_menneen_ajan_verbimuodoilla.html#ytm-verbit)).
+
+Kun kyseessä on merkitys, joka edustaa aspektin invariantin merkityksen kannalta
+poikkeuksellista toimintaa, erityismerkityksen käyttö tuo usein mukanaan
+neutraaliudesta poikkeavia lisävivahteita ja modaalisuutta[^modal]. Usein
+jollain suppeampiläyttöisellä erityismerkityksellä ilmaistava lause
+voitaisiinkin sanoa neutraalimmin käyttämällä toisen aspektin tavallisempaa
+merkitystä. Tämänkaltainen tilanne vallitsee monin paikoin esimerkiksi käytettäessä
+perfektiivisen aspektin [potentiaalista erityismerkitystä](#pot-em):
+vertaa esimerkkiä @ee_pot1 neutraalimpaan imperfektiivisen aspektin verbin
+sisältävään esimerkkiin @ee_potimp:
+
+(@ee_potimp) Ему можно доверять. Он всегда помагает.
+
+Erityismerkitysten vaikutukseen aspektin valinnassa sekä imperfektiivisen ja
+perfektiivisen aspektin erityismerkitysten välisiin oppositioihin perehdytään
+tarkemmin tuonnempana, kun käsitellään 
+[aspektin valintaa menneessä ajassa](aspekti_menneen_ajan_verbimuodoilla.html),
+aspektin valintaa futuurissa sekä infinitiivin ja  kieltomuodon vaikutusta  aspektin
+valintaan. Tässä luodaan lyhyt katsaus siihen, mitä eri erityismerkityksiä
+aspekteilla kaikkiaan on tapana erottaa.
+
+[^modal]: Modaalisuudella tarkoitetaan jonkin asian esittämisestä niin, että
+samalla ilmaistaan esimerkiksi epäilys tai muu puhujan arvio asian mahdollisuudesta,
+todennäköisyydestä tai pakollisuudesta.
+
+Perfektiivisen aspektin erityismerkityksiä
+==========================================
+
+Erityismerkityksiä käsiteltäessä on usein tapana aloittaa perfektistä, jolla
+erityismerkityksiä on perinteisesti nähty vähemmän kuin imperfektiivisellä
+aspektilla. Tässä yhteydessä käsitellään seuraavia perfektiivisen aspektin
+merkitysryppäitä:
+
+1. konkreettis-faktinen merkitys (конкретно-фактическое значение)
+2. havainnollisen esimerkin merkitys (наглядно-примерное значение)
+3. perfektin merkitys (перфектное значение)
+4. potentiaalinen merkitys (потенциальное значение)
+5. summatiivinen merkitys (суммарное значение)
+
+Konkreettis-faktinen merkitys (kfm){#kfm}
+---------------------------------
+
+Konkreettis-faktista merkitystä (jäljempänä myös lyhenteenä: *kfm*) voi pitää perfektiivisen aspektin
+*perusmerkityksenä*, koska 
+
+a. Se on vähiten riippuvainen kontekstista
+b. Se ilmaisee selkeimmin perfektiiviselle aspektille tyypillisiä piirteitä
+c. Se on laajimmin levinnyt
+
+
+<div class='definition'>
+<div class='defheader'>Konkreettis-faktinen erityismerkitys</div> 
+Nimensä mukaisesti konkreettis-faktinen erityismerkitys viittaa toimintaan,
+joka on
+
+1. Konkreettista:
+    - kuvaa yhtä yksittäistä, konkreettista toimintakertaa  
+2. faktista
+    - kuvaa toiminnan totaalisena (целостный)
+
+</div>
+
+*Perusmerkitys* tarkoittaa tässä myös sitä, että muut erityismerkitykset tavalla
+tai toisella yleensä  heijastavat konkreettis-faktiselle merkitykselle
+tyypillisiä ominaisuuksia, vaikkei niitä suoraan pidettäisikään tämän
+alamerkityksinä.
+
+Kfm-erityismerkityksen luonne perusmerkityksenä sekä sen kyky ilmaista P:lle tyypillisiä piirteitä näkyy
+siinä, ettei sen realisoitumiseksi tarvita juurikaan erityisiä kontekstuaalisia
+vihjeitä. Seuraavissa esimerkeissä konteksti on hyvin minimaalinen, mutta silti
+konkreettis-faktinen merkitys nousee esiin:
+
+(@ee_kf3) Он повторил мне свой вопрос. [@bondarko2015]                     
+(@ee_kf4) Он написал письмо и вложил его в конверт [@nikunlassi2002]
+(@ee_kf1) -- Отпустили тебя? -- отпустили. [@bondarko2015]
+
+
+Potentiaalinen merkitys (pm) {#pot-em}
+--------------------------------------
+
+<div class='definition'>
+<div class='defheader'>Potentiaalinen erityismerkitys</div> 
+Potentiaalinen erityismerkitys kuvaa puhujan arvioita tekijän kyvystä tai
+kyvyttömyydestä suorittaa jokin tehtävä tai taipumuksesta toimia toistuvasti
+tietyllä tavalla.
+</div>
+
+Tämän erityismerkityksen voi laveammassa analyysissa katsoa myös osaksi [havainnollisen esimerkin
+edustamaa merkitysrypästä](#hav-esim). Tämä johtuu siitä, että myös potentiaalinen merkitys
+piirtää ikään kuin yksittäistä toimintaa kuvaavalla perfektiivisen aspektin verbillä
+esimerkinomaisen tilanteen, jota voi soveltaa laajemmin tai toistuvasti: olipa tilanne mikä
+tahansa, hän varmasti auttaa ystävää (esimerkki @ee_pot1). 
+
+(@ee_pot1) Ему можно доверять. Он всегда поможет другу.
+
+Koska toiminnan tuloksellisuus on yksi perfektiiviselle aspektille tyypillisistä
+piirteistä, potentiaalinen erityismerkitys on usein modaalisesti värittynyt:
+puhuja pitää varmana, että apua pyydettäessä esimerkin @ee_pot1 vastaa pyyntöön
+myöntävästi ja tekee, mitä pyytäjä haluaa. Tämä toimii myös toiseen suuntaan,
+kun puhuja pitää varmana jonkun muun *kyvyttömyyttä* tehdä jotakin:
+
+(@ee_pot2) Он не сдаст экзамен, слишком много пропускал занятия [@nikunlassi2002]
+(@ee_pot3) По лицу не поймешь, сколько ей лет [@rassudova1984]
+
+Pohdi myös seuraavia korpusesimerkkejä:
+
+(@ee_pot_k1) Он всегда похвалит твое платье, прическу и сумочку [@liza1]
+(@ee_pot_k1) Оснастил двери особо умным устройством, теперь никто не <span class='r'>пролезет</span> в квартиру.[@azol1]
+
+
+Perfektin merkitys
+------------------
+
+Perfektiivisen aspektin käyttö luo tietyissä tapauksissa yhteyden
+ilmauksen lausumisajankohdan ja verbin ilmaiseman ajankohdan välille. Tällöin
+ilmaus saa perfektisen tulkinnan. Esimerkissä @ee_perf1 toiminnan tulos 
+on nähtävissä lausumishetkellä: henkilö on laihtunut ja vanhentunut. 
+
+(@ee_perf1) Он похудел и постарел
+
+Perfektiivisen aspektin käyttö esimerkissä @ee_perf2 puolestaan ilmaisee, että
+lomake, joka on täytetty on vieläkin jossain lähistöllä: täyttäminen on juuri
+päättynyt, ja se on toimintana edelleen relevantti nykyhetken kannalta.
+
+(@ee_perf2) Вы можете взять анкету. Я ее уже заполнил.
+
+Perfektin merkitys on tärkeä käsite, kun pyritään ratkaisemaan
+aspektinvalintakysymyksiä menneessä ajassa tilanteissa, joissa myös
+imperfektiivisen aspektin [yleisesti toteava erityismerkitys](#ytm) voisi tulla
+kysymykseen. 
+
+Havainnollisen esimerkin merkitys (hem){#hav-esim}
+---------------------------------
+
+Perfektiivisen aspektin luontaisiin ominaisuuksiin kuuluu sisäisen rajan sisältävän totaalisen toiminnan
+ilmaiseminen. Tyypillistä on myös yksittäisten toimintojen kuvaaminen. Näitä ominaisuuksia voidaan hyödyntää,
+kun kuvataan tapahtumia, jotka joku henkilö joissakin olosuhteissa tyypillisesti suorittaa.
+
+<div class='definition'>
+<div class='defheader'>Havainnollisen esimerkin erityismerkitys</div> 
+Havainnollisen esimerkin merkityksessä perfektiivinen aspekti kuvaa toiminnan
+ikään kuin toistuvana tai tyypillisenä nostamalla yhden konkreettisen
+toimintakerran esimerkinomaisesti esille. 
+</div>
+
+Havainnolisen esimerkin erityismerkityksen ilmenemiseksi vaaditaan
+kontekstuaalisia vihjeitä, jotka ohjaavat tulkintaa esimerkinomaiseen suuntaan.
+Hem-merkityksessä käytetyn verbin sisältävät virkkeet voivat esimerkiksi alkaa
+johdantomaisella lauseella kuten *Бывало так*, *бывает* tai *случается*, jonka jälkeen seuraavan aineksen
+kuulija ymmärtää tulkita esimerkiksi.
+
+(@ee_haves1) Бывало так: Женя положит бутылку в холодильник, побежит куда-то и через минуту вернется
+(@ee_haves3) Бывает, что и не заметишь ошибку сразу. [@rassudova1984]
+(@ee_haves_korp1) Случается, что среди зимы <span class='r'>настанет</span> вдруг сильная оттепель и клюква<span class='r'>оттает.</span> 
+
+Hem-erityismerkitystä voidaan käyttää myös laveampana otsikkona eri tapauksille,
+joissa perfektiivinen aspekti ilmaisee yksittäisen toiminnan kautta jotain, joka
+todellisuudessa pitää sisällään toistuvuutta. Tällöin potentiaalin
+erityismerkitys luetaan osaksi havainnollisen esimerkin erityismerkitystä, ja
+vaikkapa esimerkin @ee_haves2 voidaan myös katsoa kuuluvan hem:n piiriin
+[ks. erit. @rassudova1984, 114-117]:
+
+(@ee_haves2) Только скажешь ему -- он немедленно приедет.
+
+
+Summatiivinen merkitys{#summatiivinen}
+----------------------
+
+<div class='definition'>
+<div class='defheader'>Summatiivinen erityismerkitys</div> 
+Summatiivisessa erityismerkityksessä perfektiivisellä aspektilla ilmaistaan
+toimintaa, joka toistuu tietyn määrän (yleensä peräkkäisiä) kertoja.
+</div>
+
+Yllä oleva määritelmä saattaa herättää kummastusta siinä mielessä, että
+toistuminen katsotaan lähtökohtaisesti yleensä nimenomaan imperfektiiviselle
+aspektille ominaiseksi piirteeksi, joka perfektiivisen aspektin tapauksessa on
+käytännössä mahdotonta. Summatiivinen merkitys ei kuitenkiaan sodi P:n 
+[tarkempaa määritelmää](invariantit_merkitykset.html#tarkempi-maaritelma)
+vastaan. Pohdi esimerkkiä @ee_sum1:
+
+(@ee_sum1) Вчера я пять раз прочитал материал для экзамена.
+
+Esimerkissä @ee_sum1 kuvattava toiminta on perfektiivisen aspektin määritelmän
+mukaisesti *sisäisesti rajattua* ja *totaalista*. Toiminnat (lukemiskerrat)
+eivät limity, vaan esimerkin @ee_sum1 tekijä on, ainakin ensi miettimällä, aina
+ennen uutta toistoa suorittanut loppuun edellisen toistokerran.
+
+On kuitenkin totta, että kuvatessaan toistuvaa toimintaa perfektiivinen aspekti
+ikään kuin "astuu imperfektiivisen aspektin alueelle" siinä mielessä, että
+syntyy tilanteita, joissa aspektit ovat käytännössä synonyymisia, eikä valintaa
+niiden välillä ole kovin helppo analysoida. Yksi vaihtoehto on todeta, että
+I:llä ilmaistuna toistokertojen väliin mahtuu
+ajanjaksoja, selkeämmin kuin P:llä ilmaistavassa toistossa:
+
+(@ee_toisto_sumea1) Он несколько раз перечитал записку
+(@ee_toisto_sumea2) Я перечитывал этот роман несколько раз
+
+[@rassudova1984]
+
+Tietyissä konteksteissa tämäkin ero on kuitenkin hämärtynyt:
+
+(@ee_toisto_sumea3) За время лекции он несколько раз вышел из аудитории
+(@ee_toisto_sumea4) За время лекции он несколько раз выходил из аудитории
+
+[@rassudova1984]
+
+Imperfektiivisen aspektin erityismerkityksiä
+============================================
+
+Luokittelusta riippumatta imperfektiivisen aspektien erityismerkityksiä
+on perinteisesti erotettu useampia kuin perfektiivisellä aspektilla. Tässä
+keskitytään seuraaviin:
+
+1. konkreettis-prosessuaalinen merkitys (конкретно-процессное значение)
+2. rajoittamattoman toiston merkitys (неограниченно-кратное значение)
+5. yleisesti toteava merkitys (обобщенно-фактическое значение)
+3. rajoitetun toiston merkitys (ограниченно-кратное значение)
+4. Tilaan, ominaisuuteen tai suhteeseen liittyvä merkitys (значение неактуального осостояния, свойства или отношения)
+
+
+Konkreettis-prosessuaalinen merkitys
+------------------------------------
+
+Esimerkkejä:
+
+(@ee_kp0) Когда мама пришла домой, я играл на фортепиано
+(@ee_kp1) Молодая женщина сидела у окна вагона и читала (ras)
+(@ee_kp2) Я слышу шаги (nik)
+
+Konkreettis-prosessuaalista merkitystä voi pitää imperfektiivisen aspektin
+*perusmerkityksenä*, koska 
+
+a. Se on vähiten riippuvainen kontekstista
+b. Se ilmaisee selkeimmin imperfektiiviselle aspektille tyypillisiä piirteitä
+c. Se on laajimmin levinnyt
+
+Konkreettis-prosessuaalista merkitystä välittävä toiminta on:
+
+1. Konkreettista:
+    - kuvaa yhtä yksittäistä, konkreettista toimintakertaa  
+2. Prosessuaalista
+    - ei kuvaa toiminnan totaalisena
+    - ei erota toiminnalle sisäistä rajaa
+
+### Konatiivinen merkitys
+
+Imperfektiivisen aspektin konkreettis-prosessuaalisesta erityismerkityksestä voi
+erottaa kaksi alamerkitystä, jotka ovat käytöltään sikäli yleisiä, että niitä on
+mielekästä tarkastella omina ryhminään. Nämä kaksi erityismerkitystä ovat
+konatiivinen ja kestoa korostava merkitys.
+
+Esimerkkejä:
+
+(@ee_kon1) Вот тебе и муж предоставлен. Убивали, да не убили (Bon)
+(@ee_kon1) Я давал ему деньги, но он не брал их
+
+Konatiivisessa merkityksessä viitataan yritykseen suorittaa jokin toiminto. 
+
+### Kestoa korostava merkitys
+
+Esimerkkejä:
+
+(@ee_kko1) Значит, опять всю ночь будет выть собака. (Bon)
+(@ee_kko2) Ваня все читал и читал
+(@ee_kko2) Студенты занимались с утра до вечера
+
+Painotetaan toiminnan kestoa esimerkiksi verbin toistolla tai kestoa
+korostavilla adverbiaaleilla kuten всю ночь, долго, целый день
+
+Rajoittamattoman toiston merkitys{#rtm}
+---------------------------------
+
+Esimerkkejä:
+
+(@ee_rajt1) Я часто покупаю на рынке овощи.
+(@ee_rajt2) В Финляндии всегда играют в хоккей
+
+Rajoittamaton toisto on hyvin frekventti imperfektiivisen aspektin
+erityismerkitys. Se kuvaa imperfektiiviselle aspektille tunnusomaista
+ajallisen kiinnekohdan puuttumista: toimintaa ei ole sidottu mihinkään tiettyyn
+hetkeen yksittäisenä tapahtumana. Konkreettiseen tapahtuma-ajankohtaan ei oteta kantaa.
+
+Tilaa, suhdetta tai ominaisuutta kuvaava erityismerkitys
+--------------------------------------------------------
+
+Esimerkkejä:
+
+(@ee_tila1) Река течет через город
+(@ee_ominaisuus1) Ты играешь на гитаре?
+(@ee_suhde1) Ты играешь на гитаре?
+
+Tämä erityismerkitys yhdistää useita eri merkityksiä yhden yläkäsitteen alle.
+Esimerkiksi A. V. Bondarko erottaa tilaa tai ominaisuutta kuvaavista
+erityismerkityksistä potentiaalis-laadullisen (ks. esimerkki @ee_tila1) ja
+keskeytymättömän toiminnan (ks. esimerkki @ee_tila1) merkitykset.
+
+
+
+Yleisesti toteava merkitys{#ytm}
+--------------------------
+
+Esimerkkejä:
+
+(@ee_tot1) Ты смотрел новый "Войну звезд"?
+(@ee_tot2) Нолито забивал в этом сезоне и «Реалу», и «Барселоне».
+
+Imperfektiivisen aspektin yleisesti toteavalla merkityksellä on rajoittunut levinneisyys,
+mutta silti merkittävä rooli aspektien valinnan selittäjänä. Toteavassa merkityksessä
+puhuja on kiinnostunut (tai olettaa vastaanottajan olevan kiinnostunut) siitä, oliko toimintaa
+vai ei, tapahtuiko jokin vai ei. Pääasiassa tämä merkitys on käytössä menneessä ajassa, jolloin
+ilmaistaan selvä ajallinen etäisyys nykyhetkestä.
+
+Yleisesti toteava erityismerkitys jaetaan usein muutamiin eri alamerkityksiin. Näitä ovat
+
+1. Toiminnan mitätöitymisen merkitys
+2. ei-resultatiivinen toteava merkitys
+3. tilannesidonnainen resultatiivis-faktinen merkitys
+
+Millä verbeillä tyypillistä?
+
+
+Rajoitetun toiston merkitys
+---------------------------
+
+Esimerkkejä:
+
+(@ee_rtutoisto1) Я три раза поступал в университет
+
+Imperfektiivisen aspektin ilmaisema toisto voi olla myös rajattua. Tällöin kuvataan
+usen suoritetun prosessin sarjaa, kuten esimerkissä @ee_rtutoisto1.
+
+</section>
+</article>
+

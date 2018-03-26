@@ -1,0 +1,974 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="finnish" xml:lang="finnish">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="../jquery-latest.js"></script>
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/theme/sky.css" id="theme">
+  <style type='text/css'>
+  
+  /* General Demo Style */
+  @import url(http://fonts.googleapis.com/css?family=Lato:300,700);
+  
+  .main {
+  	width: 100%;
+  	max-width: 960px;
+  	padding: 40px;
+  	text-shadow: 0 2px 0 rgba(255,255,255,0.7);
+  }
+  
+  .main p {
+  	font-size: 16px;
+  	line-height: 1.4;
+  	text-align: justify;
+  }
+  
+  .main p:nth-of-type(2){
+  	-moz-column-gap: 20px;
+  	-webkit-column-gap: 20px;
+  	-ms-column-gap: 20px;
+  	-o-column-gap: 20px;
+  	column-gap: 20px;
+  }
+  
+  .main p:nth-of-type(4){
+  	-moz-column-gap: 15px;
+  	-o-column-count: 3;
+  	-o-column-gap: 15px;
+  	-ms-column-count: 3;
+  	-ms-column-gap: 15px;
+  	-webkit-column-gap: 15px;
+  	column-count: 3;
+  	column-gap: 15px;
+  }
+  
+  
+  
+  html *
+  {
+     /*font-family: Arial !important;*/
+  }
+  
+  
+  p.header {
+      font-size: 46px;
+      line-height: 40px;
+      text-align:left;
+      border-bottom: 2px solid black;
+      padding-bottom:5px;
+      margin-bottom:5em;
+  }
+  
+  h1 {
+      font-size: 36px;
+      line-height: 40px;
+  }
+  
+  h2 {
+      font-size: 30px;
+      line-height: 40px;
+  }
+  
+  h3 {
+      font-size: 24px;
+      line-height: 40px;
+  }
+  
+  h4 {
+      font-size: 18px;
+      line-height: 20px;
+  }
+  
+  /* Won't be used here */
+  
+  h5 {
+      font-size: 14px;
+      line-height: 20px;
+  }
+  
+  h6 {
+      font-size: 12px;
+      line-height: 20px;
+  }
+  
+  
+  .main {
+  	counter-reset: section-1, section-2, section-3, section-4;
+  }
+  
+  .main h1 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 36px;
+  	line-height: 40px;
+  	counter-increment: section-1;
+  	counter-reset: section-2 section-3 section-4;
+  }
+  
+  .main h2 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 30px;
+  	line-height: 40px;
+  	counter-increment: section-2;
+  	counter-reset: section-3 section-4;
+  	border-bottom: 1px solid #fff;
+  	box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+  	padding-bottom: 10px;
+  }
+  
+  .main h3 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 24px;
+  	line-height: 40px;
+  	counter-increment: section-3;
+  	counter-reset: section-4;
+  }
+  
+  .main h4 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 18px;
+  	line-height: 20px;
+  	counter-increment: section-4;
+  }
+  
+  a:link{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:active{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:visited{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:hover{
+  color:#000000;
+  text-decoration:underline;
+  }
+  
+  #TOC{
+  position:absolute;
+  width:17%;
+  font-size:89%;
+  margin-top:30px;
+  /*height:70%;*/
+  /*box-shadow: 3px 7px 5px 0px;*/
+  padding:5px;
+  overflow:auto;
+  /*border-radius:10px;
+  border: 1px black dashed;*/
+  }
+  
+  #TOC > ul{
+  list-style-type: none;
+  }
+  
+  
+  #TOC ul
+  {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  }
+  
+  #TOC a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #036;
+  /*width: 9em;*/
+  padding: 3px 12px 3px 8px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: bold;
+  }
+  
+  #TOC a:hover
+  {
+  background-color: #369;
+  color: #FFF;
+  }
+  
+  #TOC li li a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #69C;
+  /*width: 9em;*/
+  padding: 3px 3px 3px 17px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: normal;
+  }
+  
+  
+  .container{
+      height: 100%;
+      margin-top: 50px;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 9%;
+      padding-top: 10%;
+      background: white;
+      border-radius:25px;
+      }
+  
+  .references{
+      margin-top: 2%;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      background: white;
+      }
+  
+  
+  
+  #topbar{
+  position:absolute;
+  top:0;
+  left:-20px;
+  /*background:yellow;*/
+  background-color: #C5A05B;
+  margin-bottom:10px;
+  padding-left:25px;
+  /*
+  padding-right:25px;
+  padding-top:5px;
+  */
+  padding-bottom:2px;
+  border-bottom: 1px dashed white;
+  border-right: 1px dashed white;
+  }
+  
+  .r {color:red;}
+  .b {color:blue;}
+  .g {color:grey;}
+  .gre {color:green;}
+  
+  .definition {
+      background: beige;
+      /*background: #DABC83;*/
+      padding-left: 1px;
+      margin-left: 2em;
+      padding-right: 1px;
+  }
+  
+  .defheader{
+      width: 100%;
+      /* padding-right: 10px; */
+      /* margin-right: 10px; */
+      border-bottom: 1px dashed black;
+      background: aliceblue;
+      /*background: #B0D0EC;*/
+  }
+  
+  .definition > p {
+      /* color: red; */
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 1em;
+      font-style: italic;
+  }
+  
+  article.bubble{
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 2em;
+  border-radius: 7px;
+  margin-left: 14px;
+  color:black;
+  }
+  
+  
+  article.bubblenob{
+  float: left;
+  width:30%;
+  }
+  
+  
+  article.mmbubble{
+  text-align: left;
+  border: 2px dotted black;
+  padding: 4px;
+  border-radius: 7px;
+  margin:1%;
+  color:black;
+  }
+  
+  article.nfbubble{
+  font-size:90%;
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 1.5em;
+  border-radius: 7px;
+  margin:4%;
+  box-shadow: 10px 10px 5px #888888;
+  color:black;
+  }
+  
+  article.bgred{background: rgba(222, 184, 135, 0.64);}
+  article.bgblue{background: rgba(100, 149, 237, 0.45);}
+  article.bggreen{background: darkseagreen;}
+  article.bgcyan{background: rgba(255, 215, 0, 0.25);}
+  
+  span#triangle {
+      display: inline-block;
+      margin: 72px;
+      border-right: 24px solid; border-bottom: 24px solid;
+      width: 50px; height: 50px;
+      transform: rotate(-45deg);
+  }
+  
+  span.right-arrow {
+      display: inline-block;
+      position: relative;
+      background: #E8EFED;
+      padding: 3px;
+  }
+  
+  span.right-arrow:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      margin-top: -10px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid #151514;
+  }
+  
+  span.afterarrow {
+      background: rgb(193, 243, 255);
+      margin-left: 9px;
+      padding: 3px;
+  }
+  
+  article#tocmain{
+  background:none;
+  }
+  
+  #topbar a:hover{
+  background-color: #8A6C34;
+  color: #FFF;
+  }
+  
+  #topbar a{
+  padding:3px;
+  color: #FFF;
+  text-decoration: none;
+  /*border-right:1px dashed white;*/
+  }
+  
+  #inlinemenu{
+  padding:0;
+  margin:0;
+  }
+  
+  .inline{
+  display:inline;
+  }
+  
+  #topbar li{list-style-type: none;
+      line-height:130%;
+  }
+  
+  a.dropdown-link { 
+      color:#044264;
+      text-decoration:none; 
+  }
+  
+  ul#quotes-bar-menu {
+      margin: 0; padding: 0;
+      float:left;
+      width: 100%;
+      list-style: none;
+  }
+  
+  ul#quotes-bar-menu li {
+      display:inline;
+      float:left;
+      position:relative;
+      margin:0;
+      padding:7px 15px 7px 0;
+  }
+  
+  /* sub menu class */
+  ul#quotes-bar-menu li .sub-menu {
+      background-color: #C5A05B;
+      display:none;
+      left:0;
+      margin:0;
+      font-size:11;
+      padding:0;
+      position:absolute;
+      top:29px;
+      width:320px;
+      z-index:999;
+  }
+  
+  ul#quotes-bar-menu li .single { 
+      /*width:150px !important;*/
+  }
+  
+  ul#quotes-bar-menu li{
+      color:#fff;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu ul {
+      float:left;
+      list-style:none;
+      display: block;
+      width:205px;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li {
+      width:135px;
+      margin:0; 
+      font-size:11px;
+      padding:1px 1px 0;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li a { color: white;
+  text-decoration: none;
+  }
+  ul#quotes-bar-menu li .sub-menu li a:hover { text-decoration: none; }
+  
+  
+  .invisible{
+  display:none;
+  }
+  .menubox{
+      background-color: #C5A05B;
+      padding: 0.12em;
+      border: 1px dashed white;
+      padding-left: 0.5em;
+  }
+  
+  
+  #topbar .menulauncher a{
+  border-right: 1px dashed white;
+  padding-right:3px;
+  }
+  
+  .menubox a{
+  width:80%;
+  display:inline-block;
+  margin-bottom:1%;
+  padding:0.2em;
+  cursor: pointer; cursor: hand;
+  font-family: arial;
+  font-size: 12;
+  text-decoration: underline;
+  }
+  </style>
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#toiminnan-luonteen-характер-действия-käsite"><span class="toc-section-number">1</span> Toiminnan luonteen (характер действия) käsite</a><ul>
+<li><a href="#toiminnan-luonne-privatiivina-oppositiona"><span class="toc-section-number">1.1</span> Toiminnan luonne privatiivina oppositiona</a></li>
+</ul></li>
+<li><a href="#liikeverbiparit"><span class="toc-section-number">2</span> Liikeverbiparit</a><ul>
+<li><a href="#tavallisimpia-liikeverbipareja"><span class="toc-section-number">2.1</span> Tavallisimpia liikeverbipareja</a></li>
+<li><a href="#harvinaisempia-liikeverbipareja"><span class="toc-section-number">2.2</span> Harvinaisempia liikeverbipareja</a></li>
+<li><a href="#lisäksi"><span class="toc-section-number">2.3</span> Lisäksi</a></li>
+<li><a href="#yleisyydestä-empiirisellä-aineistolla-mitattuna"><span class="toc-section-number">2.4</span> Yleisyydestä empiirisellä aineistolla mitattuna</a></li>
+</ul></li>
+</ul>
+</div>
+<article id="topbar">
+<a href='javascript:void(0)' id='menu1' class='menulauncher' >Aspekti- ja liikeverbiteoria |</a>
+<div id="menu1box" class="invisible menubox">
+<p><a href='../index.html'>Sisällys</a> <a href='kurssin_esittely.html'>Kurssin esittely</a> <a href='kurssin_aikataulu.html'>Kurssin aikataulu</a> <a href='https://learning2.uta.fi/course/view.php?id=7339'>Moodle</a></p>
+</div>
+<a href='javascript:void(0)' id='menu2' class='menulauncher' >Aspekti |</a>
+<div id="menu2box" class="invisible menubox">
+<p><a href='invariantit_merkitykset.html'>Aspektuaalisuus ja aspektin invariantit merkitykset</a> <a href='aspektin_muodostus.html'>Aspektin/aspektiparin muodostaminen sekä aspektin valintaan vaikuttavat tekijät</a> <a href='erityismerkitykset.html'>Aspektien erityismerkitykset</a> <a href='teonlaadut.html'>Teonlaadut</a></p>
+</div>
+<a href='javascript:void(0)' id='menu3' class='menulauncher' >Aspektin vaikuttavat tekijät vuorovaikutuksessa |</a>
+<div id="menu3box" class="invisible menubox">
+<p><a href='aspekti_menneen_ajan_verbimuodoilla.html'>Aspekti menneen ajan verbimuodoilla</a> <a href='aspekti_futuurisilla_verbimuodoilla.html'>Aspekti futuurin verbimuodoilla</a> <a href='imperatiivi.html'>Aspekti imperatiivissa</a> <a href='infinitiivi.html'>Aspekti infinitiivissä</a></p>
+</div>
+<a href='javascript:void(0)' id='menu4' class='menulauncher' >Liikeverbiteoria</a>
+<div id="menu4box" class="invisible menubox">
+<p><a href='liikeverbit_johdanto.html'>Johdanto</a> <a href='liikeverbit_prefikseilla.html'>Liikeverbit prefikseillä</a> <a href='Liikeverbit_ja_teonlaatu.html'>Liikeverbit ja teonlaadut</a></p>
+</div>
+<script>
+function showmenu(obj) {
+
+    // .position() uses position relative to the offset parent, 
+    var pos = $(obj).position();
+
+    // .outerWidth() takes into account border and padding.
+    var width = $(obj).outerWidth();
+    var height = $(obj).outerHeight();
+    var menuid = "#" + $(obj).attr('id') + 'box';
+
+    //show the menu directly over the placeholder
+    $(menuid).css({
+        position: "absolute",
+        top: pos.top + height + "px",
+        left: (pos.left) + "px"
+    }).show();
+    
+}
+
+$('.menulauncher').hover(function(event) {showmenu(this); });
+$('.menubox').mouseleave(function(event) {$('.menubox').hide();});
+
+</script>
+</article>
+<article class="container">
+<section class="main">
+<p class="header">
+Johdanto liikeverbeihin
+</p>
+<p>Tähän asti kurssilla on puhuttu sellaisista verbejä koskevista kategorioista kuin <em>aspekti</em> ja <em>teonlaadut.</em> Näiden lisäksi venäjän (ja slaavilaisten kielten yleensä) verbisysteemi sisältää vielä yhden vastaavalla tavalla merkittävän kategorian, josta A. V. Isachenko käyttää termiä <em>характер действия</em> (vakiintuneen suomenkielisen termin puuttuessa käytän tässä nimitystä <em>toiminnan luonne</em>). Toiminnan luonteen kategoria ei kosketa kaikkia verbejä, vaan ainoastaan perinteisesti <em>liikeverbeiksi</em> (глаголы движения/глаголы перемещения) määriteltyä verbien ryhmää.</p>
+<h1 id="toiminnan-luonteen-характер-действия-käsite"><span class="header-section-number">1</span> Toiminnan luonteen (характер действия) käsite</h1>
+<p>Isachenko <span class="citation">(2014: 310)</span> lähtee liikkeelle havainnosta liittyen (esimerkiksi) verbeihin <em>идти</em> ja <em>ходить</em>. Näistä verbeistä tiedetään</p>
+<ol style="list-style-type: decimal">
+<li>Että molemmat ovat semanttisesti hyvin lähellä toisiaan (merkitsevät muun muassa liikettä kävellen).</li>
+<li>Että molemmat ovat imperfektiivisen aspektin verbejä</li>
+<li>Että kumpikaan ei edusta mitään erityistä teonlaatua</li>
+<li>Että verbit tuntuvat jollain tavalla muodostavan parin, jota vastaavia voidaan löytää myös tietyillä muilla, kuitenkin tarkkaan rajatuilla verbeillä.</li>
+<li>Tällaisten verbiparien ryhmä on tiukkaan rajattu ja epäproduktiivinen: Kieleen ei ilmesty uusia vastaavia verbipareja, vaan päinvastoin jotkin olemassaolevista pareista alkavat käytöltään hiipua.</li>
+<li>Vaikka verbit muodostavat jonkinlaisen parin, ei ole mahdollista sanoa, että toinen verbi olisi johdettu toisesta niin kuin esimerkiksi perfektivaation ja imperfektivaation tapauksissa.</li>
+</ol>
+<p>Jos verbien välinen ero ei ole aspektissa eikä teonlaadussa, mutta verbit kuitenkin muodostavat parin, on kysyttävä, mikä on se ominaisuus, joka parin jäsenet erottaa toisistaan. Tätä liikeverbiparin erottavaa ominaisuutta Isachenko nimittää edellä mainitulla termillä <em>toiminnan luonne.</em></p>
+<p>Isachenkon <span class="citation">(2014: 311)</span> mukaan идти- ja ходить-verbityypin välistä eroa täytyy etsiä siitä, miten verbit ilmaisevat liikkeen suuntaa tilassa.</p>
+<h2 id="toiminnan-luonne-privatiivina-oppositiona"><span class="header-section-number">1.1</span> Toiminnan luonne privatiivina oppositiona</h2>
+<p>Jo aspektin invarianttien merkitysten määrittämisen yhteydessä törmäsimme käsitteeseen <em>privatiivi oppositio</em>: invariantit merkitykset määriteltiin suhteessa opposition <em>tunnusmerkilliseen</em> jäseneen, perfektiiviseen aspektiin, ja tunnusmerkitön jäsen, imperfektiivinen aspekti, määriteltiin ennemmin negaation kautta siten, että imperfektiivinen aspekti ei ota kantaa toiminnan rajattuuteen tai totaalisuuteen.</p>
+<div class="definition">
+<div class="defheader">
+<p>Määritelmä 1.</p>
+</div>
+<p>Liikeverbien ero toiminnan luonteessa voidaan myös nähdä privatiivina oppositiona, jonka tunnusmerkillisenä jäsenenä ovat идти-tyypin verbit. Nämä verbit kuvaavat liikettä yhteen suuntaan (однонаправленный характер действия). Ходить-tyypin verbit puolestaan ovat tunnusmerkittömiä siinä mielessä, ettei niistä suoraan käy ilmi, onko niiden kuvaama liike yksisuuntaista vai ei.</p>
+</div>
+<p>Määritelmä 1 saattaa kuulostaa tarpeettoman monimutkaiselta: eikö voisi vain määrittää, että идти-tyypin verbit ovat yksisuuntaisia ja ходить-tyypin verbit kaksisuuntaisia? Tilanne ei kuitenkaan ole näin yksiselitteinen.</p>
+<p>Ajattele esimerkkiä 1:</p>
+<ol style="list-style-type: decimal">
+<li>Он <em>ходит</em> по лесу.</li>
+</ol>
+<p>Ei voida sanoa, että liike esimerkissä 1 tapahtuisi <em>kahteen</em> suuntaan. Sen sijaan on todettava, että liike on monisuuntaista (разнонаправленное движение): kävelyä tapahtuu sinne tänne. Tämäkin on kuitenkin edelleen riittämätön määritelmä ajatellen ходить-verbin erilaisia merkitysmahdollisuuksia. Pohdi, nimittäin, esimerkkiä 2:</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Он <em>ходит</em> в школу через парк</li>
+</ol>
+<p>Esimerkin 2 liike on tarkkaan otettuna yksisuuntaista. Kulkeminen on kyllä <em>toistuvaa</em> – kouluun mennään oletettavasti joka arkipäivä, ja joka kerta matka suoritetaan puiston läpi – mutta se ei vielä tee liikkeestä kaksi- tai useampisuuntaista. Voisi tietysti ajatella, että koulumatka tehdään oletettavasti <em>kahteen suuntaan</em>, mutta siihen esimerkki 2 ei ota kantaa – paluumatka saattaa tapahtua saman puiston halki tai sitten ei.</p>
+<p>Tämän takia Isachenkon ходить-verbityypistä käyttämä termi on <em>ненаправленный характер действия</em> (<em>ненаправленные глаголы</em>). Käytän tässä liikeverbien toiminnan luonteista suomeksi puhuttaessa vakiintuneita nimityksiä <em>iteratiiviset</em> (идти-tyyppi) ja <em>duratiiviset</em> (ходить-tyyppi) verbit.</p>
+<p>Privatiivin opposition tunnusmerkittömänä jäsenenä iteratiiviset verbit kykenevät ilmaisemaan (mutteivät välttämättä ilmaise) lukuisia eri merkityspiirteitä – aivan kuten imperfektiivisen aspektin verrattuna perfektiiviseen aspektiin havaittiin <a href="invariantit_merkitykset.html#monis-maar">Bondarkon piirreanalyysin perusteella</a> pystyvän ilmaisemaan (vaikkei näin läheskään aina tapahdu) huomattavaa määrää erilaisia merkityspiirteitä kuten prosessuaalisuutta, toistoa, yksittäistä toimintaa ja toiminnan peräkkäisyyttä. Isachenko <span class="citation">(2014: 312)</span> luetteleekin seuraavat merkitykset, joita ходить-tyypin verbi voi saada. Huomaa, että merkitykset 1-4 ovat imperfektiivisen aspektin merkityksiä sinänsä ja ainoastaan merkitys 5 on merkitys, joka ходить-tyypin verbeillä on pelkästään sen takia, että ne ovat iteratiivisia liikeverbejä.</p>
+<ol style="list-style-type: decimal">
+<li>Habituaalisuus: <em>по субботам он ходит в баню</em></li>
+<li>Kesto: <em>он ходит по комнате</em></li>
+<li>Kyky: <em>больной уже ходит</em></li>
+<li>Subjektin (lajityypillinen) ominaisuus: <em>птицы летают</em>, <em>пробка плавает</em></li>
+<li>Kaksisuuntainen liike: <em>Он ходил в город и принес газету</em>.</li>
+</ol>
+<h1 id="liikeverbiparit"><span class="header-section-number">2</span> Liikeverbiparit</h1>
+<p>Seuraavissa taulukoissa on esitetty merkittävimmät duratiiviset ja iteratiiviset liikeverbit. Taulukoiden kolmanteen sarakkeeseen on merkitty, onko kyseessä transitiivinen (suoran objektin saava) vai intransitiivinen (ilman objektia käytettävä) verbi. Liikeverbit on jaettu kahteen taulukkoon, niin että ensimmäisessä ovat (oletettavasti) tavallisimmin käytetyt verbit, toisessa harvinaisemmat. Lisäksi kolmannessa taulukossa esitetään eräitä usein mainitsematta jääviä liikeverbejä.</p>
+<h2 id="tavallisimpia-liikeverbipareja"><span class="header-section-number">2.1</span> Tavallisimpia liikeverbipareja</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">duratiivinen verbi</th>
+<th align="left">iteratiivinen verbi</th>
+<th align="left">transitiivisuus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">идти</td>
+<td align="left">ходить</td>
+<td align="left">intransitiivinen</td>
+</tr>
+<tr class="even">
+<td align="left">бежать</td>
+<td align="left">бегать</td>
+<td align="left">intransitiivinen</td>
+</tr>
+<tr class="odd">
+<td align="left">нести</td>
+<td align="left">носить</td>
+<td align="left">transitiivinen</td>
+</tr>
+<tr class="even">
+<td align="left">вести</td>
+<td align="left">водить</td>
+<td align="left">transitiivinen</td>
+</tr>
+<tr class="odd">
+<td align="left">ехать</td>
+<td align="left">ездить</td>
+<td align="left">intransitiivinen</td>
+</tr>
+<tr class="even">
+<td align="left">лететь</td>
+<td align="left">летать</td>
+<td align="left">intransitiivinen</td>
+</tr>
+<tr class="odd">
+<td align="left">плыть</td>
+<td align="left">плавать</td>
+<td align="left">intransitiivinen</td>
+</tr>
+<tr class="even">
+<td align="left">везти</td>
+<td align="left">возить</td>
+<td align="left">transitiivinen</td>
+</tr>
+</tbody>
+</table>
+<p>идти-ходить-, бежать-бегать-, нести-носить- ja вести-водить-verbipareja yhdistää kaikkia se, että ne ilmaisevat liikettä ilman kulkuneuvoa (tai itse kulkuneuvon liikettä, mistä jäljempänä tarkemmin), kun taas ехать-ездить-, лететь-летать-, плыть-плавать- ja везти-возить-verbejä yhdistää se, että niillä tavallisesti (joskaan esimerkiksi плыть-плавать-parilla ei toki aina) ilmaistaan liikettä kulkuneuvolla.</p>
+<h2 id="harvinaisempia-liikeverbipareja"><span class="header-section-number">2.2</span> Harvinaisempia liikeverbipareja</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">duratiivinen verbi</th>
+<th align="left">iteratiivinen verbi</th>
+<th align="left">transitiivisuus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">лезть</td>
+<td align="left">ла́зить</td>
+<td align="left">intransitiivinen</td>
+</tr>
+<tr class="even">
+<td align="left">ползти</td>
+<td align="left">по́лзать</td>
+<td align="left">intransitiivinen</td>
+</tr>
+<tr class="odd">
+<td align="left">гнать</td>
+<td align="left">гоня́ть</td>
+<td align="left">transitiivinen</td>
+</tr>
+<tr class="even">
+<td align="left">катѝть</td>
+<td align="left">ката́ть</td>
+<td align="left">transitiivinen</td>
+</tr>
+<tr class="odd">
+<td align="left">тащѝть</td>
+<td align="left">таска́ть</td>
+<td align="left">transitiivinen</td>
+</tr>
+<tr class="even">
+<td align="left">*брестѝ</td>
+<td align="left">бродѝть</td>
+<td align="left">intransitiivinen</td>
+</tr>
+</tbody>
+</table>
+<p>Vaikka nämä verbit on luokiteltu harvinaisemmiksi kuin edellä mainitut, ovat ne silti käytössä, ja koko venäjän verbikategoriaa tarkasteltaessa kuitenkin verrattain yleisiä. Verbipari брести-бродить yleensä ilmoitetaan yhtenä liikeverbiparina, mutta Isachenko <span class="citation">(2014: 313)</span> huomauttaa, että vaikka pari morfologisesti muistuttaakin muita tässä esitettyjä verbipareja, ovat parin osapuolet semanttisesti niin kaukana toisistaan, että <em>verbiparista</em> puhuminen on tuskin perusteltua. Isachenkon mukaan брести-verbin merkitys on “идти с трудом, волоча ноги; идти тихо”, mutta бродить-verbillä ei ole kyse liikkumisen hitaudesta ja vaikeudesta, vaan ennemminkin päämäärättömyydestä: “глагол бродить обозначает скитаться, ходить без цели”. Tässä mielessä siis kyseiset verbit eivät heijasta eroa saman liikkeen <em>luonteessa</em>, vaan kyse on lähtökohtaisesti erityyppisistä liikkeistä.</p>
+<h2 id="lisäksi"><span class="header-section-number">2.3</span> Lisäksi</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">duratiivinen verbi</th>
+<th align="left">iteratiivinen verbi</th>
+<th align="left">transitiivisuus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">нестись</td>
+<td align="left">носиться</td>
+<td align="left">intransitiivinen</td>
+</tr>
+<tr class="even">
+<td align="left">катиться</td>
+<td align="left">кататься</td>
+<td align="left">intransitiivinen</td>
+</tr>
+<tr class="odd">
+<td align="left">тащиться</td>
+<td align="left">таскаться</td>
+<td align="left">intransitiivinen</td>
+</tr>
+</tbody>
+</table>
+<p>Isachenkon <span class="citation">(2014: 314)</span> tässä esitetyt verbit eivät ole pelkkiä refleksiivimuotoja verbeistä нести, катить, тащить, vaan itsenäisiä sanoja, joilla on oma spesifi merkityksensä. Tämän kurssin puitteissa nämä verbit jätetään kuitenkin ainoastaan pienelle huomiolle.</p>
+<h2 id="yleisyydestä-empiirisellä-aineistolla-mitattuna"><span class="header-section-number">2.4</span> Yleisyydestä empiirisellä aineistolla mitattuna</h2>
+<!--
+
+```{r, echo=FALSE}
+
+library('pander')
+flist <- read.csv('data/flist_dur.csv')
+flist["relfreq"]<-round(flist$freq/1200001911*1000,4)
+flist <- flist[order(flist$relfreq,decreasing=T),]
+printlist <- data.frame(flist$verbi,flist$freq,flist$relfreq)
+colnames(printlist) <- c("verbi","abs.frekv.","frekv./1000 sanetta")
+
+
+flist2 <- read.csv('data/flist_iter.csv')
+flist2["relfreq"]<-round(flist2$freq/1200001911*1000,4)
+flist2 <- flist2[order(flist2$relfreq,decreasing=T),]
+printlist2 <- data.frame(flist2$verbi,flist2$freq,flist2$relfreq)
+colnames(printlist2) <- c("verbi","abs.frekv.","frekv./1000 sanetta")
+
+
+flist_fi <- read.csv('data/freqlist_fi.csv')
+flist_fi["relfreq"]<-round(flist_fi$freq/1200000100*1000,4)
+flist_fi <- flist_fi[order(flist_fi$relfreq,decreasing=T),]
+printlist3 <- data.frame(flist_fi$verb,flist_fi$freq,flist_fi$relfreq)
+colnames(printlist3) <- c("verbi","abs.frekv.","frekv./1000 sanetta")
+
+
+
+```
+-->
+<p>Kuinka pätevä lopulta on oletus, jonka mukaan ensimmäisen taulukon verbit ovat yleisiä, toisen harvinaisia? Tutkitaan kysymystä Araneum-korpusaineiston Araneum Russicum Maius -internetkorpuksen <span class="citation">(Benko 2015)</span> avulla. Seuraavassa taulukossa on esitetty edellä mainittujen verbiparien duratiiviset osapuolet järjestettynä useimmin käytetystä harvimmin käytettyyn. Araneum Russicum Maius -korpus sisältää 1,2 miljoonaa sanetta. Jotta vertailu olisi helpompaa, viimeisessä sarakkeessa kerrotaan esiintymistiheys per 1000 sanetta (normalisoitu tiheys). Lukuja tutkittaessa on huomioitava, että ne sisältävät kaikki mahdolliset käyttötilanteet niin suorassa kuin kuvainnollisissakin merkityksissä ja ennen kaikkea se, että tässä annetut luvut koskevat <strong>vain etuliitteettömiä verbejä</strong>. Tämän vuoksi lukemiin kannattaa suhtautua vain suuntaa-antavina.</p>
+<!--
+
+```{r, echo=FALSE, results='asis'}
+
+pander(printlist,style = 'rmarkdown')
+
+```
+-->
+<table>
+<thead>
+<tr class="header">
+<th align="center">verbi</th>
+<th align="center">abs.frekv.</th>
+<th align="center">frekv./1000 sanetta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">идти</td>
+<td align="center">542513</td>
+<td align="center">0.4521</td>
+</tr>
+<tr class="even">
+<td align="center">вести</td>
+<td align="center">258220</td>
+<td align="center">0.2152</td>
+</tr>
+<tr class="odd">
+<td align="center">нести</td>
+<td align="center">97658</td>
+<td align="center">0.0814</td>
+</tr>
+<tr class="even">
+<td align="center">ехать</td>
+<td align="center">83840</td>
+<td align="center">0.0699</td>
+</tr>
+<tr class="odd">
+<td align="center">бежать</td>
+<td align="center">54851</td>
+<td align="center">0.0457</td>
+</tr>
+<tr class="even">
+<td align="center">лететь</td>
+<td align="center">28684</td>
+<td align="center">0.0239</td>
+</tr>
+<tr class="odd">
+<td align="center">лезть</td>
+<td align="center">16989</td>
+<td align="center">0.0142</td>
+</tr>
+<tr class="even">
+<td align="center">везти</td>
+<td align="center">16977</td>
+<td align="center">0.0141</td>
+</tr>
+<tr class="odd">
+<td align="center">гнать</td>
+<td align="center">12486</td>
+<td align="center">0.0104</td>
+</tr>
+<tr class="even">
+<td align="center">плыть</td>
+<td align="center">11616</td>
+<td align="center">0.0097</td>
+</tr>
+<tr class="odd">
+<td align="center">тащить</td>
+<td align="center">8519</td>
+<td align="center">0.0071</td>
+</tr>
+<tr class="even">
+<td align="center">нестись</td>
+<td align="center">5748</td>
+<td align="center">0.0048</td>
+</tr>
+<tr class="odd">
+<td align="center">катиться</td>
+<td align="center">4827</td>
+<td align="center">0.004</td>
+</tr>
+<tr class="even">
+<td align="center">ползти</td>
+<td align="center">4014</td>
+<td align="center">0.0033</td>
+</tr>
+<tr class="odd">
+<td align="center">катить</td>
+<td align="center">2092</td>
+<td align="center">0.0017</td>
+</tr>
+<tr class="even">
+<td align="center">брести</td>
+<td align="center">1747</td>
+<td align="center">0.0015</td>
+</tr>
+<tr class="odd">
+<td align="center">тащиться</td>
+<td align="center">1258</td>
+<td align="center">0.001</td>
+</tr>
+</tbody>
+</table>
+<p>Tuskin on yllättävää, että yleisimmäksi duratiiviseksi verbiksi osoittautui <em>идти.</em> <em>Вести</em>-verbin korkea frekvenssi johtuu epäilemättä monista ei-liikeverbimäisistä käyttötilanteista (вести переговоры jne.). Kaiken kaikkiaan lista vahvistaa yllättävänkin hyvin ennakko-oletukset kunkin verbin yleisyydestä.</p>
+<p>Tarkastellaan vielä parien iteratiivisten osapuolten frekvenssejä:</p>
+<!--
+
+```{r, echo=FALSE, results='asis'}
+pander(printlist2,style = 'rmarkdown')
+ 
+ 
+```
+-->
+<table>
+<thead>
+<tr class="header">
+<th align="center">verbi</th>
+<th align="center">abs.frekv.</th>
+<th align="center">frekv./1000 sanetta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">ходить</td>
+<td align="center">144931</td>
+<td align="center">0.1208</td>
+</tr>
+<tr class="even">
+<td align="center">носить</td>
+<td align="center">105303</td>
+<td align="center">0.0878</td>
+</tr>
+<tr class="odd">
+<td align="center">ездить</td>
+<td align="center">52938</td>
+<td align="center">0.0441</td>
+</tr>
+<tr class="even">
+<td align="center">летать</td>
+<td align="center">27572</td>
+<td align="center">0.023</td>
+</tr>
+<tr class="odd">
+<td align="center">бегать</td>
+<td align="center">27488</td>
+<td align="center">0.0229</td>
+</tr>
+<tr class="even">
+<td align="center">плавать</td>
+<td align="center">16031</td>
+<td align="center">0.0134</td>
+</tr>
+<tr class="odd">
+<td align="center">водить</td>
+<td align="center">13294</td>
+<td align="center">0.0111</td>
+</tr>
+<tr class="even">
+<td align="center">кататься</td>
+<td align="center">11706</td>
+<td align="center">0.0098</td>
+</tr>
+<tr class="odd">
+<td align="center">бродить</td>
+<td align="center">10042</td>
+<td align="center">0.0084</td>
+</tr>
+<tr class="even">
+<td align="center">возить</td>
+<td align="center">9299</td>
+<td align="center">0.0077</td>
+</tr>
+<tr class="odd">
+<td align="center">носиться</td>
+<td align="center">5681</td>
+<td align="center">0.0047</td>
+</tr>
+<tr class="even">
+<td align="center">таскать</td>
+<td align="center">5327</td>
+<td align="center">0.0044</td>
+</tr>
+<tr class="odd">
+<td align="center">гонять</td>
+<td align="center">5094</td>
+<td align="center">0.0042</td>
+</tr>
+<tr class="even">
+<td align="center">ползать</td>
+<td align="center">4094</td>
+<td align="center">0.0034</td>
+</tr>
+<tr class="odd">
+<td align="center">катать</td>
+<td align="center">2118</td>
+<td align="center">0.0018</td>
+</tr>
+<tr class="even">
+<td align="center">лазить</td>
+<td align="center">2054</td>
+<td align="center">0.0017</td>
+</tr>
+<tr class="odd">
+<td align="center">таскаться</td>
+<td align="center">421</td>
+<td align="center">4e-04</td>
+</tr>
+</tbody>
+</table>
+<p>Myös iteratiivisissa verbeissä идти-ходить-parin osapuoli on, kuten oletettavaa, yleisin. Водить on pudonnut selkeästi alemmas, mikä selittynee ei-liikeverbisten käyttötilanteiden vähyydellä suhteessa вести-verbiin. Lueteltujen verbien välisestä parillisuudesta kertoo, että verbiparien välinen järjestys on iteratiivisten verbien listalla hyvin samanlainen kuin duratiivisten verbien listalla.</p>
+</section>
+</article>
+<div class="references">
+<div id="ref-araneum">
+<p>BENKO, V. 2015. Aranea: Yet Another Family of (Comparable) Web Corpora. In: <em>TSD</em>. pp. 247–254. <a href="http://doi.org/http://dx.doi.org/10.1007/978-3-319-10816-2_31">doi:http://dx.doi.org/10.1007/978-3-319-10816-2_31</a></p>
+</div>
+<div id="ref-isachenko2014">
+<p>ИСАЧЕНКО, А. 2014. <em>Грамматический строй русского языка в сопоставлении с словацким. морфология. часть 1, 2</em>. Litres.</p>
+</div>
+</div>
+</body>
+</html>

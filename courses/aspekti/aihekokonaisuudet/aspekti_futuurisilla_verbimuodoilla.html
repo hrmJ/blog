@@ -1,0 +1,766 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="finnish" xml:lang="finnish">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="../jquery-latest.js"></script>
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/theme/sky.css" id="theme">
+  <style type='text/css'>
+  
+  /* General Demo Style */
+  @import url(http://fonts.googleapis.com/css?family=Lato:300,700);
+  
+  .main {
+  	width: 100%;
+  	max-width: 960px;
+  	padding: 40px;
+  	text-shadow: 0 2px 0 rgba(255,255,255,0.7);
+  }
+  
+  .main p {
+  	font-size: 16px;
+  	line-height: 1.4;
+  	text-align: justify;
+  }
+  
+  .main p:nth-of-type(2){
+  	-moz-column-gap: 20px;
+  	-webkit-column-gap: 20px;
+  	-ms-column-gap: 20px;
+  	-o-column-gap: 20px;
+  	column-gap: 20px;
+  }
+  
+  .main p:nth-of-type(4){
+  	-moz-column-gap: 15px;
+  	-o-column-count: 3;
+  	-o-column-gap: 15px;
+  	-ms-column-count: 3;
+  	-ms-column-gap: 15px;
+  	-webkit-column-gap: 15px;
+  	column-count: 3;
+  	column-gap: 15px;
+  }
+  
+  
+  
+  html *
+  {
+     /*font-family: Arial !important;*/
+  }
+  
+  
+  p.header {
+      font-size: 46px;
+      line-height: 40px;
+      text-align:left;
+      border-bottom: 2px solid black;
+      padding-bottom:5px;
+      margin-bottom:5em;
+  }
+  
+  h1 {
+      font-size: 36px;
+      line-height: 40px;
+  }
+  
+  h2 {
+      font-size: 30px;
+      line-height: 40px;
+  }
+  
+  h3 {
+      font-size: 24px;
+      line-height: 40px;
+  }
+  
+  h4 {
+      font-size: 18px;
+      line-height: 20px;
+  }
+  
+  /* Won't be used here */
+  
+  h5 {
+      font-size: 14px;
+      line-height: 20px;
+  }
+  
+  h6 {
+      font-size: 12px;
+      line-height: 20px;
+  }
+  
+  
+  .main {
+  	counter-reset: section-1, section-2, section-3, section-4;
+  }
+  
+  .main h1 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 36px;
+  	line-height: 40px;
+  	counter-increment: section-1;
+  	counter-reset: section-2 section-3 section-4;
+  }
+  
+  .main h2 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 30px;
+  	line-height: 40px;
+  	counter-increment: section-2;
+  	counter-reset: section-3 section-4;
+  	border-bottom: 1px solid #fff;
+  	box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+  	padding-bottom: 10px;
+  }
+  
+  .main h3 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 24px;
+  	line-height: 40px;
+  	counter-increment: section-3;
+  	counter-reset: section-4;
+  }
+  
+  .main h4 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 18px;
+  	line-height: 20px;
+  	counter-increment: section-4;
+  }
+  
+  a:link{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:active{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:visited{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:hover{
+  color:#000000;
+  text-decoration:underline;
+  }
+  
+  #TOC{
+  position:absolute;
+  width:17%;
+  font-size:89%;
+  margin-top:30px;
+  /*height:70%;*/
+  /*box-shadow: 3px 7px 5px 0px;*/
+  padding:5px;
+  overflow:auto;
+  /*border-radius:10px;
+  border: 1px black dashed;*/
+  }
+  
+  #TOC > ul{
+  list-style-type: none;
+  }
+  
+  
+  #TOC ul
+  {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  }
+  
+  #TOC a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #036;
+  /*width: 9em;*/
+  padding: 3px 12px 3px 8px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: bold;
+  }
+  
+  #TOC a:hover
+  {
+  background-color: #369;
+  color: #FFF;
+  }
+  
+  #TOC li li a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #69C;
+  /*width: 9em;*/
+  padding: 3px 3px 3px 17px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: normal;
+  }
+  
+  
+  .container{
+      height: 100%;
+      margin-top: 50px;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 9%;
+      padding-top: 10%;
+      background: white;
+      border-radius:25px;
+      }
+  
+  .references{
+      margin-top: 2%;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      background: white;
+      }
+  
+  
+  
+  #topbar{
+  position:absolute;
+  top:0;
+  left:-20px;
+  /*background:yellow;*/
+  background-color: #C5A05B;
+  margin-bottom:10px;
+  padding-left:25px;
+  /*
+  padding-right:25px;
+  padding-top:5px;
+  */
+  padding-bottom:2px;
+  border-bottom: 1px dashed white;
+  border-right: 1px dashed white;
+  }
+  
+  .r {color:red;}
+  .b {color:blue;}
+  .g {color:grey;}
+  .gre {color:green;}
+  
+  .definition {
+      background: beige;
+      /*background: #DABC83;*/
+      padding-left: 1px;
+      margin-left: 2em;
+      padding-right: 1px;
+  }
+  
+  .defheader{
+      width: 100%;
+      /* padding-right: 10px; */
+      /* margin-right: 10px; */
+      border-bottom: 1px dashed black;
+      background: aliceblue;
+      /*background: #B0D0EC;*/
+  }
+  
+  .definition > p {
+      /* color: red; */
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 1em;
+      font-style: italic;
+  }
+  
+  article.bubble{
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 2em;
+  border-radius: 7px;
+  margin-left: 14px;
+  color:black;
+  }
+  
+  
+  article.bubblenob{
+  float: left;
+  width:30%;
+  }
+  
+  
+  article.mmbubble{
+  text-align: left;
+  border: 2px dotted black;
+  padding: 4px;
+  border-radius: 7px;
+  margin:1%;
+  color:black;
+  }
+  
+  article.nfbubble{
+  font-size:90%;
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 1.5em;
+  border-radius: 7px;
+  margin:4%;
+  box-shadow: 10px 10px 5px #888888;
+  color:black;
+  }
+  
+  article.bgred{background: rgba(222, 184, 135, 0.64);}
+  article.bgblue{background: rgba(100, 149, 237, 0.45);}
+  article.bggreen{background: darkseagreen;}
+  article.bgcyan{background: rgba(255, 215, 0, 0.25);}
+  
+  span#triangle {
+      display: inline-block;
+      margin: 72px;
+      border-right: 24px solid; border-bottom: 24px solid;
+      width: 50px; height: 50px;
+      transform: rotate(-45deg);
+  }
+  
+  span.right-arrow {
+      display: inline-block;
+      position: relative;
+      background: #E8EFED;
+      padding: 3px;
+  }
+  
+  span.right-arrow:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      margin-top: -10px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid #151514;
+  }
+  
+  span.afterarrow {
+      background: rgb(193, 243, 255);
+      margin-left: 9px;
+      padding: 3px;
+  }
+  
+  article#tocmain{
+  background:none;
+  }
+  
+  #topbar a:hover{
+  background-color: #8A6C34;
+  color: #FFF;
+  }
+  
+  #topbar a{
+  padding:3px;
+  color: #FFF;
+  text-decoration: none;
+  /*border-right:1px dashed white;*/
+  }
+  
+  #inlinemenu{
+  padding:0;
+  margin:0;
+  }
+  
+  .inline{
+  display:inline;
+  }
+  
+  #topbar li{list-style-type: none;
+      line-height:130%;
+  }
+  
+  a.dropdown-link { 
+      color:#044264;
+      text-decoration:none; 
+  }
+  
+  ul#quotes-bar-menu {
+      margin: 0; padding: 0;
+      float:left;
+      width: 100%;
+      list-style: none;
+  }
+  
+  ul#quotes-bar-menu li {
+      display:inline;
+      float:left;
+      position:relative;
+      margin:0;
+      padding:7px 15px 7px 0;
+  }
+  
+  /* sub menu class */
+  ul#quotes-bar-menu li .sub-menu {
+      background-color: #C5A05B;
+      display:none;
+      left:0;
+      margin:0;
+      font-size:11;
+      padding:0;
+      position:absolute;
+      top:29px;
+      width:320px;
+      z-index:999;
+  }
+  
+  ul#quotes-bar-menu li .single { 
+      /*width:150px !important;*/
+  }
+  
+  ul#quotes-bar-menu li{
+      color:#fff;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu ul {
+      float:left;
+      list-style:none;
+      display: block;
+      width:205px;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li {
+      width:135px;
+      margin:0; 
+      font-size:11px;
+      padding:1px 1px 0;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li a { color: white;
+  text-decoration: none;
+  }
+  ul#quotes-bar-menu li .sub-menu li a:hover { text-decoration: none; }
+  
+  
+  .invisible{
+  display:none;
+  }
+  .menubox{
+      background-color: #C5A05B;
+      padding: 0.12em;
+      border: 1px dashed white;
+      padding-left: 0.5em;
+  }
+  
+  
+  #topbar .menulauncher a{
+  border-right: 1px dashed white;
+  padding-right:3px;
+  }
+  
+  .menubox a{
+  width:80%;
+  display:inline-block;
+  margin-bottom:1%;
+  padding:0.2em;
+  cursor: pointer; cursor: hand;
+  font-family: arial;
+  font-size: 12;
+  text-decoration: underline;
+  }
+  </style>
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#huomioita-in-käytöstä-futuurissa"><span class="toc-section-number">1</span> Huomioita I:n käytöstä futuurissa</a><ul>
+<li><a href="#konkreettis-prosessuaalinen-merkitys"><span class="toc-section-number">1.1</span> Konkreettis-prosessuaalinen merkitys</a></li>
+<li><a href="#yleisesti-toteava-merkitys"><span class="toc-section-number">1.2</span> Yleisesti toteava merkitys</a></li>
+<li><a href="#in-futuuriselle-käytölle-tyypillisiä-tilanteita"><span class="toc-section-number">1.3</span> I:n futuuriselle käytölle tyypillisiä tilanteita</a><ul>
+<li><a href="#aikomuksen-merkitys"><span class="toc-section-number">1.3.1</span> Aikomuksen merkitys</a></li>
+<li><a href="#kielteisiä-rakenteita"><span class="toc-section-number">1.3.2</span> Kielteisiä rakenteita</a></li>
+</ul></li>
+<li><a href="#i-futuurissa-ilman-liittomuotoa"><span class="toc-section-number">1.4</span> I futuurissa ilman liittomuotoa</a></li>
+</ul></li>
+<li><a href="#huomioita-pn-käytöstä-futuurissa"><span class="toc-section-number">2</span> Huomioita P:n käytöstä futuurissa</a><ul>
+<li><a href="#pn-futuuriselle-käytölle-tyypillisiä-tilanteita"><span class="toc-section-number">2.1</span> P:n futuuriselle käytölle tyypillisiä tilanteita</a><ul>
+<li><a href="#puhujan-varmuuden-ilmaiseminen"><span class="toc-section-number">2.1.1</span> Puhujan varmuuden ilmaiseminen</a></li>
+<li><a href="#käynnissä-oleva-toiminta-luvataan-suorittaa-loppuun"><span class="toc-section-number">2.1.2</span> Käynnissä oleva toiminta luvataan suorittaa loppuun</a></li>
+<li><a href="#välitön-tulevaisuus"><span class="toc-section-number">2.1.3</span> Välitön tulevaisuus</a></li>
+</ul></li>
+<li><a href="#pn-erityismerkityksiä-futuurissa"><span class="toc-section-number">2.2</span> P:n erityismerkityksiä futuurissa</a><ul>
+<li><a href="#havainnollisen-esimerkin-erityismerkitys"><span class="toc-section-number">2.2.1</span> Havainnollisen esimerkin erityismerkitys</a></li>
+<li><a href="#potentiaalinen-merkitys"><span class="toc-section-number">2.2.2</span> Potentiaalinen merkitys</a></li>
+</ul></li>
+<li><a href="#modaalisuus-perfektiivisen-aspektin-futuurimuodoilla"><span class="toc-section-number">2.3</span> Modaalisuus perfektiivisen aspektin futuurimuodoilla</a></li>
+</ul></li>
+</ul>
+</div>
+<article id="topbar">
+<a href='javascript:void(0)' id='menu1' class='menulauncher' >Aspekti- ja liikeverbiteoria |</a>
+<div id="menu1box" class="invisible menubox">
+<p><a href='../index.html'>Sisällys</a> <a href='kurssin_esittely.html'>Kurssin esittely</a> <a href='kurssin_aikataulu.html'>Kurssin aikataulu</a> <a href='https://learning2.uta.fi/course/view.php?id=7339'>Moodle</a></p>
+</div>
+<a href='javascript:void(0)' id='menu2' class='menulauncher' >Aspekti |</a>
+<div id="menu2box" class="invisible menubox">
+<p><a href='invariantit_merkitykset.html'>Aspektuaalisuus ja aspektin invariantit merkitykset</a> <a href='aspektin_muodostus.html'>Aspektin/aspektiparin muodostaminen sekä aspektin valintaan vaikuttavat tekijät</a> <a href='erityismerkitykset.html'>Aspektien erityismerkitykset</a> <a href='teonlaadut.html'>Teonlaadut</a></p>
+</div>
+<a href='javascript:void(0)' id='menu3' class='menulauncher' >Aspektin vaikuttavat tekijät vuorovaikutuksessa |</a>
+<div id="menu3box" class="invisible menubox">
+<p><a href='aspekti_menneen_ajan_verbimuodoilla.html'>Aspekti menneen ajan verbimuodoilla</a> <a href='aspekti_futuurisilla_verbimuodoilla.html'>Aspekti futuurin verbimuodoilla</a> <a href='imperatiivi.html'>Aspekti imperatiivissa</a> <a href='infinitiivi.html'>Aspekti infinitiivissä</a></p>
+</div>
+<a href='javascript:void(0)' id='menu4' class='menulauncher' >Liikeverbiteoria</a>
+<div id="menu4box" class="invisible menubox">
+<p><a href='liikeverbit_johdanto.html'>Johdanto</a> <a href='liikeverbit_prefikseilla.html'>Liikeverbit prefikseillä</a> <a href='Liikeverbit_ja_teonlaatu.html'>Liikeverbit ja teonlaadut</a></p>
+</div>
+<script>
+function showmenu(obj) {
+
+    // .position() uses position relative to the offset parent, 
+    var pos = $(obj).position();
+
+    // .outerWidth() takes into account border and padding.
+    var width = $(obj).outerWidth();
+    var height = $(obj).outerHeight();
+    var menuid = "#" + $(obj).attr('id') + 'box';
+
+    //show the menu directly over the placeholder
+    $(menuid).css({
+        position: "absolute",
+        top: pos.top + height + "px",
+        left: (pos.left) + "px"
+    }).show();
+    
+}
+
+$('.menulauncher').hover(function(event) {showmenu(this); });
+$('.menubox').mouseleave(function(event) {$('.menubox').hide();});
+
+</script>
+</article>
+<article class="container">
+<section class="main">
+<p class="header">
+Aspekti futuurisilla verbimuodoilla
+</p>
+<p>Tässä osiossa käsitellään aspektien, erityisesti perfektiivisen aspektin käyttäytymistä lauseissa, jotka ovat aikamuodoltaan futuurisia. Käsittelyn ulkopuolelle jäävät siis tarkoituksella preesenstapaukset, koska ainakin tiukasti tulkittuna ne liittyvät yksinomaan imperfektiivisen aspektin käyttöön.</p>
+<h1 id="huomioita-in-käytöstä-futuurissa"><span class="header-section-number">1</span> Huomioita I:n käytöstä futuurissa</h1>
+<h2 id="konkreettis-prosessuaalinen-merkitys"><span class="header-section-number">1.1</span> Konkreettis-prosessuaalinen merkitys</h2>
+<p>Perusmerkityksessään, <a href="erityismerkitykset.html#kpm">konkreettis-prosessuaalisessa</a>, imperfektiivinen aspekti esiintyy tulevaan viittaavissa tapahtumissa erityisesti, kun puhujan huomio kohdistuu toiminnan osiin tai esimerkiksi toiminnan tekijään. Esimerkissä 1 painotus on nimenomaan tekijän osallisuudessa toimintaan:</p>
+<ol style="list-style-type: decimal">
+<li>Что ты будешь завтра делать?</li>
+<li>Утром до работы буду слушать подкасты. Вечером буду играть в бадминтон.</li>
+</ol>
+<p>Kpm- erityismerkityksen käyttö on erityisen havainnollista verbeillä, joilta selkeä perfektiivisen aspektin muoto puuttuu:</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Я завтра не смогу поехать с вами на стадион, буду заниматься.</li>
+</ol>
+<p>Toinen selkeähkö tapaus ovat virkkeet, jotka sisältävät temporaalisen sivulauseen:</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Когда я буду рассказывать о поездке, покажу на экране самые удачные из наших фотографий.</li>
+</ol>
+<p>On kuitenkin huomattava, että kpm-merkityksen käyttö futuurissa on rajatumpaa kuin menneessä ajassa, ja usein niissäkin tapauksissa, joissa imperfektiivinen aspekti on mahdollinen, voitaisiin yhtä hyvin ja suurin piirtein samassa merkityksessä käyttää myös perfektiivistä aspektia. Vertaa esimerkiksi esimerkkejä 1 ja 2 esimerkkiin 5, jossa vastaus kysymykseen voi hyvin sisältää perfektiivisen aspektin verbin:</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Что будем делать завтра? - Поедем за город.</li>
+</ol>
+<h2 id="yleisesti-toteava-merkitys"><span class="header-section-number">1.2</span> Yleisesti toteava merkitys</h2>
+<p>Imperfektiivisen aspektin yleisesti toteava merkitys on mahdollinen myös aikamuodoltaan futuurisissa lauseissa. On kuitenkin huomattava, että verrattuna menneeseen aikaan ytm-merkityksen mahdollistavia käyttötilanteita on selkeästi vähemmän ja ne ovat tarkemmin rajattuja. Ajattele vaikka esimerkkiä 6, jossa verbi on menneessä ajassa. Vastaava futuurinen esimerkki (kun pyritään viittaavaan nimenomaan yhteen yksittäiseen toimintaan) ei Rassudovan <span class="citation">(1984: 105)</span> mukaan ole mahdollinen:</p>
+<ol start="6" style="list-style-type: decimal">
+<li>однажды мы уже давали вам такой совет</li>
+<li>*я буду давать вам такой совет</li>
+</ol>
+<p>Kuitenkin erityisesti kysymyksissä ytm esiintyy myös tulevaisuuteen viitattaessa:</p>
+<ol start="8" style="list-style-type: decimal">
+<li>Ты будешь ужинать?</li>
+<li>Как ты думаешь, Ханна будет в третий раз поступать в нашу магистерскую программу?</li>
+</ol>
+<p>Toinen tyypillinen konteksti ytm-merkitykselle ovat virkkeet, jotka sisältävät ehtolauseen:</p>
+<ol start="10" style="list-style-type: decimal">
+<li>Если будешь говорить с Пашей, скажи ему, что я жду от него ответа.</li>
+</ol>
+<p>Toisin sanoen, ytm on mahdollinen, kun lausuman funktiona on selkeästi sen toteaminen, tapahtuuko jokin toiminta vai ei ilman, että toiminnan luonteeseen tai muihin yksityiskohtiin kiinnitettäisiin erityistä huomiota.</p>
+<p>Usein I:n mennyttä aikaa kapeampi käyttöala näkyy siinä, että aspektien välinen kilpailu on tavallista, kuten merkitykseltän hyvin samanlaisissa lauseissa 11–12:</p>
+<ol start="11" style="list-style-type: decimal">
+<li>Я позвоню ему завтра</li>
+<li>Я буду звонить ему завтра</li>
+</ol>
+<h2 id="in-futuuriselle-käytölle-tyypillisiä-tilanteita"><span class="header-section-number">1.3</span> I:n futuuriselle käytölle tyypillisiä tilanteita</h2>
+<h3 id="aikomuksen-merkitys"><span class="header-section-number">1.3.1</span> Aikomuksen merkitys</h3>
+<p>Imperfektiivinen aspekti tuo futuurisesti käytettynä usein mukanaan sen lisämerkityksen, että toiminta on tekijän <em>aikomaa</em> tai mahdollisesti aikomaa. Näissä tapauksissa on yleensä melko helppo tehdä ero I:n ja P:n välillä. Vertaa vaikka seuraavia esimerkkejä:</p>
+<ol start="13" style="list-style-type: decimal">
+<li>Если он будет уходить, позвоните мне</li>
+<li>Если он уйдет, позвоните мне.</li>
+</ol>
+<p>Esimerkkien 13 ja 14 välillä on selkeä merkitysero: esimerkissä 14 viestin vastaanottajaa pyydetään soittamaan, jos henkilö on todella lähtenyt, kun taas esimerkissä 13 pyyntö koskee jo tilannetta, jossa henkilö näyttää olevan aikeissa lähetä. Tyypillinen aikomusta kuvaava esimerkki on myös julkisissa kulkuvälineissä todettava:</p>
+<ol start="15" style="list-style-type: decimal">
+<li>Вы будете выходить?</li>
+</ol>
+<h3 id="kielteisiä-rakenteita"><span class="header-section-number">1.3.2</span> Kielteisiä rakenteita</h3>
+<p>On olemassa eräitä kieltorakenteita, jotka tyypillisesti ilmaistaan käyttäen I:tä ja futuurista aikamuotoa. Yksi tällainen on esitety esimerkissä 16:</p>
+<ol start="16" style="list-style-type: decimal">
+<li>Не будем сегодня спорить о деньгах!</li>
+</ol>
+<p>Toinen vastaava rakenne on esitetty esimerkissä 17:</p>
+<ol start="17" style="list-style-type: decimal">
+<li>не будем участвовать в семинаре, давайте лучше пойдем гулять!</li>
+</ol>
+<h2 id="i-futuurissa-ilman-liittomuotoa"><span class="header-section-number">1.4</span> I futuurissa ilman liittomuotoa</h2>
+<p>Vaikka imperfektiivisen aspektin käyttö futuurisessa merkityksessä tavallisimmillaan tarkoittaa быть-verbin avulla muodostettua liittomuotoa, ei ole lainkaan mahdotonta ilmaista tulevaisuuteen sijoittuvaa toimintaa myös pelkällä imperfektiivisen aspektin verbillä. Tämä johtuu I:n tunnusmerkittömyydestä: siinä missä P tunnusmerkillisenä invarianttina merkityksenä ei käytännössä pysty ilmaisemaan nykyhetkeen sijoittuvaa toimintaa, voi I tunnusmerkittömänä, laajempikäyttöisenä, kuitenkin ilmaista tulevaa. Tällöin I:n käyttö vertautuu ainakin jossain määrin suomen tapaan ilmaista tulevaisuutta ilman varsinaista futuurin aikamuotoa. Oleellista on, että kontekstissa on mukana jokin ilmaus (tavallisimmin ajan adverbiaali), josta toiminnan ajankohta käy ilmi.</p>
+<ol start="18" style="list-style-type: decimal">
+<li>завтра мы едем кататься на лыжах</li>
+<li>в понедельник мы уезжаем</li>
+</ol>
+<h1 id="huomioita-pn-käytöstä-futuurissa"><span class="header-section-number">2</span> Huomioita P:n käytöstä futuurissa</h1>
+<p>Kun siirrytään puhumaan perfektiivisen aspektin käytöstä ei-menneen ajan muodoissa, P:n käyttöala laajenee (sen seurakusena, että I:n käyttöala vastaavasti kapenee). Tulevaisuuteen viittaavasta toiminnasta on usein melko selkeä määrittää, että kyseessä on yksittäinen, sisäisesti rajattu toiminta. Näin on esimerkiksi lauseissa 20–21:</p>
+<ol start="20" style="list-style-type: decimal">
+<li>Папа, ты едешь в горы? я поеду с тобой</li>
+<li>Я передам ему, что вы его ждете</li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<!--
+Myös tulevassa aikamuodossa perfektiivisen aspektin tehtävä on ilmaista
+peräkkäisiä tapahtumia:
+
+(@ee_futper) Я поднимусь, помою посуду и пойду помогать маме.
+-->
+<h2 id="pn-futuuriselle-käytölle-tyypillisiä-tilanteita"><span class="header-section-number">2.1</span> P:n futuuriselle käytölle tyypillisiä tilanteita</h2>
+<h3 id="puhujan-varmuuden-ilmaiseminen"><span class="header-section-number">2.1.1</span> Puhujan varmuuden ilmaiseminen</h3>
+<p>Siinä missä I ilmaisee futuurissa usein <em>aikomusta</em>, on P:n tehtävänä vastaavasti usein esittää toiminta puhujan arvion mukaan varmana, ehdottomasti toteutuvana. Ajattele tätä taustaa vasten seuraavia lauseita:</p>
+<ol start="22" style="list-style-type: decimal">
+<li>Не волнуйся, ты справишься с этим курсом</li>
+<li>Не волнуйся, я из тебя сделаю человека</li>
+</ol>
+<p>Jos puhuja taas on epävarma, I:n käyttö on luonteva tapa ilmaista se. I ja P voivat tällöin hyvinkin esiintyä myös samassa virkkeessä ilmaisemassa varmuuden ja epävarmuuden ristiriitaa:</p>
+<ol start="24" style="list-style-type: decimal">
+<li>Делать я, пожалуй, буду, а сделаю, не знаю</li>
+</ol>
+<h3 id="käynnissä-oleva-toiminta-luvataan-suorittaa-loppuun"><span class="header-section-number">2.1.2</span> Käynnissä oleva toiminta luvataan suorittaa loppuun</h3>
+<p>Käynnissä olevan toiminnan suorittaminen loppuun on yksi selkeä nyanssi, joka on läsnä käytettäessä P:tä futuurissa. Usein tämäntyyppisiä tilanteita esiintyy keskusteluissa, joissa toinen osapuoli odottaa toisen valmistumista:</p>
+<ol start="25" style="list-style-type: decimal">
+<li><p>Что ты так долго одеваешься?<br />
+ - Сейчас оденусь</p></li>
+<li><p>Я еще не убрал бумаги, уже убираю, сейчас уберу</p></li>
+</ol>
+<h3 id="välitön-tulevaisuus"><span class="header-section-number">2.1.3</span> Välitön tulevaisuus</h3>
+<p>Eräs tyypillinen käyttötilanne futuurin perfektiiviselle aspektille ovat tapaukset, joissa puhuja kertoo, mitä tapahtuu aivan välittömässä tulevaisuudessa, esimerkiksi, mistä hän puhuu käynnissä olevassa esitelmässään:</p>
+<ol start="27" style="list-style-type: decimal">
+<li>В своём докладе я обсужу следующие проблемы</li>
+<li>Я остнанавлюсь на следующих вопросах</li>
+</ol>
+<h2 id="pn-erityismerkityksiä-futuurissa"><span class="header-section-number">2.2</span> P:n erityismerkityksiä futuurissa</h2>
+<p>Kun puhutaan perfektiivisen aspektin käytöstä ei-menneen ajan muodoissa, yksi merkittävä aspektin käyttöä määrittävä tekijä ovat <a href="erityismerkitykset.html#hav-esim">havainnollisen esimerkin</a> erityismerkitys sekä <a href="erityismerkitykset.html#pot-em">potentiaalinen erityismerkitys</a>. Näissä erityismerkityksissä perfektiiviselle aspektille epätyypillisesti ilmaistaan toimintaa, johon voi tulkita liittyvän toistoa ja esimerkiksi kestoa ilmaisevia adverbiaaleja. Ne tuovat tavallisesti mukanaan modaalisuutta ja lisänyansseja, niin että vastaava asia voitaisiin usein ilmaista neutraalimmin imperfektiivisen aspektin muotoja käyttämällä. On myös huomattava, että se, mihin ajankohtaan verbien kuvaama toiminta näiden erityismerkitysten yhteydessä sijoittuu, on tavallista laajempi kysymys: perfektiivisen aspektin verbin voi näissä tapauksissa ainakin implisiittisesti katsoa kuvaavan paitsi konkreettisia tulevaisuuteen sijoittuvia toimintakertoja, myös enemmän tai vähemmän pysyviä ominaisuuksia tai toistuvia tapoja.</p>
+<h3 id="havainnollisen-esimerkin-erityismerkitys"><span class="header-section-number">2.2.1</span> Havainnollisen esimerkin erityismerkitys</h3>
+<p>Havainnollisen esimerkin erityismerkitys tulee usein esiin geneeris-persoonaisissa lauserakenteissa, kuten esimerkeissä 29–31:</p>
+<ol start="29" style="list-style-type: decimal">
+<li>Так не один раз мне приходится делать, и всегда при этом пожалеешь муравьев, что приготовил им лишнюю работу, но тут же и успокоишь себя мыслью: а что им стоит собрать, если их миллионы! <span class="citation">(Пришвин 1939)</span></li>
+<li>Но правда бывает разная, и правдой не всегда пробьешь путь к намеченной цели <span class="citation">(Запашный. 1998–2004)</span></li>
+<li>Я обычно, если хочу в кино, иду на Лейстер-сквер ― и всегда подберешь себе картину по вкусу. <span class="citation">(Кузнецов 2002)</span></li>
+</ol>
+<p>Toinen jossain määrin vastaava konteksti ovat rakenteet, joissa geneeris-persoonaista ehtorakennennetta seuraa ehdon vahvistava toinen lause:</p>
+<ol start="32" style="list-style-type: decimal">
+<li>Попросишь его - он все сделает</li>
+<li>Только скажешь ему - он немедленно приедет</li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<h3 id="potentiaalinen-merkitys"><span class="header-section-number">2.2.2</span> Potentiaalinen merkitys</h3>
+<p>Potentiaalisessa erityismerkityksessä verbit ovat morfologisesti futuurissa, mutta saattavat semanttiselta kannalta katsottuna ilmaista ajanjaksoa, jonka rajat ovat tavallista perfektiivisen aspektin merkitystä laajemmat. Tämä johtuu siitä, että verbeillä ilmaistaan ominaisuuksia, jotka ovat jollekulle tyypillisiä ja siten enemmän tai vähemmän pysyviä. Tutki esimerkkiä 34</p>
+<ol start="34" style="list-style-type: decimal">
+<li>Наш дедушка на все руки мастер - он и замок починит, и игрушку смастерит <span class="citation">(Rassudova 1984)</span></li>
+</ol>
+<p>Esimerkissä 34 isoisän pysyviä ominaisuuksia kuvataan yksittäisten, tulevaisuuteen sijoittuvien toimintojen valossa: jos tulee eteen tilanne, jossa tarvitaan lukon korjausta, voidaan varmuudella sanoa, että isoisä hoitaa sen.</p>
+<p>Jonkin ominaisuuden tyypillisyys voi näkyä myös käänteisesti: voi olla jollekin henkilölle ominaista olla tekemättä jotakin toimintaa, oli tilanne mikä tahansa. Myös näissä tapauksissa perfektiivisen aspektin käyttö on mahdollista:</p>
+<ol start="35" style="list-style-type: decimal">
+<li>Никогда он не шепнет ей на ушко любезность, не уберет прядку с ее лица, и ни намеком не пригласит позагорать на крыше-другой, никогда, ни под каким предлогом, боже избавь [@]</li>
+<li>«Мое главное «никогда» ― я никогда не ударю девушку <span class="citation">(факты 2004)</span></li>
+</ol>
+<p>Yksi selkeä potentiaalisen erityismerkityksen käyttötilanne ovat lisäksi tietyt kohteliaat sanonnat:</p>
+<ol start="37" style="list-style-type: decimal">
+<li>Вы не подскажете… второе терапевтическое где? <span class="citation">(Константин Худяков 2004)</span></li>
+<li>А вы не скажете, что это за музыка, Иван Афанасич? <span class="citation">(др. 2005)</span></li>
+<li>Старик тем временем открыл глаза, тяжело вдохнул и проборматал: ― Спасибо вам большое… Мне уже лучше… Вы не <span class="r">поможете</span> мне подняться? <span class="citation">(Глуховский 2005)</span></li>
+</ol>
+<p>Esimerkit 37–39 tuovat hyvin esille potentiaalisen erityismerkityksen luonteen. Tässä merkityksessä on kyse kyvystä tai mahdollisuudesta suorittaa jokin toiminta: onko kysymyksen vastaanottajalle mahdollista, pystyykö tämä kertomaan missä tietty osasto sijaitsee, mitä musiikkia kuuluu ja niin edelleen. Tätä kautta on helppo ymmärtää, miksi vastaavat pyynnöt ovat kohteliaita, sillä ne eivät suoraan velvoita pyynnön vastaanottajaa suorittamaan toimintaa vaan ainoastaan tiedustelevat, olisiko tämä mahdollista. Vertaa esimerkin 39 pyyntöä vastaavaan suoraan käskyyn:</p>
+<ol start="40" style="list-style-type: decimal">
+<li>Пожалуйста, помогите мне подняться!</li>
+</ol>
+<h2 id="modaalisuus-perfektiivisen-aspektin-futuurimuodoilla"><span class="header-section-number">2.3</span> Modaalisuus perfektiivisen aspektin futuurimuodoilla</h2>
+<p>Esimerkiksi havainnollisen esimerkin erityismerkitys ja potentiaalinen erityismerkitys tuovat tavallisesti mukanaan myös puhujan arvioita tämän esittämän lausuman totuusarvosta tai muita lisänyansseja. Perfektiivisen aspektin käyttöön ei-menneessä ajassa liittyy myös joukko muita käyttötapoja, jotka tuovat mukanaan tietynlaista modaalisuutta.</p>
+<p>Ajattele esimerkkejä 41–43:</p>
+<ol start="41" style="list-style-type: decimal">
+<li>ни за что не <span class="r">поверю</span>, что у нас, с нашими подростками нет проблем!!! <span class="citation">(Forumpost 2004)</span></li>
+<li>Сегодня во многих организациях ни за что не <span class="r">получишь</span> даже самую безобидную информацию <span class="citation">(“Витрина читающей России” 2002)</span></li>
+<li>один он все это не донесет <span class="citation">(Rassudova 1984)</span></li>
+</ol>
+<p>Edellisissä esimerkeissä perfektiivisen aspektin verbit tuovat mukanaan puhujan selkeän arvion siitä, onko verbien kuvaama toiminta todennäköistä: näissä tapauksissa P:n käyttö tuo mukanaan mahdottomuuden nyanssin. Usein tämä nyanssi tulee kyseeseen tapauksissa, jotka ovat tavallista löyhemmion sidottuja mihinkään konkreettiseen aikaan, kuten esimerkki 42.</p>
+<p>P:n mukanaan tuoma modaalisuus voi olla myös täysin päinvastaista: se voi ilmaista jonkin toiminnan <em>väistämättömyyttä</em>.</p>
+<ol start="44" style="list-style-type: decimal">
+<li>В такой духоте разболится голова!</li>
+<li>Тут заскучаешь!</li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<p>Esimerkeissä 44–ee_vaistam2 toiminta kuvataan vääjäämättömästi tapahtuvaksi perfektiivisen aspektin verbien avulla.</p>
+<p>Esimerkit 46 ja 47 puolestaan ilmaisevat tilannetta, jossa viestin kohteelta odotettaisiin tai vaadittaisiin tiettyä toimintaa, mutta jota ei kuitenkaan ole tehty:</p>
+<ol start="46" style="list-style-type: decimal">
+<li>― Что же вы не <span class="r">сядете</span>? Садитесь, прошу вас, будьте гостем <span class="citation">(Свирский 1901)</span></li>
+<li>― Так что же вы не останетесь в Киеве?</li>
+</ol>
+</section>
+</article>
+<div class="references">
+<div id="ref-ots2">
+<p>FORUMPOST 2004. Forumpost. <em>Форум: Наши дети</em>.</p>
+</div>
+<div id="ref-rassudova1984">
+<p>RASSUDOVA, O. 1984. <em>Aspectual usage in modern russian</em>. Moskova: Russky Yazyk.</p>
+</div>
+<div id="ref-vitrina">
+<p>“ВИТРИНА ЧИТАЮЩЕЙ РОССИИ” 2002. К начальству не допускать! <em>«Витрина Читающей России»</em>.</p>
+</div>
+<div id="ref-metro2033">
+<p>ГЛУХОВСКИЙ, Д. 2005. <em>Метро 2033</em>. Эксмо.</p>
+</div>
+<div id="ref-mdushfilm">
+<p>ДР., П.Л. и 2005. Дело о «мертвых душах» (фильм).</p>
+</div>
+<div id="ref-riskborb">
+<p>ЗАПАШНЫЙ., В. 1998–2004. Риск. борьба. любовь.</p>
+</div>
+<div id="ref-film2">
+<p>КОНСТАНТИН ХУДЯКОВ, Д.Р. 2004. На верхней масловке, к/ф.</p>
+</div>
+<div id="ref-kuznetsov">
+<p>КУЗНЕЦОВ, А. 2002. <em>Между гринвичем и куреневкой</em>. Захаров.</p>
+</div>
+<div id="ref-mur">
+<p>ПРИШВИН, М.М. 1939. <em>Муравьи</em>. правда.</p>
+</div>
+<div id="ref-svirsk">
+<p>СВИРСКИЙ, А.И. 1901. <em>Рыжик</em>.</p>
+</div>
+<div id="ref-argfakt">
+<p>ФАКТЫ, А. и 2004. Уроки плейбоев от иракли. <em>Аргументы И Факты</em>.</p>
+</div>
+</div>
+</body>
+</html>

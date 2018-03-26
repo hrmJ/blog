@@ -1,0 +1,779 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="finnish" xml:lang="finnish">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="../jquery-latest.js"></script>
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/theme/sky.css" id="theme">
+  <style type='text/css'>
+  
+  /* General Demo Style */
+  @import url(http://fonts.googleapis.com/css?family=Lato:300,700);
+  
+  .main {
+  	width: 100%;
+  	max-width: 960px;
+  	padding: 40px;
+  	text-shadow: 0 2px 0 rgba(255,255,255,0.7);
+  }
+  
+  .main p {
+  	font-size: 16px;
+  	line-height: 1.4;
+  	text-align: justify;
+  }
+  
+  .main p:nth-of-type(2){
+  	-moz-column-gap: 20px;
+  	-webkit-column-gap: 20px;
+  	-ms-column-gap: 20px;
+  	-o-column-gap: 20px;
+  	column-gap: 20px;
+  }
+  
+  .main p:nth-of-type(4){
+  	-moz-column-gap: 15px;
+  	-o-column-count: 3;
+  	-o-column-gap: 15px;
+  	-ms-column-count: 3;
+  	-ms-column-gap: 15px;
+  	-webkit-column-gap: 15px;
+  	column-count: 3;
+  	column-gap: 15px;
+  }
+  
+  
+  
+  html *
+  {
+     /*font-family: Arial !important;*/
+  }
+  
+  
+  p.header {
+      font-size: 46px;
+      line-height: 40px;
+      text-align:left;
+      border-bottom: 2px solid black;
+      padding-bottom:5px;
+      margin-bottom:5em;
+  }
+  
+  h1 {
+      font-size: 36px;
+      line-height: 40px;
+  }
+  
+  h2 {
+      font-size: 30px;
+      line-height: 40px;
+  }
+  
+  h3 {
+      font-size: 24px;
+      line-height: 40px;
+  }
+  
+  h4 {
+      font-size: 18px;
+      line-height: 20px;
+  }
+  
+  /* Won't be used here */
+  
+  h5 {
+      font-size: 14px;
+      line-height: 20px;
+  }
+  
+  h6 {
+      font-size: 12px;
+      line-height: 20px;
+  }
+  
+  
+  .main {
+  	counter-reset: section-1, section-2, section-3, section-4;
+  }
+  
+  .main h1 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 36px;
+  	line-height: 40px;
+  	counter-increment: section-1;
+  	counter-reset: section-2 section-3 section-4;
+  }
+  
+  .main h2 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 30px;
+  	line-height: 40px;
+  	counter-increment: section-2;
+  	counter-reset: section-3 section-4;
+  	border-bottom: 1px solid #fff;
+  	box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+  	padding-bottom: 10px;
+  }
+  
+  .main h3 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 24px;
+  	line-height: 40px;
+  	counter-increment: section-3;
+  	counter-reset: section-4;
+  }
+  
+  .main h4 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 18px;
+  	line-height: 20px;
+  	counter-increment: section-4;
+  }
+  
+  a:link{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:active{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:visited{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:hover{
+  color:#000000;
+  text-decoration:underline;
+  }
+  
+  #TOC{
+  position:absolute;
+  width:17%;
+  font-size:89%;
+  margin-top:30px;
+  /*height:70%;*/
+  /*box-shadow: 3px 7px 5px 0px;*/
+  padding:5px;
+  overflow:auto;
+  /*border-radius:10px;
+  border: 1px black dashed;*/
+  }
+  
+  #TOC > ul{
+  list-style-type: none;
+  }
+  
+  
+  #TOC ul
+  {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  }
+  
+  #TOC a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #036;
+  /*width: 9em;*/
+  padding: 3px 12px 3px 8px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: bold;
+  }
+  
+  #TOC a:hover
+  {
+  background-color: #369;
+  color: #FFF;
+  }
+  
+  #TOC li li a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #69C;
+  /*width: 9em;*/
+  padding: 3px 3px 3px 17px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: normal;
+  }
+  
+  
+  .container{
+      height: 100%;
+      margin-top: 50px;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 9%;
+      padding-top: 10%;
+      background: white;
+      border-radius:25px;
+      }
+  
+  .references{
+      margin-top: 2%;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      background: white;
+      }
+  
+  
+  
+  #topbar{
+  position:absolute;
+  top:0;
+  left:-20px;
+  /*background:yellow;*/
+  background-color: #C5A05B;
+  margin-bottom:10px;
+  padding-left:25px;
+  /*
+  padding-right:25px;
+  padding-top:5px;
+  */
+  padding-bottom:2px;
+  border-bottom: 1px dashed white;
+  border-right: 1px dashed white;
+  }
+  
+  .r {color:red;}
+  .b {color:blue;}
+  .g {color:grey;}
+  .gre {color:green;}
+  
+  .definition {
+      background: beige;
+      /*background: #DABC83;*/
+      padding-left: 1px;
+      margin-left: 2em;
+      padding-right: 1px;
+  }
+  
+  .defheader{
+      width: 100%;
+      /* padding-right: 10px; */
+      /* margin-right: 10px; */
+      border-bottom: 1px dashed black;
+      background: aliceblue;
+      /*background: #B0D0EC;*/
+  }
+  
+  .definition > p {
+      /* color: red; */
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 1em;
+      font-style: italic;
+  }
+  
+  article.bubble{
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 2em;
+  border-radius: 7px;
+  margin-left: 14px;
+  color:black;
+  }
+  
+  
+  article.bubblenob{
+  float: left;
+  width:30%;
+  }
+  
+  
+  article.mmbubble{
+  text-align: left;
+  border: 2px dotted black;
+  padding: 4px;
+  border-radius: 7px;
+  margin:1%;
+  color:black;
+  }
+  
+  article.nfbubble{
+  font-size:90%;
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 1.5em;
+  border-radius: 7px;
+  margin:4%;
+  box-shadow: 10px 10px 5px #888888;
+  color:black;
+  }
+  
+  article.bgred{background: rgba(222, 184, 135, 0.64);}
+  article.bgblue{background: rgba(100, 149, 237, 0.45);}
+  article.bggreen{background: darkseagreen;}
+  article.bgcyan{background: rgba(255, 215, 0, 0.25);}
+  
+  span#triangle {
+      display: inline-block;
+      margin: 72px;
+      border-right: 24px solid; border-bottom: 24px solid;
+      width: 50px; height: 50px;
+      transform: rotate(-45deg);
+  }
+  
+  span.right-arrow {
+      display: inline-block;
+      position: relative;
+      background: #E8EFED;
+      padding: 3px;
+  }
+  
+  span.right-arrow:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      margin-top: -10px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid #151514;
+  }
+  
+  span.afterarrow {
+      background: rgb(193, 243, 255);
+      margin-left: 9px;
+      padding: 3px;
+  }
+  
+  article#tocmain{
+  background:none;
+  }
+  
+  #topbar a:hover{
+  background-color: #8A6C34;
+  color: #FFF;
+  }
+  
+  #topbar a{
+  padding:3px;
+  color: #FFF;
+  text-decoration: none;
+  /*border-right:1px dashed white;*/
+  }
+  
+  #inlinemenu{
+  padding:0;
+  margin:0;
+  }
+  
+  .inline{
+  display:inline;
+  }
+  
+  #topbar li{list-style-type: none;
+      line-height:130%;
+  }
+  
+  a.dropdown-link { 
+      color:#044264;
+      text-decoration:none; 
+  }
+  
+  ul#quotes-bar-menu {
+      margin: 0; padding: 0;
+      float:left;
+      width: 100%;
+      list-style: none;
+  }
+  
+  ul#quotes-bar-menu li {
+      display:inline;
+      float:left;
+      position:relative;
+      margin:0;
+      padding:7px 15px 7px 0;
+  }
+  
+  /* sub menu class */
+  ul#quotes-bar-menu li .sub-menu {
+      background-color: #C5A05B;
+      display:none;
+      left:0;
+      margin:0;
+      font-size:11;
+      padding:0;
+      position:absolute;
+      top:29px;
+      width:320px;
+      z-index:999;
+  }
+  
+  ul#quotes-bar-menu li .single { 
+      /*width:150px !important;*/
+  }
+  
+  ul#quotes-bar-menu li{
+      color:#fff;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu ul {
+      float:left;
+      list-style:none;
+      display: block;
+      width:205px;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li {
+      width:135px;
+      margin:0; 
+      font-size:11px;
+      padding:1px 1px 0;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li a { color: white;
+  text-decoration: none;
+  }
+  ul#quotes-bar-menu li .sub-menu li a:hover { text-decoration: none; }
+  
+  
+  .invisible{
+  display:none;
+  }
+  .menubox{
+      background-color: #C5A05B;
+      padding: 0.12em;
+      border: 1px dashed white;
+      padding-left: 0.5em;
+  }
+  
+  
+  #topbar .menulauncher a{
+  border-right: 1px dashed white;
+  padding-right:3px;
+  }
+  
+  .menubox a{
+  width:80%;
+  display:inline-block;
+  margin-bottom:1%;
+  padding:0.2em;
+  cursor: pointer; cursor: hand;
+  font-family: arial;
+  font-size: 12;
+  text-decoration: underline;
+  }
+  </style>
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#duratiiviset-liikeverbit"><span class="toc-section-number">1</span> Duratiiviset liikeverbit</a></li>
+<li><a href="#iteratiiviset-liikeverbit"><span class="toc-section-number">2</span> Iteratiiviset liikeverbit</a><ul>
+<li><a href="#semelfaktiivinen-teonlaatu"><span class="toc-section-number">2.1</span> Semelfaktiivinen teonlaatu</a><ul>
+<li><a href="#läheisiä-merkityksiä"><span class="toc-section-number">2.1.1</span> Läheisiä merkityksiä</a></li>
+</ul></li>
+<li><a href="#muita-teonlaatuja"><span class="toc-section-number">2.2</span> Muita teonlaatuja</a><ul>
+<li><a href="#delimitatiivinen-teonlaatu"><span class="toc-section-number">2.2.1</span> Delimitatiivinen teonlaatu</a></li>
+<li><a href="#perduratiivinen-teonlaatu"><span class="toc-section-number">2.2.2</span> Perduratiivinen teonlaatu</a></li>
+<li><a href="#saturatiivinen-teonlaatu"><span class="toc-section-number">2.2.3</span> Saturatiivinen teonlaatu</a></li>
+<li><a href="#inkoatiivinen-teonlaatu"><span class="toc-section-number">2.2.4</span> Inkoatiivinen teonlaatu</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<article id="topbar">
+<a href='javascript:void(0)' id='menu1' class='menulauncher' >Aspekti- ja liikeverbiteoria |</a>
+<div id="menu1box" class="invisible menubox">
+<p><a href='../index.html'>Sisällys</a> <a href='kurssin_esittely.html'>Kurssin esittely</a> <a href='kurssin_aikataulu.html'>Kurssin aikataulu</a> <a href='https://learning2.uta.fi/course/view.php?id=7339'>Moodle</a></p>
+</div>
+<a href='javascript:void(0)' id='menu2' class='menulauncher' >Aspekti |</a>
+<div id="menu2box" class="invisible menubox">
+<p><a href='invariantit_merkitykset.html'>Aspektuaalisuus ja aspektin invariantit merkitykset</a> <a href='aspektin_muodostus.html'>Aspektin/aspektiparin muodostaminen sekä aspektin valintaan vaikuttavat tekijät</a> <a href='erityismerkitykset.html'>Aspektien erityismerkitykset</a> <a href='teonlaadut.html'>Teonlaadut</a></p>
+</div>
+<a href='javascript:void(0)' id='menu3' class='menulauncher' >Aspektin vaikuttavat tekijät vuorovaikutuksessa |</a>
+<div id="menu3box" class="invisible menubox">
+<p><a href='aspekti_menneen_ajan_verbimuodoilla.html'>Aspekti menneen ajan verbimuodoilla</a> <a href='aspekti_futuurisilla_verbimuodoilla.html'>Aspekti futuurin verbimuodoilla</a> <a href='imperatiivi.html'>Aspekti imperatiivissa</a> <a href='infinitiivi.html'>Aspekti infinitiivissä</a></p>
+</div>
+<a href='javascript:void(0)' id='menu4' class='menulauncher' >Liikeverbiteoria</a>
+<div id="menu4box" class="invisible menubox">
+<p><a href='liikeverbit_johdanto.html'>Johdanto</a> <a href='liikeverbit_prefikseilla.html'>Liikeverbit prefikseillä</a> <a href='Liikeverbit_ja_teonlaatu.html'>Liikeverbit ja teonlaadut</a></p>
+</div>
+<script>
+function showmenu(obj) {
+
+    // .position() uses position relative to the offset parent, 
+    var pos = $(obj).position();
+
+    // .outerWidth() takes into account border and padding.
+    var width = $(obj).outerWidth();
+    var height = $(obj).outerHeight();
+    var menuid = "#" + $(obj).attr('id') + 'box';
+
+    //show the menu directly over the placeholder
+    $(menuid).css({
+        position: "absolute",
+        top: pos.top + height + "px",
+        left: (pos.left) + "px"
+    }).show();
+    
+}
+
+$('.menulauncher').hover(function(event) {showmenu(this); });
+$('.menubox').mouseleave(function(event) {$('.menubox').hide();});
+
+</script>
+</article>
+<article class="container">
+<section class="main">
+<p class="header">
+Liikeverbit ja teonlaadut
+</p>
+<p>Jo edellä puhuttaessa etuliitteellisten liikeverbien muodostuksesta kävi ilmi, että myös liikeverbit voivat muodostaa teonlaatuja. Seuraavassa tarkastellaan lähinnä A.V. Isachenkon <span class="citation">(2014)</span> esityksen pohjalta, miten teonlaatujen käsite suhtautuu toisaalta duratiivisiin ja toisaalta iteratiivisiin liikeverbeihin.</p>
+<h1 id="duratiiviset-liikeverbit"><span class="header-section-number">1</span> Duratiiviset liikeverbit</h1>
+<p>Duratiivisten liikeverbien teonlaatuja tarkasteltaessa huomio keskittyy по-etuliitteellisiin verbimuotoihin. Kuten <a href="teonlaadut.html#inkoatiivinen-начинательный-teonlaatu">aspektien teonlaaduista yleensä</a> puhuttaessa kävi ilmi, по-prefiksi on yksi inkoatiiviseen teonlaatun johtavista etuliitteistä ja pääasiassa tuottaa inkoatiivisia verbejä juuri duratiivisista liikeverbeistä. По-etuliitteisten duratiivisten liikeverbien merkitys ja käyttö ovat kuitenkin moniselitteisempiä ilmiöitä kuin pelkkä ajatus toiminnan alkamisesta. Näillä liikeverbeillä ei ole aspektiparia, mikä myös korostaa verbien statusta nimenomaan tietyn teonlaadun edustajina (vrt. <a href="teonlaadut.html">keskustelu teonlaatujen aspektipareista</a>).</p>
+<p>Inkoatiivinen merkitys näkyy niin menneen ajan muodoilla kuin futuurimuodoillakin. Esimerkissä 1 пошел-verbimuoto merkitsee nimenomaan liikkeen alkamista, samoin kuin seuraavan esimerkin futuurinen <em>поедет</em>:</p>
+<ol style="list-style-type: decimal">
+<li>Григорий взял котелок и <em>пошел</em> к реке, чтобы зачерпнуть свеженькой воды и проверить снасти <span class="citation">(www.rulit.org n.d.-a)</span></li>
+<li>– Он вернётся завтра утром и <em>поедет</em> вот по этому медному мосту, - сказала девушка <span class="citation">(skazkapro.net n.d.)</span></li>
+</ol>
+<p>Inkoatiivisyys ei kuitenkaan ole ainoa funktio, jossa по-etuliitteelliset duratiiviset verbit menneessä ajassa toimivat: niihin saattaa liittyä myös yleisesti perfektiivisen aspektin ominaisuuksiin kuuluva ajatus tuloksen voimassaolosta. Tämä näkyy esimerkeissä 3–4, joissa пойти-verbin preteritimuoto ilmaisee, ettei liikkeen subjekti ole puhehetkellä paikalla.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Батьки нет дома, он пошел в лавочку за дратвой <span class="citation">(Беляев 1940)</span></li>
+<li>Посмотрел Алёшка ― никого нет, все спать пошли <span class="citation">(Житков 1931)</span></li>
+</ol>
+<p>Ajatukseen liikkeen alkamisesta liittyy myös ajatus liikkeen laadun, esimerkiksi nopeuden, muuttumisesta, jota по-etuliitteelliset идти-tyypin verbit myös ilmaisevat, kuten seuraavassa esimerkissä:</p>
+<ol start="5" style="list-style-type: decimal">
+<li>штык не проколол мешка, а только толкнул немца в спину, отчего он <em>побежал</em> быстрее, а я, остановленный выпадом, принуждён был догонять его ещё раз. <span class="citation">(www.dk1868.ru n.d.)</span></li>
+</ol>
+<p>Inkoatiivisen teonlaadun lisäksi duratiiviset liikeverbit eivät juuri edusta muita teonlaatuja. Sen sijaan iteratiivisista liikeverbeistä muodostettavien teonlaatujen määrä on runsas.</p>
+<h1 id="iteratiiviset-liikeverbit"><span class="header-section-number">2</span> Iteratiiviset liikeverbit</h1>
+<p>Isachenko <span class="citation">(2014: 323)</span> mainitsee koko joukon iteratiivisista liikeverbeistä muodostettavia teonlaatuja, mukaanlukien harvinaisia tapauksia, joita tavataan melkeinpä yksinomaan liikeverbeillä (kuten muodot <em>расхаживать</em> ja <em>похаживаться</em>). Tässä kiinnitetään kuitenkin huomiota vain merkittävimpiin ja käytöltään yleisiin teonlaatuihin. <strong>Kaikki tässä kuvatut teonlaadut edustavat perfektiivistä aspektia</strong>.</p>
+<h2 id="semelfaktiivinen-teonlaatu"><span class="header-section-number">2.1</span> Semelfaktiivinen teonlaatu</h2>
+<p>Ehkä tärkein iteratiivisten verbien edustama teonlaatu on <a href="teonlaadut.html#momentaaninen-одноактныйонднократный-teonlaatu">edellä</a> suomeksi <em>momentaaniseksi</em> nimitetty teonlaatu, josta tässä yhteydessä olisi selkeämpää käyttää venäjänkielistä nimitystä <em>однократный способ действия</em> tai nimitystä <em>semelfaktiivinen teonlaatu</em> <span class="citation">(ks. Batiukova 2005: 7)</span>. Semelfaktiiviset verbit ilmaisevat toiminnan kertaluontoisuutta, niin että toiminnasta, joka tavallisesti koostuu useasta toistokerrasta tai vaiheesta, erotetaan yksi konkreettinen toteutuma. Iteratiivisten liikeverbien yhteydessä tämä tarkoittaa kaksivaiheisen (liike pois + liike takaisin) toiminnan kuvaamista yhtenä liikkeenä. Siinä missä tämän teonlaadun tyypillisin muodostustapa on ну-suffiksi, lisätään iteratiivisten liikeverbien tapauksessa verbivartalon eteen с-prefiksi:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Iteratiivinen liikeverbi</th>
+<th align="left">Semelfaktiivinen teonlaatu</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">ходить</td>
+<td align="left">сходѝть</td>
+</tr>
+<tr class="even">
+<td align="left">носить</td>
+<td align="left">сносѝть</td>
+</tr>
+<tr class="odd">
+<td align="left">ездить</td>
+<td align="left">съѐздить</td>
+</tr>
+<tr class="even">
+<td align="left">летать</td>
+<td align="left">слета́ть</td>
+</tr>
+<tr class="odd">
+<td align="left">бегать</td>
+<td align="left">сбѐгать</td>
+</tr>
+<tr class="even">
+<td align="left">плавать</td>
+<td align="left">спла́вать</td>
+</tr>
+<tr class="odd">
+<td align="left">водить</td>
+<td align="left">сводѝть</td>
+</tr>
+<tr class="even">
+<td align="left">возить</td>
+<td align="left">свозѝть</td>
+</tr>
+<tr class="odd">
+<td align="left">лазить</td>
+<td align="left">сла́зить</td>
+</tr>
+</tbody>
+</table>
+<p>Muodostettaessa teonlaatuja iteratiivisista verbeistä, <a href="liikeverbit_prefikseilla.html#isachenkon-muodostusteoria">Isachenkon muodostusteoria</a> on vahvimmillaan ja toimii vähintäänkin hyvänä muistisääntönä sille, miten teonlaatuja edustavat muodot erotetaan aspektiparillisista prefiksillisistä liikeverbimuodoista. Esimerkiksi semelfaktiivista teonlaatua edustava <em>сбѐгать</em> on helppo käsittää muodostetuksi suoraan бѐгать-verbistä с-prefiksillä, kun taas jos <em>сбега́ть</em>-verbin katsoo johdokseksi <em>сбежа́ть</em>-verbistä, painon säilyminen a:lla on helppo ymmärtää. Vielä selkeämmin спла́вать voidaan Isachenkon teorian valossa ymmärtää muodostetuksi suoraan iteratiivisesta <em>пла́вать</em>-verbistä (vrt. aspektiparillinen imperfektiivinen <em>сплывать</em>). Kaikkien verbien kanssa aspektiparilliset, etuliitteelliset verbimuodot eivät ulkoisesti kuitenkaan eroa aspektiparittomista teonlaatuja edustavista verbimuodoista, vaan syntyy homonyymeja (kuten сходѝть–сходѝть).</p>
+<p>Esimerkit 6–9 antavat viimein käytännön kuvan semelfaktiivisten iteratiivisten verbien toiminnasta:</p>
+<ol start="6" style="list-style-type: decimal">
+<li>Ну, я <em>сбегал</em> в видеосалон, быстренько просмотрел пару боевиков, возвращаюсь, а их нет <span class="citation">(www.rmes.minsk.by n.d.)</span></li>
+<li>В свою бытность священноиноком Даниил возложил на себя редкий подвиг – ночью тайно выходил из обители, искал по городу и дорогам внезапно умерших и убитых, <em>сносил</em> их тела в особую городскую скудельницу <span class="citation">(www.nsad.ru n.d.)</span></li>
+<li>Купил два конверта и написал в Аиртав Лёхе Матвееву, чтобы <em>сходил</em> к деду моему и объяснил, пусть тот не волнуется, я уехал в Ташкент, другого пути у меня нет <span class="citation">(www.rulit.org n.d.-b)</span></li>
+<li>Сегодня <em>съездила</em> в треннажерку и поехала к Серёже <span class="citation">(zeldo4ka.livejournal.com n.d.)</span></li>
+</ol>
+<p>Isachenko <span class="citation">(Исаченко 2014: 324)</span> huomauttaa semelfaktiivisten liikeverbien käytöstä, että niihin liittyy aina eksplisiittisesti liike kahteen suuntaan. Liikkeen subjekti ei siis voi puhehetkellä sijaita paikassa, johon liike kohdistui – esimerkin 6 subjekti ei voi puhehetkellä olla elokuvateatterissa jne. Toisin kuin aspektiparillisten prefiksillisten liikeverbimuotojen yhteydessä, joilla verbiparin ero ei niinkään ole liikkeen suunnassa vaan verbin aspektissa, on teonlaatumuodoista puhuttaessa muistettava, että verbi säilyttää toiminnan luonteen sellaisena kuin se on myös ilman prefiksiä.</p>
+<h3 id="läheisiä-merkityksiä"><span class="header-section-number">2.1.1</span> Läheisiä merkityksiä</h3>
+<p>Semelfaktiiviset liikeverbit ovat merkitykseltään usein läheisiä tai miltei identtisiä eräiden muiden verbimuotojen kanssa. Voidaankin tarkastella kolmea merkityksiltään limittyvää verbiryhmää:</p>
+<ol style="list-style-type: decimal">
+<li>По-etuliitteiset duratiiviset verbit (infinitiivissä)</li>
+<li>Semelfaktiiviset (с-etuliitteiset iteratiiviset verbit)</li>
+<li>Etuliitteettömät iteratiiviset verbit</li>
+</ol>
+<p>Katsotaan ensin ryhmien 2 ja 3 välistä yhteneväisyyttä vertailemalla lauseita 10 ja 11:</p>
+<ol start="10" style="list-style-type: decimal">
+<li>Я сегодня <em>ходил</em> в город</li>
+<li>Я сегодня <em>сходил</em> в город</li>
+</ol>
+<p>Molemmat lauseet ilmaisevat toiminnan kaksisuuntaisena, menneisyydessä tapahtuneena liikkeenä jalan. Isachenkon <span class="citation">(2014: 324)</span> mukaan lauseiden välillä on kuitenkin ero siinä, että jälkimmäinen esimerkki korostaa toiminnan kertaluonteisuutta. Voisi myös ajatella, että puhujan suhde tapahtumaan on esimerkissä 11 jossain mielessä välinpitämättömämpi: ennemminkin painottuu liikkeellä voimaan saatettu tulos (vrt. <a href="erityismerkitykset.html#perfektin-merkitys">perfektin erityismerkitys</a>), esimerkiksi jokin kaupungista tuotu tavara tai muu. Tämä näkyy siinä, että usein semelfaktiivista verbiä käytetään yhdessä за-preposition kanssa kuvaamaan jonkin objektin hakemista:</p>
+<ol start="12" style="list-style-type: decimal">
+<li>Затем <em>сходил</em> в сарай за топором и быстро нарубил щепы <span class="citation">(Pasternak 2003)</span></li>
+<li>Однажды инженер Иванов решил <em>сходить</em> за кефиром. <span class="citation">(lx-v88.diary.ru n.d.)</span></li>
+<li>Вокруг лес. Есть возможность <em>сходить</em> за грибами. <span class="citation">(lubimaya-dacha.ru n.d.)</span></li>
+</ol>
+<p>Ryhmien 1 ja 2 välillä merkitysten läheisyys koskee ennen kaikkea infinitiivimuotoja. Vertaa esimerkiksi seuraavia lauseita:</p>
+<ol start="15" style="list-style-type: decimal">
+<li>– Особенно нет, но к восьми мне надо быть уже в городе, хочу <em>пойти</em> в кино. <span class="citation">(Домбровский 1964)</span></li>
+<li>– Ты не хочешь <em>сходить</em> в кино? <span class="citation">(zavalinka.sane4ka.ru n.d.)</span></li>
+<li>– Хотите <em>пойти</em> в музей? Ну его к чёрту! <span class="citation">(Аксенов 1961)</span></li>
+<li>– Завтрак кончился, и мы с Эллиотом скоро ушли. Я еще раньше говорил ему, что хочу <em>сходить</em> в музей, и он вызвался меня сопровождать. <span class="citation">(nkozlov.ru n.d.)</span></li>
+</ol>
+<p>Jälleen voisi ajatella, että Semelfaktiivisilla verbeillä ilmaistaessa puhuja ikään kuin antaa itse toiminnalle vähemmän painoarvoa ja korostaa toiminnan kertaluontoisuutta / momentaanisuutta.</p>
+<h2 id="muita-teonlaatuja"><span class="header-section-number">2.2</span> Muita teonlaatuja</h2>
+<p>Tarkastellaan semelfaktiivisen teonlaadun lisäksi neljää muuta jo aiemmin käsiteltyä teonlaatua ja niiden esiintymistä iteratiivisilla liikeverbeillä.</p>
+<h3 id="delimitatiivinen-teonlaatu"><span class="header-section-number">2.2.1</span> Delimitatiivinen teonlaatu</h3>
+<p>Kuten <a href="teonlaadut.html#delimitatiivinen-онграничительный-teonlaatu">edellä</a> on todettu, delimitatiivinen teonlaatu ilmaisee toiminnan suorittamisesta jonkin rajatun, usein lyhyen ajan verran. Kuten muillakin verbeillä, iteratiivisilla liikeverbeillä delimitatiivinen teonlaatu muodostetaan по-etuliitteen avulla. Onkin tärkeä huomata, että</p>
+<ol style="list-style-type: decimal">
+<li>по + duratiivinen liikeverbi = perfektiivinen, (yleensä) inkoatiivista teonlaatua edustava aspektipariton verbi</li>
+<li>по + iteratiivinen liikeverbi = perfektiivinen, delimitatiivista teonlaatua edustava aspektipariton verbi</li>
+</ol>
+<p>Näin ollen esimerkiksi verbit <em>поносить</em>, <em>поездить</em>, <em>покататься</em>, <em>походить</em> ja muut vastaavat ilmaisevat liikkeen suorittamista jonkin aikaa vailla määriteltyä suuntaa (jälleen kerran teonlaatun muodostamisenkin jälkeen liikeverbin toiminnan luonne pysyy samana). Tarkastele tähän liittyen seuraavia esimerkkejä:</p>
+<ol start="19" style="list-style-type: decimal">
+<li>Поскольку жизнь в квартире для растущих детей ограничивает их. Им нужен простор, где побѐгать , попрыгать, покричать и т.д <span class="citation">(sozidatel.org n.d.)</span></li>
+<li>И у меня еще один вопрос: если просто <em>поплавать</em> в бассейне, то это платно или бесплатно? <span class="citation">(www.sanrussia.ru n.d.)</span></li>
+<li>Приехали в Хельсинки, <em>поездили</em> по городу на автобусе, побывали в соборе в скале, а потом поехали в аквапарк <span class="citation">(www.grandtour.ru n.d.)</span></li>
+</ol>
+<h3 id="perduratiivinen-teonlaatu"><span class="header-section-number">2.2.2</span> Perduratiivinen teonlaatu</h3>
+<p>Myös perduratiivinen teonlaatu on liikeverbeillä tavallinen. Kuten <a href="teonlaadut.html#Perduratiivinen#perduratiivinen-пердуративныйдлительно-ограничительный">edellä käsitellystä</a> voi muistaa, perduratiivinenkin teonlaatu liittyy toiminnan suorittamisajan rajaamiseen, niin että tavallisesti mukana on myös suorittamisajan eksplisiittisesti kertova adverbiaali. Muodostimena toimii про-prefiksi.</p>
+<ol start="22" style="list-style-type: decimal">
+<li>Вы можете много лет <em>проездить</em> на мощных автомобилях и ни разу в жизни не надавить педаль газа до пола. <span class="citation">(www.7budget.ru n.d.)</span></li>
+<li>Так всю ночь и прокатались взад-вперед. <span class="citation">(www.fatheralexander.org n.d.)</span></li>
+</ol>
+<p>Huomaa, että pro-prefiksi liitettynä duratiivisiin liikeverbeihin tuottaa samantyyppisen, joskaan ei varsinaisesti perduratiivisen merkityksen: liikutun etäisyyden mittaaminen:</p>
+<ol start="24" style="list-style-type: decimal">
+<li>К трем часам пополудни <em>проехали</em> шестьдесят километров — это после семи часов пути с несколькими короткими остановками! <span class="citation">(www.vokrugsveta.ru n.d.)</span></li>
+</ol>
+<h3 id="saturatiivinen-teonlaatu"><span class="header-section-number">2.2.3</span> Saturatiivinen teonlaatu</h3>
+<p><a href="teonlaadut.html#saturatiivinen">Saturatiivinen teonlaatu</a> ilmaisee jonkin toiminnan tekemistä, kunnes toiminnan suorittaja on saanut siitä tarpeekseen. Tällainen tilanne ei ole lainkaan poissuljettu liikeverbeilläkään, vaan esimerkiksi verbit <em>наездиться</em>, <em>наплаваться</em> ym. ovat täysin mahdollisia. Kuten esimerkeistä käy ilmi, muodostus tapahtuu liittämällä на-prefiksi ja ся-suffiksi iteratiivisen liikeverbin vartaloon, niin että muodostuu perfektiivisen aspektin aspektipariton verbi.</p>
+<ol start="25" style="list-style-type: decimal">
+<li>Остаток дня мы провели на пляже. Все вдоволь <em>наплавались</em>.</li>
+<li>Также те, кто «<em>наездился</em>» на КАМАЗах говорят, что HOWO выигрывает за счет большого объемного кузова и высокой грузоподъемности. <span class="citation">(www.kg99.ru n.d.)</span></li>
+</ol>
+<h3 id="inkoatiivinen-teonlaatu"><span class="header-section-number">2.2.4</span> Inkoatiivinen teonlaatu</h3>
+<p>Lopuksi on syytä todeta, että myös iteratiivisista verbeistä voidaan muodostaa inkoatiivisen teonlaadun verbejä. Ei kuitenkaan ole syytä ajatella, että näin muodostettavat verbit olisivat jollain tavoin duratiivisista verbeistä muodostettavien inkoatiivisten по-verbien pareja, vaan kyseessä on oma erillinen verbijoukkonsa. Iteratiivisilla liikeverbeillä inkoatiivisen teonlaadun muodostimena toimii за-prefiksi <span class="citation">(vrt. Batiukova 2005: 5)</span>. Kuten seuraavasta esimerkistä havaitaan, kyse on suunnaltaan määrittelemättömän liikkeen aloittamisesta:</p>
+<ol start="27" style="list-style-type: decimal">
+<li>Ганец встал и <em>заходил</em> по комнате, потом поднял трубку и заговорил с кем-то. <span class="citation">(planetguide.ru n.d.)</span></li>
+</ol>
+</section>
+</article>
+<div class="references">
+<div id="ref-batiukova2005aspectual">
+<p>BATIUKOVA, O. 2005. Aspectual function of russian verbal affixes. <em>Pierrette Bouillon Y Kyoko Kanzaki (Eds.)</em>, 36–45.</p>
+</div>
+<div id="ref-lubimaya-dacharu">
+<p>LUBIMAYA-DACHA.RU (n.d.) Lubimaya-dacha.ru. &lt;<a href="http://lubimaya-dacha.ru/ishhem-sosedey.html/" class="uri">http://lubimaya-dacha.ru/ishhem-sosedey.html/</a>&gt;</p>
+</div>
+<div id="ref-lx-v88diaryru">
+<p>LX-V88.DIARY.RU (n.d.) Lx-v88.diary.ru. &lt;<a href="http://lx-v88.diary.ru/?from=60" class="uri">http://lx-v88.diary.ru/?from=60</a>&gt;</p>
+</div>
+<div id="ref-nkozlovru">
+<p>NKOZLOV.RU (n.d.) Nkozlov.ru. &lt;<a href="http://nkozlov.ru/library/s223/d4299/" class="uri">http://nkozlov.ru/library/s223/d4299/</a>&gt;</p>
+</div>
+<div id="ref-elizarov">
+<p>PASTERNAK 2003. <em>Михаил елизаров</em>.</p>
+</div>
+<div id="ref-planetguideru">
+<p>PLANETGUIDE.RU (n.d.) Planetguide.ru. &lt;<a href="http://planetguide.ru/krugosvetka/entry/477/" class="uri">http://planetguide.ru/krugosvetka/entry/477/</a>&gt;</p>
+</div>
+<div id="ref-skazkapro">
+<p>SKAZKAPRO.NET (n.d.) Skazkapro. &lt;<a href="http://skazkapro.net/publ/skazki_po_avtoram/rouling_dzhoan/garri_potter_i_dary_cmerti_glava_30/30-1-0-983" class="uri">http://skazkapro.net/publ/skazki_po_avtoram/rouling_dzhoan/garri_potter_i_dary_cmerti_glava_30/30-1-0-983</a>&gt;</p>
+</div>
+<div id="ref-sozidatelorg">
+<p>SOZIDATEL.ORG (n.d.) Sozidatel.org. &lt;<a href="http://sozidatel.org/obchestvo/2558-mnogodetnaya-semya-primer-iz-zhizni.html" class="uri">http://sozidatel.org/obchestvo/2558-mnogodetnaya-semya-primer-iz-zhizni.html</a>&gt;</p>
+</div>
+<div id="ref-www7budgetru">
+<p>WWW.7BUDGET.RU (n.d.) Www.7budget.ru. &lt;<a href="http://www.7budget.ru/detail.php?ID=202599" class="uri">http://www.7budget.ru/detail.php?ID=202599</a>&gt;</p>
+</div>
+<div id="ref-wwwdk1868ru">
+<p>WWW.DK1868.RU (n.d.) Www.dk1868.ru. &lt;<a href="http://www.dk1868.ru/history/igor/reingart.htm" class="uri">http://www.dk1868.ru/history/igor/reingart.htm</a>&gt;</p>
+</div>
+<div id="ref-wwwfatheralexanderorg">
+<p>WWW.FATHERALEXANDER.ORG (n.d.) Www.fatheralexander.org. &lt;<a href="http://www.fatheralexander.org/booklets/russian/duhovnoe_probuzhdenie_1_paisij_eznepidis.htm" class="uri">http://www.fatheralexander.org/booklets/russian/duhovnoe_probuzhdenie_1_paisij_eznepidis.htm</a>&gt;</p>
+</div>
+<div id="ref-wwwgrandtourru">
+<p>WWW.GRANDTOUR.RU (n.d.) Www.grandtour.ru. &lt;<a href="http://www.grandtour.ru/rassilka/kuda_segodnya_edut_otdykhat_i_pochemu_/38/kuda_segodnya_edut_otdykhat_i_pochemu_luchshego_mesta_ne_najjti/1202/" class="uri">http://www.grandtour.ru/rassilka/kuda_segodnya_edut_otdykhat_i_pochemu_/38/kuda_segodnya_edut_otdykhat_i_pochemu_luchshego_mesta_ne_najjti/1202/</a>&gt;</p>
+</div>
+<div id="ref-wwwkg99ru">
+<p>WWW.KG99.RU (n.d.) Www.kg99.ru. &lt;<a href="http://www.kg99.ru/howo.html" class="uri">http://www.kg99.ru/howo.html</a>&gt;</p>
+</div>
+<div id="ref-wwwnsadru">
+<p>WWW.NSAD.RU (n.d.) Www.nsad.ru. &lt;<a href="http://www.nsad.ru/articles/sorok-veruyushhih-lyudej-pereslavlya-zalesskogo" class="uri">http://www.nsad.ru/articles/sorok-veruyushhih-lyudej-pereslavlya-zalesskogo</a>&gt;</p>
+</div>
+<div id="ref-wwwrmesminskby">
+<p>WWW.RMES.MINSK.BY (n.d.) Www.rmes.minsk.by. &lt;<a href="http://www.rmes.minsk.by/mediateka/stati/item/127-%D0%BE%D0%BD%D0%B0-%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B8%D1%82-%D0%B4%D0%B0%D0%B2%D0%B0%D0%B9-%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%B5%D0%BC%D1%81%D1%8F-%D0%B4%D1%80%D1%83%D0%B7%D1%8C%D1%8F%D0%BC%D0%B8-%D1%87%D1%82%D0%BE-%D1%81-%D1%8D%D1%82%D0%B8%D0%BC-%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C">http://www.rmes.minsk.by/mediateka/stati/item/127-%D0%BE%D0%BD%D0%B0-%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B8%D1%82-%D0%B4%D0%B0%D0%B2%D0%B0%D0%B9-%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%B5%D0%BC%D1%81%D1%8F-%D0%B4%D1%80%D1%83%D0%B7%D1%8C%D1%8F%D0%BC%D0%B8-%D1%87%D1%82%D0%BE-%D1%81-%D1%8D%D1%82%D0%B8%D0%BC-%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C</a>&gt;</p>
+</div>
+<div id="ref-wwwrulitorg">
+<p>WWW.RULIT.ORG (n.d.-a) Www.rulit.org. &lt;<a href="http://www.rulit.org/read/644" class="uri">http://www.rulit.org/read/644</a>&gt;</p>
+</div>
+<div id="ref-wwwrulitorg2">
+<p>WWW.RULIT.ORG (n.d.-b) Www.rulit.org. &lt;<a href="http://www.rulit.org/read/429" class="uri">http://www.rulit.org/read/429</a>&gt;</p>
+</div>
+<div id="ref-wwwsanrussiaru">
+<p>WWW.SANRUSSIA.RU (n.d.) Www.sanrussia.ru. &lt;<a href="	http://www.sanrussia.ru/guest_book/14" class="uri">	http://www.sanrussia.ru/guest_book/14</a>&gt;</p>
+</div>
+<div id="ref-wwwvokrugsvetaru">
+<p>WWW.VOKRUGSVETA.RU (n.d.) Www.vokrugsveta.ru. &lt;<a href="http://www.vokrugsveta.ru/vs/article/2024/" class="uri">http://www.vokrugsveta.ru/vs/article/2024/</a>&gt;</p>
+</div>
+<div id="ref-zavalinkasane4karu">
+<p>ZAVALINKA.SANE4KA.RU (n.d.) Zavalinka.sane4ka.ru. &lt;<a href="http://zavalinka.sane4ka.ru/difference/562-ghensko-mughskoy-razgovornik.html" class="uri">http://zavalinka.sane4ka.ru/difference/562-ghensko-mughskoy-razgovornik.html</a>&gt;</p>
+</div>
+<div id="ref-zeldo4kalivejournalcom">
+<p>ZELDO4KA.LIVEJOURNAL.COM (n.d.) Zeldo4ka.livejournal.com. &lt;<a href="http://zeldo4ka.livejournal.com/22098.html?thread=6994" class="uri">http://zeldo4ka.livejournal.com/22098.html?thread=6994</a>&gt;</p>
+</div>
+<div id="ref-aksenov">
+<p>АКСЕНОВ, В. 1961. <em>Звездный билет</em>. «Юность».</p>
+</div>
+<div id="ref-starkrep">
+<p>БЕЛЯЕВ, В.П. 1940. <em>Старая крепость</em>.</p>
+</div>
+<div id="ref-hrandrev">
+<p>ДОМБРОВСКИЙ, Ю.О. 1964. <em>Хранитель древностей, часть 2</em>.</p>
+</div>
+<div id="ref-zhitkov">
+<p>ЖИТКОВ, Б.С. 1931. <em>Вечер</em>.</p>
+</div>
+<div id="ref-isachenko2014">
+<p>ИСАЧЕНКО, А. 2014. <em>Грамматический строй русского языка в сопоставлении с словацким. морфология. часть 1, 2</em>. Litres.</p>
+</div>
+</div>
+</body>
+</html>

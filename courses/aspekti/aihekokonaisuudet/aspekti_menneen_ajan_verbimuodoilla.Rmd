@@ -1,0 +1,892 @@
+---
+bibliography: ../lahteet.bib
+csl: ../bratislava.csl
+numbersections: true
+---
+
+
+<article id='topbar'>
+
+<a href='javascript:void(0)' id='menu1' class='menulauncher' >Aspekti- ja liikeverbiteoria |</a>
+<div class='invisible menubox' id='menu1box'>
+<a href='../index.html'>Sisällys</a>
+<a href='kurssin_esittely.html'>Kurssin esittely</a>
+<a href='kurssin_aikataulu.html'>Kurssin aikataulu</a>
+<a href='https://learning2.uta.fi/course/view.php?id=7339'>Moodle</a>
+</div>
+
+<a href='javascript:void(0)' id='menu2' class='menulauncher' >Aspekti |</a>
+<div class='invisible menubox' id='menu2box'>
+<a href='invariantit_merkitykset.html'>Aspektuaalisuus ja aspektin invariantit merkitykset</a>
+<a href='aspektin_muodostus.html'>Aspektin/aspektiparin muodostaminen sekä aspektin valintaan vaikuttavat tekijät</a>
+<a href='erityismerkitykset.html'>Aspektien erityismerkitykset</a>
+</div>
+
+<a href='javascript:void(0)' id='menu3' class='menulauncher' >Aspektin vaikuttavat tekijät vuorovaikutuksessa</a>
+<div class='invisible menubox' id='menu3box'>
+<a href='aspekti_menneen_ajan_verbimuodoilla.html'>Aspekti menneen ajan verbimuodoilla</a>
+<a href='#'>Aspekti futuurin verbimuodoilla</a>
+<a href='#'>Aspekti infinitiivissä ja imperatiivissa</a>
+</div>
+
+<script>
+function showmenu(obj) {
+
+    // .position() uses position relative to the offset parent, 
+    var pos = $(obj).position();
+
+    // .outerWidth() takes into account border and padding.
+    var width = $(obj).outerWidth();
+    var height = $(obj).outerHeight();
+    var menuid = "#" + $(obj).attr('id') + 'box';
+
+    //show the menu directly over the placeholder
+    $(menuid).css({
+        position: "absolute",
+        top: pos.top + height + "px",
+        left: (pos.left) + "px"
+    }).show();
+    
+}
+
+$('.menulauncher').hover(function(event) {showmenu(this); });
+$('.menubox').mouseleave(function(event) {$('.menubox').hide();});
+
+</script>
+
+</article>
+
+<article class='container'>
+
+<section class='main'>
+
+<p class='header'>Aspekti menneen ajan verbimuodoilla</p>
+
+Konkreettis-faktinen merkitys vs. konkreettis-prosessuaalinen merkitys 
+===========================================================================
+
+I:n Konkreettis-prosessuaalisen (kpm) ja P:n konkreettis-faktisen merkityksen (kfm)
+voi melko selvästi katsoa muodostavan *vahvan aspektuaalisen opposition*. Tämä
+johtuu siitä, että valinta näiden kahden erityismerkityksen välillä tavallisesti
+aiheutta todellisen eron lauseen merkityksessä (aspektin merkitystä erottava funktio).
+
+Kpm:n käyttöalaa voi pitää kfm:n käyttöalaa laajempana: imperfektiivisellä
+aspektilla on tässä kontekstuaalisen tekijän (erityismerkitys) ja kielellisen
+tekijän (aikamuoto) yhdistelmässä useammanlaisia käyttötilanteita ja sitä kautta
+sen voi ajatella myös olevan yleisempi.
+
+Pohdittaessa kpm-kfm-oppositiota on muistettava, että aikamuodon lisäksi
+merkityksen muodostamisessa on olennaisesti läsnä toinenkin kielellinen tekijä, kunkin konkreettisen
+verbin leksikaaliset ominaisuudet. Nämä vaikuttavat siihen, minkätyyppiset
+tapaukset ovat ylipäätään mahdollisia tai todennäköisiä. Esimerkiksi niin
+kutsutut statiivisen teonlaadun verbit kuten лежать ja висеть ovat jo
+merkitykseltään sellaisia, että ne ilmaisevat rajaamatonta prosessia.
+
+
+Kfm- ja kpm-käyttötilanteiden vertailua
+---------------------------------------
+
+Seuraavassa kuvataan eräitä tyypillisiä kielenkäyttötilanteita, joissa kfm- ja kpm-erityismerkitysten
+erot käyvät ilmi.
+ 
+### Ero kuvattavassa toiminnassa
+
+Kfm:n  ja kpm:n  välillä voi  ensinnäkin olla selvä ero siinä, millaista asiaintilaa
+verbillä ilmaistaan. Vertaa seuraavia lauseita:
+
+(@ee_mennyt1) Самолет возвращался на аэродром.
+(@ee_mennyt2) Самолет возвратился на аэродром.
+(@ee_mennyt3) Билеты уже продавали.
+(@ee_mennyt4) Билеты уже продали
+
+[@rassudova1984]
+
+Tämä voi johtaa myös spatiaalisiin (paikan) eroihin:
+
+(@ee_mennyt7) Когда мы проходили мимо кинотеатра, мы купили билеты
+(@ee_mennyt8) Когда мы прошли мимо кинотеатра, мы вспомнили, что собирались купить билеты
+
+[@rassudova1984]
+
+Esimerkissä @ee_mennyt7 toiminta (lippujen ostaminen) tapahtuu juuri elokuvateatterin kohdalla,
+kun taaas esimerkissä @ee_mennyt8 lauseen agentti on toiminnan (muistaminen) suorittamisen hetkellä edellistä lausetta
+kauempana, elokuvateatterin toisella puolella.
+
+Erityisen selkeästi kpm/kfm-merkitysero tulee esille temporaalisten[^temp]
+sivulauseiden yhteydessä.
+
+[^temp]: Tavallisimmin когда-konjunktiolla alkavat aikaa ilmaisevat sivulauseet
+
+(@ee_mennyt5) Студенты волновалиь, когда выступали c докладом
+(@ee_mennyt6) Когда студенты выступили, они neрестали волноваться
+
+### Lähestyminen kohti rajaa vs. rajan ylittäminen
+
+Toisen tyypillisen merkitystä erottavan käyttötilanteen muodostavat tapaukset, joissa
+verbillä ilmaistaan 
+
+a. Lähestymistä kohti jotakin (esim. ajallista) rajaa: <span class='r'>kpm</span>
+b. Rajan ylittämistä: <span class='r'>kfm</span>
+
+Tässä yhteydessä on syytä muistaa I:n ja P:n välinen perustavanlaatuinen ero: perfektiivinen aspekti 
+ilmaisee sisäisesti rajattua toimintaa, mutta imperfektiivisessä aspektissa
+rajaan ei oteta kantaa [ks. esim. @nikunlassi2002, 176-177]. Tästä seuraa, että
+menneessä ajassa aspektien välinen ero on usein siinä, onko jokin ajallinen
+rajapiste ylitetty vai ollaanko sitä vasta lähestymässä. Tämä käy ilmi
+seuraavista esimerkkipareista:
+
+(@ee_mennyt_rajal) Заканчивалась август / закончился август
+(@ee_mennyt_raja2) Костер догорал  / костер догорел
+(@ee_mennyt_raja3) Липы уже отцветали. / Липы уже отцвели
+(@ee_mennyt_raja4) Мальчик засыпал / Мальчик заснул
+(@ee_mennyt_raja5) Я забывал испанский язык / Я забыл испанский язык
+(@ee_mennyt_raja8) Мы успевали на автобус / Мы успели на автобус
+(@ee_mennyt_raja9) Машина останавливалась / Машина остановилась
+
+[@rassudova1984]
+
+### Puhujan näkökulmana toiminta vai tulos
+
+Kolmanneksi voidaan tarkastella sitä, mitä puhuja haluaa painottaa kuvatessaan jotakin
+mennyttä tapahtumaa. Tässä tarkoitetaan yhtä kuuluisinta aspektien invarianttien merkitysten 
+välistä ominaisuuseroa: perfektiivisen aspektin tulosta ja imperfektiivisen aspektin 
+toimintaa painottavaa ominaisuutta. 
+
+Tarkastele seuraavia esimerkkejä:
+
+(@ee_mennyt_huomio1) 
+    —   Вы можете вернуть мне книгу?  
+    —	Да, я ее прочитал.  
+    —	Вам не скучно было ехать так долго в поезде?  
+    —	Нет, я читал интересную книгу.  
+
+(@ee_mennyt_huomio2) 
+    —   Олег уехал?  
+    —	Да, вчера мы его проводили.  
+    —	Где вы вчера задержались?  
+    —	Провожали Олега, он вчера уехал.
+
+(@ee_mennyt_huomio3)
+    —   Ваш доклад готов?  
+    —	Да, я его написал.  
+    —	Почему вы не были вчера на стадионе?  
+    —	Я писал доклад.  
+
+[@rassudova1984]
+
+Esimerkeissä @ee_mennyt_huomio1--@ee_mennyt_huomio3 on ensiksi esitetty dialogi,
+jossa puhujan huomio on tuloksessa (kfm) ja sitten dialogi, jossa huomio on
+toiminnassa (kpm).
+
+Syitä käyttää imperfektiivistä aspektia
+---------------------------------------
+
+[Edellä]() todettiin, että imperfektiivisen aspektin käyttö vaatii usein enemmän
+kontekstuaalisia vihjeitä kuin perfektiivisen. Seuraavassa tarkastellaan
+muutamia selkeitä syitä, joiden perusteella menneessä ajassa valitaan
+konkreettis-prosessuaalista toimintaa edustava verbimuoto.
+
+### Selkeä keston ilmaisin
+
+Ajan adverbiaaleilla on usein ratkaiseva rooli siinä, minkä aspektuaalisen
+tulkinnan jokin lause saa. Kun menneen ajan verbimuotoon lisätään selkeä kestoa 
+ilmaiseva adverbiaali (kuten esimerkin @ee_mennyt_pm1 *с каждой минутой*),
+konkreettis-prosessuaalinen erityismerkitys nousee pintaan. Toisaalta kestoa
+voidaan painottaa myös ilman erillistä ajanilmausta, jolloin voidaan puhua
+*määrittelemättömästä kestosta*, kuten esimerkissä @ee_mennyt_eikesto.
+
+(@ee_mennyt_pm1) с каждой минутой видимость на дороге улучшалось, туман рассеивался
+(@ee_mennyt_pm1) в сентябре и октябре собирали урожай винограда
+(@ee_mennyt_eikesto) Кругом все улыбались
+
+[@rassudova1984]
+
+### Persoonattomat rakenteet
+
+Kpm-erityismerkitys on tyypillinen persoonattomissa, ympäristön tilaa
+ilmaisevissa lauisessa:
+
+(@ee_persoonaton1) Сейчас, под утро, туман жался к земле, а натаявшую воду подбирало хрупким ледком. <span class='r'>Холодало.</span> Было уже скоро пять часов. [@solzh1]
+(@ee_persoonaton2) Даренский подъехал к штабной избе. Уже <span class='r'>темнело.</span> [@gross1]
+
+### Temporaaliset konjunktiot 
+
+Erityisesti пока-konjunktiolla alkavat sivulauseet vaikuttavat yleensä päälauseen aspektiin:
+
+(@ee_pokalause) И мальчик плакал и плакал, пока не уснул [@ekim]
+(@ee_pokalause) Лет 30 компьютеры <span class='r'>стояли</span> в лабораториях и мало кого <span class='r'>интересовали</span> пока не додумались сделать маленький компьютер и продавать его гражданам [@kompr1]
+
+### Konatiivinen erityismerkitys
+
+Imperfektiivisen aspektin konkreettis-prosessuaalisella erityismerkityksellä voi
+katsoa olevan joitakin itsenäisiä alamerkityksiä, joista yksi on [konatiivinen merkitys]().
+Kun halutaan ilmaista menneessä ajassa pyrkimistä saavuttaa jokin päämäärä [ks. @bondarko2015, 242], joka kuitenkin jää
+yritykseksi, valitaan imperfektiivinen aspekti:
+
+(@ee_kon1) Вот тебе и муж предоставлен. Убивали, да не убили [@bondarko2015]
+
+(@ee_kon2) Разумеется, все это хорошо известно как премьеру, так и депутатам,
+которые явно ждали от главы правительства менее оптимистичного, но более
+приближенного к реалиям российской жизни выступления. <span class='r'>Ждали,</span> но так и не дождались. [@izv1]
+
+<!--
+V,praet,ipf
+
+-->
+
+### Agentin osallisuus
+
+Konkreettis-prosessuaalisella merkityksellä voidaan painottaa myös
+jonkin agentin, ts. toiminnan suorittajan, osallisuutta verbin ilmaisemaan toimintaan, kuten
+esimerkin @ee_mennyt_agentti1 verbeissä рассказывать sekä слушать ja esimerkin
+(@ee_mennyt_agentti2) verbeissä слушать, смотреть, вспоминать. Näissä
+tapauksissa verbeillä paitsi ilmaistaan prosessia sinänsä, myös painotetaan
+sitä, että lauseen funktiona on kertoa jotakin toiminnan suorittajasta.
+
+(@ee_mennyt_agentti1) Она рассказывала, а я слушал, закурив после ужина [@rassudova1984]
+(@ee_mennyt_agentti2) Я слушала её, смотрела, как деревья потихоньку роняют листья, вспоминала всё хорошее, что пережила за этот год в Нанси, и думала, что --- [@blog1]
+
+
+### Selittävä funktio
+
+Kun jonkin lauseen funktiona on antaa selitys edellisessä lauseessa kuvatulle
+toiminnalle, kpm-erityismerkitys on tavallinen:
+
+(@ee_selittava1) После обеда, когда я сидел у компьютера и планировал упражнения
+на курс по аспектологии, раздался странный шум.
+Я подошел к окну и посмотрел на улицу: <span class='r'>рыли</span> канаву для труб системы теплоснабжения.
+
+
+Aspekti ja tapahtumien suhteet ajassa
+-------------------------------------
+
+Kun pohditaan tapahtumien suhteita menneessä ajassa, imperfektiivisen ja perfektiivisen
+aspektin välille on mahdollista löytää melko selkeäkin työnjako. Mietitään
+aluksi, minkälaisissa temporaalisissa suhteissa kaksi toimintaa voivat olla
+toisiinsa nähden. Tapahtumat E~1~ ja E~2~ voivat olla esimerkiksi
+
+a. samanaikaisia niin, että kummatkin kestävät suurin piirtein yhtä kauan
+
+<span class='g'>=========|<span class='r'>================</span>|E~1~=============</span> 
+
+<span class='g'>=========|<span class='b'>================</span>|E~2~=============</span> 
+
+b. samanaikaisia niin, että toinen kestää pidempään kuin toinen
+
+<span class='g'>=========|<span class='r'>================</span>|E~1~=============</span> 
+
+<span class='g'>==============|<span class='b'>===</span>|E~2~=====================</span> 
+
+c. eriaikaisia niin, että E~2~ seuraa heti E~1~:n jälkeen
+
+<span class='g'>=========|<span class='r'>================</span>|E~1~=|<span class='b'>=========</span>|E~2~== ... =|<span class='gre'>======</span>|E~n~=</span> 
+
+Tarkastellaan nyt aspektin käyttöä näissä kolmessa tapauksessa.
+
+Jos kyseessä ovat kaksi täysin samanaikaista tapahtumaa (tapaus a), käytetään
+imperfektiivistä aspektia (konkreettis-prosessuaalisessa erityismerkityksessä). 
+
+(@ee_mennyt_simu1) Вечером я ел гамбургеры и смотрел телевизор.
+
+Jos kyseessä ovat kaksi osittain samanaikaista tapahtumaa (tapaus b), käytetään sekä
+imperfektiivistä että perfektiivistä aspektia. Tavallisesti tämä tarkoittaa
+sitä, että imperfektiivisellä aspektilla (kpm) ilmaistaan pidempikestoinen tapahtuma, jonka aikana
+tapahtuva yksittäinen, rajattu tapahtuma ilmaistaan perfektiivisellä aspektilla (kfm).
+
+(@ee_mennyt_simu2) Пока мы играли в шахматы, кто-то постучал в дверь.
+
+Jos taas puhutaan kahdesta tai useammasta toiminnasta, jotka tapahtuvat
+peräkkäin (tapaus c), käytetään useimmiten kaikista toiminnoista perfektiivisen aspektin verbiä:
+
+(@ee_mennyt_perakk1) Федя поужинал, собрал игрушки с пола, почистил зубы, и лег спать.
+
+Jos mukana on kuitenkin esimerkiksi ajan adverbiaaleja, jotka tuovat mukanaan
+prosessuaalisen painotuksen, myös imperfektiivinen aspekti on mahdollinen:
+
+(@ee_mennyt_perakk1b) Сначала Федя ужинал, потом он долго собирал свои игрушки и наконец-то стал по-тихоньку думать о том, что ему пара спать.
+
+Tutki vielä esimerkkiä @ee_selittava1 aikasuhteiden kannalta. Mitä erilaisia
+suhteita huomaat? Miten imperfektiivistä ja perfektiivistä aspektia käytetään
+näiden suhteiden kuvaamisessa? 
+
+Aspektin käyttö toiston merkityksessä
+=====================================
+
+Seuraavassa tarkastellaan, miten menneessä ajassa tapahtuva toistuva toiminta
+vaikuttaa aspektin valintaan. Tärkein huomio kohdistetaan perfektiivisen
+aspektin konkreettis-faktisen (kfm) ja imperfektiivisen aspektin
+[rajoittamattoman toiston](erityismerkitykset.html#rtm)
+(rtm) erityismerkityksen väliseen oppositioon. Kuten
+kpm-kfm-oppositiota, myös kfm-rtm-oppositiota voi luonnehtia vahvaksi
+oppositioksi, sillä se tuottaa merkityseroja. <!-- korjaa muotoilu! -->
+
+Milloin I ilmaisee toistoa, milloin prosessia?
+----------------------------------------------
+
+Tarkastellaan aluksi pelkästään imperfektiivistä aspektia. Kuten A. V. Bondarko [@bondarko2015, 231]
+toteaa, aspektien invarianttien merkitysten määrittäminen pelkästään jonkin
+yksittäisen ominaisuuden perusteella ei ole mielekästä. Toisin sanoen, ei ole
+järkevää määritellä seuraavasti:
+
+a. imperfektiivisestä aspektista on kyse silloin, kun verbi ilmaisee toistoa
+
+tai:
+
+b. imperfektiivisestä aspektista on kyse silloin, kun verbi ilmaisee prosessia
+
+Määritelmien a ja b heikkous johtuu ensinnäkin siitä, että esimerkiksi toisto on
+tietyssä määrin myös perfektiivisen aspektin ominaisuus. Toiseksi määritelmät a
+ja b ovat heikkoja, koska imperfektiivisen aspektin sisällä ei aina ole
+mahdollista päättää, mikä ominaisuus on hallitseva. Näin ollen onkin järkevämpää
+todeta:
+
+c. Eräs imperfektiiviselle aspektille tyypillisistä piirteistä on verbillä
+ilmaistava toisto
+ 
+sekä:
+
+d. Eräs imperfektiiviselle aspektille tyypillisistä piirteistä on toiminnan
+kuvaaminen prosessina.
+
+Näitä I:lle tyypillisiä piirteitä ei kuitenkaan aina ole helppo erottaa
+toisistaan. Seuraavassa tutkitaan muutamia tilanteita, joissa menneessä ajassa 
+tapahtuva toiminta on toistuvaa.
+
+### Toisto vaatii enemmän kontekstin tukea kuin prosessi
+
+Kpm-erityismerkityksen todettiin edellä olevan imperfektiivisen aspektin
+*perusmerkitys*. Tästä seuraa, että
+
+1. on oletettavampaa, että imperfektiivisen aspektin verbi ilmaisee yksittäistä prosessia kuin toistoa
+2. toiminnan tulkitseminen toistuvaksi vaatii jotakin erityistä siltä ympäristöltä, jossa se esiintyy
+
+Vertaa seuraavia esimerkkejä:
+
+(@ee_mennyt_tp1)  Солнце садилось 
+(@ee_mennyt_tp2)  В это время года солнце садилось рано.
+[@rassudova1984]
+
+Esimerkissä @ee_mennyt_tp1 kyseessä on yksi konkreettinen prosessi, kun taas
+esimerkissä @ee_mennyt_tp2 puhe on useista kerroista, joina aurinko on laskenut.
+Jotta esimerkin @ee_mennyt_tp2 toistotulkintaan päästäisiin, tarvitaan ajan
+adverbiaali *в это время года*, joka luo sellaisen ympäristön, että juuri
+toistuvuus on verbin hallitseva ominaisuus.
+
+### Monikko paljastaa usein toistuvuuden
+
+Usein jo lauseen subjektin luku riittää antamaan vihjeen siitä, että
+toiminta on tulkittava toistuvana:
+
+(@ee_mennyt_montoisto) На этой станции скорые поезда останавливались
+[@rassudova1984]
+
+### Satunnainen toiminta toiston merkityksessä
+
+Jos verbillä kuvattava toiminta on luonteeltaan satunnaista (eikä tietoista tai
+tarkoitettua), toisto on usein läsnä lauseen tulkinnassa.
+
+(@ee_mennyt_piirt_sat) Каждый раз я встречал его около нашего дома
+(@ee_mennyt_piirt_sat) Каждую неделю получал письмо от сестры
+
+[@rassudova1984]
+
+### Ehto saa aikaan toiston merkityksen:
+
+Kun läsnä on jokin tarkentava ehto, jonka voimassa ollessa toiminta tapahtuu, tuloksena on usein toiston merkitys eikä
+vain yksittäinen prosessi:
+
+(@ee_mennyt_ehtotoisto) Когда я попадал на каток, я вспоминал Марусю
+(@ee_mennyt_ehtotoisto2) При нем она становилась совсем другая, смеялась и даже начинала так же длинно говорить, как и он
+(@ee_mennyt_ehtotoisto3) Если я опаздывал, он меня никогда не ругал
+
+[@rassudova1984]
+
+Konkreettis-faktinen merkitys vs. rajoittamattoman toiston merkitys
+---------------------------------------------------------------------------
+
+Samoin kuin kahden imperfektiivisen aspektin verbin välillä ei aina ole selvää,
+ilmaistaanko verbillä yhtä prosessia vai useita toistuvia tapahtumia, myös
+toistuvaa toimintaa ilmaisevan I-verbin ja yksittäistä faktaa ilmaisevan
+P-verbin välinen ero vaatii usein erityistä huomiota. 
+
+### Yksi rajattu toiminta vs. toisto
+
+Vertaa esimerkkejä @ee_mennyt_toisto_opp3 ja @ee_mennyt_toisto_opp4:
+
+(@ee_mennyt_toisto_opp3) К вечеру больному стало хуже
+(@ee_mennyt_toisto_opp4) К вечеру больному становилось хуже
+
+[@rassudova1984]
+
+Rtm- ja kfm-erityismerkitysten välinen ero ja toisaalta läheisyys tiivistyy
+hyvin esimerkkeihin @ee_mennyt_toisto_opp3 ja @ee_mennyt_toisto_opp4.
+Esimerkissä @ee_mennyt_toisto_opp3 kyseessä on yksi konkreettinen fakta:
+puhutaan yhdestä päivästä ja erotellaan, että päivän kääntyessä iltaan potilaan
+olo huononi. Esimerkin @ee_mennyt_toisto_opp4 merkitys on tätä lähellä, mutta
+ero on kuitenkin selvä: kyse on useasta toistuvasta tapauksesta -- aina iltaisin
+potilaan olo huononi.
+
+Jonkin verran hienojakoisempi ero on esimerkissä @ee_mennyt_toisto_opp5. Pohdi
+esimerkkiä perfektiivisen aspektin verbillä. Miten merkitys muuttuu?
+
+(@ee_mennyt_toisto_opp5) К десяти часам утра, не выдержав неслыханной нагрузки, портились все телефоны. [@rassudova1984]
+
+### Toisto tapahtumasarjassa
+
+Rtm-kfm-oppositio toteutuu myös tapauksissa, joissa puhuja kertoo peräkkäisten
+tapahtumien sarjasta. Jos kyseessä on vain yksi konkreettinen peräkkäisten tapahtumien
+sarja,  käytetään ([kuten edellä osoitettiin]())
+konkreettis-faktista erityismerkitystä eli pelkkiä perfektiivisen aspektin
+muotoja:
+
+(@ee_mennyt_sarjatoisto1) Как только докладчик поднялся на трибуну, раздались аплодисменты
+
+Kyseessä voi kuitenkin olla myös tapahtumasarja, joka toistuu samanlaisena uudestaan ja
+uudestaan. Tällöin toiston merkitys johtaa loogisesti imperfektiiviseen
+aspektiin ja rajoittamattoman toiston erityismerkitykseen, kuten esimerkissä
+@ee_mennyt_sarjatoisto2:
+
+(@ee_mennyt_sarjatoisto2) Как только докладчик поднимался на трибуну, раздавались аплодисменты
+
+
+### Mukana absoluuttisen keston adverbiaali
+
+Tutki esimerkkiä @ee_mennyt_kestona3:
+
+(@ee_mennyt_kestona3) Он прочитал за два часа 30 страниц
+
+Esimerkin @ee_mennyt_kestona3 ajanilmaus *за два часа* ilmaisee kestoa, joka
+voidaan tarkemmin määritellä absoluuttiseksi kestoksi: jossain tietyssä ajassa
+saavutettava tulos. Tämäntyyppisistä ajanilmauksista seuraa automaattisesti,
+että toiminnan, jota ajanilmaus määrittää, on oltava sisäisesti rajattu. Tämä
+taas sulkee pois prosessuaalisen tulkinnan, joka seuraisi *читать*-verbin
+käytöstä:
+
+(@ee_mennyt_kestona_v) * Он читал за два часа 30 страниц
+
+Ainoa mahdollisuus käyttää imperfektiivisen aspektin verbiä on
+прочитать-verbistä [imperfektivaation]() avulla muodostettu *прочитывать*
+-verbi, jolloin seurauksena on toiston ilmaiseminen:
+
+(@ee_mennyt_kestona2) Он прочитывал 30 страниц за два часа
+
+Huomaa, että tässä tapauksessa imperfektiivinenkin aspekti sisältää tuloksen,
+mikä ei I:n perusmerkityksessä ole mahdollista. Rajoittamattoman toiston
+erityismerkityksen yhteydessä toisto ja tulos ovat kuitenkin usein sidoksissa
+toisiinsa.
+
+### Teonlaatujen merkitys
+
+Kuten jo edellisen esimerkin kohdalla kävi ilmi, tietyt imperfektiivisen
+aspektin verbit ilmaisevat käytännössä aina *toistoa*. Tämä johtuu verbien
+leksikaalisista ominaisuuksista, siitä, että kyseisten *sanojen* merkitys on jo
+itsessään sen luonteista, että mahdollisten tulkintojen määrä on rajattu. Tällä
+tarkoitetaan teonlaatuja, joita käsitellään tarkemmin [toisaalla]().
+
+Esimerkin @ee_mennyt_kestona3 прочитать edustaa [perduratiivista]() teonlaatua.
+Nämä perfektiivisen aspektin verbit kuvaavat tietyn aikaa kestävää toimintaa.
+Perduratiivisen teonlaadun verbeistä muodostetut imperfektiivisen aspektin
+verbit ilmaisevat, kuten esimerkin @ee_mennyt_kestona2 *прочитывать* ja
+esimerkin @ee_mennyt_kestona4 просиживать, toistoa.
+
+(@ee_mennyt_kestona4) Он просиживал над статьей не менее десяти
+часов. [@rassudova1984]
+
+<!--Rassudova [-@rassudova1984, 49] luettelee lisäksi esimerkkeinä verbiparit
+*износить/изнашивать, *-->
+
+Summatiivinen merkitys vs. rajoitetun toiston merkitys
+------------------------------------------------------
+
+Edellä mainittujen tapausten lisäksi aspektin valinta menneessä ajassa
+tapahtuvan toiston tapauksissa on usein hankalaa silloin, kun toistokertojen
+määrä on tarkkaan yksilöity, esimerkiksi ilmauksilla *два/три/N раз(а)*, *несколько/много раз*.
+Tällöin on usein mahdollista käyttää sekä imperfektiivisen aspektin rajoitetun
+toiston merkitystä että perfektiivisen aspektin 
+[summatiivista erityismerkitystä](erityismerkitykset.html#summatiivinen).
+
+Usein aspektien välisen merkityseron selittämisessä auttaa se, että  P:n ja I:n
+välinen määritelmällinen ero näkyy myös toistumista ilmaisevien
+erityismerkitysten kohdalla, niin että P ilmaiseet toistokerrat sisäisesti rajattuina ja
+totaalisina ja tästä johtuen usein tiukasti peräkkäisinä, selkeästi eriteltyinä
+kertoina, kun taas I:ssä kertojen välinen aika on määrittelemätön eikä
+toimintoja ajatella rajattuina:
+
+(@ee_toist_sum1)  стало жарко глазам, я несколько раз <span class='r'>сморгнул</span>, потом без раздумий налил половину фужера и тут же выпил. [@nedv]
+(@ee_toist_rajt) Мы много раз рассматривали на заседании Президиума РАН вопросы, связанные с ракетной и авиационной техникой, но в первый раз в повестку нашего заседания
+поставлена тема корабельной ядерной энергетики [@ran]
+
+Joissain tapauksissa toiminnan luonne on sellaista, ettei perfektiivinen aspekti
+edes olisi mahdollinen:
+
+(@ee_toisto_iperf) Бударин в прежних полётах уже 5 раз <span class='r'>работал</span> в открытом космосе и его медицинские параметры всегда были аналогичны обнаруженным, это особенность организма [@izv3]
+
+Aina ero ei kuitenkaan ole selvä, ja esimerkiksi ajallisen kiinnekohdan
+virkkeelle antavat adverbiaalit saattavat olla omiaan pienentämän sitä. Vertaa:
+
+(@ee_toisto_pieniero1) В ходе встречи президент несколько раз повторил:"Давайте конкретику!" Но с "конкретными предложениями" было негусто. [@itogi1]
+(@ee_toisto_pieniero1) В ходе встречи президент несколько раз повторял:"Давайте конкретику!" Но с "конкретными предложениями" было негусто. [@itogi1, muokattu]
+
+
+Konkreettis-faktinen vs. yleisesti toteava merkitys{#ytmoppositio}
+=======================================================
+
+Imperfektiivisen ja perfektiivisen aspektin välinen oppositio on heikoimmillaan,
+kun tarkastellaan perfektiivisen aspektin konkreettis-faktisen
+erityismerkityksen (kfm) ja imperfektiivisen aspektin yleisesti
+toteavan erityismerkityksen (ytm) välisiä eroja. Ytm on imperfektiivisen aspektin
+erityismerkitys, jonka laajin käyttöalua on nimenomaan menneen ajan
+verbimuodoilla. Se on yleinen ja käytetty erityismerkitys, mutta esimerkiksi
+suomalaisille opiskelijoille suunnatuissa oppikirjoissa sitä ei käsitellä 
+erityismerkityksenä, joskin siihen viitataan esimerkeissä ja teksteissä [@ohtonen12, 114].
+
+Seuraavassa tarkastellaan ytm- ja kfm- merkitysten suhdetta erilaisissa konteksteissa.
+
+
+Kfm ja ytm samankaltaisina erityismerkityksinä
+----------------------------------------------
+
+Sekä kfm- että ytm-erityismerkitys viittaavat yksittäiseen, tapahtuneeseen
+toimintaan. Tämä näkyy jo merkitysten venäjänkielisissä nimissä
+(конкретно-фактическое / обобщенно-фактическое значения), jotka suomenkielisiä
+termejä paremmin tuovat esille merkitysten välisen samankaltaisuuden. 
+Vertaa A. V. Bondarkon [-@bondarko2015, 239, 244] näille erityismerkityksille
+antamia lyhyitä määritelmiä:
+
+1. Конкретно-фактическое значение ... обозначает конкретный единичный факт
+
+2. Обобщенно-фактическое значение ... заключается в общем указании на самый факт наличия или отсутствия
+действия
+
+Määritelmistä käy ilmi, että kumpikin erityismerkitys viittaa yksittäiseen
+faktaan. Ytm on kuitenkin pyritty määrittelemään tarkemmin, niin että
+olennaiseksi nousee nimenomaan (suomenkielisen termin mukaisesti) sen
+toteaminen, että jotakin on tapahtunut.
+
+Monissa tilanteissa valinta kfm:n ja ytm:n välillä on kielenoppijalle hankalaa.
+Kummallakin erityismerkityksellä on kuitenkin olemassa omia tyypillisiä
+käyttötarkoituksiaan, joiden avulla kielenkäyttäjän on helpompi perustella ja
+analysoida aspektien välisiä eroja kyseessä olevissa erityismerkityksissä.
+Seuraavassa tutkitaan ensin imperfektiiviselle aspektille (ytm), sitten
+perfektiiviselle aspektille (kfm) tyypillisiä funktioita ja niiden
+esiintymisympäristöjä
+
+Imperfektiiviselle aspektille tyypillisiä piirteitä
+----------------------------------------------
+
+### Deklaratiivisuus
+
+Ytm:n deklaratiivisuudella tarkoitetaan tässä sitä, että nimensä mukaisesti
+ytm:n tärkein funktio on jonkin faktan tapahtumisen toteaminen. Tällä
+painotuksella tarkoitetaan ennen muuta sitä, että ytm-merkityksessä käytetyllä
+verbillä on ikään kuin mahdollisimman vähän sanottavaa itse toiminnasta tai
+siihen liittyvistä ominaisuuksista: se vain kylmästi toteaa jonkin asian
+tapahtuneen tai olleen tapahtumatta. Pohdi esimerkkiä (@ee_mennyt_yt1):
+
+(@ee_mennyt_yt1) Он предупреждал меня
+
+Esimerkin @ee_mennyt_yt1 informaatio voitaisiin kertoa myös paljon tarkemmin ja
+siinä kuvattavaa toimintaa tai sen tulosta voitaisiin tarkastella monista eri
+näkökulmista. Imperfektiivinen aspekti kuitenkin mahdollistaa myös puhtaan
+toteavan ilmaisutavan. Se ei ota tässä muodossa kantaa siihen, oliko toiminta
+esimerkiksi odotettua tai vaadittua tai oliko se toistuvaa vai kertaluontoista.
+Tämä käy paremmin ilmi esimerkistä @ee_mennyt_yt:
+
+(@ee_mennyt_yt) Я знаю, что Ханна поступала в магистерскую программу по
+переводоведению в Тамперском университете
+
+Esimerkissä @ee_mennyt_yt puhuja ei tiedä, pääsikö Hanna sisään tai onko
+hän kenties yrittänyt pääsyä useampaan kertaan vai ainoastaan kerran.
+
+### Tarkemmat erityismerkitykset
+
+Monet tutkijat erottavat Ytm-merkityksestä erikseen vielä monia alamerkityksiä,
+joille kaikille on yhteistä ennen kaikkea se, että imperfektiivistä aspektia
+käytetään ilmaisemaan yksittäistä toimintaa. Seuraavassa käsitellään näistä
+muutamia:
+
+#### Toiminnan tuloksen mitätöityminen{#ytm_mitat}
+
+Toiminnan tuloksen mitätöitymisen merkitys (значение аннулированности результата
+действия) on yksi selkeimmin tunnistettavista erityismerkityksistä. Tyypillinen
+tässä merkityksessä esiintyvä verbi on открывать:
+
+(@ee_mennyt_mitat1) -- Почему в аудитории так холодно? Вы не открывали окно?
+
+Esimerkin @ee_mennyt_mitat1 lausumishetkellä vallitsee tilanne, jossa ikkuna on
+kiinni. Kysyjä kuitenkin epäilee, että hänen poissaollessaan oli suoritettu sekä
+toiminta että sen mitätöiminen: ikkuna oli avattu ja jälleen suljettu, niin että
+kylmää ilmaa oli mahdollisesti päässyt huoneeseen. Vastaava erityismerkitys on
+tyypillistä myös iteratiivisille liikeverbeille:
+
+(@ee_mennyt_mitat5) -- Папа вчера приезжал.
+
+Esimerkissä @ee_mennyt_mitat5 on myös tapahtunut toiminta ja sen mitätöityminen:
+Isä on saapunut, ollut paikalla, mutta lähtenyt jo pois ennen kuin esimerkki
+@ee_mennyt_mitat5 on lausuttu. Huomaa kuitenkin, ettei liikeverbeissä *mitätöityminen*
+tarkoita, että olisi tapahtunut tarkalleen päinvastainen toiminta: puhuja ei
+kerro, että Isä olisi välttämättä palannut sinne, mistä oli lähtenyt, vaan
+ainoastaan sen, ettei tämä enää ole paikalla.
+
+Mainittujen verbien lisäksi mitätöitymisen erityismerkitys on tyypillinen muun
+muassa verbeille подниматься, включать, просыпаться jne. Näitä kaikkia yhdistää
+se, että toiminnalle on olemassa selkeä vastaohta: laskeutuminen, sulkeminen,
+nukahtaminen. 
+
+(@ee_mennyt_mitat6) Кто-нибудь включал компьютер? Я ведь запретил..
+
+#### Tilannesidonnainen resultatiivis-faktinen merkitys
+
+Nikunlassin [-@nikunlassi2002, 185] mukaan tilannesidonnainen
+resultatiivis-faktinen merkitys (единично-фактическое значение в условиях
+ситуативной совершенности действия, trfm) tulisi erottaa omaksi
+erityismerkityksekseen. Läheskään kaikki tutkijat eivät tätä erottelua
+kuitenkaan tee, ja myös tässä sitä tarkastellaan yhtenä ytm-erityismerkityksen
+tyyppinä. Trfm-erityismerkitys liittyy tilanteisiin, joissa kontekstista käy
+jollain tavalla ilmi toiminnan loppuunsuorittaminen:
+
+(@ee_trfm1) Где вы защищали диссертацию? [@nikunlassi2002]
+
+Esimerkissä @ee_trfm1 puhuja tietää keskustelukumppaninsa joskus menneisyydessä väitelleen.
+
+
+### Imperfektiivinen aspekti tapahtumien sarjassa{#ytm_sarja}
+
+Aivan kuten [edellä kfm/kpm-opposition yhteydessä](), myös kfm/ytm-opposition
+osalta on relevanttia pohtia, miten aspekteja käytetään, kun kuvataan
+tapahtumien ajallisia suhteita toisiinsa.
+
+Imperfektiiviselle aspektille on usein tyypillistä kuvata toimintaa, joka on
+*kauempana* menneisyydessä kuin perfektiivisen aspektin kuvaava toiminta.
+Pohdi seuraavia esimerkkejä:
+
+(@ee_mennyt_kauempana1) Я не сразу понял, что это та книга, о которой ты мне уже <span class='r'>говорил</span>...
+(@ee_mennyt_kauempana2) Я, признаюсь, так и рассчитывал, что, может быть Елиэавета Прокофьевна вспомнит, что я ей <span class='r'>писал</span> 
+
+[@rassudova1984]
+
+Esimerkeissä @ee_mennyt_kauempana1--@ee_mennyt_kauempana2 verbit говорить ja
+писать viittaavat toimintaan, joka on tapahtunut selkeästi ennen muiden verbien
+kuvaamia toimintahektiä ja on ikään kuin vanhaa, ainoastaan yleisesti todettavaa
+tietoa.
+
+### Tyypillisiä konteksteja ytm-merkitykselle
+
+Seuraavassa käydään läpi muutamia tyypillisiä tilanteita, joissa käytetään
+imperfektiivisen aspektin verbiä yleisesti toteavassa merkityksessä.
+Ytm-erityismerkitys on tavallinen muun muassa seuraavissa käyttötilanteissa:
+
+a. Puhuja pohtii jonkin toiminnan suorittamista ja päätös
+   suorittaa riippuu siitä, onko toiminta ja tapahtunut:
+
+(@ee_mennyt_jotap) Надо полить цеты? Или ты уже поливал?
+(@ee_mennyt_jotap2) Вы проветривали комнату?
+
+[@rassudova1984]
+
+b. Kun puhuja kieltäytyy ehdotuksesta:
+
+(@ee_mennyt_jotap3) Давай пойдем на "Войну звезд". - Не хочу, я его уже <span class='r'>смотрел</span>.
+
+c. Kun puhujalla on jokin oletus, jonka hän pyrkii vahvistamaan tai kumoamaan:
+
+(@ee_mennyt_vahv) Дима сказал, что это вы ему сказали. Вы действительно говорили ему об этом? [@rassudova1984]
+
+d. Puhuja kuvaa toimintaa hänelle tuttuna, ennenkin kokeiltuna:
+
+(@ee_mennyt_tuttu) Не бойтесь, я водил машину. было это, правда, давно.
+
+e. Puhuja etsii jotakin
+
+(@ee_mennyt_tuttu) Вы не брали мои наушники? Они были вон тут на столе..
+
+### Tyypillisiä ytm-merkityksessä esiintyviä verbejä{#ytm-verbit}
+
+Edellä lueteltujen erityismerkitysten, aikasuhteiden  ja käyttötilanteiden
+lisäksi ytm-merkitystä pohdittaessa voi olla hyötyä seuraavasta verbilistasta,
+jonka A.V. Bondarko [-@bondarko2015, 244] antaa koskien verbejä, joiden kanssa
+ytm on tavallinen.
+
+Konkreettinen fysikaalinen toiminta, ml. liikeverb.                                                                                                                                            | konkreettinen, tahtoa ilmaiseva toiminta                            | kommunikaatioverbit                                                                                                     | havaintoverbit
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|-----------------------------------
+выезжать, заходить, идти, приводить, привозить, приезжать, разносить, брать, давать, браться, нападать, поджигать, поить, получать, продавать, пропускать, работать, стрелять, топить, убивать | вызывать, звать, исключать, нанимать, посылать, приглашать, упекать | беседовать, говорить, докладывать, называть, отвечать, рассказывать, спрашивать, обвинять, обижать, отзываться, хвалить | видеть, слышать, слыхать, встречать
+
+Perfektiiviselle aspektille tyypillisiä piirteitä
+-------------------------------------------------
+
+Siirrytään nyt tarkastelemaan tapauksia, joiden pohjalta on tavallisesti
+perusteltua käyttää perfektiivistä aspektia tilanteissa, joissa viitataan
+yhteeen tapahtumaan menneisyydessä ja joissa tätä kautta myös imperfektiivisen
+aspektin ytm-erityismerkitys voisi olla kilpaileva mahdollisuus.
+
+
+### Tarkempi konteksti
+
+Siinä missä imperfektiivisen aspektin ytm-merkitys ilmaisee mahdollisimman vähän
+ja mahdollisimman yleisellä tasolla, perfektiivisen aspektin kfm-merkitys
+tavallisesti yksilöi kuvaamamnsa toiminnan tarkemmin. Tämä ero johtaa jo
+invarianttien merkitysten määrittelyn yhteydessä todettuun tulkintaan, jonka
+mukaan imperfektiivinen aspekti on parin tunnusmerkitön osapuoli, perfektiivinen
+taas tunnusmerkillinen: jollain tavalla spesifimpi ja kantaa ottava.
+Esimerkeissä @ee_mennyt_ajallinenkiinn--@ee_mennyt_ajallinenkiinn2 kummassakin
+on läsnä adverbiaalilla ilmaistu ajallinen kehys, joka yksilöi toiminnan ja
+tarkentaa sen tiettyyn hetkeen menneisyydessä.
+
+(@ee_mennyt_ajallinenkiinn) 1-го Мая в Доме Дружбы собрались представители общественности
+(@ee_mennyt_ajallinenkiinn2) В начале 1943 года Шатров получил от Виктора письмо
+
+[@rassudova1984]
+
+
+### Perfektin erityismerkitys
+
+Kun pohditaan valintaa imperfektiivisen aspektin ytm-erityismerkityksen ja
+perfektiivisen aspektin välillä, on otettava huomioon eräs perfektiivisen
+aspektin ominaisuuksista menneessä aikamuodossa: se linkittää usein tapahtuneen
+tiukemmin kiinni puhehetkeen (vrt. edellä mainittu [ytm-merkityksen taipumus
+viitata tapahtumaan, joka on kauempana menneisyydessä](#ytm_sarja)). Yksi tämän
+ominaisuuden seuraksista on, että perfektiiviselle aspektille voidaan erottaa
+oma [perfektin erityismerkitys](): se voi viitata tapahtumiin, jotka sijoittuvat
+menneisyteen, mutta joiden tulos on voimassa vielä puhehetkelläkin. Usein
+käytetty esimerkki tästä on koskee lomaketta, joka on juuri täytetty: 
+
+(@ee_mennyt_perf1) Я заполнил анкету, он лежит на вашем столе.
+
+Vertaa esimerkkiä @ee_mennyt_perf1 esimerkkiin @ee_mennyt_perf2, jossa käytetään
+imperfektiivisen aspektin заполнять-verbiä:
+
+(@ee_mennyt_perf2) Я уже заполнял анкету
+
+Esimerkissä @ee_mennyt_perf1 toiminnan tulos on ajankohtainen: lomake on läsnä
+puhetilanteessa, se on juuri täytetty ja sijaitsee vastaanottajan pöydällä.
+Esimerkissä @ee_mennyt_perf2 puolestaan viitataan menneisyyteen ilman linkkiä
+puhehetkeen: todetaan vain toiminnan tapahtuneen. Lomakkeen sijainnista tai
+täyttämisajasta ei ilmaista mitään.
+
+Perfektiivisen aspektin kyky ilmaista menneisyydessä suoritettua toimintaa,
+jonka tulos on puhehetkellä voimassa, tulee hyvin esiin vertailussa
+imperfektiivisen aspektin [toiminnan mitätöitymisen
+erityismerkitykseen](#ytm_mitat). Pohdi uudestaan [esimerkkejä](#ytm_mitat)
+@ee_mennyt_mitat1--@ee_mennyt_mitat6. Vertaa niitä esimerkkeihin
+@ee_perf_eim1--@ee_perf_eim2:
+
+(@ee_perf_eim1) Почему вы открыли окно? На улице минус двадцать пять, вы с ума сошли?
+(@ee_perf_eim3) Папа приехал, он в гостиной, иди поздоровайся.
+(@ee_perf_eim2) Не понимаю эту мою привычку: опять, кажется, первым делом включил компьютер, сам того не замечая.
+
+Esimerkit @ee_perf_eim1--@ee_perf_eim3 osoittavat, että toiminnan tulos on
+puhehetkellä voimassa: ikkuna on auki, tietokone päällä ja isä paikalla.
+
+### Äkillinen muutos toiminnassa 
+
+Perfektiivisellä aspektilla voidaan ilmaista toiminnassa tapahtuvia nopeita
+muutoksia, kuten seuraavissa esimerkeissä:
+
+(@ee_mennyt_muutos) Прохожий обернулся
+(@ee_mennyt_muutos) Вошедший снял плащ
+(@ee_mennyt_muutos) Машина свернула направо
+
+[@rassudova1984]
+
+### Odotetun toiminnan suorittaminen
+
+Keskustelutilanteissa on mahdollista, että puhuja on odottanut lausuman vastaanottajalta jonkin teon 
+suorittamista. Kun tällaisen suorituksen toteutumista tarkistetaan, käytetään
+usein perfektiivistä aspektia:
+
+(@ee_mennyt_odotettutoim2) Ты принял лекарство?
+(@ee_mennyt_odotettutoim3) Вы поговорили с ним?
+(@ee_mennyt_odotettutoim3) Ты помыл посуду?
+
+Kieltomuoto menneessä ajassa
+============================
+
+Edellä käsitellyt seikat vaikuttavat aspektin
+valintaan myös kieltomuodossa, mutta sillä on myös joitakin erityispiirteitä,
+jotka on syytä ottaa huomioon. 
+Yleisesti ottaen kieltomuotoisissa lauseissa imperfektiivinen aspekti on
+tavallisempi kuin perfektiivinen. Voidaan sanoa, että kieltolauseissa
+imperfektiivisen aspektin käyttöala laajeneen ja perfektiivisen aspektin
+käyttöala jonkin verran supistuu. Seuraavassa tarkastellaan joitakin
+imperfektiiviselle aspektille menneen ajan kieltomuodossa tyypillisiä piirteitä
+sekä verrataan tilanteita, joissa aspektin valinta on häilyvää.
+
+Imperfektiivisen aspektin kieltomuotoon liittyviä erityispiirteitä
+------------------------------------------------------------------
+
+### Toiminta ei vielä ole alkanut
+
+Kun menneessä ajassa käytetään imperfektiivisen aspektin verbimuotoa,
+seurauksena on usein sen ilmaiseminen, ettei toiminta ole vielä edes alkanut.
+Virke @ee_mennyt_eiala1 on tästä esimerkki:
+
+(@ee_mennyt_eiala1) Уже стемнело, но свечи ещё не горели [@dav1, muokattu]
+
+Periaatteessa samasta asiasta on kyse esimerkissä @ee_mennyt_eiala2, jossa Zenit ei
+vielä ollut johdossa (voitolla), ts. "johdossa oleminen ei vielä ollut alkanut":
+
+(@ee_mennyt_eiala2) на 60-м минуте Зенит еще не выигывал
+
+Vertaa myös esimerkkiä @ee_mennyt_eiala3:
+
+(@ee_mennyt_eiala3) В 40-ые годы кварки не изучали.
+
+### Toiminnassa ei muutoksia
+
+Toinen imperfektiiviseen aspektiin meenneessä ajassa ja kieltomuodossa liittyvä erityispiirre on, 
+että sillä kuvataan toimintaa, joka jatkuu muuttumattomana. Usein kyseessä on
+esimerkiksi säätila, kuten esimerkissä @ee_mennyt_eimuut1:
+
+(@ee_mennyt_eimuut1) Дождь не переставал.
+
+Vrt. myös seuraavia esimerkkejä, jossa muutoksettomuus koskee ennemmin
+toiminnan puutetta kuin toimintaa:
+
+(@ee_mennyt_eimuut3) Компьютер не включался.
+(@ee_mennyt_eimuut4) Шла уже 80-ая минута матча, но Роналду не забивал.
+(@ee_mennyt_puutkest1) Ученые долго не <span class='r'>находили</span> ответа на вопрос о том, почему значение гравитационной постоянной составвляет именно 6,67408(31)·10−11 м3·с−2·кг−1, или Н·м²·кг−2
+
+Esimerkki @ee_mennyt_puutkest1 osoittaa, että vastaavissa tapauksissa on
+mahdollista luoda mielikuva toiminnan puuttumisen kestämisestä, vaikka kyseessä
+olisi verbi, joka tavallisesti ei ilmaise kestoa, kuten находить.
+
+Tilanteita, joissa aspektin valinta on häilyvää
+------------------------------------------------------------------
+
+Kieltomuoto paitsi laajentaa imperfektiivisen aspektin käyttöalaa, samalla myös
+lisää häilyvien tapausten määrää, joissa usein mahdollisia ovat kummatkin
+aspektit. 
+
+Selkeimmin tämä näkyy jo muutoinkin heikossa ytm/kfm-oppositiossa. Myönteisissä
+lauseissa imperfektiivisen ja perfektiivisen aspektin välinen ero on näissä
+tapauksissa usein perua perfektiivisen aspektin ominaisuudesta kuvata toiminta
+sisäisesti rajattuna. Kun kyse on toiminnan *puuttumisen toteamisesta*, myös
+tämä vastakkainasettelu laimenee tai häviää kokonaan. Niinpä seuraavissa
+esimerkeissä niin imperfektiivisen aspektin yleisesti toteava merkitys kuin
+perfektiivisen aspektin konkreettis-faktinen merkitys ovat mahdollisia:
+
+(@ee_ytmkielto1) Меня никто не встретил/ встречал.
+(@ee_ytmkielto2) Автобус не останавливался / остановился?
+(@ee_ytmkielto3) Он не сообщил / сообщал о своем приезде.
+(@ee_ytmkielto4) Сегодня я не купила / покупала фруктов.
+
+[@rassudova1984]
+
+I:n ja P:n välisen eron häilyvyys voi näkyä myös I:n konkreettis-prosessuaalisen
+merkityksen yhteydessä. Tämä tarkoittaa yleensä, että kumpaa tahansa aspektia
+voi käyttää kuvaamaan kyseessä olevaa tilannetta, mutta aspektien välillä on
+pieni merkitysero siinä, että I-verbi tuo mukanaan lievän kestoa korostavan
+painotuksen, kuten esimerkeissä @ee_kestny--@ee_kestny2:
+
+(@ee_kestny) Я подошел и остановился в двух шагах. Они не замечали / заметили меня
+(@ee_kestny2) Егор, что ты? Так и не ложился / лег?
+
+[@rassudova1984]
+
+
+### Odotettu toiminta, jota ei sittenkään suoritettu
+
+
+</section>
+</article>
+

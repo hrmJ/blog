@@ -1,0 +1,805 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="finnish" xml:lang="finnish">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="../jquery-latest.js"></script>
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/theme/sky.css" id="theme">
+  <style type='text/css'>
+  
+  /* General Demo Style */
+  @import url(http://fonts.googleapis.com/css?family=Lato:300,700);
+  
+  .main {
+  	width: 100%;
+  	max-width: 960px;
+  	padding: 40px;
+  	text-shadow: 0 2px 0 rgba(255,255,255,0.7);
+  }
+  
+  .main p {
+  	font-size: 16px;
+  	line-height: 1.4;
+  	text-align: justify;
+  }
+  
+  .main p:nth-of-type(2){
+  	-moz-column-gap: 20px;
+  	-webkit-column-gap: 20px;
+  	-ms-column-gap: 20px;
+  	-o-column-gap: 20px;
+  	column-gap: 20px;
+  }
+  
+  .main p:nth-of-type(4){
+  	-moz-column-gap: 15px;
+  	-o-column-count: 3;
+  	-o-column-gap: 15px;
+  	-ms-column-count: 3;
+  	-ms-column-gap: 15px;
+  	-webkit-column-gap: 15px;
+  	column-count: 3;
+  	column-gap: 15px;
+  }
+  
+  
+  
+  html *
+  {
+     /*font-family: Arial !important;*/
+  }
+  
+  
+  p.header {
+      font-size: 46px;
+      line-height: 40px;
+      text-align:left;
+      border-bottom: 2px solid black;
+      padding-bottom:5px;
+      margin-bottom:5em;
+  }
+  
+  h1 {
+      font-size: 36px;
+      line-height: 40px;
+  }
+  
+  h2 {
+      font-size: 30px;
+      line-height: 40px;
+  }
+  
+  h3 {
+      font-size: 24px;
+      line-height: 40px;
+  }
+  
+  h4 {
+      font-size: 18px;
+      line-height: 20px;
+  }
+  
+  /* Won't be used here */
+  
+  h5 {
+      font-size: 14px;
+      line-height: 20px;
+  }
+  
+  h6 {
+      font-size: 12px;
+      line-height: 20px;
+  }
+  
+  
+  .main {
+  	counter-reset: section-1, section-2, section-3, section-4;
+  }
+  
+  .main h1 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 36px;
+  	line-height: 40px;
+  	counter-increment: section-1;
+  	counter-reset: section-2 section-3 section-4;
+  }
+  
+  .main h2 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 30px;
+  	line-height: 40px;
+  	counter-increment: section-2;
+  	counter-reset: section-3 section-4;
+  	border-bottom: 1px solid #fff;
+  	box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+  	padding-bottom: 10px;
+  }
+  
+  .main h3 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 24px;
+  	line-height: 40px;
+  	counter-increment: section-3;
+  	counter-reset: section-4;
+  }
+  
+  .main h4 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 18px;
+  	line-height: 20px;
+  	counter-increment: section-4;
+  }
+  
+  a:link{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:active{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:visited{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:hover{
+  color:#000000;
+  text-decoration:underline;
+  }
+  
+  #TOC{
+  position:absolute;
+  width:17%;
+  font-size:89%;
+  margin-top:30px;
+  /*height:70%;*/
+  /*box-shadow: 3px 7px 5px 0px;*/
+  padding:5px;
+  overflow:auto;
+  /*border-radius:10px;
+  border: 1px black dashed;*/
+  }
+  
+  #TOC > ul{
+  list-style-type: none;
+  }
+  
+  
+  #TOC ul
+  {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  }
+  
+  #TOC a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #036;
+  /*width: 9em;*/
+  padding: 3px 12px 3px 8px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: bold;
+  }
+  
+  #TOC a:hover
+  {
+  background-color: #369;
+  color: #FFF;
+  }
+  
+  #TOC li li a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #69C;
+  /*width: 9em;*/
+  padding: 3px 3px 3px 17px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: normal;
+  }
+  
+  
+  .container{
+      height: 100%;
+      margin-top: 50px;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 9%;
+      padding-top: 10%;
+      background: white;
+      border-radius:25px;
+      }
+  
+  .references{
+      margin-top: 2%;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      background: white;
+      }
+  
+  
+  
+  #topbar{
+  position:absolute;
+  top:0;
+  left:-20px;
+  /*background:yellow;*/
+  background-color: #C5A05B;
+  margin-bottom:10px;
+  padding-left:25px;
+  /*
+  padding-right:25px;
+  padding-top:5px;
+  */
+  padding-bottom:2px;
+  border-bottom: 1px dashed white;
+  border-right: 1px dashed white;
+  }
+  
+  .r {color:red;}
+  .b {color:blue;}
+  .g {color:grey;}
+  .gre {color:green;}
+  
+  .definition {
+      background: beige;
+      /*background: #DABC83;*/
+      padding-left: 1px;
+      margin-left: 2em;
+      padding-right: 1px;
+  }
+  
+  .defheader{
+      width: 100%;
+      /* padding-right: 10px; */
+      /* margin-right: 10px; */
+      border-bottom: 1px dashed black;
+      background: aliceblue;
+      /*background: #B0D0EC;*/
+  }
+  
+  .definition > p {
+      /* color: red; */
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 1em;
+      font-style: italic;
+  }
+  
+  article.bubble{
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 2em;
+  border-radius: 7px;
+  margin-left: 14px;
+  color:black;
+  }
+  
+  
+  article.bubblenob{
+  float: left;
+  width:30%;
+  }
+  
+  
+  article.mmbubble{
+  text-align: left;
+  border: 2px dotted black;
+  padding: 4px;
+  border-radius: 7px;
+  margin:1%;
+  color:black;
+  }
+  
+  article.nfbubble{
+  font-size:90%;
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 1.5em;
+  border-radius: 7px;
+  margin:4%;
+  box-shadow: 10px 10px 5px #888888;
+  color:black;
+  }
+  
+  article.bgred{background: rgba(222, 184, 135, 0.64);}
+  article.bgblue{background: rgba(100, 149, 237, 0.45);}
+  article.bggreen{background: darkseagreen;}
+  article.bgcyan{background: rgba(255, 215, 0, 0.25);}
+  
+  span#triangle {
+      display: inline-block;
+      margin: 72px;
+      border-right: 24px solid; border-bottom: 24px solid;
+      width: 50px; height: 50px;
+      transform: rotate(-45deg);
+  }
+  
+  span.right-arrow {
+      display: inline-block;
+      position: relative;
+      background: #E8EFED;
+      padding: 3px;
+  }
+  
+  span.right-arrow:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      margin-top: -10px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid #151514;
+  }
+  
+  span.afterarrow {
+      background: rgb(193, 243, 255);
+      margin-left: 9px;
+      padding: 3px;
+  }
+  
+  article#tocmain{
+  background:none;
+  }
+  
+  #topbar a:hover{
+  background-color: #8A6C34;
+  color: #FFF;
+  }
+  
+  #topbar a{
+  padding:3px;
+  color: #FFF;
+  text-decoration: none;
+  /*border-right:1px dashed white;*/
+  }
+  
+  #inlinemenu{
+  padding:0;
+  margin:0;
+  }
+  
+  .inline{
+  display:inline;
+  }
+  
+  #topbar li{list-style-type: none;
+      line-height:130%;
+  }
+  
+  a.dropdown-link { 
+      color:#044264;
+      text-decoration:none; 
+  }
+  
+  ul#quotes-bar-menu {
+      margin: 0; padding: 0;
+      float:left;
+      width: 100%;
+      list-style: none;
+  }
+  
+  ul#quotes-bar-menu li {
+      display:inline;
+      float:left;
+      position:relative;
+      margin:0;
+      padding:7px 15px 7px 0;
+  }
+  
+  /* sub menu class */
+  ul#quotes-bar-menu li .sub-menu {
+      background-color: #C5A05B;
+      display:none;
+      left:0;
+      margin:0;
+      font-size:11;
+      padding:0;
+      position:absolute;
+      top:29px;
+      width:320px;
+      z-index:999;
+  }
+  
+  ul#quotes-bar-menu li .single { 
+      /*width:150px !important;*/
+  }
+  
+  ul#quotes-bar-menu li{
+      color:#fff;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu ul {
+      float:left;
+      list-style:none;
+      display: block;
+      width:205px;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li {
+      width:135px;
+      margin:0; 
+      font-size:11px;
+      padding:1px 1px 0;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li a { color: white;
+  text-decoration: none;
+  }
+  ul#quotes-bar-menu li .sub-menu li a:hover { text-decoration: none; }
+  
+  
+  .invisible{
+  display:none;
+  }
+  .menubox{
+      background-color: #C5A05B;
+      padding: 0.12em;
+      border: 1px dashed white;
+      padding-left: 0.5em;
+  }
+  
+  
+  #topbar .menulauncher a{
+  border-right: 1px dashed white;
+  padding-right:3px;
+  }
+  
+  .menubox a{
+  width:80%;
+  display:inline-block;
+  margin-bottom:1%;
+  padding:0.2em;
+  cursor: pointer; cursor: hand;
+  font-family: arial;
+  font-size: 12;
+  text-decoration: underline;
+  }
+  </style>
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#ekaots"><span class="toc-section-number">1</span> Määritelmä</a></li>
+<li><a href="#yleisiä-periaatteita"><span class="toc-section-number">2</span> Yleisiä periaatteita</a></li>
+<li><a href="#perfektiivisen-aspektin-erityismerkityksiä"><span class="toc-section-number">3</span> Perfektiivisen aspektin erityismerkityksiä</a><ul>
+<li><a href="#kfm"><span class="toc-section-number">3.1</span> Konkreettis-faktinen merkitys (kfm)</a></li>
+<li><a href="#pot-em"><span class="toc-section-number">3.2</span> Potentiaalinen merkitys (pm)</a></li>
+<li><a href="#perfektin-merkitys"><span class="toc-section-number">3.3</span> Perfektin merkitys</a></li>
+<li><a href="#hav-esim"><span class="toc-section-number">3.4</span> Havainnollisen esimerkin merkitys (hem)</a></li>
+<li><a href="#summatiivinen"><span class="toc-section-number">3.5</span> Summatiivinen merkitys</a></li>
+</ul></li>
+<li><a href="#imperfektiivisen-aspektin-erityismerkityksiä"><span class="toc-section-number">4</span> Imperfektiivisen aspektin erityismerkityksiä</a><ul>
+<li><a href="#kpm"><span class="toc-section-number">4.1</span> Konkreettis-prosessuaalinen merkitys</a><ul>
+<li><a href="#konatiivinen-merkitys"><span class="toc-section-number">4.1.1</span> Konatiivinen merkitys</a></li>
+<li><a href="#kestoa-korostava-merkitys"><span class="toc-section-number">4.1.2</span> Kestoa korostava merkitys</a></li>
+</ul></li>
+<li><a href="#rtm"><span class="toc-section-number">4.2</span> Rajoittamattoman toiston merkitys</a></li>
+<li><a href="#rttm"><span class="toc-section-number">4.3</span> Rajoitetun toiston merkitys</a></li>
+<li><a href="#tilaa-suhdetta-tai-ominaisuutta-kuvaava-erityismerkitys"><span class="toc-section-number">4.4</span> Tilaa, suhdetta tai ominaisuutta kuvaava erityismerkitys</a></li>
+<li><a href="#ytm"><span class="toc-section-number">4.5</span> Yleisesti toteava merkitys</a></li>
+</ul></li>
+</ul>
+</div>
+<article id="topbar">
+<a href='javascript:void(0)' id='menu1' class='menulauncher' >Aspekti- ja liikeverbiteoria |</a>
+<div id="menu1box" class="invisible menubox">
+<p><a href='../index.html'>Sisällys</a> <a href='kurssin_esittely.html'>Kurssin esittely</a> <a href='kurssin_aikataulu.html'>Kurssin aikataulu</a> <a href='https://learning2.uta.fi/course/view.php?id=7339'>Moodle</a></p>
+</div>
+<a href='javascript:void(0)' id='menu2' class='menulauncher' >Aspekti |</a>
+<div id="menu2box" class="invisible menubox">
+<p><a href='invariantit_merkitykset.html'>Aspektuaalisuus ja aspektin invariantit merkitykset</a> <a href='aspektin_muodostus.html'>Aspektin/aspektiparin muodostaminen sekä aspektin valintaan vaikuttavat tekijät</a> <a href='erityismerkitykset.html'>Aspektien erityismerkitykset</a></p>
+</div>
+<a href='javascript:void(0)' id='menu3' class='menulauncher' >Aspektin vaikuttavat tekijät vuorovaikutuksessa</a>
+<div id="menu3box" class="invisible menubox">
+<p><a href='aspekti_menneen_ajan_verbimuodoilla.html'>Aspekti menneen ajan verbimuodoilla</a> <a href='aspekti_futuurisilla_verbimuodoilla.html'>Aspekti futuurin verbimuodoilla</a> <a href='imperatiivi.html'>Aspekti imperatiivissa</a> <a href='infinitiivi.html'>Aspekti infinitiivissä</a></p>
+</div>
+<script>
+function showmenu(obj) {
+
+    // .position() uses position relative to the offset parent, 
+    var pos = $(obj).position();
+
+    // .outerWidth() takes into account border and padding.
+    var width = $(obj).outerWidth();
+    var height = $(obj).outerHeight();
+    var menuid = "#" + $(obj).attr('id') + 'box';
+
+    //show the menu directly over the placeholder
+    $(menuid).css({
+        position: "absolute",
+        top: pos.top + height + "px",
+        left: (pos.left) + "px"
+    }).show();
+    
+}
+
+$('.menulauncher').hover(function(event) {showmenu(this); });
+$('.menubox').mouseleave(function(event) {$('.menubox').hide();});
+
+</script>
+</article>
+<article class="container">
+<section class="main">
+<p class="header">
+Aspektien erityismerkitykset
+</p>
+<h1 id="ekaots"><span class="header-section-number">1</span> Määritelmä</h1>
+<p>Sen lisäksi, että aspektologiassa erotetaan aspektien <a href="invariantit_merkitykset.html">invariantit merkitykset</a>, voidaan sekä imperfektiivinen että perfektiivinen aspekti jakaa edelleen tapausryppäisiin, jotka muistuttavat merkitykseltään ja käyttötilanteiltaan toisiaan. Jokainen tällainen tapausrypäs, erityismerkitys<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>, heijastaa omalla tavallaan ko. aspektille tyypillisiä semanttisia piirteitä kuten toiminnan sisäistä rajaa, sidonnaisuutta aikaan tai prosessuaalisuutta. Kuitenkin jotkin piirteet tai ominaisuudet tulevat selvemmin esille kuin toiset.</p>
+<p>Ei ole olemassa tarkkaa määritelmää tai yksimielisyyttä siitä, mitä kaikkia erityismerkityksia aspekteilla on. Esimerkiksi V. A. Bondarko <span class="citation">(2005: 238–246)</span> erottaa kaikkiaan kuusi imperfektiivisen ja neljä perfektiivisen aspektin erityismerkitystä, kun taas Ahti Nikunlassi <span class="citation">(2002: 178–187)</span> luettelee peräti yhdeksän erityismerkityksen pääluokkaa, jotka lisäksi jakautuvat muutamiin alaluokkiin. Aspektologian klassikko Ju. S. Maslov <span class="citation">(1959)</span> puolestaan erottaa kummallekin aspektille kolme <em>tärkeintä</em> erityismerkitystä.</p>
+<p>Mainittujen luokitusten erot johtuvat pääosin siitä, että toisissa analyyseissa jokin erityismerkitys jaetaan useaksi alamerkityksesi kun taas toisissa käytetään laveampaa luokittelua. Ei toki ole niin, että esimerkiksi Maslovin suppeassa luokituksessa jätettäisiin jotkin merkitykset kokonaan huomiotta: ne vain ryhmitellään osaksi laajempaa kokonaisuutta kuin muissa luokituksissa.</p>
+<p>Tällä kurssilla keskitytään vain valikoituun määrään erityismerkityksiä, niin että painotus on käytetyimmissä ja laajimmin sovellettavissa olevissa luokissa.</p>
+<h1 id="yleisiä-periaatteita"><span class="header-section-number">2</span> Yleisiä periaatteita</h1>
+<p>Erityismerkityksiä käsiteltäessä on muistettava, että ne ovat ennen kaikkea tutkijoiden konstruktioita, joilla pyritään selittämään tietyntyyppisiä verbeillä luotavia merkityksiä. Tämän vuoksi erityismerkitysten määrä ja usein nimet vaihtelevat ja niihin sisältyy paljon tulkinnanvaraisuutta. Ne kannattaakin mieltää analyysissa ja ymmärtämisessä avustavaksi käsiteverkoksi, jonka avulla pystytään paremmin ottamaan huomioon verbeillä ilmaistavan aspektuaalisuuden moniulotteisuus: kuten <a href="invariantit_merkitykset.html#monis-maar">edellä</a> todettiin, sen paremmin imperfektiivistä kuin perfektiivistä aspektia ei voi luonnehtia vain yhden ominaisuuden perusteella, vaan niihin liittyy monia merkityspiirteitä, jotka ovat tilanteesta riippuen läsnä joko selkeämmin tai laimeammin.</p>
+<p>Kaikki imperfektiivisen aspektin verbit eivät esiinny kaikissa imperfektiiviselle aspektille esitetyistä erityismerkityksissä eivätkä kaikki perfektiivisen aspektin verbit esiinny kaikissa perfektiivisen aspektin erityismerkityksissä. Lisäksi joillekin verbeille tietyt erityismerkitykset ovat tyypillisempiä kuin toisille. Esimerkiksi imperfektiivisen aspektin yleisesti toteavassa erityismerkityksessä esiintyvät useimmiten verbit, jotka ilmaisevat konkreettista fysikaalista toimintaa, puhujan tahtoa, kommunikaatiota ja havaintoja (ks. tarkemmin osiossa <a href="aspekti_menneen_ajan_verbimuodoilla.html#ytm-verbit">aspekti menneen ajan verbimuodoilla</a>).</p>
+<p>Kun kyseessä on merkitys, joka edustaa aspektin invariantin merkityksen kannalta poikkeuksellista toimintaa, erityismerkityksen käyttö tuo usein mukanaan neutraaliudesta poikkeavia lisävivahteita ja modaalisuutta<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. Usein jollain suppeampiläyttöisellä erityismerkityksellä ilmaistava lause voitaisiinkin sanoa neutraalimmin käyttämällä toisen aspektin tavallisempaa merkitystä. Tämänkaltainen tilanne vallitsee monin paikoin esimerkiksi käytettäessä perfektiivisen aspektin <a href="#pot-em">potentiaalista erityismerkitystä</a>: vertaa esimerkkiä 5 neutraalimpaan imperfektiivisen aspektin verbin sisältävään esimerkkiin 1:</p>
+<ol style="list-style-type: decimal">
+<li>Ему можно доверять. Он всегда помагает.</li>
+</ol>
+<p>Erityismerkitysten vaikutukseen aspektin valinnassa sekä imperfektiivisen ja perfektiivisen aspektin erityismerkitysten välisiin oppositioihin perehdytään tarkemmin tuonnempana, kun käsitellään <a href="aspekti_menneen_ajan_verbimuodoilla.html">aspektin valintaa menneessä ajassa</a>, aspektin valintaa futuurissa sekä infinitiivin ja kieltomuodon vaikutusta aspektin valintaan. Tässä luodaan lyhyt katsaus siihen, mitä eri erityismerkityksiä aspekteilla kaikkiaan on tapana erottaa.</p>
+<h1 id="perfektiivisen-aspektin-erityismerkityksiä"><span class="header-section-number">3</span> Perfektiivisen aspektin erityismerkityksiä</h1>
+<p>Erityismerkityksiä käsiteltäessä on usein tapana aloittaa perfektistä, jolla erityismerkityksiä on perinteisesti nähty vähemmän kuin imperfektiivisellä aspektilla. Tässä yhteydessä käsitellään seuraavia perfektiivisen aspektin merkitysryppäitä:</p>
+<ol style="list-style-type: decimal">
+<li>konkreettis-faktinen merkitys (конкретно-фактическое значение)</li>
+<li>havainnollisen esimerkin merkitys (наглядно-примерное значение)</li>
+<li>perfektin merkitys (перфектное значение)</li>
+<li>potentiaalinen merkitys (потенциальное значение)</li>
+<li>summatiivinen merkitys (суммарное значение)</li>
+</ol>
+<h2 id="kfm"><span class="header-section-number">3.1</span> Konkreettis-faktinen merkitys (kfm)</h2>
+<p>Konkreettis-faktista merkitystä (jäljempänä myös lyhenteenä: <em>kfm</em>) voi pitää perfektiivisen aspektin <em>perusmerkityksenä</em>, koska</p>
+<ol style="list-style-type: lower-alpha">
+<li>Se on vähiten riippuvainen kontekstista</li>
+<li>Se ilmaisee selkeimmin perfektiiviselle aspektille tyypillisiä piirteitä</li>
+<li>Se on laajimmin levinnyt</li>
+</ol>
+<div class="definition">
+<div class="defheader">
+Konkreettis-faktinen erityismerkitys
+</div>
+<p>Nimensä mukaisesti konkreettis-faktinen erityismerkitys viittaa toimintaan, joka on 1) Konkreettista: kuvaa yhtä yksittäistä, konkreettista toimintakertaa sekä 2) faktista: kuvaa toiminnan totaalisena (целостный)</p>
+</div>
+<p><em>Perusmerkitys</em> tarkoittaa tässä myös sitä, että muut erityismerkitykset tavalla tai toisella yleensä heijastavat konkreettis-faktiselle merkitykselle tyypillisiä ominaisuuksia, vaikkei niitä suoraan pidettäisikään tämän alamerkityksinä.</p>
+<p>Kfm-erityismerkityksen luonne perusmerkityksenä sekä sen kyky ilmaista P:lle tyypillisiä piirteitä näkyy siinä, ettei sen realisoitumiseksi tarvita juurikaan erityisiä kontekstuaalisia vihjeitä. Seuraavissa esimerkeissä konteksti on hyvin minimaalinen, mutta silti konkreettis-faktinen merkitys nousee esiin:</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Он повторил мне свой вопрос. <span class="citation">(Bondarko 2005)</span><br />
+</li>
+<li>Он написал письмо и вложил его в конверт <span class="citation">(Nikunlassi 2002)</span></li>
+<li>– Отпустили тебя? – отпустили. <span class="citation">(Bondarko 2005)</span></li>
+</ol>
+<h2 id="pot-em"><span class="header-section-number">3.2</span> Potentiaalinen merkitys (pm)</h2>
+<div class="definition">
+<div class="defheader">
+Potentiaalinen erityismerkitys
+</div>
+<p>Potentiaalinen erityismerkitys kuvaa puhujan arvioita tekijän kyvystä tai kyvyttömyydestä suorittaa jokin tehtävä tai taipumuksesta toimia toistuvasti tietyllä tavalla.</p>
+</div>
+<p>Tämän erityismerkityksen voi laveammassa analyysissa katsoa myös osaksi <a href="#hav-esim">havainnollisen esimerkin edustamaa merkitysrypästä</a>. Tämä johtuu siitä, että myös potentiaalinen merkitys piirtää ikään kuin yksittäistä toimintaa kuvaavalla perfektiivisen aspektin verbillä esimerkinomaisen tilanteen, jota voi soveltaa laajemmin tai toistuvasti: olipa tilanne mikä tahansa, hän varmasti auttaa ystävää (esimerkki 5).</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Ему можно доверять. Он всегда поможет другу.</li>
+</ol>
+<p>Koska toiminnan tuloksellisuus on yksi perfektiiviselle aspektille tyypillisistä piirteistä, potentiaalinen erityismerkitys on usein modaalisesti värittynyt: puhuja pitää varmana, että apua pyydettäessä esimerkin 5 vastaa pyyntöön myöntävästi ja tekee, mitä pyytäjä haluaa. Tämä toimii myös toiseen suuntaan, kun puhuja pitää varmana jonkun muun <em>kyvyttömyyttä</em> tehdä jotakin:</p>
+<ol start="6" style="list-style-type: decimal">
+<li>Он не сдаст экзамен, слишком много пропускал занятия <span class="citation">(Nikunlassi 2002)</span></li>
+<li>По лицу не поймешь, сколько ей лет <span class="citation">(Rassudova 1984)</span></li>
+</ol>
+<p>Pohdi myös seuraavia korpusesimerkkejä:</p>
+<ol start="8" style="list-style-type: decimal">
+<li>Он всегда похвалит твое платье, прическу и сумочку <span class="citation">(«Лиза» 2005)</span></li>
+<li>Оснастил двери особо умным устройством, теперь никто не <span class="r">пролезет</span> в квартиру.<span class="citation">(Азольский 1998)</span></li>
+</ol>
+<h2 id="perfektin-merkitys"><span class="header-section-number">3.3</span> Perfektin merkitys</h2>
+<p>Perfektiivisen aspektin käyttö luo tietyissä tapauksissa yhteyden ilmauksen lausumisajankohdan ja verbin ilmaiseman ajankohdan välille. Tällöin ilmaus saa perfektisen tulkinnan. Esimerkissä 10 toiminnan tulos on nähtävissä lausumishetkellä: henkilö on laihtunut ja vanhentunut.</p>
+<ol start="10" style="list-style-type: decimal">
+<li>Он похудел и постарел</li>
+</ol>
+<p>Perfektiivisen aspektin käyttö esimerkissä 11 puolestaan ilmaisee, että lomake, joka on täytetty on vieläkin jossain lähistöllä: täyttäminen on juuri päättynyt, ja se on toimintana edelleen relevantti nykyhetken kannalta.</p>
+<ol start="11" style="list-style-type: decimal">
+<li>Вы можете взять анкету. Я ее уже заполнил.</li>
+</ol>
+<p>Perfektin merkitys on tärkeä käsite, kun pyritään ratkaisemaan aspektinvalintakysymyksiä menneessä ajassa tilanteissa, joissa myös imperfektiivisen aspektin <a href="#ytm">yleisesti toteava erityismerkitys</a> voisi tulla kysymykseen.</p>
+<h2 id="hav-esim"><span class="header-section-number">3.4</span> Havainnollisen esimerkin merkitys (hem)</h2>
+<p>Perfektiivisen aspektin luontaisiin ominaisuuksiin kuuluu sisäisen rajan sisältävän totaalisen toiminnan ilmaiseminen. Tyypillistä on myös yksittäisten toimintojen kuvaaminen. Näitä ominaisuuksia voidaan hyödyntää, kun kuvataan tapahtumia, jotka joku henkilö joissakin olosuhteissa tyypillisesti suorittaa.</p>
+<div class="definition">
+<div class="defheader">
+Havainnollisen esimerkin erityismerkitys
+</div>
+<p>Havainnollisen esimerkin merkityksessä perfektiivinen aspekti kuvaa toiminnan ikään kuin toistuvana tai tyypillisenä nostamalla yhden konkreettisen toimintakerran esimerkinomaisesti esille.</p>
+</div>
+<p>Havainnolisen esimerkin erityismerkityksen ilmenemiseksi vaaditaan kontekstuaalisia vihjeitä, jotka ohjaavat tulkintaa esimerkinomaiseen suuntaan. Hem-merkityksessä käytetyn verbin sisältävät virkkeet voivat esimerkiksi alkaa johdantomaisella lauseella kuten <em>Бывало так</em>, <em>бывает</em> tai <em>случается</em>, jonka jälkeen seuraavan aineksen kuulija ymmärtää tulkita esimerkiksi.</p>
+<ol start="12" style="list-style-type: decimal">
+<li>Бывало так: Женя положит бутылку в холодильник, побежит куда-то и через минуту вернется</li>
+<li>Бывает, что и не заметишь ошибку сразу. <span class="citation">(Rassudova 1984)</span></li>
+<li>Случается, что среди зимы <span class="r">настанет</span> вдруг сильная оттепель и клюква<span class="r">оттает.</span></li>
+</ol>
+<p>Hem-erityismerkitystä voidaan käyttää myös laveampana otsikkona eri tapauksille, joissa perfektiivinen aspekti ilmaisee yksittäisen toiminnan kautta jotain, joka todellisuudessa pitää sisällään toistuvuutta. Tällöin potentiaalin erityismerkitys luetaan osaksi havainnollisen esimerkin erityismerkitystä, ja vaikkapa esimerkin 15 voidaan myös katsoa kuuluvan hem:n piiriin <span class="citation">(ks. erit. Rassudova 1984: 114–117)</span>:</p>
+<ol start="15" style="list-style-type: decimal">
+<li>Только скажешь ему – он немедленно приедет.</li>
+</ol>
+<h2 id="summatiivinen"><span class="header-section-number">3.5</span> Summatiivinen merkitys</h2>
+<div class="definition">
+<div class="defheader">
+Summatiivinen erityismerkitys
+</div>
+<p>Summatiivisessa erityismerkityksessä perfektiivisellä aspektilla ilmaistaan toimintaa, joka toistuu tietyn määrän (yleensä peräkkäisiä) kertoja.</p>
+</div>
+<p>Yllä oleva määritelmä saattaa herättää kummastusta siinä mielessä, että toistuminen katsotaan lähtökohtaisesti yleensä nimenomaan imperfektiiviselle aspektille ominaiseksi piirteeksi, joka perfektiivisen aspektin tapauksessa on käytännössä mahdotonta. Summatiivinen merkitys ei kuitenkiaan sodi P:n <a href="invariantit_merkitykset.html#tarkempi-maaritelma">tarkempaa määritelmää</a> vastaan. Pohdi esimerkkiä 16:</p>
+<ol start="16" style="list-style-type: decimal">
+<li>Вчера я пять раз прочитал материал для экзамена.</li>
+</ol>
+<p>Esimerkissä 16 kuvattava toiminta on perfektiivisen aspektin määritelmän mukaisesti <em>sisäisesti rajattua</em> ja <em>totaalista</em>. Toiminnat (lukemiskerrat) eivät limity, vaan esimerkin 16 tekijä on, ainakin ensi miettimällä, aina ennen uutta toistoa suorittanut loppuun edellisen toistokerran.</p>
+<p>On kuitenkin totta, että kuvatessaan toistuvaa toimintaa perfektiivinen aspekti ikään kuin “astuu imperfektiivisen aspektin alueelle” siinä mielessä, että syntyy tilanteita, joissa aspektit ovat käytännössä synonyymisia, eikä valintaa niiden välillä ole kovin helppo analysoida. Yksi vaihtoehto on todeta, että I:llä ilmaistuna toistokertojen väliin mahtuu ajanjaksoja, selkeämmin kuin P:llä ilmaistavassa toistossa:</p>
+<ol start="17" style="list-style-type: decimal">
+<li>Он несколько раз перечитал записку</li>
+<li>Я перечитывал этот роман несколько раз</li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<p>Tietyissä konteksteissa tämäkin ero on kuitenkin hämärtynyt:</p>
+<ol start="19" style="list-style-type: decimal">
+<li>За время лекции он несколько раз вышел из аудитории</li>
+<li>За время лекции он несколько раз выходил из аудитории</li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<h1 id="imperfektiivisen-aspektin-erityismerkityksiä"><span class="header-section-number">4</span> Imperfektiivisen aspektin erityismerkityksiä</h1>
+<p>Luokittelusta riippumatta imperfektiivisen aspektien erityismerkityksiä on perinteisesti erotettu useampia kuin perfektiivisellä aspektilla. Tässä keskitytään seuraaviin:</p>
+<ol style="list-style-type: decimal">
+<li>konkreettis-prosessuaalinen merkitys (конкретно-процессное значение)</li>
+<li>rajoittamattoman toiston merkitys (неограниченно-кратное значение)</li>
+<li>yleisesti toteava merkitys (обобщенно-фактическое значение)</li>
+<li>rajoitetun toiston merkitys (ограниченно-кратное значение)</li>
+<li>Tilaan, ominaisuuteen tai suhteeseen liittyvä merkitys (значение неактуального осостояния, свойства или отношения)</li>
+</ol>
+<h2 id="kpm"><span class="header-section-number">4.1</span> Konkreettis-prosessuaalinen merkitys</h2>
+<p>Esimerkkejä:</p>
+<ol start="21" style="list-style-type: decimal">
+<li>Когда мама пришла домой, я играл на фортепиано</li>
+<li>Молодая женщина сидела у окна вагона и читала (ras)</li>
+<li>Я слышу шаги (nik)</li>
+</ol>
+<p>Konkreettis-prosessuaalista merkitystä voi pitää imperfektiivisen aspektin <em>perusmerkityksenä</em>, koska</p>
+<ol style="list-style-type: lower-alpha">
+<li>Se on vähiten riippuvainen kontekstista</li>
+<li>Se ilmaisee selkeimmin imperfektiiviselle aspektille tyypillisiä piirteitä</li>
+<li>Se on laajimmin levinnyt</li>
+</ol>
+<p>Konkreettis-prosessuaalista merkitystä välittävä toiminta on:</p>
+<ol style="list-style-type: decimal">
+<li>Konkreettista:
+<ul>
+<li>kuvaa yhtä yksittäistä, konkreettista toimintakertaa<br />
+</li>
+</ul></li>
+<li>Prosessuaalista
+<ul>
+<li>ei kuvaa toiminnan totaalisena</li>
+<li>ei erota toiminnalle sisäistä rajaa</li>
+</ul></li>
+</ol>
+<h3 id="konatiivinen-merkitys"><span class="header-section-number">4.1.1</span> Konatiivinen merkitys</h3>
+<p>Imperfektiivisen aspektin konkreettis-prosessuaalisesta erityismerkityksestä voi erottaa kaksi alamerkitystä, jotka ovat käytöltään sikäli yleisiä, että niitä on mielekästä tarkastella omina ryhminään. Nämä kaksi erityismerkitystä ovat konatiivinen ja kestoa korostava merkitys.</p>
+<p>Esimerkkejä:</p>
+<ol start="24" style="list-style-type: decimal">
+<li>Вот тебе и муж предоставлен. Убивали, да не убили (Bon)</li>
+<li>Я давал ему деньги, но он не брал их</li>
+</ol>
+<p>Konatiivisessa merkityksessä viitataan yritykseen suorittaa jokin toiminto.</p>
+<h3 id="kestoa-korostava-merkitys"><span class="header-section-number">4.1.2</span> Kestoa korostava merkitys</h3>
+<p>Esimerkkejä:</p>
+<ol start="26" style="list-style-type: decimal">
+<li>Значит, опять всю ночь будет выть собака. (Bon)</li>
+<li>Ваня все читал и читал</li>
+<li>Студенты занимались с утра до вечера</li>
+</ol>
+<p>Painotetaan toiminnan kestoa esimerkiksi verbin toistolla tai kestoa korostavilla adverbiaaleilla kuten всю ночь, долго, целый день</p>
+<h2 id="rtm"><span class="header-section-number">4.2</span> Rajoittamattoman toiston merkitys</h2>
+<p>Esimerkkejä:</p>
+<ol start="29" style="list-style-type: decimal">
+<li>Я часто покупаю на рынке овощи.</li>
+<li>В Финляндии всегда играют в хоккей</li>
+</ol>
+<p>Rajoittamaton toisto on hyvin frekventti imperfektiivisen aspektin erityismerkitys. Se kuvaa imperfektiiviselle aspektille tunnusomaista ajallisen kiinnekohdan puuttumista: toimintaa ei ole sidottu mihinkään tiettyyn hetkeen yksittäisenä tapahtumana. Konkreettiseen tapahtuma-ajankohtaan ei oteta kantaa.</p>
+<h2 id="rttm"><span class="header-section-number">4.3</span> Rajoitetun toiston merkitys</h2>
+<p>Hyvin lähellä perfektiivisen aspektin <a href="#summatiivinen">summatiivista erityismerkitystä</a> on imperfektiivisen aspektin <em>rajoitetun toiston erityismerkitys</em>. Erona kuitenkin tavallisesti on, että rajoitetun toiston erityismerkitys jättää hämärämmäksi toistokertojen välisen ajan:</p>
+<ol start="31" style="list-style-type: decimal">
+<li>Я три раза поступал в университет</li>
+<li>Я сегодня два раза открывал окно <span class="citation">(Nikunlassi 2002)</span></li>
+<li>Мне это надоело. Три раза подогревала тебе суп. <span class="citation">(Bondarko 2005)</span></li>
+</ol>
+<p>Vertaa esimerkkejä 32–33 vastaaviin lauseisiin perfektiivisen aspektin verbeillä. Näkökulma toimintaan muuttuu niin, että toistokerrat tulkitaan herkästi peräkkäisiksi, ja oletus on, että virke jatkuisi jollakin kontekstia tarkentavalla lauseella, kuten:</p>
+<ol start="34" style="list-style-type: decimal">
+<li>Я три раза подогрел суп, и только потом он стал съедобным.</li>
+</ol>
+<h2 id="tilaa-suhdetta-tai-ominaisuutta-kuvaava-erityismerkitys"><span class="header-section-number">4.4</span> Tilaa, suhdetta tai ominaisuutta kuvaava erityismerkitys</h2>
+<p>Esimerkkejä:</p>
+<ol start="35" style="list-style-type: decimal">
+<li>Река течет через город</li>
+<li>Ты играешь на гитаре?</li>
+<li>Миша болеет гриппом.</li>
+<li>Она на самом деле считает, что солнце - это очень старая звезда</li>
+</ol>
+<p>Tämä erityismerkitys yhdistää useita eri merkityksiä yhden yläkäsitteen alle. Esimerkiksi A. V. Bondarko erottaa tilaa tai ominaisuutta kuvaavista erityismerkityksistä potentiaalis-laadullisen<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> (ks. esimerkki 36) ja keskeytymättömän toiminnan<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> (ks. esimerkki 35) merkitykset. Nikunlassi puolestaan erottelee, mitä erilaisia suhteita ja tiloja voidaan kuvata: esimerkiksi fyysisiä (37) tai psyykkisiä (38).</p>
+<h2 id="ytm"><span class="header-section-number">4.5</span> Yleisesti toteava merkitys</h2>
+<p>Esimerkkejä:</p>
+<ol start="39" style="list-style-type: decimal">
+<li>Ты смотрел новый фильм Тарантино?</li>
+<li>Нолито забивал в этом сезоне и «Реалу», и «Барселоне».</li>
+</ol>
+<p>Imperfektiivisen aspektin yleisesti toteavalla merkityksellä<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> (ytm) on rajoittunut levinneisyys, mutta silti merkittävä rooli aspektien valinnan selittäjänä. Toteavassa merkityksessä puhuja on kiinnostunut (tai olettaa vastaanottajan olevan kiinnostunut) siitä, oliko toimintaa vai ei, tapahtuiko jokin vai ei. Pääasiassa tämä merkitys on käytössä menneessä ajassa, jolloin ilmaistaan selvä ajallinen etäisyys nykyhetkestä.</p>
+<p>Yleisesti toteava erityismerkitys jaetaan usein muutamiin eri alamerkityksiin. Näitä ovat</p>
+<ol style="list-style-type: decimal">
+<li>Toiminnan mitätöitymisen merkitys<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a></li>
+<li>ei-resultatiivinen toteava merkitys<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a></li>
+<li>tilannesidonnainen resultatiivis-faktinen merkitys<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a></li>
+</ol>
+<p>Näitä alamerkityksiä sekä ytm-erityismerkitystä yleensä on käsitelty tarkemmin <a href="aspekti_menneen_ajan_verbimuodoilla.html#ytmoppositio">menneen ajan verbimuotojen yhteydessä</a>.</p>
+</section>
+</article>
+<div class="references">
+<div id="ref-bondarko2015">
+<p>BONDARKO, A. 2005. <em>Теория морфологических категории и аспектологические исследования</em>. Moskova: Jazyki slavjanskoj kultury.</p>
+</div>
+<div id="ref-maslov1959">
+<p>MASLOV, J.S. 1959. <em>Вопросы грамматики в болгарском литературном языке</em>. Москва.</p>
+</div>
+<div id="ref-nikunlassi2002">
+<p>NIKUNLASSI, A. 2002. <em>Johdatus venäjän kieleen ja sen tutkimukseen</em>. Helsinki: Finn Lectura.</p>
+</div>
+<div id="ref-rassudova1984">
+<p>RASSUDOVA, O. 1984. <em>Aspectual usage in modern russian</em>. Moskova: Russky Yazyk.</p>
+</div>
+<div id="ref-azol1">
+<p>АЗОЛЬСКИЙ, А. 1998. <em>Лопушок</em>. Новый Мир.</p>
+</div>
+<div id="ref-liza1">
+<p>«ЛИЗА» 2005. О жадных гусарах замолвите слово. <em>«Лиза»</em>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>частные видовые значения<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Modaalisuudella tarkoitetaan jonkin asian esittämisestä niin, että samalla ilmaistaan esimerkiksi epäilys tai muu puhujan arvio asian mahdollisuudesta, todennäköisyydestä tai pakollisuudesta.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Потенциально-качественное значение<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>Постоянно-непрерывное значение<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>обобщённо-фактическое значение<a href="#fnref5">↩</a></p></li>
+<li id="fn6"><p>значение аннулированности результата действия<a href="#fnref6">↩</a></p></li>
+<li id="fn7"><p>нерезультативное обобщённо-фактическое значение<a href="#fnref7">↩</a></p></li>
+<li id="fn8"><p>единично-фактическое значение в условиях ситуативной совершённости действия<a href="#fnref8">↩</a></p></li>
+</ol>
+</div>
+</body>
+</html>
