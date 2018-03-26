@@ -137,7 +137,7 @@ NAVIGATION_LINKS = {
         ("/archive.html", "Archive"),
         ("/categories/", "Tags"),
         ("/rss.xml", "RSS feed"),
-        ("pres/", "Archive of presentations"),
+        ("pages/", "Archive of presentations"),
     ),
 }
 
