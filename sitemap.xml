@@ -7,11 +7,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://hrmJ.github.io/blog/</loc>
-  <lastmod>2018-03-26T09:04:00Z</lastmod>
+  <lastmod>2018-03-26T09:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/2018/</loc>
-  <lastmod>2018-01-17T19:08:00Z</lastmod>
+  <lastmod>2018-03-26T09:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/archive.html</loc>
@@ -64,6 +64,14 @@
  <url>
   <loc>https://hrmJ.github.io/blog/categories/tif/</loc>
   <lastmod>2018-02-03T06:27:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://hrmJ.github.io/blog/pages/pres/</loc>
+  <lastmod>2018-03-26T09:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://hrmJ.github.io/blog/pages/pres/index.src.html</loc>
+  <lastmod>2018-03-26T09:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/posts/getting-readable-pdfs-from-scans/</loc>
