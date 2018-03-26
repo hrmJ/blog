@@ -1,0 +1,842 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="finnish" xml:lang="finnish">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="../jquery-latest.js"></script>
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/theme/sky.css" id="theme">
+  <style type='text/css'>
+  
+  /* General Demo Style */
+  @import url(http://fonts.googleapis.com/css?family=Lato:300,700);
+  
+  .main {
+  	width: 100%;
+  	max-width: 960px;
+  	padding: 40px;
+  	text-shadow: 0 2px 0 rgba(255,255,255,0.7);
+  }
+  
+  .main p {
+  	font-size: 16px;
+  	line-height: 1.4;
+  	text-align: justify;
+  }
+  
+  .main p:nth-of-type(2){
+  	-moz-column-gap: 20px;
+  	-webkit-column-gap: 20px;
+  	-ms-column-gap: 20px;
+  	-o-column-gap: 20px;
+  	column-gap: 20px;
+  }
+  
+  .main p:nth-of-type(4){
+  	-moz-column-gap: 15px;
+  	-o-column-count: 3;
+  	-o-column-gap: 15px;
+  	-ms-column-count: 3;
+  	-ms-column-gap: 15px;
+  	-webkit-column-gap: 15px;
+  	column-count: 3;
+  	column-gap: 15px;
+  }
+  
+  
+  
+  html *
+  {
+     /*font-family: Arial !important;*/
+  }
+  
+  
+  p.header {
+      font-size: 46px;
+      line-height: 40px;
+      text-align:left;
+      border-bottom: 2px solid black;
+      padding-bottom:5px;
+      margin-bottom:5em;
+  }
+  
+  h1 {
+      font-size: 36px;
+      line-height: 40px;
+  }
+  
+  h2 {
+      font-size: 30px;
+      line-height: 40px;
+  }
+  
+  h3 {
+      font-size: 24px;
+      line-height: 40px;
+  }
+  
+  h4 {
+      font-size: 18px;
+      line-height: 20px;
+  }
+  
+  /* Won't be used here */
+  
+  h5 {
+      font-size: 14px;
+      line-height: 20px;
+  }
+  
+  h6 {
+      font-size: 12px;
+      line-height: 20px;
+  }
+  
+  
+  .main {
+  	counter-reset: section-1, section-2, section-3, section-4;
+  }
+  
+  .main h1 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 36px;
+  	line-height: 40px;
+  	counter-increment: section-1;
+  	counter-reset: section-2 section-3 section-4;
+  }
+  
+  .main h2 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 30px;
+  	line-height: 40px;
+  	counter-increment: section-2;
+  	counter-reset: section-3 section-4;
+  	border-bottom: 1px solid #fff;
+  	box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+  	padding-bottom: 10px;
+  }
+  
+  .main h3 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 24px;
+  	line-height: 40px;
+  	counter-increment: section-3;
+  	counter-reset: section-4;
+  }
+  
+  .main h4 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 18px;
+  	line-height: 20px;
+  	counter-increment: section-4;
+  }
+  
+  a:link{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:active{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:visited{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:hover{
+  color:#000000;
+  text-decoration:underline;
+  }
+  
+  #TOC{
+  position:absolute;
+  width:17%;
+  font-size:89%;
+  margin-top:30px;
+  /*height:70%;*/
+  /*box-shadow: 3px 7px 5px 0px;*/
+  padding:5px;
+  overflow:auto;
+  /*border-radius:10px;
+  border: 1px black dashed;*/
+  }
+  
+  #TOC > ul{
+  list-style-type: none;
+  }
+  
+  
+  #TOC ul
+  {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  }
+  
+  #TOC a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #036;
+  /*width: 9em;*/
+  padding: 3px 12px 3px 8px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: bold;
+  }
+  
+  #TOC a:hover
+  {
+  background-color: #369;
+  color: #FFF;
+  }
+  
+  #TOC li li a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #69C;
+  /*width: 9em;*/
+  padding: 3px 3px 3px 17px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: normal;
+  }
+  
+  
+  .container{
+      height: 100%;
+      margin-top: 50px;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 9%;
+      padding-top: 10%;
+      background: white;
+      border-radius:25px;
+      }
+  
+  .references{
+      margin-top: 2%;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      background: white;
+      }
+  
+  
+  
+  #topbar{
+  position:absolute;
+  top:0;
+  left:-20px;
+  /*background:yellow;*/
+  background-color: #C5A05B;
+  margin-bottom:10px;
+  padding-left:25px;
+  /*
+  padding-right:25px;
+  padding-top:5px;
+  */
+  padding-bottom:2px;
+  border-bottom: 1px dashed white;
+  border-right: 1px dashed white;
+  }
+  
+  .r {color:red;}
+  .b {color:blue;}
+  .g {color:grey;}
+  .gre {color:green;}
+  
+  .definition {
+      background: beige;
+      /*background: #DABC83;*/
+      padding-left: 1px;
+      margin-left: 2em;
+      padding-right: 1px;
+  }
+  
+  .defheader{
+      width: 100%;
+      /* padding-right: 10px; */
+      /* margin-right: 10px; */
+      border-bottom: 1px dashed black;
+      background: aliceblue;
+      /*background: #B0D0EC;*/
+  }
+  
+  .definition > p {
+      /* color: red; */
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 1em;
+      font-style: italic;
+  }
+  
+  article.bubble{
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 2em;
+  border-radius: 7px;
+  margin-left: 14px;
+  color:black;
+  }
+  
+  
+  article.bubblenob{
+  float: left;
+  width:30%;
+  }
+  
+  
+  article.mmbubble{
+  text-align: left;
+  border: 2px dotted black;
+  padding: 4px;
+  border-radius: 7px;
+  margin:1%;
+  color:black;
+  }
+  
+  article.nfbubble{
+  font-size:90%;
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 1.5em;
+  border-radius: 7px;
+  margin:4%;
+  box-shadow: 10px 10px 5px #888888;
+  color:black;
+  }
+  
+  article.bgred{background: rgba(222, 184, 135, 0.64);}
+  article.bgblue{background: rgba(100, 149, 237, 0.45);}
+  article.bggreen{background: darkseagreen;}
+  article.bgcyan{background: rgba(255, 215, 0, 0.25);}
+  
+  span#triangle {
+      display: inline-block;
+      margin: 72px;
+      border-right: 24px solid; border-bottom: 24px solid;
+      width: 50px; height: 50px;
+      transform: rotate(-45deg);
+  }
+  
+  span.right-arrow {
+      display: inline-block;
+      position: relative;
+      background: #E8EFED;
+      padding: 3px;
+  }
+  
+  span.right-arrow:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      margin-top: -10px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid #151514;
+  }
+  
+  span.afterarrow {
+      background: rgb(193, 243, 255);
+      margin-left: 9px;
+      padding: 3px;
+  }
+  
+  article#tocmain{
+  background:none;
+  }
+  
+  #topbar a:hover{
+  background-color: #8A6C34;
+  color: #FFF;
+  }
+  
+  #topbar a{
+  padding:3px;
+  color: #FFF;
+  text-decoration: none;
+  /*border-right:1px dashed white;*/
+  }
+  
+  #inlinemenu{
+  padding:0;
+  margin:0;
+  }
+  
+  .inline{
+  display:inline;
+  }
+  
+  #topbar li{list-style-type: none;
+      line-height:130%;
+  }
+  
+  a.dropdown-link { 
+      color:#044264;
+      text-decoration:none; 
+  }
+  
+  ul#quotes-bar-menu {
+      margin: 0; padding: 0;
+      float:left;
+      width: 100%;
+      list-style: none;
+  }
+  
+  ul#quotes-bar-menu li {
+      display:inline;
+      float:left;
+      position:relative;
+      margin:0;
+      padding:7px 15px 7px 0;
+  }
+  
+  /* sub menu class */
+  ul#quotes-bar-menu li .sub-menu {
+      background-color: #C5A05B;
+      display:none;
+      left:0;
+      margin:0;
+      font-size:11;
+      padding:0;
+      position:absolute;
+      top:29px;
+      width:320px;
+      z-index:999;
+  }
+  
+  ul#quotes-bar-menu li .single { 
+      /*width:150px !important;*/
+  }
+  
+  ul#quotes-bar-menu li{
+      color:#fff;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu ul {
+      float:left;
+      list-style:none;
+      display: block;
+      width:205px;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li {
+      width:135px;
+      margin:0; 
+      font-size:11px;
+      padding:1px 1px 0;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li a { color: white;
+  text-decoration: none;
+  }
+  ul#quotes-bar-menu li .sub-menu li a:hover { text-decoration: none; }
+  
+  
+  .invisible{
+  display:none;
+  }
+  .menubox{
+      background-color: #C5A05B;
+      padding: 0.12em;
+      border: 1px dashed white;
+      padding-left: 0.5em;
+  }
+  
+  
+  #topbar .menulauncher a{
+  border-right: 1px dashed white;
+  padding-right:3px;
+  }
+  
+  .menubox a{
+  width:80%;
+  display:inline-block;
+  margin-bottom:1%;
+  padding:0.2em;
+  cursor: pointer; cursor: hand;
+  font-family: arial;
+  font-size: 12;
+  text-decoration: underline;
+  }
+  </style>
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#muodostuksesta"><span class="toc-section-number">1</span> Muodostuksesta</a><ul>
+<li><a href="#isachenkon-muodostusteoria"><span class="toc-section-number">1.1</span> Isachenkon muodostusteoria</a></li>
+<li><a href="#isachenkon-teorian-kritiikkiä"><span class="toc-section-number">1.2</span> Isachenkon teorian kritiikkiä</a></li>
+<li><a href="#oikeinkirjoituksesta"><span class="toc-section-number">1.3</span> Oikeinkirjoituksesta</a></li>
+<li><a href="#prefiksilliset-liikeverbit-aspektipareina"><span class="toc-section-number">1.4</span> Prefiksilliset liikeverbit aspektipareina</a></li>
+</ul></li>
+<li><a href="#prefiksit-ja-merkitykset"><span class="toc-section-number">2</span> Prefiksit ja merkitykset</a><ul>
+<li><a href="#у"><span class="toc-section-number">2.1</span> У</a></li>
+<li><a href="#вы"><span class="toc-section-number">2.2</span> Вы</a></li>
+<li><a href="#при"><span class="toc-section-number">2.3</span> При</a></li>
+<li><a href="#за"><span class="toc-section-number">2.4</span> За</a></li>
+<li><a href="#под"><span class="toc-section-number">2.5</span> Под</a></li>
+<li><a href="#в"><span class="toc-section-number">2.6</span> В</a></li>
+<li><a href="#про"><span class="toc-section-number">2.7</span> Про</a></li>
+<li><a href="#пере"><span class="toc-section-number">2.8</span> Пере</a></li>
+<li><a href="#от"><span class="toc-section-number">2.9</span> От</a></li>
+<li><a href="#до"><span class="toc-section-number">2.10</span> до</a></li>
+<li><a href="#о"><span class="toc-section-number">2.11</span> о</a></li>
+<li><a href="#с"><span class="toc-section-number">2.12</span> с</a></li>
+<li><a href="#раз"><span class="toc-section-number">2.13</span> Раз</a></li>
+<li><a href="#вз"><span class="toc-section-number">2.14</span> Вз</a></li>
+</ul></li>
+</ul>
+</div>
+<article id="topbar">
+<a href='javascript:void(0)' id='menu1' class='menulauncher' >Aspekti- ja liikeverbiteoria |</a>
+<div id="menu1box" class="invisible menubox">
+<p><a href='../index.html'>Sisällys</a> <a href='kurssin_esittely.html'>Kurssin esittely</a> <a href='kurssin_aikataulu.html'>Kurssin aikataulu</a> <a href='https://learning2.uta.fi/course/view.php?id=7339'>Moodle</a></p>
+</div>
+<a href='javascript:void(0)' id='menu2' class='menulauncher' >Aspekti |</a>
+<div id="menu2box" class="invisible menubox">
+<p><a href='invariantit_merkitykset.html'>Aspektuaalisuus ja aspektin invariantit merkitykset</a> <a href='aspektin_muodostus.html'>Aspektin/aspektiparin muodostaminen sekä aspektin valintaan vaikuttavat tekijät</a> <a href='erityismerkitykset.html'>Aspektien erityismerkitykset</a> <a href='teonlaadut.html'>Teonlaadut</a></p>
+</div>
+<a href='javascript:void(0)' id='menu3' class='menulauncher' >Aspektin vaikuttavat tekijät vuorovaikutuksessa |</a>
+<div id="menu3box" class="invisible menubox">
+<p><a href='aspekti_menneen_ajan_verbimuodoilla.html'>Aspekti menneen ajan verbimuodoilla</a> <a href='aspekti_futuurisilla_verbimuodoilla.html'>Aspekti futuurin verbimuodoilla</a> <a href='imperatiivi.html'>Aspekti imperatiivissa</a> <a href='infinitiivi.html'>Aspekti infinitiivissä</a></p>
+</div>
+<a href='javascript:void(0)' id='menu4' class='menulauncher' >Liikeverbiteoria</a>
+<div id="menu4box" class="invisible menubox">
+<p><a href='liikeverbit_johdanto.html'>Johdanto</a> <a href='liikeverbit_prefikseilla.html'>Liikeverbit prefikseillä</a> <a href='Liikeverbit_ja_teonlaatu.html'>Liikeverbit ja teonlaadut</a></p>
+</div>
+<script>
+function showmenu(obj) {
+
+    // .position() uses position relative to the offset parent, 
+    var pos = $(obj).position();
+
+    // .outerWidth() takes into account border and padding.
+    var width = $(obj).outerWidth();
+    var height = $(obj).outerHeight();
+    var menuid = "#" + $(obj).attr('id') + 'box';
+
+    //show the menu directly over the placeholder
+    $(menuid).css({
+        position: "absolute",
+        top: pos.top + height + "px",
+        left: (pos.left) + "px"
+    }).show();
+    
+}
+
+$('.menulauncher').hover(function(event) {showmenu(this); });
+$('.menubox').mouseleave(function(event) {$('.menubox').hide();});
+
+</script>
+</article>
+<article class="container">
+<section class="main">
+<p class="header">
+Liikeverbit prefikseillä
+</p>
+<h1 id="muodostuksesta"><span class="header-section-number">1</span> Muodostuksesta</h1>
+<p>Edellä todettiin, että ilman prefiksejä esimerkiksi verbit бежать - бегать muodostavat parin suhteessa ominaisuuteen, jota A.V. Isachenko nimittää termillä характер действия ja joka liittyy siihen, miten verbit ilmaisevat liikkeen suuntaa. Tarkastellaan nyt vastaavia verbipareja tilanteessa, joissa verbivartaloihin on liitetty prefiksejä.</p>
+<h2 id="isachenkon-muodostusteoria"><span class="header-section-number">1.1</span> Isachenkon muodostusteoria</h2>
+<p>A.V. Isachenko <span class="citation">(2014)</span> lähti jo 1960-luvulla siitä ajatuksesta, etteivät prefiksilliset liikeverbit liikeverbit voi olla poikkeuksia sääntöön, jonka mukaan prefiksin liittäminen prefiksittömään imperfektiivisen aspektin verbiin tuottaa perfektiivisen aspektin verbin. Tämä standardinmukainen perfektivaatioprosessi näkyy esimerkissä 1:</p>
+<ol style="list-style-type: decimal">
+<li>благодарить - поблагодарить</li>
+</ol>
+<p>Ensi näkemältä liikeverbit eivät kuitenkaan sovi tähän perfektivaatiokaavaan. Vaikka duratiiviseen liikeverbiin (идти-tyyppi) liitettävät prefiksit tuottavatkin perfektiivisen aspektin verbejä (пойти, пролететь, переплыть jne.), vaikuttaisi siltä, että iteratiiviset verbit pysyvät edelleen imperfektiivisinä (jollaisia ovat kaikki etuliitteettömät): ходить - проходить, летать - прилетать, носить - выносить jne.</p>
+<p>Isachenko esittää kuitenkin, että kaikki prefiksilliset liikeverbit muodostetaan seuraavaa kaavaa noudattaen:</p>
+<span style='align:left;'><em>Kuvio 1. prefiksillisten liikeverbien muodostus</em>
+</p>
+<p><img src = 'liikev_muodostus.png' width=70%></p>
+<p>Kuviossa 1 iteratiivinen verbi ei ole lainkaan prefiksillisten liikeverbien muodostuksen pohjana. Sen sijaan duratiivisesta verbistä muodostetaan ensin perfektiivisen aspektin verbi liittämällä tähän prefiksi. Tästä prefiksillisestä verbistä muodostotetaan edelleen (<em>sekundäärinen imperfektivaatio</em>) imperfektiivisen aspektin prefiksillinen liikeverbi.</p>
+<p>Tämä muodostusmalli toimii uskottavasti verbien тащить–таскать, катить–катать, плыть–плавать, лезть–лазить, ползти–ползать, ехать-ездить ja бежать-бегать kanssa. Sijoitetaan kokeeksi kuvioon 1 verbipari плыть-плавать:</p>
+<span style='align:left;'><em>Kuvio 2. плыть ja johdokset</em>
+</p>
+<p><img src = 'plyt.png' width=90%></p>
+<p>Kuviosta 2 huomataan, että подплывать-verbi todella vaikuttaa muodostetun подплыть-verbistä ыва-suffiksin kautta. Vastaavasti:</p>
+<ul>
+<li>подкатить – подка́тывать</li>
+<li>подтащить – подта́скивать</li>
+<li>подбежать – подбега́ть</li>
+<li>подползти – подполза́ть</li>
+<li>подъехать – подъезжа́ть</li>
+<li>подлезть – подлеза́ть</li>
+</ul>
+<p>Huomaa, että kuten missä tahansa sananmuodostustilanteessa, myös näissä tapauksissa havaitaan myös äänteenmuutoksia, kuten щ–ск. Itse imperfektivoiva suffiksi vaihtelee painollisen a:n ja ы/ива:n välillä.</p>
+<p>Tätä muodostusteoriaa on myöhemmin puolustaneet myös A. Zaliznjak ja A. Smelev <span class="citation">(2000)</span>.</p>
+<p>Mallille aiheuttavat kuitenkin ongelman muut liikeverbit, joissa imperfektiivisten liikeverbien muodostus tuntuu tapahtuvan liittämällä prefiksi suoraan iteratiiseen liikeverbiin. Vertaa seuraavia iteratiivinen verbi + prefiksillinen imperfektiivisen aspektin liikeverbi -yhdistelmiä:</p>
+<ul>
+<li>ходить - приходить</li>
+<li>носить - приносить</li>
+<li>летать - прилетать</li>
+<li>гонять - пригонять</li>
+<li>водить - приводить</li>
+<li>возить - привозить</li>
+</ul>
+<p>Kaikissa näissä tapauksissa vaikuttaisi selvältä, että prefiksi liittyy iteratiivisen verbin vartaloon. Isachenkon mukaan kyse on kuitenkin ainoastaan <em>homomorfeista</em>: on kielihistoriallinen sattuma, että приносить-verbin носить-morfi on identtinen носить-verbin morfin kanssa. Tämän käsityksen puolustukseksi Isachenko esittää seuraavat neljä perustelua:</p>
+<ol style="list-style-type: decimal">
+<li>Tavallisesti prefiksin liittäminen imperfektiiviseen verbivartaloon tuottaa aina perfektiivisen aspektin verbin</li>
+<li>Jos приходить on muostotettu ходить-verbistä, miksi sitten притаскивать ja muut vastaavat vaikuttavat selvästi olevan muodostettuja притащить-tyypin verbeistä (ei ole olemassa esimerkiksi verbiä <em>приплавать</em>)?</li>
+<li>Muista slaavilaisista kielistä löytyy esimerkkejä myös muun muassa нести-носить-verbiparin vastineista, joiden osalta приносить-tyypin verbi vaikuttaa selkeästi muodostetun suffiksaatiolla</li>
+<li>prefiksi + iteratiivinen verbi tuottaa myös perfektiivisiä verbejä, nimittäin johonkin teonlaatuun kuuluvia kuten <em>заходить</em> merkityksessä ‘alkaa kävellä’, сходить merkityksessä ‘käydä kerran’, tai <em>поносить</em> merkityksessä ‘kantaa vähän aikaa’.</li>
+</ol>
+<h2 id="isachenkon-teorian-kritiikkiä"><span class="header-section-number">1.2</span> Isachenkon teorian kritiikkiä</h2>
+<p>Edellä esitety perustelut eivät kuitenkaan monien tutkijoiden mielestä riitä osoittamaan intuitiivisesti oikealta vaikuttavaa при + носить - muodostusteoriaa vääräksi. Esimerkiksi Laura Janda <span class="citation">(2010)</span> toteaa, että Isachenkon teoria on liiaksi kiinni käsityksessä, jonka mukaan prefiksin liittäminen ei missään tilanteessa voisi tuottaa imperfektiivisen aspektin verbiä.</p>
+<h2 id="oikeinkirjoituksesta"><span class="header-section-number">1.3</span> Oikeinkirjoituksesta</h2>
+<p>Liitettäessä prefiksejä iteratiivisten ja duratiivisten verbien vartaloihin kannattaa muistaa seuraavat tapaukset:</p>
+<ol style="list-style-type: decimal">
+<li>Kun йдти-verbiin (myös preteritissä) liitetään konsonanttiin päättyvä prefiksi, prefiksin ja vartalon väliin lisätään о:
+<ul>
+<li><em>сойти, обойти, вошёл, подошёл</em> jne.</li>
+</ul></li>
+<li>Kun ехать-verbiin liitetään konsonanttiin päättyvä prefiksi, prefiksin ja vartalon väliin lisätään Ъ:
+<ul>
+<li>съехать, въехать jne.</li>
+</ul></li>
+</ol>
+<h2 id="prefiksilliset-liikeverbit-aspektipareina"><span class="header-section-number">1.4</span> Prefiksilliset liikeverbit aspektipareina</h2>
+<p>Oli liikeverbien muodostustavasta mitä mieltä tahansa, on huomattava, että prefiksillisten ja prefiksittömien liikeverbiparien välisissä suhteissa on eräs merkittävä ero: siinä missä etuliitteettömät verbit eroavat toisistaan toiminnan luonteen suhteen (liikkeen yksisuuntaisuus/suuntaisuuden ilmaisemattomuus), etuliitteellisillä verbeillä ero on <em>aspektuaalinen</em>. Vertaa seuraavia lauseita:</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Папа ходил в магазин</li>
+<li>Папа шёл в магазин</li>
+<li>Папа проходил мимо магазина</li>
+<li>Папа прошёл мимо магазина</li>
+</ol>
+<p>Lauseessa 2 iteratiivinen verbi ilmaisee liikettä kahteen suuntaan, lauseessa 3 duratiivinen verbi ilmaisee liikkeen yksisuuntaisena. Lauseiden 4 ja 5 välinen ero kuitenkin on nimenomaan aspektuaalinen: lauseessa 4 проходить kuvaa toiminnan sisäisesti rajaamattomana, niin että lauseen isä kuvataan kulkemassa juuri kaupan ohitse; lauseessa 5 прошёл kuvaa toiminnan sisäisesti rajattuna, niin että kauppa on jo ohitettu.</p>
+<h1 id="prefiksit-ja-merkitykset"><span class="header-section-number">2</span> Prefiksit ja merkitykset</h1>
+<p>Seuraavassa on kuvattu lyhyesti eri prefiksien tavallisesti mukanaan tuomat merkitykset <span class="citation">(ks. Скворцова 2003: 56–58)</span></p>
+<h2 id="у"><span class="header-section-number">2.1</span> У</h2>
+<ul>
+<li>liike pois, pidemmäksi aikaa / kauemmaksi</li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
+<li>Он был единственным сыном в семье, были еще две старшие сестры, которые <em>уехали</em> из России в 1918–1919 годах <span class="citation">(Маринина 2013)</span></li>
+<li>Брат уходит на работу через 15 минут</li>
+</ol>
+<h2 id="вы"><span class="header-section-number">2.2</span> Вы</h2>
+<ul>
+<li>liikkua sisältä ulos</li>
+<li>ylittää kahden tilan välinen raja ja jättää raja taakseen<br />
+</li>
+<li>ilmaisee myös lähtöpistettä, etenkin lähtöajan yhteydessä</li>
+<li>poistua hetkeksi</li>
+</ul>
+<ol start="8" style="list-style-type: decimal">
+<li>Затем мы <em>вылетели</em> из Соединенных Штатов и прибыли в Японию <span class="citation">(supotnitskiy.ru n.d.)</span></li>
+<li>Естественно, если вы впервые <em>выехали</em> за пределы Родины, то основной проблемой для вас наверняка является вопрос проживания на отдыхе <span class="citation">(tisamsebegid.ru n.d.)</span></li>
+<li><em>Вышел</em> на минуту протереть лобовое стекло и в мгновение лишился сумки, которая лежала на заднем сиденье <span class="citation">(«Автопилот» 2002)</span></li>
+</ol>
+<h2 id="при"><span class="header-section-number">2.3</span> При</h2>
+<ul>
+<li>Tulla jonnekin, ilmestyä jonnekin</li>
+</ul>
+<ol start="11" style="list-style-type: decimal">
+<li>Олег приехал в Питер</li>
+</ol>
+<h2 id="за"><span class="header-section-number">2.4</span> За</h2>
+<ul>
+<li>Poiketa varsinaiselta reitiltä ja tulla / päätyä jonnekin vähäksi aikaa</li>
+</ul>
+<p>Huomaa käyttö myös puhuttaessa internetissä liikkumisesta:</p>
+<ol start="12" style="list-style-type: decimal">
+<li>Уважаемый посетитель, Вы <em>зашли</em> на сайт как незарегистрированный пользователь</li>
+</ol>
+<ul>
+<li>Päätyä jonnekin kauas, jonkin rajan taakse</li>
+</ul>
+<ol start="13" style="list-style-type: decimal">
+<li>Предположительно, он <em>заплыл</em> в подводную пещеру Ko Poo и не смог выбрать… <span class="citation">(1tvnet n.d.)</span></li>
+</ol>
+<ul>
+<li>Muu negatiivinen seuraus</li>
+</ul>
+<h2 id="под"><span class="header-section-number">2.5</span> Под</h2>
+<ul>
+<li>lähestyä jotakin</li>
+</ul>
+<ol start="14" style="list-style-type: decimal">
+<li>Гарри <em>подбежал</em> к окну, игнорируя пораженные вопли Флитвика <span class="citation">(skazkapro.net n.d.)</span></li>
+</ol>
+<h2 id="в"><span class="header-section-number">2.6</span> В</h2>
+<ul>
+<li>liikkua/liikuttaa sisälle</li>
+<li>ylittää kahden tilan välinen raja</li>
+</ul>
+<ol start="15" style="list-style-type: decimal">
+<li>На жарком африканском солнышке сохло все это моментально. И земляная насыпь перед пирамидой, чтобы <em>втаскивать</em> туда каменные блоки, была не нужна <span class="citation">(africana.ru n.d.)</span></li>
+<li>Да так сильно, что бур просто <em>влетел</em> в зону аномально высокого пластового давления. <span class="citation">(x-files.org.ua n.d.)</span></li>
+</ol>
+<h2 id="про"><span class="header-section-number">2.7</span> Про</h2>
+<ul>
+<li>ohittaa / jättää taakseen</li>
+<li>mennä sisään ja edetä peremmälle jossakin tilassa tai ensin edetä ja sitten astua sisälle</li>
+<li>kulkea suoraviivainen reitti</li>
+</ul>
+<ol start="17" style="list-style-type: decimal">
+<li>Мы <em>прошли</em> в отдел новых поступлений, и девушка принесла мне женскую сумку Gianfranco Sisti <span class="citation">(www.burguy.ru n.d.)</span></li>
+<li>Они <em>прошли</em> в дом через большую каменную террасу <span class="citation">(Куприн. 1911)</span></li>
+</ol>
+<h2 id="пере"><span class="header-section-number">2.8</span> Пере</h2>
+<ul>
+<li>liikkua jonkin puolelta toiselle</li>
+<li>vaihtaa (asuin-)paikkaa</li>
+</ul>
+<ol start="19" style="list-style-type: decimal">
+<li>… он и есть тот самый мостик, через который русские антикоммунисты <em>перебежали</em> из Европы в Аргентину в 1947г. <span class="citation">(zhistory.org.ua n.d.)</span></li>
+</ol>
+<h2 id="от"><span class="header-section-number">2.9</span> От</h2>
+<ul>
+<li>loitota pieni etäisyys / vähäksi aikaa</li>
+<li>Toimittaa jokin sinne, minne se kuuluu / toimittaa joksikin aikaa / (palauttaa) /</li>
+</ul>
+<ol start="20" style="list-style-type: decimal">
+<li>Несколько парней почти сразу отбежали в сторону <span class="citation">(lenalevina.com n.d.)</span></li>
+<li>Утром мать отвела дочку в детский сад</li>
+<li>По просьбе Генри я отвез рукопись ему <span class="citation">(www.ihst.ru n.d.)</span></li>
+</ol>
+<h2 id="до"><span class="header-section-number">2.10</span> до</h2>
+<ul>
+<li>saavuttaa jokin raja</li>
+<li>matkan luonnehdinta</li>
+</ul>
+<ol start="23" style="list-style-type: decimal">
+<li>За 40 вас довезут до аэропорта <span class="citation">(365tours.ru n.d.)</span></li>
+<li>Как вы доехали?</li>
+</ol>
+<h2 id="о"><span class="header-section-number">2.11</span> о</h2>
+<ul>
+<li>liikkua ympäri</li>
+<li>käydä useissa paikoissa</li>
+</ul>
+<ol start="25" style="list-style-type: decimal">
+<li>Он обежал поляну и бросился вон, а за ним - вся стая <span class="citation">(pravislava.al.ru n.d.)</span></li>
+<li>я объехал США вдоль и поперек и такого не видел <span class="citation">(www.km.ru n.d.)</span></li>
+</ol>
+<h2 id="с"><span class="header-section-number">2.12</span> с</h2>
+<ul>
+<li>laskeutua</li>
+<li>kerääntyä yhteen paikkaan</li>
+</ul>
+<ol start="27" style="list-style-type: decimal">
+<li>Лыжник съехал с горы <span class="citation">(Скворцова 2003)</span></li>
+<li>В Московской консерватории 23 октября сошлись Восток и Запад. <span class="citation">(iran.ru n.d.)</span></li>
+</ol>
+<h2 id="раз"><span class="header-section-number">2.13</span> Раз</h2>
+<ul>
+<li>hajaantua eri suuntiin</li>
+</ul>
+<ol start="29" style="list-style-type: decimal">
+<li>Милиция поговорила с ребятами, они разошлись и, собственно, ничего не произошло. <span class="citation">(oko-planet.su n.d.)</span></li>
+</ol>
+<h2 id="вз"><span class="header-section-number">2.14</span> Вз</h2>
+<ul>
+<li>nousta ylös</li>
+</ul>
+<ol start="30" style="list-style-type: decimal">
+<li>Они уже взошли на вершину холма, от остальной компании их скрывала полуразрушенная стена <span class="citation">(lib.ru n.d.)</span></li>
+<li>Солнце уже взошло.</li>
+</ol>
+</section>
+</article>
+<div class="references">
+<div id="ref-1tvnet">
+<p>1TVNET (n.d.) 1tvnet. &lt;<a href="http://www.1tvnet.ru/content/author/72/?app[current_page]=5" class="uri">http://www.1tvnet.ru/content/author/72/?app[current_page]=5</a>&gt;</p>
+</div>
+<div id="ref-365toursru">
+<p>365TOURS.RU (n.d.) 365tours.ru. &lt;<a href="http://365tours.ru/chez/resorts/praga/" class="uri">http://365tours.ru/chez/resorts/praga/</a>&gt;</p>
+</div>
+<div id="ref-africana">
+<p>AFRICANA.RU (n.d.) Africana.ru. &lt;<a href="http://www.africana.ru/countries/Egypt/030505_piramids.htm" class="uri">http://www.africana.ru/countries/Egypt/030505_piramids.htm</a>&gt;</p>
+</div>
+<div id="ref-iranru">
+<p>IRAN.RU (n.d.) Iran.ru. &lt;<a href="http://iran.ru/news/culture/?page=2" class="uri">http://iran.ru/news/culture/?page=2</a>&gt;</p>
+</div>
+<div id="ref-janda2010">
+<p>JANDA, L. 2010. Perfectives from indeterminate motion verbs in russian. <em>New Approaches to Slavic Verbs of Motion. Amsterdam: John Benjamins</em>, 125–39.</p>
+</div>
+<div id="ref-lenalevinacom">
+<p>LENALEVINA.COM (n.d.) Lenalevina.com. &lt;<a href="http://lenalevina.com/blog/page/2/" class="uri">http://lenalevina.com/blog/page/2/</a>&gt;</p>
+</div>
+<div id="ref-libru">
+<p>LIB.RU (n.d.) Lib.ru. &lt;<a href="http://lib.ru/INOSTRHIST/PRUS/kukla.txt" class="uri">http://lib.ru/INOSTRHIST/PRUS/kukla.txt</a>&gt;</p>
+</div>
+<div id="ref-oko-planetsu">
+<p>OKO-PLANET.SU (n.d.) Oko-planet.su. &lt;<a href="http://oko-planet.su/politik/newsday/60761-sergey-sobyanin-dal-pervoe-bolshoe-intervyu-on-protiv-obedineniya-moskvy-i-oblasti.html" class="uri">http://oko-planet.su/politik/newsday/60761-sergey-sobyanin-dal-pervoe-bolshoe-intervyu-on-protiv-obedineniya-moskvy-i-oblasti.html</a>&gt;</p>
+</div>
+<div id="ref-pravislavaalru">
+<p>PRAVISLAVA.AL.RU (n.d.) Pravislava.al.ru. &lt;<a href="http://pravislava.al.ru/volkodlak.htm" class="uri">http://pravislava.al.ru/volkodlak.htm</a>&gt;</p>
+</div>
+<div id="ref-skazkapro">
+<p>SKAZKAPRO.NET (n.d.) Skazkapro. &lt;<a href="http://skazkapro.net/publ/skazki_po_avtoram/rouling_dzhoan/garri_potter_i_dary_cmerti_glava_30/30-1-0-983" class="uri">http://skazkapro.net/publ/skazki_po_avtoram/rouling_dzhoan/garri_potter_i_dary_cmerti_glava_30/30-1-0-983</a>&gt;</p>
+</div>
+<div id="ref-supotnitskiyru">
+<p>SUPOTNITSKIY.RU (n.d.) Supotnitskiy.ru. &lt;<a href="http://supotnitskiy.ru/stat/stat98.htm" class="uri">http://supotnitskiy.ru/stat/stat98.htm</a>&gt;</p>
+</div>
+<div id="ref-tisamsebegidru">
+<p>TISAMSEBEGID.RU (n.d.) Tisamsebegid.ru. &lt;<a href="http://tisamsebegid.ru/tury-i-poezdki/prjekrasnoje-srjedizjemnomorje" class="uri">http://tisamsebegid.ru/tury-i-poezdki/prjekrasnoje-srjedizjemnomorje</a>&gt;</p>
+</div>
+<div id="ref-burguy">
+<p>WWW.BURGUY.RU (n.d.) Www.burguy.ru. &lt;<a href="http://www.burguy.ru/?razd=publication&amp;page=12" class="uri">http://www.burguy.ru/?razd=publication&amp;page=12</a>&gt;</p>
+</div>
+<div id="ref-wwwihstru">
+<p>WWW.IHST.RU (n.d.) Www.ihst.ru. &lt;<a href="http://www.ihst.ru/projects/sohist/memory/sakhmem/2-1.htm" class="uri">http://www.ihst.ru/projects/sohist/memory/sakhmem/2-1.htm</a>&gt;</p>
+</div>
+<div id="ref-wwwkmru">
+<p>WWW.KM.RU (n.d.) Www.km.ru. &lt;<a href="http://www.km.ru/node/700870/comments" class="uri">http://www.km.ru/node/700870/comments</a>&gt;</p>
+</div>
+<div id="ref-x-files">
+<p>X-FILES.ORG.UA (n.d.) X-files.org.ua. &lt;<a href="http://x-files.org.ua/articles.php?article_id=2929" class="uri">http://x-files.org.ua/articles.php?article_id=2929</a>&gt;</p>
+</div>
+<div id="ref-zaliznjak2000vvedenie">
+<p>ZALIZNJAK, A.A. and ŠMELEV, A.D. 2000. <em>Vvedenie v russkuju aspektologiju</em>. Jazyki russkoj kul’tury.</p>
+</div>
+<div id="ref-zhistoryorg">
+<p>ZHISTORY.ORG.UA (n.d.) Zhistory.org.ua. &lt;<a href="http://zhistory.org.ua/evita/mb11.htm" class="uri">http://zhistory.org.ua/evita/mb11.htm</a>&gt;</p>
+</div>
+<div id="ref-apilot">
+<p>«АВТОПИЛОТ» 2002. Опыт: Перегнать из владивостока купленный автомобиль. <em>«Автопилот»</em>.</p>
+</div>
+<div id="ref-isachenko2014">
+<p>ИСАЧЕНКО, А. 2014. <em>Грамматический строй русского языка в сопоставлении с словацким. морфология. часть 1, 2</em>. Litres.</p>
+</div>
+<div id="ref-kuprin1911">
+<p>КУПРИН., А.И. 1911. <em>Гранатовый браслет</em>.</p>
+</div>
+<div id="ref-marin13">
+<p>МАРИНИНА, А. 2013. <em>Последний рассвет</em>.</p>
+</div>
+<div id="ref-skvortsova2003">
+<p>СКВОРЦОВА, Г.Л. 2003. <em>Глаголы движения - без ошибок</em>. Москва: Русский язык. Курсы.</p>
+</div>
+</div>
+</body>
+</html>

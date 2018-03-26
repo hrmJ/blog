@@ -1,0 +1,86 @@
+---
+bibliography: ../lahteet.bib
+csl: ../bratislava.csl
+numbersections: true
+---
+
+
+<article id='topbar'>
+
+<a href='javascript:void(0)' id='menu1' class='menulauncher' >Aspekti- ja liikeverbiteoria |</a>
+<div class='invisible menubox' id='menu1box'>
+<a href='../index.html'>Sisällys</a>
+<a href='kurssin_esittely.html'>Kurssin esittely</a>
+<a href='kurssin_aikataulu.html'>Kurssin aikataulu</a>
+<a href='https://learning2.uta.fi/course/view.php?id=7339'>Moodle</a>
+</div>
+
+<a href='javascript:void(0)' id='menu2' class='menulauncher' >Aspekti |</a>
+<div class='invisible menubox' id='menu2box'>
+<a href='invariantit_merkitykset.html'>Aspektuaalisuus ja aspektin invariantit merkitykset</a>
+<a href='aspektin_muodostus.html'>Aspektin/aspektiparin muodostaminen sekä aspektin valintaan vaikuttavat tekijät</a>
+<a href='erityismerkitykset.html'>Aspektien erityismerkitykset</a>
+</div>
+
+<a href='javascript:void(0)' id='menu3' class='menulauncher' >Aspektin vaikuttavat tekijät vuorovaikutuksessa</a>
+<div class='invisible menubox' id='menu3box'>
+<a href='aspekti_menneen_ajan_verbimuodoilla.html'>Aspekti menneen ajan verbimuodoilla</a>
+<a href='#'>Aspekti futuurin verbimuodoilla</a>
+<a href='#'>Aspekti infinitiivissä ja imperatiivissa</a>
+</div>
+
+<script>
+function showmenu(obj) {
+
+    // .position() uses position relative to the offset parent, 
+    var pos = $(obj).position();
+
+    // .outerWidth() takes into account border and padding.
+    var width = $(obj).outerWidth();
+    var height = $(obj).outerHeight();
+    var menuid = "#" + $(obj).attr('id') + 'box';
+
+    //show the menu directly over the placeholder
+    $(menuid).css({
+        position: "absolute",
+        top: pos.top + height + "px",
+        left: (pos.left) + "px"
+    }).show();
+    
+}
+
+$('.menulauncher').hover(function(event) {showmenu(this); });
+$('.menubox').mouseleave(function(event) {$('.menubox').hide();});
+
+</script>
+
+</article>
+
+<article class='container'>
+
+<section class='main'>
+
+**Kurssin aikataulu:**
+
+Päivämäärä   | Aihealue         | Aihe
+------------ | ---------        | ------
+ti 12.1.2016 | Aspektiteoria    | johdanto + invariantit merkitykset
+ti 19.1.2016 | Aspektiteoria    | Aspektin muodostus ja aspektin valintaan vaikuttavat tekijät
+ti 26.1.2016 | Aspektiteoria    | erityismerkitykset yleisesti
+ti 02.2.2016 | Aspektiteoria    | aspekti menneen ajan verbimuodoilla
+ti 09.2.2016 | Aspektiteoria    | aspekti menneen ajan verbimuodoilla
+ti 16.2.2016 | Aspektiteoria    | aspekti kieltomuodossa
+ti 23.2.2016 | Aspektiteoria    | aspekti futuurisilla verbimuodoilla
+ti 01.3.2016 | Aspektiteoria    | <span class='b'>TAUKOVIIKKO</span>
+ti 08.3.2016 | Aspektiteoria    | aspekti infinitiivissä, aspekti imperatiivissa
+ti 15.3.2016 | Aspektiteoria    | teonlaadut
+ti 22.3.2016 | Aspektiteoria    | <span class='r'>KOE 1: aspektiteoria</span>
+ti 29.3.2016 | Liikeverbiteoria | Yleisiä käsitteitä
+ti 05.4.2016 | Liikeverbiteoria | Muodostus ja merkityksiä
+ti 12.4.2016 | Liikeverbiteoria | Liikeverbit aspektipareina
+ti 19.4.2016 | Liikeverbiteoria | Liikeverbien teonlaadut
+ti 26.4.2016 | Liikeverbiteoria | <span class='r'>KOE 2: Liikeverbiteoria</span>
+
+</section>
+</article>
+

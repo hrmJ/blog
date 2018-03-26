@@ -1,0 +1,14 @@
+\select@language {russian}
+\contentsline {section}{Aspektien erityismerkitykset}{1}{section*.1}
+\select@language {finnish}
+\select@language {russian}
+\contentsline {subsection}{M\IeC {\"a}\IeC {\"a}ritelm\IeC {\"a}}{1}{section*.3}
+\contentsline {subsection}{Perfektiivisen aspektin erityismerkityksi\IeC {\"a}}{2}{section*.4}
+\contentsline {subsubsection}{Konkreettis-faktuaalinen merkitys}{2}{section*.5}
+\contentsline {subsubsection}{Potentiaalinen merkitys}{3}{section*.6}
+\contentsline {subsubsection}{Perfektin merkitys}{3}{section*.7}
+\contentsline {subsection}{Imperfektiivisen aspektin erityismerkityksi\IeC {\"a}}{3}{section*.8}
+\contentsline {subsubsection}{Konkreettis-prosessuaalinen merkitys}{3}{section*.9}
+\contentsline {paragraph}{Alamerkityksi\IeC {\"a}}{4}{section*.10}
+\contentsline {subparagraph}{Konatiivinen merkitys}{4}{section*.11}
+\contentsline {subparagraph}{Kestoa korostava merkitys}{4}{section*.12}

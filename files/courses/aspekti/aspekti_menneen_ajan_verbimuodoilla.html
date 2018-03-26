@@ -1,0 +1,1124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="finnish" xml:lang="finnish">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="../jquery-latest.js"></script>
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/theme/sky.css" id="theme">
+  <style type='text/css'>
+  
+  /* General Demo Style */
+  @import url(http://fonts.googleapis.com/css?family=Lato:300,700);
+  
+  .main {
+  	width: 100%;
+  	max-width: 960px;
+  	padding: 40px;
+  	text-shadow: 0 2px 0 rgba(255,255,255,0.7);
+  }
+  
+  .main p {
+  	font-size: 16px;
+  	line-height: 1.4;
+  	text-align: justify;
+  }
+  
+  .main p:nth-of-type(2){
+  	-moz-column-gap: 20px;
+  	-webkit-column-gap: 20px;
+  	-ms-column-gap: 20px;
+  	-o-column-gap: 20px;
+  	column-gap: 20px;
+  }
+  
+  .main p:nth-of-type(4){
+  	-moz-column-gap: 15px;
+  	-o-column-count: 3;
+  	-o-column-gap: 15px;
+  	-ms-column-count: 3;
+  	-ms-column-gap: 15px;
+  	-webkit-column-gap: 15px;
+  	column-count: 3;
+  	column-gap: 15px;
+  }
+  
+  
+  
+  html *
+  {
+     /*font-family: Arial !important;*/
+  }
+  
+  
+  p.header {
+      font-size: 46px;
+      line-height: 40px;
+      text-align:left;
+      border-bottom: 2px solid black;
+      padding-bottom:5px;
+      margin-bottom:5em;
+  }
+  
+  h1 {
+      font-size: 36px;
+      line-height: 40px;
+  }
+  
+  h2 {
+      font-size: 30px;
+      line-height: 40px;
+  }
+  
+  h3 {
+      font-size: 24px;
+      line-height: 40px;
+  }
+  
+  h4 {
+      font-size: 18px;
+      line-height: 20px;
+  }
+  
+  /* Won't be used here */
+  
+  h5 {
+      font-size: 14px;
+      line-height: 20px;
+  }
+  
+  h6 {
+      font-size: 12px;
+      line-height: 20px;
+  }
+  
+  
+  .main {
+  	counter-reset: section-1, section-2, section-3, section-4;
+  }
+  
+  .main h1 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 36px;
+  	line-height: 40px;
+  	counter-increment: section-1;
+  	counter-reset: section-2 section-3 section-4;
+  }
+  
+  .main h2 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 30px;
+  	line-height: 40px;
+  	counter-increment: section-2;
+  	counter-reset: section-3 section-4;
+  	border-bottom: 1px solid #fff;
+  	box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+  	padding-bottom: 10px;
+  }
+  
+  .main h3 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 24px;
+  	line-height: 40px;
+  	counter-increment: section-3;
+  	counter-reset: section-4;
+  }
+  
+  .main h4 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 18px;
+  	line-height: 20px;
+  	counter-increment: section-4;
+  }
+  
+  a:link{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:active{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:visited{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:hover{
+  color:#000000;
+  text-decoration:underline;
+  }
+  
+  #TOC{
+  position:absolute;
+  width:17%;
+  font-size:89%;
+  margin-top:30px;
+  /*height:70%;*/
+  /*box-shadow: 3px 7px 5px 0px;*/
+  padding:5px;
+  overflow:auto;
+  /*border-radius:10px;
+  border: 1px black dashed;*/
+  }
+  
+  #TOC > ul{
+  list-style-type: none;
+  }
+  
+  
+  #TOC ul
+  {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  }
+  
+  #TOC a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #036;
+  /*width: 9em;*/
+  padding: 3px 12px 3px 8px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: bold;
+  }
+  
+  #TOC a:hover
+  {
+  background-color: #369;
+  color: #FFF;
+  }
+  
+  #TOC li li a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #69C;
+  /*width: 9em;*/
+  padding: 3px 3px 3px 17px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: normal;
+  }
+  
+  
+  .container{
+      height: 100%;
+      margin-top: 50px;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 9%;
+      padding-top: 10%;
+      background: white;
+      border-radius:25px;
+      }
+  
+  .references{
+      margin-top: 2%;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      background: white;
+      }
+  
+  
+  
+  #topbar{
+  position:absolute;
+  top:0;
+  left:-20px;
+  /*background:yellow;*/
+  background-color: #C5A05B;
+  margin-bottom:10px;
+  padding-left:25px;
+  /*
+  padding-right:25px;
+  padding-top:5px;
+  */
+  padding-bottom:2px;
+  border-bottom: 1px dashed white;
+  border-right: 1px dashed white;
+  }
+  
+  .r {color:red;}
+  .b {color:blue;}
+  .g {color:grey;}
+  .gre {color:green;}
+  
+  .definition {
+      background: beige;
+      /*background: #DABC83;*/
+      padding-left: 1px;
+      margin-left: 2em;
+      padding-right: 1px;
+  }
+  
+  .defheader{
+      width: 100%;
+      /* padding-right: 10px; */
+      /* margin-right: 10px; */
+      border-bottom: 1px dashed black;
+      background: aliceblue;
+      /*background: #B0D0EC;*/
+  }
+  
+  .definition > p {
+      /* color: red; */
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 1em;
+      font-style: italic;
+  }
+  
+  article.bubble{
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 2em;
+  border-radius: 7px;
+  margin-left: 14px;
+  color:black;
+  }
+  
+  
+  article.bubblenob{
+  float: left;
+  width:30%;
+  }
+  
+  
+  article.mmbubble{
+  text-align: left;
+  border: 2px dotted black;
+  padding: 4px;
+  border-radius: 7px;
+  margin:1%;
+  color:black;
+  }
+  
+  article.nfbubble{
+  font-size:90%;
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 1.5em;
+  border-radius: 7px;
+  margin:4%;
+  box-shadow: 10px 10px 5px #888888;
+  color:black;
+  }
+  
+  article.bgred{background: rgba(222, 184, 135, 0.64);}
+  article.bgblue{background: rgba(100, 149, 237, 0.45);}
+  article.bggreen{background: darkseagreen;}
+  article.bgcyan{background: rgba(255, 215, 0, 0.25);}
+  
+  span#triangle {
+      display: inline-block;
+      margin: 72px;
+      border-right: 24px solid; border-bottom: 24px solid;
+      width: 50px; height: 50px;
+      transform: rotate(-45deg);
+  }
+  
+  span.right-arrow {
+      display: inline-block;
+      position: relative;
+      background: #E8EFED;
+      padding: 3px;
+  }
+  
+  span.right-arrow:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      margin-top: -10px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid #151514;
+  }
+  
+  span.afterarrow {
+      background: rgb(193, 243, 255);
+      margin-left: 9px;
+      padding: 3px;
+  }
+  
+  article#tocmain{
+  background:none;
+  }
+  
+  #topbar a:hover{
+  background-color: #8A6C34;
+  color: #FFF;
+  }
+  
+  #topbar a{
+  padding:3px;
+  color: #FFF;
+  text-decoration: none;
+  /*border-right:1px dashed white;*/
+  }
+  
+  #inlinemenu{
+  padding:0;
+  margin:0;
+  }
+  
+  .inline{
+  display:inline;
+  }
+  
+  #topbar li{list-style-type: none;
+      line-height:130%;
+  }
+  
+  a.dropdown-link { 
+      color:#044264;
+      text-decoration:none; 
+  }
+  
+  ul#quotes-bar-menu {
+      margin: 0; padding: 0;
+      float:left;
+      width: 100%;
+      list-style: none;
+  }
+  
+  ul#quotes-bar-menu li {
+      display:inline;
+      float:left;
+      position:relative;
+      margin:0;
+      padding:7px 15px 7px 0;
+  }
+  
+  /* sub menu class */
+  ul#quotes-bar-menu li .sub-menu {
+      background-color: #C5A05B;
+      display:none;
+      left:0;
+      margin:0;
+      font-size:11;
+      padding:0;
+      position:absolute;
+      top:29px;
+      width:320px;
+      z-index:999;
+  }
+  
+  ul#quotes-bar-menu li .single { 
+      /*width:150px !important;*/
+  }
+  
+  ul#quotes-bar-menu li{
+      color:#fff;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu ul {
+      float:left;
+      list-style:none;
+      display: block;
+      width:205px;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li {
+      width:135px;
+      margin:0; 
+      font-size:11px;
+      padding:1px 1px 0;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li a { color: white;
+  text-decoration: none;
+  }
+  ul#quotes-bar-menu li .sub-menu li a:hover { text-decoration: none; }
+  
+  
+  .invisible{
+  display:none;
+  }
+  .menubox{
+      background-color: #C5A05B;
+      padding: 0.12em;
+      border: 1px dashed white;
+      padding-left: 0.5em;
+  }
+  
+  
+  #topbar .menulauncher a{
+  border-right: 1px dashed white;
+  padding-right:3px;
+  }
+  
+  .menubox a{
+  width:80%;
+  display:inline-block;
+  margin-bottom:1%;
+  padding:0.2em;
+  cursor: pointer; cursor: hand;
+  font-family: arial;
+  font-size: 12;
+  text-decoration: underline;
+  }
+  </style>
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#konkreettis-faktinen-merkitys-vs.konkreettis-prosessuaalinen-merkitys"><span class="toc-section-number">1</span> Konkreettis-faktinen merkitys vs. konkreettis-prosessuaalinen merkitys</a><ul>
+<li><a href="#kfm--ja-kpm-käyttötilanteiden-vertailua"><span class="toc-section-number">1.1</span> Kfm- ja kpm-käyttötilanteiden vertailua</a><ul>
+<li><a href="#ero-kuvattavassa-toiminnassa-mihin-hetkeen-huomio-kohdistuu"><span class="toc-section-number">1.1.1</span> Ero kuvattavassa toiminnassa: mihin hetkeen huomio kohdistuu</a></li>
+<li><a href="#lähestyminen-kohti-rajaa-vs.rajan-ylittäminen"><span class="toc-section-number">1.1.2</span> Lähestyminen kohti rajaa vs. rajan ylittäminen</a></li>
+<li><a href="#puhujan-näkökulmana-toiminta-vai-tulos"><span class="toc-section-number">1.1.3</span> Puhujan näkökulmana toiminta vai tulos</a></li>
+</ul></li>
+<li><a href="#syitä-käyttää-imperfektiivistä-aspektia"><span class="toc-section-number">1.2</span> Syitä käyttää imperfektiivistä aspektia</a><ul>
+<li><a href="#selkeä-keston-ilmaisin"><span class="toc-section-number">1.2.1</span> Selkeä keston ilmaisin</a></li>
+<li><a href="#persoonattomat-rakenteet"><span class="toc-section-number">1.2.2</span> Persoonattomat rakenteet</a></li>
+<li><a href="#temporaaliset-konjunktiot"><span class="toc-section-number">1.2.3</span> Temporaaliset konjunktiot</a></li>
+<li><a href="#konatiivinen-erityismerkitys"><span class="toc-section-number">1.2.4</span> Konatiivinen erityismerkitys</a></li>
+<li><a href="#agentin-osallisuus"><span class="toc-section-number">1.2.5</span> Agentin osallisuus</a></li>
+<li><a href="#selittävä-funktio"><span class="toc-section-number">1.2.6</span> Selittävä funktio</a></li>
+</ul></li>
+<li><a href="#aspekti-ja-tapahtumien-suhteet-ajassa"><span class="toc-section-number">1.3</span> Aspekti ja tapahtumien suhteet ajassa</a></li>
+</ul></li>
+<li><a href="#aspektin-käyttö-toiston-merkityksessä"><span class="toc-section-number">2</span> Aspektin käyttö toiston merkityksessä</a><ul>
+<li><a href="#milloin-i-ilmaisee-toistoa-milloin-prosessia"><span class="toc-section-number">2.1</span> Milloin I ilmaisee toistoa, milloin prosessia?</a><ul>
+<li><a href="#toisto-vaatii-enemmän-kontekstin-tukea-kuin-prosessi"><span class="toc-section-number">2.1.1</span> Toisto vaatii enemmän kontekstin tukea kuin prosessi</a></li>
+<li><a href="#monikko-paljastaa-usein-toistuvuuden"><span class="toc-section-number">2.1.2</span> Monikko paljastaa usein toistuvuuden</a></li>
+<li><a href="#satunnainen-toiminta-toiston-merkityksessä"><span class="toc-section-number">2.1.3</span> Satunnainen toiminta toiston merkityksessä</a></li>
+<li><a href="#ehto-saa-aikaan-toiston-merkityksen"><span class="toc-section-number">2.1.4</span> Ehto saa aikaan toiston merkityksen:</a></li>
+</ul></li>
+<li><a href="#konkreettis-faktinen-merkitys-vs.rajoittamattoman-toiston-merkitys"><span class="toc-section-number">2.2</span> Konkreettis-faktinen merkitys vs. rajoittamattoman toiston merkitys</a><ul>
+<li><a href="#yksi-rajattu-toiminta-vs.toisto"><span class="toc-section-number">2.2.1</span> Yksi rajattu toiminta vs. toisto</a></li>
+<li><a href="#toisto-tapahtumasarjassa"><span class="toc-section-number">2.2.2</span> Toisto tapahtumasarjassa</a></li>
+<li><a href="#mukana-absoluuttisen-keston-adverbiaali"><span class="toc-section-number">2.2.3</span> Mukana absoluuttisen keston adverbiaali</a></li>
+<li><a href="#teonlaatujen-merkitys"><span class="toc-section-number">2.2.4</span> Teonlaatujen merkitys</a></li>
+</ul></li>
+<li><a href="#summatiivinen-merkitys-vs.rajoitetun-toiston-merkitys"><span class="toc-section-number">2.3</span> Summatiivinen merkitys vs. rajoitetun toiston merkitys</a></li>
+</ul></li>
+<li><a href="#ytmoppositio"><span class="toc-section-number">3</span> Konkreettis-faktinen vs. yleisesti toteava merkitys</a><ul>
+<li><a href="#kfm-ja-ytm-samankaltaisina-erityismerkityksinä"><span class="toc-section-number">3.1</span> Kfm ja ytm samankaltaisina erityismerkityksinä</a></li>
+<li><a href="#imperfektiiviselle-aspektille-tyypillisiä-piirteitä"><span class="toc-section-number">3.2</span> Imperfektiiviselle aspektille tyypillisiä piirteitä</a><ul>
+<li><a href="#deklaratiivisuus"><span class="toc-section-number">3.2.1</span> Deklaratiivisuus</a></li>
+<li><a href="#tarkemmat-erityismerkitykset"><span class="toc-section-number">3.2.2</span> Tarkemmat erityismerkitykset</a></li>
+<li><a href="#ytm_sarja"><span class="toc-section-number">3.2.3</span> Imperfektiivinen aspekti tapahtumien sarjassa</a></li>
+<li><a href="#tyypillisiä-konteksteja-ytm-merkitykselle"><span class="toc-section-number">3.2.4</span> Tyypillisiä konteksteja ytm-merkitykselle</a></li>
+<li><a href="#ytm-verbit"><span class="toc-section-number">3.2.5</span> Tyypillisiä ytm-merkityksessä esiintyviä verbejä</a></li>
+</ul></li>
+<li><a href="#perfektiiviselle-aspektille-tyypillisiä-piirteitä"><span class="toc-section-number">3.3</span> Perfektiiviselle aspektille tyypillisiä piirteitä</a><ul>
+<li><a href="#tarkempi-konteksti"><span class="toc-section-number">3.3.1</span> Tarkempi konteksti</a></li>
+<li><a href="#perfektin-erityismerkitys"><span class="toc-section-number">3.3.2</span> Perfektin erityismerkitys</a></li>
+<li><a href="#äkillinen-muutos-toiminnassa"><span class="toc-section-number">3.3.3</span> Äkillinen muutos toiminnassa</a></li>
+<li><a href="#odotettusuor"><span class="toc-section-number">3.3.4</span> Odotetun toiminnan suorittaminen</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#kieltomuoto-menneessä-ajassa"><span class="toc-section-number">4</span> Kieltomuoto menneessä ajassa</a><ul>
+<li><a href="#imperfektiivisen-aspektin-kieltomuotoon-liittyviä-erityispiirteitä"><span class="toc-section-number">4.1</span> Imperfektiivisen aspektin kieltomuotoon liittyviä erityispiirteitä</a><ul>
+<li><a href="#toiminta-ei-vielä-ole-alkanut"><span class="toc-section-number">4.1.1</span> Toiminta ei vielä ole alkanut</a></li>
+<li><a href="#toiminnassa-ei-muutoksia"><span class="toc-section-number">4.1.2</span> Toiminnassa ei muutoksia</a></li>
+</ul></li>
+<li><a href="#perfektiivisen-aspektin-kieltomuotoon-liittyviä-erityispiirteitä"><span class="toc-section-number">4.2</span> Perfektiivisen aspektin kieltomuotoon liittyviä erityispiirteitä</a></li>
+<li><a href="#tilanteita-joissa-aspektin-valinta-on-häilyvää"><span class="toc-section-number">4.3</span> Tilanteita, joissa aspektin valinta on häilyvää</a></li>
+</ul></li>
+</ul>
+</div>
+<article id="topbar">
+<a href='javascript:void(0)' id='menu1' class='menulauncher' >Aspekti- ja liikeverbiteoria |</a>
+<div id="menu1box" class="invisible menubox">
+<p><a href='../index.html'>Sisällys</a> <a href='kurssin_esittely.html'>Kurssin esittely</a> <a href='kurssin_aikataulu.html'>Kurssin aikataulu</a> <a href='https://learning2.uta.fi/course/view.php?id=7339'>Moodle</a></p>
+</div>
+<a href='javascript:void(0)' id='menu2' class='menulauncher' >Aspekti |</a>
+<div id="menu2box" class="invisible menubox">
+<p><a href='invariantit_merkitykset.html'>Aspektuaalisuus ja aspektin invariantit merkitykset</a> <a href='aspektin_muodostus.html'>Aspektin/aspektiparin muodostaminen sekä aspektin valintaan vaikuttavat tekijät</a> <a href='erityismerkitykset.html'>Aspektien erityismerkitykset</a></p>
+</div>
+<a href='javascript:void(0)' id='menu3' class='menulauncher' >Aspektin vaikuttavat tekijät vuorovaikutuksessa</a>
+<div id="menu3box" class="invisible menubox">
+<p><a href='aspekti_menneen_ajan_verbimuodoilla.html'>Aspekti menneen ajan verbimuodoilla</a> <a href='aspekti_futuurisilla_verbimuodoilla.html'>Aspekti futuurin verbimuodoilla</a> <a href='imperatiivi.html'>Aspekti imperatiivissa</a> <a href='infinitiivi.html'>Aspekti infinitiivissä</a></p>
+</div>
+<script>
+function showmenu(obj) {
+
+    // .position() uses position relative to the offset parent, 
+    var pos = $(obj).position();
+
+    // .outerWidth() takes into account border and padding.
+    var width = $(obj).outerWidth();
+    var height = $(obj).outerHeight();
+    var menuid = "#" + $(obj).attr('id') + 'box';
+
+    //show the menu directly over the placeholder
+    $(menuid).css({
+        position: "absolute",
+        top: pos.top + height + "px",
+        left: (pos.left) + "px"
+    }).show();
+    
+}
+
+$('.menulauncher').hover(function(event) {showmenu(this); });
+$('.menubox').mouseleave(function(event) {$('.menubox').hide();});
+
+</script>
+</article>
+<article class="container">
+<section class="main">
+<p class="header">
+Aspekti menneen ajan verbimuodoilla
+</p>
+<h1 id="konkreettis-faktinen-merkitys-vs.konkreettis-prosessuaalinen-merkitys"><span class="header-section-number">1</span> Konkreettis-faktinen merkitys vs. konkreettis-prosessuaalinen merkitys</h1>
+<p>I:n Konkreettis-prosessuaalisen (kpm) ja P:n konkreettis-faktisen merkityksen (kfm) voi melko selvästi katsoa muodostavan <em>vahvan aspektuaalisen opposition</em>. Tämä johtuu siitä, että valinta näiden kahden erityismerkityksen välillä tavallisesti aiheutta todellisen eron lauseen merkityksessä (aspektin merkitystä erottava funktio).</p>
+<p>Kpm:n käyttöalaa voi pitää kfm:n käyttöalaa laajempana: imperfektiivisellä aspektilla on tässä kontekstuaalisen tekijän (erityismerkitys) ja kielellisen tekijän (aikamuoto) yhdistelmässä useammanlaisia käyttötilanteita ja sitä kautta sen voi ajatella myös olevan yleisempi.</p>
+<p>Pohdittaessa kpm-kfm-oppositiota on muistettava, että aikamuodon lisäksi merkityksen muodostamisessa on olennaisesti läsnä toinenkin kielellinen tekijä, kunkin konkreettisen verbin leksikaaliset ominaisuudet. Nämä vaikuttavat siihen, minkätyyppiset tapaukset ovat ylipäätään mahdollisia tai todennäköisiä. Esimerkiksi niin kutsutut statiivisen teonlaadun verbit kuten лежать ja висеть ovat jo merkitykseltään sellaisia, että ne ilmaisevat rajaamatonta prosessia.</p>
+<h2 id="kfm--ja-kpm-käyttötilanteiden-vertailua"><span class="header-section-number">1.1</span> Kfm- ja kpm-käyttötilanteiden vertailua</h2>
+<p>Seuraavassa kuvataan eräitä tyypillisiä kielenkäyttötilanteita, joissa kfm- ja kpm-erityismerkitysten erot käyvät ilmi.</p>
+<h3 id="ero-kuvattavassa-toiminnassa-mihin-hetkeen-huomio-kohdistuu"><span class="header-section-number">1.1.1</span> Ero kuvattavassa toiminnassa: mihin hetkeen huomio kohdistuu</h3>
+<p>Kfm:n ja kpm:n välillä voi ensinnäkin olla selvä ero siinä, millaista asiaintilaa verbillä ilmaistaan. Vertaa seuraavia lauseita:</p>
+<ol style="list-style-type: decimal">
+<li>Самолет возвращался на аэродром.</li>
+<li>Самолет возвратился на аэродром.</li>
+<li>Билеты уже продавали.</li>
+<li>Билеты уже продали</li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<p>Esimerkeissä 1–4 aspektien välisen eron voi tulkita näkyvän siinä, mihin hetkeen puhujan huomio kohdistuu: aspekteilla on selkeä ajallinen ero. Lauseessa 1 on kyse toiminnasta, joka on ajallisesti ennen lauseessa 2 tapahtuvaa toimintaa. Samoin lauseessa 3 puhujan huomio on aikaisemmassa hetkessä kuin lauseessa 4.</p>
+<p>Aspektien välinen ero voi johtaa myös spatiaalisiin (paikan) eroihin lauseiden tulkinnassa:</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Когда мы проходили мимо кинотеатра, мы купили билеты</li>
+<li>Когда мы прошли мимо кинотеатра, мы вспомнили, что собирались купить билеты</li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<p>Esimerkissä 5 toiminta (lippujen ostaminen) tapahtuu juuri elokuvateatterin kohdalla, kun taaas esimerkissä 6 lauseen agentti on toiminnan (muistaminen) suorittamisen hetkellä edellistä lausetta kauempana, elokuvateatterin toisella puolella.</p>
+<p>Erityisen selkeästi kpm/kfm-merkitysero tulee esille temporaalisten<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> sivulauseiden yhteydessä.</p>
+<ol start="7" style="list-style-type: decimal">
+<li>Студенты волновалиь, когда выступали c докладом</li>
+<li>Когда студенты выступили, они neрестали волноваться</li>
+</ol>
+<h3 id="lähestyminen-kohti-rajaa-vs.rajan-ylittäminen"><span class="header-section-number">1.1.2</span> Lähestyminen kohti rajaa vs. rajan ylittäminen</h3>
+<p>Toisen tyypillisen merkitystä erottavan käyttötilanteen muodostavat tapaukset, joissa verbillä ilmaistaan</p>
+<ol style="list-style-type: lower-alpha">
+<li>Lähestymistä kohti jotakin (esim. ajallista) rajaa: <span class="r">kpm</span></li>
+<li>Rajan ylittämistä: <span class="r">kfm</span></li>
+</ol>
+<p>Tässä yhteydessä on syytä muistaa I:n ja P:n välinen perustavanlaatuinen ero: perfektiivinen aspekti ilmaisee sisäisesti rajattua toimintaa, mutta imperfektiivisessä aspektissa rajaan ei oteta kantaa <span class="citation">(ks. esim. Nikunlassi 2002: 176–177)</span>. Tästä seuraa, että menneessä ajassa aspektien välinen ero on usein siinä, onko jokin ajallinen rajapiste ylitetty vai ollaanko sitä vasta lähestymässä. Tämä käy ilmi seuraavista esimerkkipareista:</p>
+<ol start="9" style="list-style-type: decimal">
+<li>Заканчивалась август / закончился август</li>
+<li>Костер догорал / костер догорел</li>
+<li>Липы уже отцветали. / Липы уже отцвели</li>
+<li>Мальчик засыпал / Мальчик заснул</li>
+<li>Я забывал испанский язык / Я забыл испанский язык</li>
+<li>Мы успевали на автобус / Мы успели на автобус</li>
+<li>Машина останавливалась / Машина остановилась</li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<h3 id="puhujan-näkökulmana-toiminta-vai-tulos"><span class="header-section-number">1.1.3</span> Puhujan näkökulmana toiminta vai tulos</h3>
+<p>Kolmanneksi voidaan tarkastella sitä, mitä puhuja haluaa painottaa kuvatessaan jotakin mennyttä tapahtumaa. Tässä tarkoitetaan yhtä kuuluisinta aspektien invarianttien merkitysten välistä ominaisuuseroa: perfektiivisen aspektin tulosta ja imperfektiivisen aspektin toimintaa painottavaa ominaisuutta.</p>
+<p>Tarkastele seuraavia esimerkkejä:</p>
+<ol start="16" style="list-style-type: decimal">
+<li><p>— Вы можете вернуть мне книгу?<br />
+— Да, я ее прочитал.<br />
+— Вам не скучно было ехать так долго в поезде?<br />
+— Нет, я читал интересную книгу.</p></li>
+<li><p>— Олег уехал?<br />
+— Да, вчера мы его проводили.<br />
+— Где вы вчера задержались?<br />
+— Провожали Олега, он вчера уехал.</p></li>
+<li><p>— Ваш доклад готов?<br />
+— Да, я его написал.<br />
+— Почему вы не были вчера на стадионе?<br />
+— Я писал доклад.</p></li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<p>Esimerkeissä 16–18 on ensiksi esitetty dialogi, jossa puhujan huomio on tuloksessa (kfm) ja sitten dialogi, jossa huomio on toiminnassa (kpm).</p>
+<h2 id="syitä-käyttää-imperfektiivistä-aspektia"><span class="header-section-number">1.2</span> Syitä käyttää imperfektiivistä aspektia</h2>
+<p><a href="">Edellä</a> todettiin, että imperfektiivisen aspektin käyttö vaatii usein enemmän kontekstuaalisia vihjeitä kuin perfektiivisen. Seuraavassa tarkastellaan muutamia selkeitä syitä, joiden perusteella menneessä ajassa valitaan konkreettis-prosessuaalista toimintaa edustava verbimuoto.</p>
+<h3 id="selkeä-keston-ilmaisin"><span class="header-section-number">1.2.1</span> Selkeä keston ilmaisin</h3>
+<p>Ajan adverbiaaleilla on usein ratkaiseva rooli siinä, minkä aspektuaalisen tulkinnan jokin lause saa. Kun menneen ajan verbimuotoon lisätään selkeä kestoa ilmaiseva adverbiaali (kuten esimerkin 19 <em>с каждой минутой</em>), konkreettis-prosessuaalinen erityismerkitys nousee pintaan. Toisaalta kestoa voidaan painottaa myös ilman erillistä ajanilmausta, jolloin voidaan puhua <em>määrittelemättömästä kestosta</em>, kuten esimerkissä 21.</p>
+<ol start="19" style="list-style-type: decimal">
+<li>с каждой минутой видимость на дороге улучшалось, туман рассеивался</li>
+<li>в сентябре и октябре собирали урожай винограда</li>
+<li>Кругом все улыбались</li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<h3 id="persoonattomat-rakenteet"><span class="header-section-number">1.2.2</span> Persoonattomat rakenteet</h3>
+<p>Kpm-erityismerkitys on tyypillinen persoonattomissa, ympäristön tilaa ilmaisevissa lauisessa:</p>
+<ol start="22" style="list-style-type: decimal">
+<li>Сейчас, под утро, туман жался к земле, а натаявшую воду подбирало хрупким ледком. <span class="r">Холодало.</span> Было уже скоро пять часов. <span class="citation">(Солженицын 1968)</span></li>
+<li>Даренский подъехал к штабной избе. Уже <span class="r">темнело.</span> <span class="citation">(Гроссман 1960)</span></li>
+</ol>
+<h3 id="temporaaliset-konjunktiot"><span class="header-section-number">1.2.3</span> Temporaaliset konjunktiot</h3>
+<p>Erityisesti пока-konjunktiolla alkavat sivulauseet vaikuttavat yleensä päälauseen aspektiin:</p>
+<ol start="24" style="list-style-type: decimal">
+<li>И мальчик плакал и плакал, пока не уснул <span class="citation">(Екимов 1996)</span></li>
+<li>Лет 30 компьютеры <span class="r">стояли</span> в лабораториях и мало кого <span class="r">интересовали</span> пока не додумались сделать маленький компьютер и продавать его гражданам <span class="citation">(АРСЮХИН 2014)</span></li>
+</ol>
+<h3 id="konatiivinen-erityismerkitys"><span class="header-section-number">1.2.4</span> Konatiivinen erityismerkitys</h3>
+<p>Imperfektiivisen aspektin konkreettis-prosessuaalisella erityismerkityksellä voi katsoa olevan joitakin itsenäisiä alamerkityksiä, joista yksi on <a href="">konatiivinen merkitys</a>. Kun halutaan ilmaista menneessä ajassa pyrkimistä saavuttaa jokin päämäärä <span class="citation">(ks. Bondarko 2005: 242)</span>, joka kuitenkin jää yritykseksi, valitaan imperfektiivinen aspekti:</p>
+<ol start="26" style="list-style-type: decimal">
+<li><p>Вот тебе и муж предоставлен. Убивали, да не убили <span class="citation">(Bondarko 2005)</span></p></li>
+<li><p>Разумеется, все это хорошо известно как премьеру, так и депутатам, которые явно ждали от главы правительства менее оптимистичного, но более приближенного к реалиям российской жизни выступления. <span class="r">Ждали,</span> но так и не дождались. <span class="citation">(Бенедиктов. 2013)</span></p></li>
+</ol>
+<!--
+V,praet,ipf
+
+-->
+<h3 id="agentin-osallisuus"><span class="header-section-number">1.2.5</span> Agentin osallisuus</h3>
+<p>Konkreettis-prosessuaalisella merkityksellä voidaan painottaa myös jonkin agentin, ts. toiminnan suorittajan, osallisuutta verbin ilmaisemaan toimintaan, kuten esimerkin 28 verbeissä рассказывать sekä слушать ja esimerkin (29) verbeissä слушать, смотреть, вспоминать. Näissä tapauksissa verbeillä paitsi ilmaistaan prosessia sinänsä, myös painotetaan sitä, että lauseen funktiona on kertoa jotakin toiminnan suorittajasta.</p>
+<ol start="28" style="list-style-type: decimal">
+<li>Она рассказывала, а я слушал, закурив после ужина <span class="citation">(Rassudova 1984)</span></li>
+<li>Я слушала её, смотрела, как деревья потихоньку роняют листья, вспоминала всё хорошее, что пережила за этот год в Нанси, и думала, что — <span class="citation">(“LiveJournal” 2014)</span></li>
+</ol>
+<h3 id="selittävä-funktio"><span class="header-section-number">1.2.6</span> Selittävä funktio</h3>
+<p>Kun jonkin lauseen funktiona on antaa selitys edellisessä lauseessa kuvatulle toiminnalle, kpm-erityismerkitys on tavallinen:</p>
+<ol start="30" style="list-style-type: decimal">
+<li>После обеда, когда я сидел у компьютера и планировал упражнения на курс по аспектологии, раздался странный шум. Я подошел к окну и посмотрел на улицу: <span class="r">рыли</span> канаву для труб системы теплоснабжения.</li>
+</ol>
+<h2 id="aspekti-ja-tapahtumien-suhteet-ajassa"><span class="header-section-number">1.3</span> Aspekti ja tapahtumien suhteet ajassa</h2>
+<p>Kun pohditaan tapahtumien suhteita menneessä ajassa, imperfektiivisen ja perfektiivisen aspektin välille on mahdollista löytää melko selkeäkin työnjako. Mietitään aluksi, minkälaisissa temporaalisissa suhteissa kaksi toimintaa voivat olla toisiinsa nähden. Tapahtumat E<sub>1</sub> ja E<sub>2</sub> voivat olla esimerkiksi</p>
+<ol style="list-style-type: lower-alpha">
+<li>samanaikaisia niin, että kummatkin kestävät suurin piirtein yhtä kauan</li>
+</ol>
+<p><span class="g">=========|<span class="r">================</span>|E<sub>1</sub>=============</span></p>
+<p><span class="g">=========|<span class="b">================</span>|E<sub>2</sub>=============</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>samanaikaisia niin, että toinen kestää pidempään kuin toinen</li>
+</ol>
+<p><span class="g">=========|<span class="r">================</span>|E<sub>1</sub>=============</span></p>
+<p><span class="g">==============|<span class="b">===</span>|E<sub>2</sub>=====================</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>eriaikaisia niin, että E<sub>2</sub> seuraa heti E<sub>1</sub>:n jälkeen</li>
+</ol>
+<p><span class="g">=========|<span class="r">================</span>|E<sub>1</sub>=|<span class="b">=========</span>|E<sub>2</sub>== … =|<span class="gre">======</span>|E<sub>n</sub>=</span></p>
+<p>Tarkastellaan nyt aspektin käyttöä näissä kolmessa tapauksessa.</p>
+<p>Jos kyseessä ovat kaksi täysin samanaikaista tapahtumaa (tapaus a), käytetään imperfektiivistä aspektia (konkreettis-prosessuaalisessa erityismerkityksessä).</p>
+<ol start="31" style="list-style-type: decimal">
+<li>Вечером я ел гамбургеры и смотрел телевизор.</li>
+</ol>
+<p>Jos kyseessä ovat kaksi osittain samanaikaista tapahtumaa (tapaus b), käytetään sekä imperfektiivistä että perfektiivistä aspektia. Tavallisesti tämä tarkoittaa sitä, että imperfektiivisellä aspektilla (kpm) ilmaistaan pidempikestoinen tapahtuma, jonka aikana tapahtuva yksittäinen, rajattu tapahtuma ilmaistaan perfektiivisellä aspektilla (kfm).</p>
+<ol start="32" style="list-style-type: decimal">
+<li>Пока мы играли в шахматы, кто-то постучал в дверь.</li>
+</ol>
+<p>Jos taas puhutaan kahdesta tai useammasta toiminnasta, jotka tapahtuvat peräkkäin (tapaus c), käytetään useimmiten kaikista toiminnoista perfektiivisen aspektin verbiä:</p>
+<ol start="33" style="list-style-type: decimal">
+<li>Федя поужинал, собрал игрушки с пола, почистил зубы, и лег спать.</li>
+</ol>
+<p>Jos mukana on kuitenkin esimerkiksi ajan adverbiaaleja, jotka tuovat mukanaan prosessuaalisen painotuksen, myös imperfektiivinen aspekti on mahdollinen:</p>
+<ol start="34" style="list-style-type: decimal">
+<li>Сначала Федя ужинал, потом он долго собирал свои игрушки и наконец-то стал по-тихоньку думать о том, что ему пара спать.</li>
+</ol>
+<p>Tutki vielä esimerkkiä 30 aikasuhteiden kannalta. Mitä erilaisia suhteita huomaat? Miten imperfektiivistä ja perfektiivistä aspektia käytetään näiden suhteiden kuvaamisessa?</p>
+<h1 id="aspektin-käyttö-toiston-merkityksessä"><span class="header-section-number">2</span> Aspektin käyttö toiston merkityksessä</h1>
+<p>Seuraavassa tarkastellaan, miten menneessä ajassa tapahtuva toistuva toiminta vaikuttaa aspektin valintaan. Tärkein huomio kohdistetaan perfektiivisen aspektin konkreettis-faktisen (kfm) ja imperfektiivisen aspektin <a href="erityismerkitykset.html#rtm">rajoittamattoman toiston</a> (rtm) erityismerkityksen väliseen oppositioon. Kuten kpm-kfm-oppositiota, myös kfm-rtm-oppositiota voi luonnehtia vahvaksi oppositioksi, sillä se tuottaa merkityseroja. <!-- korjaa muotoilu! --></p>
+<h2 id="milloin-i-ilmaisee-toistoa-milloin-prosessia"><span class="header-section-number">2.1</span> Milloin I ilmaisee toistoa, milloin prosessia?</h2>
+<p>Tarkastellaan aluksi pelkästään imperfektiivistä aspektia. Kuten A. V. Bondarko <span class="citation">(Bondarko 2005: 231)</span> toteaa, aspektien invarianttien merkitysten määrittäminen pelkästään jonkin yksittäisen ominaisuuden perusteella ei ole mielekästä. Toisin sanoen, ei ole järkevää määritellä seuraavasti:</p>
+<ol style="list-style-type: lower-alpha">
+<li>imperfektiivisestä aspektista on kyse silloin, kun verbi ilmaisee toistoa</li>
+</ol>
+<p>tai:</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>imperfektiivisestä aspektista on kyse silloin, kun verbi ilmaisee prosessia</li>
+</ol>
+<p>Määritelmien a ja b heikkous johtuu ensinnäkin siitä, että esimerkiksi toisto on tietyssä määrin myös perfektiivisen aspektin ominaisuus. Toiseksi määritelmät a ja b ovat heikkoja, koska imperfektiivisen aspektin sisällä ei aina ole mahdollista päättää, mikä ominaisuus on hallitseva. Näin ollen onkin järkevämpää todeta:</p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Eräs imperfektiiviselle aspektille tyypillisistä piirteistä on verbillä ilmaistava toisto</li>
+</ol>
+<p>sekä:</p>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Eräs imperfektiiviselle aspektille tyypillisistä piirteistä on toiminnan kuvaaminen prosessina.</li>
+</ol>
+<p>Näitä I:lle tyypillisiä piirteitä ei kuitenkaan aina ole helppo erottaa toisistaan. Seuraavassa tutkitaan muutamia tilanteita, joissa menneessä ajassa tapahtuva toiminta on toistuvaa.</p>
+<h3 id="toisto-vaatii-enemmän-kontekstin-tukea-kuin-prosessi"><span class="header-section-number">2.1.1</span> Toisto vaatii enemmän kontekstin tukea kuin prosessi</h3>
+<p>Kpm-erityismerkityksen todettiin edellä olevan imperfektiivisen aspektin <em>perusmerkitys</em>. Tästä seuraa, että</p>
+<ol style="list-style-type: decimal">
+<li>on oletettavampaa, että imperfektiivisen aspektin verbi ilmaisee yksittäistä prosessia kuin toistoa</li>
+<li>toiminnan tulkitseminen toistuvaksi vaatii jotakin erityistä siltä ympäristöltä, jossa se esiintyy</li>
+</ol>
+<p>Vertaa seuraavia esimerkkejä:</p>
+<ol start="35" style="list-style-type: decimal">
+<li>Солнце садилось</li>
+<li>В это время года солнце садилось рано. <span class="citation">(Rassudova 1984)</span></li>
+</ol>
+<p>Esimerkissä 35 kyseessä on yksi konkreettinen prosessi, kun taas esimerkissä 36 puhe on useista kerroista, joina aurinko on laskenut. Jotta esimerkin 36 toistotulkintaan päästäisiin, tarvitaan ajan adverbiaali <em>в это время года</em>, joka luo sellaisen ympäristön, että juuri toistuvuus on verbin hallitseva ominaisuus.</p>
+<h3 id="monikko-paljastaa-usein-toistuvuuden"><span class="header-section-number">2.1.2</span> Monikko paljastaa usein toistuvuuden</h3>
+<p>Usein jo lauseen subjektin luku riittää antamaan vihjeen siitä, että toiminta on tulkittava toistuvana:</p>
+<ol start="37" style="list-style-type: decimal">
+<li>На этой станции скорые поезда останавливались <span class="citation">(Rassudova 1984)</span></li>
+</ol>
+<h3 id="satunnainen-toiminta-toiston-merkityksessä"><span class="header-section-number">2.1.3</span> Satunnainen toiminta toiston merkityksessä</h3>
+<p>Jos verbillä kuvattava toiminta on luonteeltaan satunnaista (eikä tietoista tai tarkoitettua), toisto on usein läsnä lauseen tulkinnassa.</p>
+<ol start="38" style="list-style-type: decimal">
+<li>Каждый раз я встречал его около нашего дома</li>
+<li>Каждую неделю получал письмо от сестры</li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<h3 id="ehto-saa-aikaan-toiston-merkityksen"><span class="header-section-number">2.1.4</span> Ehto saa aikaan toiston merkityksen:</h3>
+<p>Kun läsnä on jokin tarkentava ehto, jonka voimassa ollessa toiminta tapahtuu, tuloksena on usein toiston merkitys eikä vain yksittäinen prosessi:</p>
+<ol start="40" style="list-style-type: decimal">
+<li>Когда я попадал на каток, я вспоминал Марусю</li>
+<li>При нем она становилась совсем другая, смеялась и даже начинала так же длинно говорить, как и он</li>
+<li>Если я опаздывал, он меня никогда не ругал</li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<h2 id="konkreettis-faktinen-merkitys-vs.rajoittamattoman-toiston-merkitys"><span class="header-section-number">2.2</span> Konkreettis-faktinen merkitys vs. rajoittamattoman toiston merkitys</h2>
+<p>Samoin kuin kahden imperfektiivisen aspektin verbin välillä ei aina ole selvää, ilmaistaanko verbillä yhtä prosessia vai useita toistuvia tapahtumia, myös toistuvaa toimintaa ilmaisevan I-verbin ja yksittäistä faktaa ilmaisevan P-verbin välinen ero vaatii usein erityistä huomiota.</p>
+<h3 id="yksi-rajattu-toiminta-vs.toisto"><span class="header-section-number">2.2.1</span> Yksi rajattu toiminta vs. toisto</h3>
+<p>Vertaa esimerkkejä 43 ja 44:</p>
+<ol start="43" style="list-style-type: decimal">
+<li>К вечеру больному стало хуже</li>
+<li>К вечеру больному становилось хуже</li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<p>Rtm- ja kfm-erityismerkitysten välinen ero ja toisaalta läheisyys tiivistyy hyvin esimerkkeihin 43 ja 44. Esimerkissä 43 kyseessä on yksi konkreettinen fakta: puhutaan yhdestä päivästä ja erotellaan, että päivän kääntyessä iltaan potilaan olo huononi. Esimerkin 44 merkitys on tätä lähellä, mutta ero on kuitenkin selvä: kyse on useasta toistuvasta tapauksesta – aina iltaisin potilaan olo huononi.</p>
+<p>Jonkin verran hienojakoisempi ero on esimerkissä 45. Pohdi esimerkkiä perfektiivisen aspektin verbillä. Miten merkitys muuttuu?</p>
+<ol start="45" style="list-style-type: decimal">
+<li>К десяти часам утра, не выдержав неслыханной нагрузки, портились все телефоны. <span class="citation">(Rassudova 1984)</span></li>
+</ol>
+<h3 id="toisto-tapahtumasarjassa"><span class="header-section-number">2.2.2</span> Toisto tapahtumasarjassa</h3>
+<p>Rtm-kfm-oppositio toteutuu myös tapauksissa, joissa puhuja kertoo peräkkäisten tapahtumien sarjasta. Jos kyseessä on vain yksi konkreettinen peräkkäisten tapahtumien sarja, käytetään (<a href="">kuten edellä osoitettiin</a>) konkreettis-faktista erityismerkitystä eli pelkkiä perfektiivisen aspektin muotoja:</p>
+<ol start="46" style="list-style-type: decimal">
+<li>Как только докладчик поднялся на трибуну, раздались аплодисменты</li>
+</ol>
+<p>Kyseessä voi kuitenkin olla myös tapahtumasarja, joka toistuu samanlaisena uudestaan ja uudestaan. Tällöin toiston merkitys johtaa loogisesti imperfektiiviseen aspektiin ja rajoittamattoman toiston erityismerkitykseen, kuten esimerkissä 47:</p>
+<ol start="47" style="list-style-type: decimal">
+<li>Как только докладчик поднимался на трибуну, раздавались аплодисменты</li>
+</ol>
+<h3 id="mukana-absoluuttisen-keston-adverbiaali"><span class="header-section-number">2.2.3</span> Mukana absoluuttisen keston adverbiaali</h3>
+<p>Tutki esimerkkiä 48:</p>
+<ol start="48" style="list-style-type: decimal">
+<li>Он прочитал за два часа 30 страниц</li>
+</ol>
+<p>Esimerkin 48 ajanilmaus <em>за два часа</em> ilmaisee kestoa, joka voidaan tarkemmin määritellä absoluuttiseksi kestoksi: jossain tietyssä ajassa saavutettava tulos. Tämäntyyppisistä ajanilmauksista seuraa automaattisesti, että toiminnan, jota ajanilmaus määrittää, on oltava sisäisesti rajattu. Tämä taas sulkee pois prosessuaalisen tulkinnan, joka seuraisi <em>читать</em>-verbin käytöstä:</p>
+<ol start="49" style="list-style-type: decimal">
+<li><ul>
+<li>Он читал за два часа 30 страниц</li>
+</ul></li>
+</ol>
+<p>Ainoa mahdollisuus käyttää imperfektiivisen aspektin verbiä on прочитать-verbistä <a href="">imperfektivaation</a> avulla muodostettu <em>прочитывать</em> -verbi, jolloin seurauksena on toiston ilmaiseminen:</p>
+<ol start="50" style="list-style-type: decimal">
+<li>Он прочитывал 30 страниц за два часа</li>
+</ol>
+<p>Huomaa, että tässä tapauksessa imperfektiivinenkin aspekti sisältää tuloksen, mikä ei I:n perusmerkityksessä ole mahdollista. Rajoittamattoman toiston erityismerkityksen yhteydessä toisto ja tulos ovat kuitenkin usein sidoksissa toisiinsa.</p>
+<h3 id="teonlaatujen-merkitys"><span class="header-section-number">2.2.4</span> Teonlaatujen merkitys</h3>
+<p>Kuten jo edellisen esimerkin kohdalla kävi ilmi, tietyt imperfektiivisen aspektin verbit ilmaisevat käytännössä aina <em>toistoa</em>. Tämä johtuu verbien leksikaalisista ominaisuuksista, siitä, että kyseisten <em>sanojen</em> merkitys on jo itsessään sen luonteista, että mahdollisten tulkintojen määrä on rajattu. Tällä tarkoitetaan teonlaatuja, joita käsitellään tarkemmin <a href="">toisaalla</a>.</p>
+<p>Esimerkin 48 прочитать edustaa <a href="">perduratiivista</a> teonlaatua. Nämä perfektiivisen aspektin verbit kuvaavat tietyn aikaa kestävää toimintaa. Perduratiivisen teonlaadun verbeistä muodostetut imperfektiivisen aspektin verbit ilmaisevat, kuten esimerkin 50 <em>прочитывать</em> ja esimerkin 51 просиживать, toistoa.</p>
+<ol start="51" style="list-style-type: decimal">
+<li>Он просиживал над статьей не менее десяти часов. <span class="citation">(Rassudova 1984)</span></li>
+</ol>
+<!--Rassudova [-@rassudova1984, 49] luettelee lisäksi esimerkkeinä verbiparit
+*износить/изнашивать, *-->
+<h2 id="summatiivinen-merkitys-vs.rajoitetun-toiston-merkitys"><span class="header-section-number">2.3</span> Summatiivinen merkitys vs. rajoitetun toiston merkitys</h2>
+<p>Edellä mainittujen tapausten lisäksi aspektin valinta menneessä ajassa tapahtuvan toiston tapauksissa on usein hankalaa silloin, kun toistokertojen määrä on tarkkaan yksilöity, esimerkiksi ilmauksilla <em>два/три/N раз(а)</em>, <em>несколько/много раз</em>. Tällöin on usein mahdollista käyttää sekä imperfektiivisen aspektin rajoitetun toiston merkitystä että perfektiivisen aspektin <a href="erityismerkitykset.html#summatiivinen">summatiivista erityismerkitystä</a>.</p>
+<p>Usein aspektien välisen merkityseron selittämisessä auttaa se, että P:n ja I:n välinen määritelmällinen ero näkyy myös toistumista ilmaisevien erityismerkitysten kohdalla, niin että P ilmaiseet toistokerrat sisäisesti rajattuina ja totaalisina ja tästä johtuen usein tiukasti peräkkäisinä, selkeästi eriteltyinä kertoina, kun taas I:ssä kertojen välinen aika on määrittelemätön eikä toimintoja ajatella rajattuina:</p>
+<ol start="52" style="list-style-type: decimal">
+<li>стало жарко глазам, я несколько раз <span class="r">сморгнул</span>, потом без раздумий налил половину фужера и тут же выпил. <span class="citation">(Волос 2001)</span></li>
+<li>Мы много раз рассматривали на заседании Президиума РАН вопросы, связанные с ракетной и авиационной техникой, но в первый раз в повестку нашего заседания поставлена тема корабельной ядерной энергетики <span class="citation">(Митенков 2003)</span></li>
+</ol>
+<p>Joissain tapauksissa toiminnan luonne on sellaista, ettei perfektiivinen aspekti edes olisi mahdollinen:</p>
+<ol start="54" style="list-style-type: decimal">
+<li>Бударин в прежних полётах уже 5 раз <span class="r">работал</span> в открытом космосе и его медицинские параметры всегда были аналогичны обнаруженным, это особенность организма <span class="citation">(Лесков 2003)</span></li>
+</ol>
+<p>Aina ero ei kuitenkaan ole selvä, ja esimerkiksi ajallisen kiinnekohdan virkkeelle antavat adverbiaalit saattavat olla omiaan pienentämän sitä. Vertaa:</p>
+<ol start="55" style="list-style-type: decimal">
+<li>В ходе встречи президент несколько раз повторил:“Давайте конкретику!” Но с “конкретными предложениями” было негусто. <span class="citation">(Чудодеев 2003)</span></li>
+<li>В ходе встречи президент несколько раз повторял:“Давайте конкретику!” Но с “конкретными предложениями” было негусто. <span class="citation">(Чудодеев 2003, muokattu)</span></li>
+</ol>
+<h1 id="ytmoppositio"><span class="header-section-number">3</span> Konkreettis-faktinen vs. yleisesti toteava merkitys</h1>
+<p>Imperfektiivisen ja perfektiivisen aspektin välinen oppositio on heikoimmillaan, kun tarkastellaan perfektiivisen aspektin konkreettis-faktisen erityismerkityksen (kfm) ja imperfektiivisen aspektin yleisesti toteavan erityismerkityksen (ytm) välisiä eroja. Ytm on imperfektiivisen aspektin erityismerkitys, jonka laajin käyttöalue on nimenomaan menneen ajan verbimuodoilla. Se on yleinen ja käytetty erityismerkitys, mutta esimerkiksi suomalaisille opiskelijoille suunnatuissa oppikirjoissa sitä ei käsitellä erityismerkityksenä, joskin siihen viitataan esimerkeissä ja teksteissä <span class="citation">(Ohtonen 2012: 114)</span>.</p>
+<p>Seuraavassa tarkastellaan ytm- ja kfm- merkitysten suhdetta erilaisissa konteksteissa.</p>
+<h2 id="kfm-ja-ytm-samankaltaisina-erityismerkityksinä"><span class="header-section-number">3.1</span> Kfm ja ytm samankaltaisina erityismerkityksinä</h2>
+<p>Sekä kfm- että ytm-erityismerkitys viittaavat yksittäiseen, tapahtuneeseen toimintaan. Tämä näkyy jo merkitysten venäjänkielisissä nimissä (конкретно-фактическое / обобщенно-фактическое значения), jotka suomenkielisiä termejä paremmin tuovat esille merkitysten välisen samankaltaisuuden. Vertaa A. V. Bondarkon <span class="citation">(2005: 239, 244)</span> näille erityismerkityksille antamia lyhyitä määritelmiä:</p>
+<ol style="list-style-type: decimal">
+<li><p>Конкретно-фактическое значение … обозначает конкретный единичный факт</p></li>
+<li><p>Обобщенно-фактическое значение … заключается в общем указании на самый факт наличия или отсутствия действия</p></li>
+</ol>
+<p>Määritelmistä käy ilmi, että kumpikin erityismerkitys viittaa yksittäiseen faktaan. Ytm on kuitenkin pyritty määrittelemään tarkemmin, niin että olennaiseksi nousee nimenomaan (suomenkielisen termin mukaisesti) sen toteaminen, että jotakin on tapahtunut.</p>
+<p>Monissa tilanteissa valinta kfm:n ja ytm:n välillä on kielenoppijalle hankalaa. Kummallakin erityismerkityksellä on kuitenkin olemassa omia tyypillisiä käyttötarkoituksiaan, joiden avulla kielenkäyttäjän on helpompi perustella ja analysoida aspektien välisiä eroja kyseessä olevissa erityismerkityksissä. Seuraavassa tutkitaan ensin imperfektiiviselle aspektille (ytm), sitten perfektiiviselle aspektille (kfm) tyypillisiä funktioita ja niiden esiintymisympäristöjä</p>
+<h2 id="imperfektiiviselle-aspektille-tyypillisiä-piirteitä"><span class="header-section-number">3.2</span> Imperfektiiviselle aspektille tyypillisiä piirteitä</h2>
+<h3 id="deklaratiivisuus"><span class="header-section-number">3.2.1</span> Deklaratiivisuus</h3>
+<p>Ytm:n deklaratiivisuudella tarkoitetaan tässä sitä, että nimensä mukaisesti ytm:n tärkein funktio on jonkin faktan tapahtumisen toteaminen. Tällä painotuksella tarkoitetaan ennen muuta sitä, että ytm-merkityksessä käytetyllä verbillä on ikään kuin mahdollisimman vähän sanottavaa itse toiminnasta tai siihen liittyvistä ominaisuuksista: se vain kylmästi toteaa jonkin asian tapahtuneen tai olleen tapahtumatta. Pohdi esimerkkiä (57):</p>
+<ol start="57" style="list-style-type: decimal">
+<li>Он предупреждал меня</li>
+</ol>
+<p>Esimerkin 57 informaatio voitaisiin kertoa myös paljon tarkemmin ja siinä kuvattavaa toimintaa tai sen tulosta voitaisiin tarkastella monista eri näkökulmista. Imperfektiivinen aspekti kuitenkin mahdollistaa myös puhtaan toteavan ilmaisutavan. Se ei ota tässä muodossa kantaa siihen, oliko toiminta esimerkiksi odotettua tai vaadittua tai oliko se toistuvaa vai kertaluontoista. Tämä käy paremmin ilmi esimerkistä 58:</p>
+<ol start="58" style="list-style-type: decimal">
+<li>Я знаю, что Ханна поступала в магистерскую программу по переводоведению в Тамперском университете</li>
+</ol>
+<p>Esimerkissä 58 puhuja ei tiedä, pääsikö Hanna sisään tai onko hän kenties yrittänyt pääsyä useampaan kertaan vai ainoastaan kerran.</p>
+<h3 id="tarkemmat-erityismerkitykset"><span class="header-section-number">3.2.2</span> Tarkemmat erityismerkitykset</h3>
+<p>Monet tutkijat erottavat Ytm-merkityksestä erikseen vielä monia alamerkityksiä, joille kaikille on yhteistä ennen kaikkea se, että imperfektiivistä aspektia käytetään ilmaisemaan yksittäistä toimintaa. Seuraavassa käsitellään näistä muutamia:</p>
+<h4 id="ytm_mitat"><span class="header-section-number">3.2.2.1</span> Toiminnan tuloksen mitätöityminen</h4>
+<p>Toiminnan tuloksen mitätöitymisen merkitys (значение аннулированности результата действия) on yksi selkeimmin tunnistettavista erityismerkityksistä. Tyypillinen tässä merkityksessä esiintyvä verbi on открывать:</p>
+<ol start="59" style="list-style-type: decimal">
+<li>– Почему в аудитории так холодно? Вы не открывали окно?</li>
+</ol>
+<p>Esimerkin 59 lausumishetkellä vallitsee tilanne, jossa ikkuna on kiinni. Kysyjä kuitenkin epäilee, että hänen poissaollessaan oli suoritettu sekä toiminta että sen mitätöiminen: ikkuna oli avattu ja jälleen suljettu, niin että kylmää ilmaa oli mahdollisesti päässyt huoneeseen. Vastaava erityismerkitys on tyypillistä myös iteratiivisille liikeverbeille:</p>
+<ol start="60" style="list-style-type: decimal">
+<li>– Папа вчера приезжал.</li>
+</ol>
+<p>Esimerkissä 60 on myös tapahtunut toiminta ja sen mitätöityminen: Isä on saapunut, ollut paikalla, mutta lähtenyt jo pois ennen kuin esimerkki 60 on lausuttu. Huomaa kuitenkin, ettei liikeverbeissä <em>mitätöityminen</em> tarkoita, että olisi tapahtunut tarkalleen päinvastainen toiminta: puhuja ei kerro, että Isä olisi välttämättä palannut sinne, mistä oli lähtenyt, vaan ainoastaan sen, ettei tämä enää ole paikalla.</p>
+<p>Mainittujen verbien lisäksi mitätöitymisen erityismerkitys on tyypillinen muun muassa verbeille подниматься, включать, просыпаться jne. Näitä kaikkia yhdistää se, että toiminnalle on olemassa selkeä vastaohta: laskeutuminen, sulkeminen, nukahtaminen.</p>
+<ol start="61" style="list-style-type: decimal">
+<li>Кто-нибудь включал компьютер? Я ведь запретил..</li>
+</ol>
+<h4 id="tilannesidonnainen-resultatiivis-faktinen-merkitys"><span class="header-section-number">3.2.2.2</span> Tilannesidonnainen resultatiivis-faktinen merkitys</h4>
+<p>Nikunlassin <span class="citation">(2002: 185)</span> mukaan tilannesidonnainen resultatiivis-faktinen merkitys (единично-фактическое значение в условиях ситуативной совершенности действия, trfm) tulisi erottaa omaksi erityismerkityksekseen. Läheskään kaikki tutkijat eivät tätä erottelua kuitenkaan tee, ja myös tässä sitä tarkastellaan yhtenä ytm-erityismerkityksen tyyppinä. Trfm-erityismerkitys liittyy tilanteisiin, joissa kontekstista käy jollain tavalla ilmi toiminnan loppuunsuorittaminen:</p>
+<ol start="62" style="list-style-type: decimal">
+<li>Где вы защищали диссертацию? <span class="citation">(Nikunlassi 2002)</span></li>
+</ol>
+<p>Esimerkissä 62 puhuja tietää keskustelukumppaninsa joskus menneisyydessä väitelleen.</p>
+<h3 id="ytm_sarja"><span class="header-section-number">3.2.3</span> Imperfektiivinen aspekti tapahtumien sarjassa</h3>
+<p>Aivan kuten <a href="">edellä kfm/kpm-opposition yhteydessä</a>, myös kfm/ytm-opposition osalta on relevanttia pohtia, miten aspekteja käytetään, kun kuvataan tapahtumien ajallisia suhteita toisiinsa.</p>
+<p>Imperfektiiviselle aspektille on usein tyypillistä kuvata toimintaa, joka on <em>kauempana</em> menneisyydessä kuin perfektiivisen aspektin kuvaava toiminta. Pohdi seuraavia esimerkkejä:</p>
+<ol start="63" style="list-style-type: decimal">
+<li>Я не сразу понял, что это та книга, о которой ты мне уже <span class="r">говорил</span>…</li>
+<li>Я, признаюсь, так и рассчитывал, что, может быть Елиэавета Прокофьевна вспомнит, что я ей <span class="r">писал</span></li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<p>Esimerkeissä 63–64 verbit говорить ja писать viittaavat toimintaan, joka on tapahtunut selkeästi ennen muiden verbien kuvaamia toimintahektiä ja on ikään kuin vanhaa, ainoastaan yleisesti todettavaa tietoa.</p>
+<h3 id="tyypillisiä-konteksteja-ytm-merkitykselle"><span class="header-section-number">3.2.4</span> Tyypillisiä konteksteja ytm-merkitykselle</h3>
+<p>Seuraavassa käydään läpi muutamia tyypillisiä tilanteita, joissa käytetään imperfektiivisen aspektin verbiä yleisesti toteavassa merkityksessä. Ytm-erityismerkitys on tavallinen muun muassa seuraavissa käyttötilanteissa:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Puhuja pohtii jonkin toiminnan suorittamista ja päätös suorittaa riippuu siitä, onko toiminta ja tapahtunut:</li>
+</ol>
+<ol start="65" style="list-style-type: decimal">
+<li>Надо полить цеты? Или ты уже поливал?</li>
+<li>Вы проветривали комнату?</li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Kun puhuja kieltäytyy ehdotuksesta:</li>
+</ol>
+<ol start="67" style="list-style-type: decimal">
+<li>Пойдем смотреть “звездные войны”. - Не хочу, я его уже <span class="r">смотрел</span>.</li>
+</ol>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Kun puhujalla on jokin oletus, jonka hän pyrkii vahvistamaan tai kumoamaan:</li>
+</ol>
+<ol start="68" style="list-style-type: decimal">
+<li>Дима сказал, что это вы ему сказали. Вы действительно говорили ему об этом? <span class="citation">(Rassudova 1984)</span></li>
+</ol>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Puhuja kuvaa toimintaa hänelle tuttuna, ennenkin kokeiltuna:</li>
+</ol>
+<ol start="69" style="list-style-type: decimal">
+<li>Не бойтесь, я водил машину. было это, правда, давно.</li>
+</ol>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>Puhuja etsii jotakin</li>
+</ol>
+<ol start="70" style="list-style-type: decimal">
+<li>Вы не брали мои наушники? Они были вон тут на столе..</li>
+</ol>
+<h3 id="ytm-verbit"><span class="header-section-number">3.2.5</span> Tyypillisiä ytm-merkityksessä esiintyviä verbejä</h3>
+<p>Edellä lueteltujen erityismerkitysten, aikasuhteiden ja käyttötilanteiden lisäksi ytm-merkitystä pohdittaessa voi olla hyötyä seuraavasta verbilistasta, jonka A.V. Bondarko <span class="citation">(2005: 244)</span> antaa koskien verbejä, joiden kanssa ytm on tavallinen.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Konkreettinen fysikaalinen toiminta, ml. liikeverb.</th>
+<th align="left">konkreettinen, tahtoa ilmaiseva toiminta</th>
+<th align="left">kommunikaatioverbit</th>
+<th align="left">havaintoverbit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">выезжать, заходить, идти, приводить, привозить, приезжать, разносить, брать, давать, браться, нападать, поджигать, поить, получать, продавать, пропускать, работать, стрелять, топить, убивать</td>
+<td align="left">вызывать, звать, исключать, нанимать, посылать, приглашать, упекать</td>
+<td align="left">беседовать, говорить, докладывать, называть, отвечать, рассказывать, спрашивать, обвинять, обижать, отзываться, хвалить</td>
+<td align="left">видеть, слышать, слыхать, встречать</td>
+</tr>
+</tbody>
+</table>
+<h2 id="perfektiiviselle-aspektille-tyypillisiä-piirteitä"><span class="header-section-number">3.3</span> Perfektiiviselle aspektille tyypillisiä piirteitä</h2>
+<p>Siirrytään nyt tarkastelemaan tapauksia, joiden pohjalta on tavallisesti perusteltua käyttää perfektiivistä aspektia tilanteissa, joissa viitataan yhteeen tapahtumaan menneisyydessä ja joissa tätä kautta myös imperfektiivisen aspektin ytm-erityismerkitys voisi olla kilpaileva mahdollisuus.</p>
+<h3 id="tarkempi-konteksti"><span class="header-section-number">3.3.1</span> Tarkempi konteksti</h3>
+<p>Siinä missä imperfektiivisen aspektin ytm-merkitys ilmaisee mahdollisimman vähän ja mahdollisimman yleisellä tasolla, perfektiivisen aspektin kfm-merkitys tavallisesti yksilöi kuvaamamnsa toiminnan tarkemmin. Tämä ero johtaa jo invarianttien merkitysten määrittelyn yhteydessä todettuun tulkintaan, jonka mukaan imperfektiivinen aspekti on parin tunnusmerkitön osapuoli, perfektiivinen taas tunnusmerkillinen: jollain tavalla spesifimpi ja kantaa ottava. Esimerkeissä 71–72 kummassakin on läsnä adverbiaalilla ilmaistu ajallinen kehys, joka yksilöi toiminnan ja tarkentaa sen tiettyyn hetkeen menneisyydessä.</p>
+<ol start="71" style="list-style-type: decimal">
+<li>1-го Мая в Доме Дружбы собрались представители общественности</li>
+<li>В начале 1943 года Шатров получил от Виктора письмо</li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<h3 id="perfektin-erityismerkitys"><span class="header-section-number">3.3.2</span> Perfektin erityismerkitys</h3>
+<p>Kun pohditaan valintaa imperfektiivisen aspektin ytm-erityismerkityksen ja perfektiivisen aspektin välillä, on otettava huomioon eräs perfektiivisen aspektin ominaisuuksista menneessä aikamuodossa: se linkittää usein tapahtuneen tiukemmin kiinni puhehetkeen (vrt. edellä mainittu <a href="#ytm_sarja">ytm-merkityksen taipumus viitata tapahtumaan, joka on kauempana menneisyydessä</a>). Yksi tämän ominaisuuden seuraksista on, että perfektiiviselle aspektille voidaan erottaa oma <a href="">perfektin erityismerkitys</a>: se voi viitata tapahtumiin, jotka sijoittuvat menneisyteen, mutta joiden tulos on voimassa vielä puhehetkelläkin. Usein käytetty esimerkki tästä on koskee lomaketta, joka on juuri täytetty:</p>
+<ol start="73" style="list-style-type: decimal">
+<li>Я заполнил анкету, он лежит на вашем столе.</li>
+</ol>
+<p>Vertaa esimerkkiä 73 esimerkkiin 74, jossa käytetään imperfektiivisen aspektin заполнять-verbiä:</p>
+<ol start="74" style="list-style-type: decimal">
+<li>Я уже заполнял анкету</li>
+</ol>
+<p>Esimerkissä 73 toiminnan tulos on ajankohtainen: lomake on läsnä puhetilanteessa, se on juuri täytetty ja sijaitsee vastaanottajan pöydällä. Esimerkissä 74 puolestaan viitataan menneisyyteen ilman linkkiä puhehetkeen: todetaan vain toiminnan tapahtuneen. Lomakkeen sijainnista tai täyttämisajasta ei ilmaista mitään.</p>
+<p>Perfektiivisen aspektin kyky ilmaista menneisyydessä suoritettua toimintaa, jonka tulos on puhehetkellä voimassa, tulee hyvin esiin vertailussa imperfektiivisen aspektin <a href="#ytm_mitat">toiminnan mitätöitymisen erityismerkitykseen</a>. Pohdi uudestaan <a href="#ytm_mitat">esimerkkejä</a> 59–61. Vertaa niitä esimerkkeihin 75–77:</p>
+<ol start="75" style="list-style-type: decimal">
+<li>Почему вы открыли окно? На улице минус двадцать пять, вы с ума сошли?</li>
+<li>Папа приехал, он в гостиной, иди поздоровайся.</li>
+<li>Не понимаю эту мою привычку: опять, кажется, первым делом включил компьютер, сам того не замечая.</li>
+</ol>
+<p>Esimerkit 75–76 osoittavat, että toiminnan tulos on puhehetkellä voimassa: ikkuna on auki, tietokone päällä ja isä paikalla.</p>
+<h3 id="äkillinen-muutos-toiminnassa"><span class="header-section-number">3.3.3</span> Äkillinen muutos toiminnassa</h3>
+<p>Perfektiivisellä aspektilla voidaan ilmaista toiminnassa tapahtuvia nopeita muutoksia, kuten seuraavissa esimerkeissä:</p>
+<ol start="78" style="list-style-type: decimal">
+<li>Прохожий обернулся</li>
+<li>Вошедший снял плащ</li>
+<li>Машина свернула направо</li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<h3 id="odotettusuor"><span class="header-section-number">3.3.4</span> Odotetun toiminnan suorittaminen</h3>
+<p>Keskustelutilanteissa on mahdollista, että puhuja on odottanut lausuman vastaanottajalta jonkin teon suorittamista. Kun tällaisen suorituksen toteutumista tarkistetaan, käytetään usein perfektiivistä aspektia:</p>
+<ol start="81" style="list-style-type: decimal">
+<li>Ты принял лекарство?</li>
+<li>Вы поговорили с ним?</li>
+<li>Ты помыл посуду?</li>
+</ol>
+<h1 id="kieltomuoto-menneessä-ajassa"><span class="header-section-number">4</span> Kieltomuoto menneessä ajassa</h1>
+<p>Edellä käsitellyt seikat vaikuttavat aspektin valintaan myös kieltomuodossa, mutta sillä on myös joitakin erityispiirteitä, jotka on syytä ottaa huomioon. Yleisesti ottaen kieltomuotoisissa lauseissa imperfektiivinen aspekti on tavallisempi kuin perfektiivinen. Voidaan sanoa, että kieltolauseissa imperfektiivisen aspektin käyttöala laajeneen ja perfektiivisen aspektin käyttöala jonkin verran supistuu. Seuraavassa tarkastellaan joitakin imperfektiiviselle aspektille menneen ajan kieltomuodossa tyypillisiä piirteitä sekä verrataan tilanteita, joissa aspektin valinta on häilyvää.</p>
+<h2 id="imperfektiivisen-aspektin-kieltomuotoon-liittyviä-erityispiirteitä"><span class="header-section-number">4.1</span> Imperfektiivisen aspektin kieltomuotoon liittyviä erityispiirteitä</h2>
+<h3 id="toiminta-ei-vielä-ole-alkanut"><span class="header-section-number">4.1.1</span> Toiminta ei vielä ole alkanut</h3>
+<p>Kun menneessä ajassa käytetään imperfektiivisen aspektin verbimuotoa, seurauksena on usein sen ilmaiseminen, ettei toiminta ole vielä edes alkanut. Virke 84 on tästä esimerkki:</p>
+<ol start="84" style="list-style-type: decimal">
+<li>Уже стемнело, но свечи ещё не горели <span class="citation">(Давыдов 1989, muokattu)</span></li>
+</ol>
+<p>Periaatteessa samasta asiasta on kyse esimerkissä 85, jossa Zenit ei vielä ollut johdossa (voitolla), ts. “johdossa oleminen ei vielä ollut alkanut”:</p>
+<ol start="85" style="list-style-type: decimal">
+<li>на 60-м минуте Зенит еще не выигывал</li>
+</ol>
+<p>Vertaa myös esimerkkiä 86:</p>
+<ol start="86" style="list-style-type: decimal">
+<li>В 40-ые годы кварки не изучали.</li>
+</ol>
+<h3 id="toiminnassa-ei-muutoksia"><span class="header-section-number">4.1.2</span> Toiminnassa ei muutoksia</h3>
+<p>Toinen imperfektiiviseen aspektiin meenneessä ajassa ja kieltomuodossa liittyvä erityispiirre on, että sillä kuvataan toimintaa, joka jatkuu muuttumattomana. Usein kyseessä on esimerkiksi säätila, kuten esimerkissä 87:</p>
+<ol start="87" style="list-style-type: decimal">
+<li>Дождь не переставал.</li>
+</ol>
+<p>Vrt. myös seuraavia esimerkkejä, jossa muutoksettomuus koskee ennemmin toiminnan puutetta kuin toimintaa:</p>
+<ol start="88" style="list-style-type: decimal">
+<li>Компьютер не включался.</li>
+<li>Шла уже 80-ая минута матча, но Роналду не забивал.</li>
+<li>Ученые долго не <span class="r">находили</span> ответа на вопрос о том, почему значение гравитационной постоянной составвляет именно 6,67408(31)·10−11 м3·с−2·кг−1, или Н·м²·кг−2</li>
+</ol>
+<p>Esimerkki 90 osoittaa, että vastaavissa tapauksissa on mahdollista luoda mielikuva toiminnan puuttumisen kestämisestä, vaikka kyseessä olisi verbi, joka tavallisesti ei ilmaise kestoa, kuten находить.</p>
+<h2 id="perfektiivisen-aspektin-kieltomuotoon-liittyviä-erityispiirteitä"><span class="header-section-number">4.2</span> Perfektiivisen aspektin kieltomuotoon liittyviä erityispiirteitä</h2>
+<p>Kuten edellä <a href="#odotettusuor">myöntölauseiden osalta</a> huomautettiin, perfektiiviseen aspektiin liittyy usein se lisänyanssi, että puheena oleva toiminta olisi ollut odotettua, mutta odotusten vastaisesti toimintaa ei tapahtunut. Tällaisissa tilanteissa aspektien välinen kilpailu on vähäisempää, sillä perfektiivisen aspektin valitseminen on imperfektiivistä aspektia todennäköisempää</p>
+<ol start="91" style="list-style-type: decimal">
+<li>Ваня, мы по тебе скучали, что же это ты не <span class="r">пришел</span>?</li>
+<li>Кстати, на заседание сенатского комитета представители Минпечати не <span class="r">пришли</span>, хотя приглашение им было направлено <span class="citation">(Ратиани 2002)</span></li>
+<li>Мы не <span class="r">посмотрели</span> фильм, хотя все его хвалили <span class="citation">(Rassudova 1984)</span></li>
+</ol>
+<p>Esimerkeissä 91–93 korostetut verbit edustavat perfektiivistä aspektia juuri sen tähde, että toiminta oli odotettua, mutta sitä ei kaikesta huolimatta suoritettu.</p>
+<p>Vertaa edellisiä esimerkkejä esimerkkeihin 94 ja 95:</p>
+<ol start="94" style="list-style-type: decimal">
+<li>Я не взял сегодня со собой ноутбука.</li>
+<li>Нет, я не брал ноутбука, я даже не знаю, где он.</li>
+</ol>
+<p>Esimerkki 94 kuvaa tilannetta, jossa puhujalla nimenomaan on tavallisesti tapanaan kantaa läppäriä mukanaan, mutta jostain syystä tämän tavan luoman odotuksen vastaisesti tänään tietokonetta ei ole. Tällä on selvä merkitysero esimerkkiin (95), jossa vastaavaa odotusta ei ole, ja sen sijaan imperfektiivisen aspektin verbiä käytetään ytm-erityismerkityksessä kieltämään ylipäätään <em>sen faktan tapahtuminen, että tietokone oli otettu</em> <span class="citation">(ks. myös Rassudova 1984: 97)</span>. Esimerkissä 95 imperfektiivisen aspektin tunnusmerkittömän luonteen mukaisesti ei oteta kantaa tilanteeseen mahdollisesti liittyvään muuhun informaatioon, vaan ainoastaan siihen, tapahtuiko läppärin ottamista, vai ei.</p>
+<h2 id="tilanteita-joissa-aspektin-valinta-on-häilyvää"><span class="header-section-number">4.3</span> Tilanteita, joissa aspektin valinta on häilyvää</h2>
+<p>Kieltomuoto paitsi laajentaa imperfektiivisen aspektin käyttöalaa, samalla myös lisää häilyvien tapausten määrää, joissa usein mahdollisia ovat kummatkin aspektit.</p>
+<p>Selkeimmin tämä näkyy jo muutoinkin heikossa ytm/kfm-oppositiossa. Myönteisissä lauseissa imperfektiivisen ja perfektiivisen aspektin välinen ero on näissä tapauksissa usein perua perfektiivisen aspektin ominaisuudesta kuvata toiminta sisäisesti rajattuna. Kun kyse on toiminnan <em>puuttumisen toteamisesta</em>, myös tämä vastakkainasettelu laimenee tai häviää kokonaan. Niinpä seuraavissa esimerkeissä niin imperfektiivisen aspektin yleisesti toteava merkitys kuin perfektiivisen aspektin konkreettis-faktinen merkitys ovat mahdollisia:</p>
+<ol start="96" style="list-style-type: decimal">
+<li>Меня никто не встретил/ встречал.</li>
+<li>Автобус не останавливался / остановился?</li>
+<li>Он не сообщил / сообщал о своем приезде.</li>
+<li>Сегодня я не купила / покупала фруктов.</li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<p>I:n ja P:n välisen eron häilyvyys voi näkyä myös I:n konkreettis-prosessuaalisen merkityksen yhteydessä. Tämä tarkoittaa yleensä, että kumpaa tahansa aspektia voi käyttää kuvaamaan kyseessä olevaa tilannetta, mutta aspektien välillä on pieni merkitysero siinä, että I-verbi tuo mukanaan lievän kestoa korostavan painotuksen, kuten esimerkeissä 100–101:</p>
+<ol start="100" style="list-style-type: decimal">
+<li>Я подошел и остановился в двух шагах. Они не замечали / заметили меня</li>
+<li>Егор, что ты? Так и не ложился / лег?</li>
+</ol>
+<p><span class="citation">(Rassudova 1984)</span></p>
+<p>Selkeämpi merkitysero voidaan havaita, jos perfektiivisen aspektin verbin on todennäköistä saada perfektin erityismerkityksen mukainen tulkinta.</p>
+<ol start="102" style="list-style-type: decimal">
+<li>– У тебя есть со собой ноутбук?<br />
+ – Нет, я его не принес</li>
+</ol>
+<p>Esimerkissä 102 on kyseessä tilanne, jossa toiminnan tuloksen puuttuminen (läppäriä ei ole) on selvässä yhteydessä nykyhetkeen, ja tämän vuoksi perfektiivisen aspektin käyttö on helposti motivoitavissa.</p>
+</section>
+</article>
+<div class="references">
+<div id="ref-bondarko2015">
+<p>BONDARKO, A. 2005. <em>Теория морфологических категории и аспектологические исследования</em>. Moskova: Jazyki slavjanskoj kultury.</p>
+</div>
+<div id="ref-nikunlassi2002">
+<p>NIKUNLASSI, A. 2002. <em>Johdatus venäjän kieleen ja sen tutkimukseen</em>. Helsinki: Finn Lectura.</p>
+</div>
+<div id="ref-ohtonen12">
+<p>OHTONEN, O. 2012. Обобщенно-фактическое и единично-фактическое значение несовершенного вида с точки зрения обучения студентов-иностранцев видам глагола русского языка. &lt;<a href="http://hdl.handle.net/10138/34754" class="uri">http://hdl.handle.net/10138/34754</a>&gt;</p>
+</div>
+<div id="ref-rassudova1984">
+<p>RASSUDOVA, O. 1984. <em>Aspectual usage in modern russian</em>. Moskova: Russky Yazyk.</p>
+</div>
+<div id="ref-kompr1">
+<p>АРСЮХИН, Е. 2014. Почему вакцины от рака не будет никогда. <em>Комсомольская Правда</em>.</p>
+</div>
+<div id="ref-izv1">
+<p>БЕНЕДИКТОВ., К. 2013. Почему вакцины от рака не будет никогда. <em>Известия</em>.</p>
+</div>
+<div id="ref-nedv">
+<p>ВОЛОС, А. 2001. <em>Недвижимость</em>. Новый Мир.</p>
+</div>
+<div id="ref-gross1">
+<p>ГРОССМАН, В. 1960. <em>Жизнь и судьба, часть 3</em>.</p>
+</div>
+<div id="ref-dav1">
+<p>ДАВЫДОВ, Ю. 1989. <em>Синие тюльпаны</em>.</p>
+</div>
+<div id="ref-ekim">
+<p>ЕКИМОВ, Б. 1996. <em>Фетисыч</em>.</p>
+</div>
+<div id="ref-izv3">
+<p>ЛЕСКОВ, С. 2003. Наш космонавт здоров, но в космос не выйдет. <em>«Известия»</em>.</p>
+</div>
+<div id="ref-ran">
+<p>МИТЕНКОВ, Ф.М. 2003. Судовая ядерная энергетика. <em>«Вестник РАН»</em>.</p>
+</div>
+<div id="ref-izv4">
+<p>РАТИАНИ, Н. 2002. Телевидения минпечати не видать. <em>«Известия»</em>.</p>
+</div>
+<div id="ref-solzh1">
+<p>СОЛЖЕНИЦЫН, А. 1968. <em>В круге первом</em>.</p>
+</div>
+<div id="ref-itogi1">
+<p>ЧУДОДЕЕВ, А. 2003. Топ-менеджмент. <em>«Итоги»</em>.</p>
+</div>
+<div id="ref-blog1">
+<p>2014. LiveJournal.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Tavallisimmin когда-konjunktiolla alkavat aikaa ilmaisevat sivulauseet<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+</body>
+</html>

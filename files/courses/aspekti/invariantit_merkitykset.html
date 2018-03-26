@@ -1,0 +1,766 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="finnish" xml:lang="finnish">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="../jquery-latest.js"></script>
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/theme/sky.css" id="theme">
+  <style type='text/css'>
+  
+  /* General Demo Style */
+  @import url(http://fonts.googleapis.com/css?family=Lato:300,700);
+  
+  .main {
+  	width: 100%;
+  	max-width: 960px;
+  	padding: 40px;
+  	text-shadow: 0 2px 0 rgba(255,255,255,0.7);
+  }
+  
+  .main p {
+  	font-size: 16px;
+  	line-height: 1.4;
+  	text-align: justify;
+  }
+  
+  .main p:nth-of-type(2){
+  	-moz-column-gap: 20px;
+  	-webkit-column-gap: 20px;
+  	-ms-column-gap: 20px;
+  	-o-column-gap: 20px;
+  	column-gap: 20px;
+  }
+  
+  .main p:nth-of-type(4){
+  	-moz-column-gap: 15px;
+  	-o-column-count: 3;
+  	-o-column-gap: 15px;
+  	-ms-column-count: 3;
+  	-ms-column-gap: 15px;
+  	-webkit-column-gap: 15px;
+  	column-count: 3;
+  	column-gap: 15px;
+  }
+  
+  
+  
+  html *
+  {
+     /*font-family: Arial !important;*/
+  }
+  
+  
+  p.header {
+      font-size: 46px;
+      line-height: 40px;
+      text-align:left;
+      border-bottom: 2px solid black;
+      padding-bottom:5px;
+      margin-bottom:5em;
+  }
+  
+  h1 {
+      font-size: 36px;
+      line-height: 40px;
+  }
+  
+  h2 {
+      font-size: 30px;
+      line-height: 40px;
+  }
+  
+  h3 {
+      font-size: 24px;
+      line-height: 40px;
+  }
+  
+  h4 {
+      font-size: 18px;
+      line-height: 20px;
+  }
+  
+  /* Won't be used here */
+  
+  h5 {
+      font-size: 14px;
+      line-height: 20px;
+  }
+  
+  h6 {
+      font-size: 12px;
+      line-height: 20px;
+  }
+  
+  
+  .main {
+  	counter-reset: section-1, section-2, section-3, section-4;
+  }
+  
+  .main h1 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 36px;
+  	line-height: 40px;
+  	counter-increment: section-1;
+  	counter-reset: section-2 section-3 section-4;
+  }
+  
+  .main h2 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 30px;
+  	line-height: 40px;
+  	counter-increment: section-2;
+  	counter-reset: section-3 section-4;
+  	border-bottom: 1px solid #fff;
+  	box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+  	padding-bottom: 10px;
+  }
+  
+  .main h3 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 24px;
+  	line-height: 40px;
+  	counter-increment: section-3;
+  	counter-reset: section-4;
+  }
+  
+  .main h4 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 18px;
+  	line-height: 20px;
+  	counter-increment: section-4;
+  }
+  
+  a:link{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:active{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:visited{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:hover{
+  color:#000000;
+  text-decoration:underline;
+  }
+  
+  #TOC{
+  position:absolute;
+  width:17%;
+  font-size:89%;
+  margin-top:30px;
+  /*height:70%;*/
+  /*box-shadow: 3px 7px 5px 0px;*/
+  padding:5px;
+  overflow:auto;
+  /*border-radius:10px;
+  border: 1px black dashed;*/
+  }
+  
+  #TOC > ul{
+  list-style-type: none;
+  }
+  
+  
+  #TOC ul
+  {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  }
+  
+  #TOC a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #036;
+  /*width: 9em;*/
+  padding: 3px 12px 3px 8px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: bold;
+  }
+  
+  #TOC a:hover
+  {
+  background-color: #369;
+  color: #FFF;
+  }
+  
+  #TOC li li a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #69C;
+  /*width: 9em;*/
+  padding: 3px 3px 3px 17px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: normal;
+  }
+  
+  
+  .container{
+      height: 100%;
+      margin-top: 50px;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 9%;
+      padding-top: 10%;
+      background: white;
+      border-radius:25px;
+      }
+  
+  .references{
+      margin-top: 2%;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      background: white;
+      }
+  
+  
+  
+  #topbar{
+  position:absolute;
+  top:0;
+  left:-20px;
+  /*background:yellow;*/
+  background-color: #C5A05B;
+  margin-bottom:10px;
+  padding-left:25px;
+  /*
+  padding-right:25px;
+  padding-top:5px;
+  */
+  padding-bottom:2px;
+  border-bottom: 1px dashed white;
+  border-right: 1px dashed white;
+  }
+  
+  .r {color:red;}
+  .b {color:blue;}
+  .g {color:grey;}
+  .gre {color:green;}
+  
+  .definition {
+      background: beige;
+      /*background: #DABC83;*/
+      padding-left: 1px;
+      margin-left: 2em;
+      padding-right: 1px;
+  }
+  
+  .defheader{
+      width: 100%;
+      /* padding-right: 10px; */
+      /* margin-right: 10px; */
+      border-bottom: 1px dashed black;
+      background: aliceblue;
+      /*background: #B0D0EC;*/
+  }
+  
+  .definition > p {
+      /* color: red; */
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 1em;
+      font-style: italic;
+  }
+  
+  article.bubble{
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 2em;
+  border-radius: 7px;
+  margin-left: 14px;
+  color:black;
+  }
+  
+  
+  article.bubblenob{
+  float: left;
+  width:30%;
+  }
+  
+  
+  article.mmbubble{
+  text-align: left;
+  border: 2px dotted black;
+  padding: 4px;
+  border-radius: 7px;
+  margin:1%;
+  color:black;
+  }
+  
+  article.nfbubble{
+  font-size:90%;
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 1.5em;
+  border-radius: 7px;
+  margin:4%;
+  box-shadow: 10px 10px 5px #888888;
+  color:black;
+  }
+  
+  article.bgred{background: rgba(222, 184, 135, 0.64);}
+  article.bgblue{background: rgba(100, 149, 237, 0.45);}
+  article.bggreen{background: darkseagreen;}
+  article.bgcyan{background: rgba(255, 215, 0, 0.25);}
+  
+  span#triangle {
+      display: inline-block;
+      margin: 72px;
+      border-right: 24px solid; border-bottom: 24px solid;
+      width: 50px; height: 50px;
+      transform: rotate(-45deg);
+  }
+  
+  span.right-arrow {
+      display: inline-block;
+      position: relative;
+      background: #E8EFED;
+      padding: 3px;
+  }
+  
+  span.right-arrow:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      margin-top: -10px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid #151514;
+  }
+  
+  span.afterarrow {
+      background: rgb(193, 243, 255);
+      margin-left: 9px;
+      padding: 3px;
+  }
+  
+  article#tocmain{
+  background:none;
+  }
+  
+  #topbar a:hover{
+  background-color: #8A6C34;
+  color: #FFF;
+  }
+  
+  #topbar a{
+  padding:3px;
+  color: #FFF;
+  text-decoration: none;
+  /*border-right:1px dashed white;*/
+  }
+  
+  #inlinemenu{
+  padding:0;
+  margin:0;
+  }
+  
+  .inline{
+  display:inline;
+  }
+  
+  #topbar li{list-style-type: none;
+      line-height:130%;
+  }
+  
+  a.dropdown-link { 
+      color:#044264;
+      text-decoration:none; 
+  }
+  
+  ul#quotes-bar-menu {
+      margin: 0; padding: 0;
+      float:left;
+      width: 100%;
+      list-style: none;
+  }
+  
+  ul#quotes-bar-menu li {
+      display:inline;
+      float:left;
+      position:relative;
+      margin:0;
+      padding:7px 15px 7px 0;
+  }
+  
+  /* sub menu class */
+  ul#quotes-bar-menu li .sub-menu {
+      background-color: #C5A05B;
+      display:none;
+      left:0;
+      margin:0;
+      font-size:11;
+      padding:0;
+      position:absolute;
+      top:29px;
+      width:320px;
+      z-index:999;
+  }
+  
+  ul#quotes-bar-menu li .single { 
+      /*width:150px !important;*/
+  }
+  
+  ul#quotes-bar-menu li{
+      color:#fff;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu ul {
+      float:left;
+      list-style:none;
+      display: block;
+      width:205px;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li {
+      width:135px;
+      margin:0; 
+      font-size:11px;
+      padding:1px 1px 0;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li a { color: white;
+  text-decoration: none;
+  }
+  ul#quotes-bar-menu li .sub-menu li a:hover { text-decoration: none; }
+  
+  
+  .invisible{
+  display:none;
+  }
+  .menubox{
+      background-color: #C5A05B;
+      padding: 0.12em;
+      border: 1px dashed white;
+      padding-left: 0.5em;
+  }
+  
+  
+  #topbar .menulauncher a{
+  border-right: 1px dashed white;
+  padding-right:3px;
+  }
+  
+  .menubox a{
+  width:80%;
+  display:inline-block;
+  margin-bottom:1%;
+  padding:0.2em;
+  cursor: pointer; cursor: hand;
+  font-family: arial;
+  font-size: 12;
+  text-decoration: underline;
+  }
+  </style>
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#johdanto"><span class="toc-section-number">1</span> Johdanto</a><ul>
+<li><a href="#aspektuaalisuus"><span class="toc-section-number">1.1</span> Aspektuaalisuus ja morfologinen aspektin kategoria</a></li>
+</ul></li>
+<li><a href="#aspektien-invariantit-merkitykset"><span class="toc-section-number">2</span> Aspektien invariantit merkitykset</a><ul>
+<li><a href="#yksinkertaisia-määritelmiä"><span class="toc-section-number">2.1</span> Yksinkertaisia määritelmiä</a></li>
+<li><a href="#monis-maar"><span class="toc-section-number">2.2</span> Bondarkon Moniselitteisempi määritelmä</a><ul>
+<li><a href="#toiminnan-käsittäminen-kokonaisuutena-sisäinen-raja"><span class="toc-section-number">2.2.1</span> Toiminnan käsittäminen kokonaisuutena (sisäinen raja)</a></li>
+<li><a href="#prosessuaalisuus"><span class="toc-section-number">2.2.2</span> Prosessuaalisuus</a></li>
+<li><a href="#ajallinen-lokalisoitavuus"><span class="toc-section-number">2.2.3</span> Ajallinen lokalisoitavuus</a></li>
+<li><a href="#kesto"><span class="toc-section-number">2.2.4</span> Kesto</a></li>
+<li><a href="#toiminnan-äkillinen-alkaminen"><span class="toc-section-number">2.2.5</span> Toiminnan äkillinen alkaminen</a></li>
+<li><a href="#toiminnan-samanaikaisuus-tai-peräkkäisyys"><span class="toc-section-number">2.2.6</span> Toiminnan samanaikaisuus tai peräkkäisyys</a></li>
+<li><a href="#tiivistetysti"><span class="toc-section-number">2.2.7</span> Tiivistetysti</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<article id="topbar">
+<a href='javascript:void(0)' id='menu1' class='menulauncher' >Aspekti- ja liikeverbiteoria |</a>
+<div id="menu1box" class="invisible menubox">
+<p><a href='../index.html'>Sisällys</a> <a href='kurssin_esittely.html'>Kurssin esittely</a> <a href='kurssin_aikataulu.html'>Kurssin aikataulu</a> <a href='https://learning2.uta.fi/course/view.php?id=7339'>Moodle</a></p>
+</div>
+<a href='javascript:void(0)' id='menu2' class='menulauncher' >Aspekti |</a>
+<div id="menu2box" class="invisible menubox">
+<p><a href='invariantit_merkitykset.html'>Aspektuaalisuus ja aspektin invariantit merkitykset</a> <a href='aspektin_muodostus.html'>Aspektin/aspektiparin muodostaminen sekä aspektin valintaan vaikuttavat tekijät</a> <a href='erityismerkitykset.html'>Aspektien erityismerkitykset</a></p>
+</div>
+<a href='javascript:void(0)' id='menu3' class='menulauncher' >Aspektin vaikuttavat tekijät vuorovaikutuksessa</a>
+<div id="menu3box" class="invisible menubox">
+<p><a href='aspekti_menneen_ajan_verbimuodoilla.html'>Aspekti menneen ajan verbimuodoilla</a> <a href='aspekti_futuurisilla_verbimuodoilla.html'>Aspekti futuurin verbimuodoilla</a> <a href='imperatiivi.html'>Aspekti imperatiivissa</a> <a href='infinitiivi.html'>Aspekti infinitiivissä</a></p>
+</div>
+<script>
+function showmenu(obj) {
+
+    // .position() uses position relative to the offset parent, 
+    var pos = $(obj).position();
+
+    // .outerWidth() takes into account border and padding.
+    var width = $(obj).outerWidth();
+    var height = $(obj).outerHeight();
+    var menuid = "#" + $(obj).attr('id') + 'box';
+
+    //show the menu directly over the placeholder
+    $(menuid).css({
+        position: "absolute",
+        top: pos.top + height + "px",
+        left: (pos.left) + "px"
+    }).show();
+    
+}
+
+$('.menulauncher').hover(function(event) {showmenu(this); });
+$('.menubox').mouseleave(function(event) {$('.menubox').hide();});
+
+</script>
+</article>
+<article class="container">
+<section class="main">
+<p class="header">
+Aspektuaalisuus ja aspektin invariantit merkitykset
+</p>
+<h1 id="johdanto"><span class="header-section-number">1</span> Johdanto</h1>
+<p>Suurin osa meistä on epäilemättä törmännyt aspektin käsitteeseen (kielitieteellisessä merkityksessä) alkaessaan opiskella venäjää tai muuta slaavilaista kieltä, joissa aspektin kieliopillinen kategoria on läsnä. Aspekti esiteltiin ehkä sinullekin “vaikeana asiana”, jota ei-äidinkielisen puhujan on hankala hahmottaa ja joka on slaavilaisten kielten erikoisuus, oikku, jonka kanssa joutuu painimaan loppuun asti.</p>
+<p>Luonnolliset kielet ovat kuitenkin syntyneet inhimillisen toiminnan ja ihmisen ilmaisutarpeen tuloksena. Ne heijastavat ihmisen kognitiivisia kykyjä, tapoja hahmottaa maailmaa. Myös aspektin kategoria on yksi tämän prosessin tuotos: ihminen kuvaa puheessaan itsensä tai jonkin muun agentin suorittamia toimintoja ja luo – tavalla tai toisella – luonnostaan jonkin näkökulman kuvaamaansa toimintaan. Sattuu vain olemaan niin, että juuri monissa slaavilaisissa kielissä näkökulman luomisesta on kehittynyt oma kieliopillinen kategoriansa.</p>
+<p>Tämän kurssin yhtenä tavoitteena on hälventää epämääräisyyden ja vaikeasti tavoitettavuuden peitettä, johon aspekti usein kiedotaan tai kietoutuu. Tarkoituksena on löytää käsitteitä ja työkaluja, joilla aspektista voi saada otetta ja joilla venäjän verbien käyttäytymistä pystyy selittämään myös muille. Kaiken kaikkiaan tarjolla on maksimissaankin pintaraapaisu, joka parhaimmillaan johtaa oma-aloitteiseen syventymiseen, kirjallisuuden tutkimiseen ja havainnoiintiin.</p>
+<h2 id="aspektuaalisuus"><span class="header-section-number">1.1</span> Aspektuaalisuus ja morfologinen aspektin kategoria</h2>
+<p>Aspektin käsite on mahdollista määritellä monin tavoin. Tavanomainen lavea määritelmä on, että se muodostaa näkökulman toimintaan tai tarkemmin sanottuna sen rakenteeseen <span class="citation">(Klein 1999: 16; ks. esim. Nikunlassi 2002: 175)</span>.</p>
+<div class="definition">
+<div class="defheader">
+Aspektin lavea määritelmä
+</div>
+<p>Aspekti muodostaa näkökulman toimintaan, tarkemmin sanottuna toiminnan rakenteeseen</p>
+</div>
+<p>Tärkeä huomio tähän liittyen on, että tällainen lavea määritelmä ei mitenkään voi olla ominaisuus, joka liittyy ainoastaan venäjään, slaavilaisiin kieliin tai ylipäätään mihin tahansa yhteen kielten ryhmittymään. Vaikka esimerkiksi suomen verbeillä ei ole aspektin kategoriaa, myös suomea puhuttaessa luodaan näkökulmia toiminnan rakenteeseen. Mieti seuraavia esimerkkejä:</p>
+<ol style="list-style-type: decimal">
+<li>Janne oli aamulla syönyt puuroa, kun ovikello oli soinut.</li>
+<li>Janne oli juuri syönyt puuron, kun ovikello soi.</li>
+<li>Syödessään puuroa Janne katseli pitkään kaukaisuuteen ja mietiskeli elämää</li>
+<li>Janne oli lopettelemassa puuronsyöntiään, kun hän äkkiä katsahti kelloon ja tajusi, että oli mentävä.</li>
+</ol>
+<p>Esimerkit 1–4 esittelevät monia tapoja, joilla suomessa voidaan luoda näkökulmia toiminnan rakenteeseen. Näitä ovat esimerkiksi objektin sija, verbien tietyt nominaalimuodot ja tietyn verbilekseemin valitseminen. Kaikilla näillä keinoilla ilmaistaan <span class="r">aspektuaalisuutta<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></span>, jolla tarkoitetaan yleisesti näkökulman luomista toiminnan rakenteeseen. Kun siirrytään puhumaan venäjän verbien aspektijärjestelmää, puhutaan <span class="r">morfologisesta aspektista<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></span> <span class="citation">(ks. Bondarko 2005: 226)</span>. Koska venäjän jokainen verbimuoto ilmaisee aspektia, se on venäjässä <em>kieliopillinen kategoria</em> samoin kuin esimerkiksi aikamuoto. Morfologisen aspektin lisäksi myös venäjässä ilmaistaan kuitenkin luonnollisesti aspektuaalisuutta sanan laajemmassakin merkityksessä.</p>
+<p>Suomen (ja muiden tuntemiesi kielten) aspektuaalisuuden huomioon ottaen auttaa usein jäsentämään myös venäjän aspektikategoriaan liittyviä eroja. Tämän vuoksi on usein hyödyllistä tehdä kontrastiivista vertailua. Yksinkertaisimmillaan se toimii vertaamalla objektin sijaa vaikkapa seuraavien esimerkkien mahdollisissa suomenkielisissä vastineissa:</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Янне ел кашу (vrt. esim. 1)</li>
+<li>Янне cъел кашу (vrt. esim. 2)</li>
+</ol>
+<h1 id="aspektien-invariantit-merkitykset"><span class="header-section-number">2</span> Aspektien invariantit merkitykset</h1>
+<p>Perinteinen näkemys on, että venäjän aspektikategoria jakautuun <em>imperfektiivisen</em> (jatkossa myös lyhennettynä: I) ja <em>perfektiiviseen</em> aspektiin (jatkossa myös lyhennettynä: P). Näitä kategorioita kutsutaan aspektin <span class="r">invarianteiksi merkityksiksi</span> erotuksena niiden <a href="erityismerkitykset.html">erityismerkityksistä</a><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>. Invarianttien merkitysten määrittely on haastavaa, eikä yksiselitteisen, lyhyen määritelmän antaminen ole välttämättä edes mielekästä. Seuraavassa pureudutaan tarkemmin joihinkin mahdollisiin määritelmävaihtoehtoihin. On syytä mainita myös, ettei aspektia ole kuitenkaan pakko ajatella vain näiden kahden kategorian ehdoin. Kognitiivisessa kielitieteessä on kehitelty myös ajatusta <em>aspektiklustereista</em>, verbien muodostamista merkitysryppäistä ennemmin kuin kahdesta invariantista merkityksestä <span class="citation">(ks. Janda 2007)</span>.</p>
+<p>Imperfektiivisestä ja perfekviivisestä aspekteista voidaan yleisellä tasolla todeta, että I on aspektuaalisen opposition <em>tunnusmerkitön osapuoli</em>, P puolestaan <em>tunnusmerkillinen</em>. Tämä tarkoittaa, että I jättää tavallisesti tilaa tulkinnalle, on vähemmän spesifi ja siinä mielessä myös vähemmän rajattu, niin että sillä on enemmän käyttökonteksteja kuin P:llä. I:n ja P:n voi sanoa olevan <em>privatiivissa oppositiossa keskenään</em>: oppositiossa on tunnusmerkillinen osapuoli (perfektiivinen aspekti), jonka käyttö on tarkemmin rajattua ja joka voidaan määritellä tiettyjen piirteiden perusteella sekä tunnusmerkitön osapuoli (imperfektiivinen aspekti), joka voidaan määritellä suhteessa opposition tunnusmerkilliseen osapuoleen <span class="citation">(tarkemmin ks. Forsyth 1970: 6–7)</span>.</p>
+<h2 id="yksinkertaisia-määritelmiä"><span class="header-section-number">2.1</span> Yksinkertaisia määritelmiä</h2>
+<p>Tyypillisesti oppikirjoissa aspektin invarianttien merkitysten välinen ero määritellään niin, että</p>
+<div class="definition">
+<div class="defheader">
+Määritelmä 1.
+</div>
+<p>imperfektiivinen aspekti ilmaisee toiminnan keskeneräisenä, kun taas perfektiivinen loppuun suoritettuna.</p>
+</div>
+<p>Tämä määrittelytapa on tavallinen ja näkyy jo nimityksissä <em>несовершенный вид</em> ja <em>совершенный вид</em>. Näin pystytään selittämään esimerkkien 7 ja 8 välinen ero:</p>
+<ol start="7" style="list-style-type: decimal">
+<li>Вчера я читал одну интересную книгу</li>
+<li>Вчера я прочитал одну интересную книгу</li>
+</ol>
+<p>Määritelmä käy kuitenkin nopeasti ongelmalliseksi, jo esimerkiksi nk. <a href="">inkoatiivisen teonlaadun</a> verbejä tutkittaessa:</p>
+<ol start="9" style="list-style-type: decimal">
+<li>Ковальчук о чем-то пошутил с Уодделлом и басисто <span class="r">засмеялся</span> <span class="citation">(спорт 2013)</span></li>
+</ol>
+<p>On vaikea järkevästi määrittää, mikä toiminta on suoritettu loppuun perfektiivisen aspektin засмеяться-verbissä esimerkissä 9 (nauramisen aloittaminen?). Vertaa määritelmän kannalta myös seuraavia lauseita:</p>
+<ol start="10" style="list-style-type: decimal">
+<li>Я не помешал вам?</li>
+<li>В ваших словах я почуствовал упрек</li>
+</ol>
+<p>Paljon yleispätevämpi on määritelmä 2, jossa olennaista on <em>toiminnan sisäisen rajan</em> käsite:</p>
+<div id="tarkempi-maaritelma" class="definition">
+<div class="defheader">
+Määritelmä 2.
+</div>
+<p>Imperfektiivinen ja perfektiivinen aspekti eroavat toisistaan siinä, että perfektiivinen aspekti kuvaa toimintaa sisäisesti rajattuna kun taas imperfektiivinen aspekti jättää näkokulman toiminnan sisäiseen rakenteeseen auki.</p>
+</div>
+<p>Perfektiivisen aspektin sisäisestä rajasta seuraa, että toiminta näyttäytyy totaalisena (целостный) ja yhtenäisenä toimintana. Pohdi verbiä исчезнуть esimerkissä 12. On ehkä outoa sanoa, että “katoaminen suoritettiin loppuun”, mutta järkevämpää ajatella toiminta rajattuna, niin että sitä ei tarkastella vain ikään kuin epämääräisenä usvana, vaan totaalisena tapahtumana, jonka rajat voidaan määrittää:</p>
+<ol start="12" style="list-style-type: decimal">
+<li>Самолет исчез, уходя все дальше за облака <span class="citation">(Rassudova 1984)</span></li>
+</ol>
+<!-- esimerkki tuntuu "väärältä" venäjänkielisistä -->
+<p>Ajattele myös esimerkkiä 13.</p>
+<ol start="13" style="list-style-type: decimal">
+<li>Мы поужинали после noлуночи <span class="citation">(Rassudova 1984)</span></li>
+</ol>
+<p>Esimerkin 13 perfektiivinen verbi поужинать ei millään tavoin kuvaa <em>lopputulosta</em>. Kuitenkin toiminta on rajattua: illallinen kuvataan lauseessa yhtenä selvärajaisena tapahtumana, kokonaisuutena.</p>
+<p>A. V. Bondarko <span class="citation">(2005: 230–231)</span> huomauttaa kuitenkin, ettei sen paremmin määritelmän 2 tapainen kuin mikään muukaan <em>yksittäisen piirteen</em> tai ominaisuuden pohjalta tehty määritelmä pysty vangitsemaan kaikkia tapauksia tai kaikkea olennaista aspektien välisestä erosta. Tämän vuoksi on perusteltua pyrkiä määritelmään aspektien invariantit merkitykset suhteessa kokonaiseen joukkoon ominaisuuksia, joita aspektit joko edustavat, eivät edusta tai edustavat, mutteivät aina. Seuraavassa siirrytään tarkastelemaan näitä ominaisuuksia Bondarkon esittämässä muodossa.</p>
+<h2 id="monis-maar"><span class="header-section-number">2.2</span> Bondarkon Moniselitteisempi määritelmä</h2>
+<p>Bondarkon määritelmän pohjana on aspektien <em>semanttinen potentiaali</em> eli se, mitä merkityksiä ne kykenevät ilmaisemaan. Nämä merkitykset limittyvät aspektien välillä ja useimmissa tapauksissa kumpikin aspekti saattaa vähintäänkin tietyissä erikoistapauksissa ilmaista ko. ominaisuutta, vaikka sei olisikaan sille tyypillinen. Tältä pohjalta voidaan muodostaa kolmas, lavea määritelmä, jokoa on enneminkin ohje määritelmän tekoa varten kuin varsinainen määritelmä:</p>
+<div class="definition">
+<div class="defheader">
+Määritelmä 3.
+</div>
+<p>Imperfektiivinen ja perfektiivinen aspekti voidaan määritellä sen mukaan, mitkä piirteet ovat niille tyypillisiä, mitkä harvinaisia tai mitkä mahdottomia. Ei voi yksiselitteisesti väittää, että jompikumpi tai molemmat aspektit ovat vain yhden ominaisuuden ilmentymiä, vaan monimutkaisia yhdistelmiä useista eri piirteistä.</p>
+</div>
+<p>Bondarko erottelee seuraavat kuusi ominaisuutta, joita tässä tarkastellaan hieman mukautettuna:</p>
+<ol style="list-style-type: decimal">
+<li>Toiminnan käsittäminen kokonaisuutena (sisäinen raja)</li>
+<li>Prosessuaalisuus</li>
+<li>Ajallinan lokalisoitavuus</li>
+<li>Kesto</li>
+<li>Toiminnan äkillinen alkaminen</li>
+<li>Toiminnan samanaikaisuus ja peräkkäisyys</li>
+</ol>
+<p>Kaikkia mainittuja ominaisuuksia tullaan kurssin aikana käsittelemään, kun puhutaan aspektien <a href="">erityismerkityksistä</a>. Ne tulevat esille monissa eri yhteyksissä, kun mietitään selitystä jollekin tietylle käyttötilanteelle. Tässä on kuitenkin esitetty teoreettisempi koonti siitä, miten ominaisuudet jakautuvat imperfektiivisen ja perfektiivisen aspektin välillä.</p>
+<h3 id="toiminnan-käsittäminen-kokonaisuutena-sisäinen-raja"><span class="header-section-number">2.2.1</span> Toiminnan käsittäminen kokonaisuutena (sisäinen raja)</h3>
+<p>Vaikka toiminnan käsittäminen sisäisesti rajattuna on edellä määritelty perfektin aspektin piirteeksi on huomattava, että määritelmässä 2 imperfektiivinen aspektin ei sanota olevan kykenemätön ilmaisemaan sisäistä rajaa vaan ainoastaan, <em>ettei se ota sisäiseen rakenteeseen kantaa</em>. Toiminta ilmaistaan täysin vaillal sisäistä rajaa esimerkiksi seuraavissa lauseissa:</p>
+<ol start="14" style="list-style-type: decimal">
+<li>Вон он бежит</li>
+<li>Мы часто так говорим</li>
+<li>Она хорошо играет на гитаре</li>
+</ol>
+<p>Kuitenkin eräissä erikoistapauksissa, esimerkiksi joskus käytettäessä nk. historiallista preesensmuotoa, imperfektiivinen aspekti voi toimia <em>neutraalisti</em> suhteessa toiminnan sisäiseen rajaan, kuten esimerkissä 17:</p>
+<ol start="17" style="list-style-type: decimal">
+<li>Затоплю камин, стало прохладно… Вдруг <span class="r">раздается</span> резкий звонок телефона <span class="citation">(Беляков 2013)</span></li>
+</ol>
+<h3 id="prosessuaalisuus"><span class="header-section-number">2.2.2</span> Prosessuaalisuus</h3>
+<p>Prosessuaalisuus on jo määritelmän 1 mukaan selvästi imperfektiiviselle aspektille tyypillinen piirre. Bondarko esittää kaksi argumenttia sen puolesta, että prosessuaalisuus on perfektiiviselle aspektille mahdoton piirre:</p>
+<ol style="list-style-type: decimal">
+<li>Adverbia всё ei voi yhdistää perfektiivisen aspektin verbiin. Vrt:</li>
+</ol>
+<ol start="18" style="list-style-type: decimal">
+<li>Он всё бежал <span class="citation">(Bondarko 2005)</span></li>
+<li>* Он всё прибежал <span class="citation">(Bondarko 2005)</span></li>
+</ol>
+<ol start="2" style="list-style-type: decimal">
+<li>Perfektiivinen aspekti ei voi ilmaista nykyhetkellä käynnissä olevaa toimintaa, vastata kysymykseen “Что это ты делаешь”</li>
+</ol>
+<p>Määritelmän 2 perusteella perfektin kyvyttömyys ilmaista prosessuaalista toimintaa on seurausta siitä, ettei kokonaisena esitettyä toimintaa voi pilkkoa paloiksi eikä mennä sen sisälle. Tämä johtaa siihen, että perfektiivisen aspektin ei-menneen ajan muodot ilmaisevat automaattisesti jotain, mikä tapahtuu tulevaisuudessa.</p>
+<h3 id="ajallinen-lokalisoitavuus"><span class="header-section-number">2.2.3</span> Ajallinen lokalisoitavuus</h3>
+<p>Ajallinen lokalisoitavuus on piirre, jolla tarkoitetaan verbin ilmaiseman tapahtuman asettamista johonkin ajalliseen kontekstiin: joko suhteessa tiettyyn yksittäiseen hetkeen tai epämääräiseen ajankohtaan. Imperfektiiviselle aspektille kummatkin näistä lokalisoitavuuden tyypeistä ovat tavallisia, kuten esimerkit 20 – 21 osoittavat:</p>
+<ol start="20" style="list-style-type: decimal">
+<li>Он сейчас волнуется <span class="citation">(Bondarko 2005)</span></li>
+<li>Он обычно волнуется <span class="citation">(Bondarko 2005)</span></li>
+</ol>
+<p>Sen sijaan perfektiivinen aspekti vaatii epämääräisten kiinnekohtien osalta erityistä kontekstia. Tavallisesti on mahdotonta sanoa <em>он часто скажет</em>, mutta esimerkki 22 antaa yhden erityistilanteen, jossa tämä on mahdollista:</p>
+<ol start="22" style="list-style-type: decimal">
+<li>Он часто скажет что-нибудь, не подумав, а потом жалеет.</li>
+</ol>
+<h3 id="kesto"><span class="header-section-number">2.2.4</span> Kesto</h3>
+<p>Keston ilmaiseminen on tyypillistä imperfektiivisen aspektin verbeille. Tämäkään piirre ei kuitenkaan välttämättä ole läsnä aina, kun imperfektiivisen aspektin verbejä käytetään, niin kuin esimerkit 23–24 osoittavat:</p>
+<ol start="23" style="list-style-type: decimal">
+<li>Ты будешь обедать? <span class="citation">(Bondarko 2005)</span></li>
+<li>Ты читал “Койриен Калевала”?</li>
+</ol>
+<p>Toisaalta keston ilmaiseminen ei ole mahdotonta perfektiivisenkään aspektin verbeille. Tietyt <a href="">teonlaadut</a> (<em>perduratiiviset</em> ja <em>delimitatiiviset</em>) verbit ilmaisevat käytännössä aina kestoa:</p>
+<ol start="25" style="list-style-type: decimal">
+<li>Как бы там ни было, они встречались довольно часто, а один раз даже преотлично и весело <span class="r">просидели</span> целый вечер в ресторане <span class="citation">(Домбровский 1978)</span></li>
+<li>Мы с Тосио еще с четверть часа <span class="r">поговорили</span> о причудах природы и необходимости не нарушать в ней равновесия сил. <span class="citation">(Жемайтис. 1970)</span></li>
+</ol>
+<h3 id="toiminnan-äkillinen-alkaminen"><span class="header-section-number">2.2.5</span> Toiminnan äkillinen alkaminen</h3>
+<p>Toiminnan äkillisellä alkamisella Bondarko tarkoittaa tilannetta, jossa kuvataan toimintaa A, ja tätä vasten kerrotaan toiminnasta B, joka syntyy äkillisesti tai odottamattomasti verrattuna A:n kuvaamaan jatkuvaan toimintaan. Tämänkaltaiset merkitykset ovat tyypillisempiä perfektiiviselle aspektille, kuten esimerkissä 27:</p>
+<ol start="27" style="list-style-type: decimal">
+<li>Викниксор спускался вниз и что-то мурлыкал. Вдруг он <span class="r">смолк</span> и <span class="r">остановился</span>. Японец поднял голову и задрожал.<span class="citation">(Белых 1929)</span></li>
+</ol>
+<p>Kuitenkin myös tämä ominaisuus on imperfektiiviselle aspektille mahdollinen historiallisessa preesensissä, kuten esimerkki 17 osoittaa.</p>
+<h3 id="toiminnan-samanaikaisuus-tai-peräkkäisyys"><span class="header-section-number">2.2.6</span> Toiminnan samanaikaisuus tai peräkkäisyys</h3>
+<p>Perfektiivisen aspektin osalta tyypillisin tapa ilmaista tapahtumien suhteita ajassa on, että se kuvaa peräkkäisiä, rajattuja toimintoja; imperfektiivinen aspekti puolestaan esittää tavallisesti toiminnat samanaikaisina. Vrt. Esimerkkejä 28–29:</p>
+<ol start="28" style="list-style-type: decimal">
+<li>Раньше как было? ― говорят участники «квартета». ― <span class="r">Собрались</span>, <span class="r">побратались</span> и <span class="r">разошлись</span>. А сейчас― <span class="r">собрались</span> и <span class="r">подписались</span>, что будем делать то-то и то-то <span class="citation">(Екатерина Григорьева 2003)</span></li>
+<li>Он плясал вокруг него, вопил и кричал, обнимал и целовал его, потом бросался обниматься к нам</li>
+</ol>
+<p>Tämänkään ominaisuuden suhteen kuva ei kuitenkaan lopulta ole täysin yksiselitteinen. Myös perfektiivinen aspekti voi esimerkiksi <a href="">perfektin erityismerkityksessä</a> kuvata toimintaa joka ei ole peräkkäistä, vaan pikemminkin samanaikaista tai vähintäänkin limittäistä:</p>
+<ol start="30" style="list-style-type: decimal">
+<li>А в общем за год мне показалось все как будто <span class="r">потолстели</span>, <span class="r">посытели</span> <span class="citation">(Пришвин 1926)</span></li>
+<li>Дима! Это ты? Как ты постарел и похудел!</li>
+</ol>
+<p>Imperfektiivinen aspekti puolestaan voi joskus, melko spesifeissä konteksteissa, ilmaista peräkkäisiä tapahtumia. Yksi tällainen mahdollisuus on tilanteissa, joissa kuvataan tapahtumien sarjaa, joka toistuu samanlaisena monta kertaa:</p>
+<ol start="32" style="list-style-type: decimal">
+<li>Как только попутчик узнавал, что перед ним сидит иностранец, тут же из портфеля (чемодана, сумки et cetera) извлекалась бутылка и начиналась демонстрация этнических стереотипов в форме состязания в питье <span class="citation">(Николаев 2003)</span></li>
+</ol>
+<h3 id="tiivistetysti"><span class="header-section-number">2.2.7</span> Tiivistetysti</h3>
+<p>Voidaankin todeta, että imperfektiivinen aspekti on todella aspektin invarianteista merkityksistä tunnusmerkittömämpi ja sitä kautta käytettävissä useammanlaisissa tilanteissa kuin perfektiivinen. I saattaa tilanteesta riippuen ilmaista kaikkia edellä lueteltuja merkityspiirteitä, joskin usein hyvin tiukasti rajatuissa konteksteissa. I ei myöskään läheskään aina <em>välttämättä</em> ilmaise edes merkityspiirteitä, jotka ovat sen kannalta kaikkein tyypillisimpiä. Sen sijaan perfektiivisen aspektin käyttö on monin paikoin selvärajaisempaa: esimerkiksi prosessuaalisuutta se ei ilmaise ollenkaan ja myös keston ja lokalisoitavuuden ominaisuudet on rajattu hyvin tarkkoihin erikoistapauksiin.</p>
+</section>
+</article>
+<div class="references">
+<div id="ref-bondarko2015">
+<p>BONDARKO, A. 2005. <em>Теория морфологических категории и аспектологические исследования</em>. Moskova: Jazyki slavjanskoj kultury.</p>
+</div>
+<div id="ref-forsyth1970">
+<p>FORSYTH, J. 1970. <em>A grammar of aspect: Usage and meaning in the russian verb</em> Vol. 1970. Cambridge University Press.</p>
+</div>
+<div id="ref-janda2007aspectual">
+<p>JANDA, L. 2007. Aspectual clusters of russian verbs. <em>Studies in Language</em>, <em>31</em>(3), 607–648. &lt;<a href="ftp://176-114-245-19.rychlydrat.cz/kopie/sem-lehec/stazeno/_Janda_2007_StudiesInLan_Aspectual-clusters-of-Russian-verbs.pdf" class="uri">ftp://176-114-245-19.rychlydrat.cz/kopie/sem-lehec/stazeno/_Janda_2007_StudiesInLan_Aspectual-clusters-of-Russian-verbs.pdf</a>&gt;</p>
+</div>
+<div id="ref-klein1999">
+<p>KLEIN, W. 1999. <em>Time in language</em> Repr. London: Routledge.</p>
+</div>
+<div id="ref-nikunlassi2002">
+<p>NIKUNLASSI, A. 2002. <em>Johdatus venäjän kieleen ja sen tutkimukseen</em>. Helsinki: Finn Lectura.</p>
+</div>
+<div id="ref-rassudova1984">
+<p>RASSUDOVA, O. 1984. <em>Aspectual usage in modern russian</em>. Moskova: Russky Yazyk.</p>
+</div>
+<div id="ref-belyh">
+<p>БЕЛЫХ, Г.Г. 1929. <em>Лапти</em>.</p>
+</div>
+<div id="ref-beljak1">
+<p>БЕЛЯКОВ, А. 2013. «Пять негритят занялись культурой. решили, что они вечные, в натуре». <em>РБК Дейли</em>.</p>
+</div>
+<div id="ref-dombr">
+<p>ДОМБРОВСКИЙ, Ю.О. 1978. <em>Факультет ненужных вещей, часть 4</em>.</p>
+</div>
+<div id="ref-izv2">
+<p>ЕКАТЕРИНА ГРИГОРЬЕВА, И.М., Елена Загородняя 2003. Кремлевская мечта. четыре президента сочинили новый экономический союз. <em>Известия</em>.</p>
+</div>
+<div id="ref-zhemaitis">
+<p>ЖЕМАЙТИС., С. 1970. <em>Большая лагуна</em>.</p>
+</div>
+<div id="ref-nikol">
+<p>НИКОЛАЕВ, О. 2003. Новый год: Праздник или ожидание праздника? <em>«Отечественные Записки»</em>.</p>
+</div>
+<div id="ref-prishv">
+<p>ПРИШВИН, М.М. 1926. <em>Дневники</em>.</p>
+</div>
+<div id="ref-sport1">
+<p>СПОРТ, С. 2013. Советский спорт.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>аспектуальность<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>вид<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>частные видовые значения<a href="#fnref3">↩</a></p></li>
+</ol>
+</div>
+</body>
+</html>

@@ -1,0 +1,841 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="finnish" xml:lang="finnish">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="../jquery-latest.js"></script>
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/theme/sky.css" id="theme">
+  <style type='text/css'>
+  
+  /* General Demo Style */
+  @import url(http://fonts.googleapis.com/css?family=Lato:300,700);
+  
+  .main {
+  	width: 100%;
+  	max-width: 960px;
+  	padding: 40px;
+  	text-shadow: 0 2px 0 rgba(255,255,255,0.7);
+  }
+  
+  .main p {
+  	font-size: 16px;
+  	line-height: 1.4;
+  	text-align: justify;
+  }
+  
+  .main p:nth-of-type(2){
+  	-moz-column-gap: 20px;
+  	-webkit-column-gap: 20px;
+  	-ms-column-gap: 20px;
+  	-o-column-gap: 20px;
+  	column-gap: 20px;
+  }
+  
+  .main p:nth-of-type(4){
+  	-moz-column-gap: 15px;
+  	-o-column-count: 3;
+  	-o-column-gap: 15px;
+  	-ms-column-count: 3;
+  	-ms-column-gap: 15px;
+  	-webkit-column-gap: 15px;
+  	column-count: 3;
+  	column-gap: 15px;
+  }
+  
+  
+  
+  html *
+  {
+     /*font-family: Arial !important;*/
+  }
+  
+  
+  p.header {
+      font-size: 46px;
+      line-height: 40px;
+      text-align:left;
+      border-bottom: 2px solid black;
+      padding-bottom:5px;
+      margin-bottom:5em;
+  }
+  
+  h1 {
+      font-size: 36px;
+      line-height: 40px;
+  }
+  
+  h2 {
+      font-size: 30px;
+      line-height: 40px;
+  }
+  
+  h3 {
+      font-size: 24px;
+      line-height: 40px;
+  }
+  
+  h4 {
+      font-size: 18px;
+      line-height: 20px;
+  }
+  
+  /* Won't be used here */
+  
+  h5 {
+      font-size: 14px;
+      line-height: 20px;
+  }
+  
+  h6 {
+      font-size: 12px;
+      line-height: 20px;
+  }
+  
+  
+  .main {
+  	counter-reset: section-1, section-2, section-3, section-4;
+  }
+  
+  .main h1 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 36px;
+  	line-height: 40px;
+  	counter-increment: section-1;
+  	counter-reset: section-2 section-3 section-4;
+  }
+  
+  .main h2 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 30px;
+  	line-height: 40px;
+  	counter-increment: section-2;
+  	counter-reset: section-3 section-4;
+  	border-bottom: 1px solid #fff;
+  	box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+  	padding-bottom: 10px;
+  }
+  
+  .main h3 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 24px;
+  	line-height: 40px;
+  	counter-increment: section-3;
+  	counter-reset: section-4;
+  }
+  
+  .main h4 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 18px;
+  	line-height: 20px;
+  	counter-increment: section-4;
+  }
+  
+  a:link{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:active{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:visited{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:hover{
+  color:#000000;
+  text-decoration:underline;
+  }
+  
+  #TOC{
+  position:absolute;
+  width:17%;
+  font-size:89%;
+  margin-top:30px;
+  /*height:70%;*/
+  /*box-shadow: 3px 7px 5px 0px;*/
+  padding:5px;
+  overflow:auto;
+  /*border-radius:10px;
+  border: 1px black dashed;*/
+  }
+  
+  #TOC > ul{
+  list-style-type: none;
+  }
+  
+  
+  #TOC ul
+  {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  }
+  
+  #TOC a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #036;
+  /*width: 9em;*/
+  padding: 3px 12px 3px 8px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: bold;
+  }
+  
+  #TOC a:hover
+  {
+  background-color: #369;
+  color: #FFF;
+  }
+  
+  #TOC li li a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #69C;
+  /*width: 9em;*/
+  padding: 3px 3px 3px 17px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: normal;
+  }
+  
+  
+  .container{
+      height: 100%;
+      margin-top: 50px;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 9%;
+      padding-top: 10%;
+      background: white;
+      border-radius:25px;
+      }
+  
+  .references{
+      margin-top: 2%;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      background: white;
+      }
+  
+  
+  
+  #topbar{
+  position:absolute;
+  top:0;
+  left:-20px;
+  /*background:yellow;*/
+  background-color: #C5A05B;
+  margin-bottom:10px;
+  padding-left:25px;
+  /*
+  padding-right:25px;
+  padding-top:5px;
+  */
+  padding-bottom:2px;
+  border-bottom: 1px dashed white;
+  border-right: 1px dashed white;
+  }
+  
+  .r {color:red;}
+  .b {color:blue;}
+  .g {color:grey;}
+  .gre {color:green;}
+  
+  .definition {
+      background: beige;
+      /*background: #DABC83;*/
+      padding-left: 1px;
+      margin-left: 2em;
+      padding-right: 1px;
+  }
+  
+  .defheader{
+      width: 100%;
+      /* padding-right: 10px; */
+      /* margin-right: 10px; */
+      border-bottom: 1px dashed black;
+      background: aliceblue;
+      /*background: #B0D0EC;*/
+  }
+  
+  .definition > p {
+      /* color: red; */
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 1em;
+      font-style: italic;
+  }
+  
+  article.bubble{
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 2em;
+  border-radius: 7px;
+  margin-left: 14px;
+  color:black;
+  }
+  
+  
+  article.bubblenob{
+  float: left;
+  width:30%;
+  }
+  
+  
+  article.mmbubble{
+  text-align: left;
+  border: 2px dotted black;
+  padding: 4px;
+  border-radius: 7px;
+  margin:1%;
+  color:black;
+  }
+  
+  article.nfbubble{
+  font-size:90%;
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 1.5em;
+  border-radius: 7px;
+  margin:4%;
+  box-shadow: 10px 10px 5px #888888;
+  color:black;
+  }
+  
+  article.bgred{background: rgba(222, 184, 135, 0.64);}
+  article.bgblue{background: rgba(100, 149, 237, 0.45);}
+  article.bggreen{background: darkseagreen;}
+  article.bgcyan{background: rgba(255, 215, 0, 0.25);}
+  
+  span#triangle {
+      display: inline-block;
+      margin: 72px;
+      border-right: 24px solid; border-bottom: 24px solid;
+      width: 50px; height: 50px;
+      transform: rotate(-45deg);
+  }
+  
+  span.right-arrow {
+      display: inline-block;
+      position: relative;
+      background: #E8EFED;
+      padding: 3px;
+  }
+  
+  span.right-arrow:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      margin-top: -10px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid #151514;
+  }
+  
+  span.afterarrow {
+      background: rgb(193, 243, 255);
+      margin-left: 9px;
+      padding: 3px;
+  }
+  
+  article#tocmain{
+  background:none;
+  }
+  
+  #topbar a:hover{
+  background-color: #8A6C34;
+  color: #FFF;
+  }
+  
+  #topbar a{
+  padding:3px;
+  color: #FFF;
+  text-decoration: none;
+  /*border-right:1px dashed white;*/
+  }
+  
+  #inlinemenu{
+  padding:0;
+  margin:0;
+  }
+  
+  .inline{
+  display:inline;
+  }
+  
+  #topbar li{list-style-type: none;
+      line-height:130%;
+  }
+  
+  a.dropdown-link { 
+      color:#044264;
+      text-decoration:none; 
+  }
+  
+  ul#quotes-bar-menu {
+      margin: 0; padding: 0;
+      float:left;
+      width: 100%;
+      list-style: none;
+  }
+  
+  ul#quotes-bar-menu li {
+      display:inline;
+      float:left;
+      position:relative;
+      margin:0;
+      padding:7px 15px 7px 0;
+  }
+  
+  /* sub menu class */
+  ul#quotes-bar-menu li .sub-menu {
+      background-color: #C5A05B;
+      display:none;
+      left:0;
+      margin:0;
+      font-size:11;
+      padding:0;
+      position:absolute;
+      top:29px;
+      width:320px;
+      z-index:999;
+  }
+  
+  ul#quotes-bar-menu li .single { 
+      /*width:150px !important;*/
+  }
+  
+  ul#quotes-bar-menu li{
+      color:#fff;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu ul {
+      float:left;
+      list-style:none;
+      display: block;
+      width:205px;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li {
+      width:135px;
+      margin:0; 
+      font-size:11px;
+      padding:1px 1px 0;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li a { color: white;
+  text-decoration: none;
+  }
+  ul#quotes-bar-menu li .sub-menu li a:hover { text-decoration: none; }
+  
+  
+  .invisible{
+  display:none;
+  }
+  .menubox{
+      background-color: #C5A05B;
+      padding: 0.12em;
+      border: 1px dashed white;
+      padding-left: 0.5em;
+  }
+  
+  
+  #topbar .menulauncher a{
+  border-right: 1px dashed white;
+  padding-right:3px;
+  }
+  
+  .menubox a{
+  width:80%;
+  display:inline-block;
+  margin-bottom:1%;
+  padding:0.2em;
+  cursor: pointer; cursor: hand;
+  font-family: arial;
+  font-size: 12;
+  text-decoration: underline;
+  }
+  </style>
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#infinitiivi-täydennyksenä"><span class="toc-section-number">1</span> Infinitiivi täydennyksenä</a><ul>
+<li><a href="#vaihetta-ilmaisevat-verbit"><span class="toc-section-number">1.1</span> Vaihetta ilmaisevat verbit</a></li>
+<li><a href="#selkeän-resultatiiviset-verbit"><span class="toc-section-number">1.2</span> Selkeän resultatiiviset verbit</a></li>
+</ul></li>
+<li><a href="#infinitiivi-itsenäisenä"><span class="toc-section-number">2</span> Infinitiivi itsenäisenä</a></li>
+<li><a href="#infinitiivi-ilmaistaessa-muuta-kuin-toistuvaa-toimintaa"><span class="toc-section-number">3</span> Infinitiivi ilmaistaessa muuta kuin toistuvaa toimintaa</a><ul>
+<li><a href="#tilanteita-joissa-yksittäistä-toimintaa-ilmaistaan-imperfektiivisellä-aspektilla"><span class="toc-section-number">3.1</span> Tilanteita, joissa yksittäistä toimintaa ilmaistaan imperfektiivisellä aspektilla</a></li>
+<li><a href="#ei-modaalinen-verbi-infinitiivi"><span class="toc-section-number">3.2</span> Ei-modaalinen verbi + infinitiivi</a></li>
+</ul></li>
+<li><a href="#infinitiivi-ilmaistaessa-toistuvaa-toimintaa"><span class="toc-section-number">4</span> Infinitiivi ilmaistaessa toistuvaa toimintaa</a></li>
+<li><a href="#infinitiivi-ja-kieltomuodot"><span class="toc-section-number">5</span> Infinitiivi ja kieltomuodot</a><ul>
+<li><a href="#nesessiivisyyden-kieltäminen"><span class="toc-section-number">5.1</span> Nesessiivisyyden kieltäminen</a></li>
+<li><a href="#mahdottomuuden-ilmaiseminen"><span class="toc-section-number">5.2</span> Mahdottomuuden ilmaiseminen</a></li>
+<li><a href="#не-должен--rakenteen-merkitys-perfektiivisen-aspektin-yhteydessä"><span class="toc-section-number">5.3</span> Не должен -rakenteen merkitys perfektiivisen aspektin yhteydessä</a></li>
+</ul></li>
+</ul>
+</div>
+<article id="topbar">
+<a href='javascript:void(0)' id='menu1' class='menulauncher' >Aspekti- ja liikeverbiteoria |</a>
+<div id="menu1box" class="invisible menubox">
+<p><a href='../index.html'>Sisällys</a> <a href='kurssin_esittely.html'>Kurssin esittely</a> <a href='kurssin_aikataulu.html'>Kurssin aikataulu</a> <a href='https://learning2.uta.fi/course/view.php?id=7339'>Moodle</a></p>
+</div>
+<a href='javascript:void(0)' id='menu2' class='menulauncher' >Aspekti |</a>
+<div id="menu2box" class="invisible menubox">
+<p><a href='invariantit_merkitykset.html'>Aspektuaalisuus ja aspektin invariantit merkitykset</a> <a href='aspektin_muodostus.html'>Aspektin/aspektiparin muodostaminen sekä aspektin valintaan vaikuttavat tekijät</a> <a href='erityismerkitykset.html'>Aspektien erityismerkitykset</a> <a href='teonlaadut.html'>Teonlaadut</a></p>
+</div>
+<a href='javascript:void(0)' id='menu3' class='menulauncher' >Aspektin vaikuttavat tekijät vuorovaikutuksessa |</a>
+<div id="menu3box" class="invisible menubox">
+<p><a href='aspekti_menneen_ajan_verbimuodoilla.html'>Aspekti menneen ajan verbimuodoilla</a> <a href='aspekti_futuurisilla_verbimuodoilla.html'>Aspekti futuurin verbimuodoilla</a> <a href='imperatiivi.html'>Aspekti imperatiivissa</a> <a href='infinitiivi.html'>Aspekti infinitiivissä</a></p>
+</div>
+<a href='javascript:void(0)' id='menu4' class='menulauncher' >Liikeverbiteoria</a>
+<div id="menu4box" class="invisible menubox">
+<p><a href='liikeverbit_johdanto.html'>Johdanto</a> <a href='liikeverbit_prefikseilla.html'>Liikeverbit prefikseillä</a> <a href='Liikeverbit_ja_teonlaatu.html'>Liikeverbit ja teonlaadut</a></p>
+</div>
+<script>
+function showmenu(obj) {
+
+    // .position() uses position relative to the offset parent, 
+    var pos = $(obj).position();
+
+    // .outerWidth() takes into account border and padding.
+    var width = $(obj).outerWidth();
+    var height = $(obj).outerHeight();
+    var menuid = "#" + $(obj).attr('id') + 'box';
+
+    //show the menu directly over the placeholder
+    $(menuid).css({
+        position: "absolute",
+        top: pos.top + height + "px",
+        left: (pos.left) + "px"
+    }).show();
+    
+}
+
+$('.menulauncher').hover(function(event) {showmenu(this); });
+$('.menubox').mouseleave(function(event) {$('.menubox').hide();});
+
+</script>
+</article>
+<article class="container">
+<section class="main">
+<p class="header">
+Aspekti infinitiivimuodoilla
+</p>
+<p>Infinitiivimuodot tekee aspektin valitsemisen kannalta erityiseksi muun muassa se, että infinitiivimuoto ei itse kanna mukanaan informaatiota aikamuodosta. Tästä johtuen infinitiivissä kuvattavan toiminnan sijoittaminen aikaan on vaikeampaa kuin persoonamuotoisissa verbitapauksissa. Infinitiivimuotojen osalta myös kontekstuaaliset tekijät, esimerkiksi toistuvuutta ilmaisevat adverbiaalit, antavat usein vähemmän vihjettä aspektivsta kuin tavallisesti, mikä näkyy seuraavassa Rassudovan <span class="citation">(1984: 129)</span> esimerkissä, jossa toistuvuutta ilmaisevan adverbiaalin <em>время от времени</em> kanssa on käytetty perfektiivisen aspektin verbiä <em>увидеться</em>:</p>
+<ol style="list-style-type: decimal">
+<li>В этом году у них была возможность время от времени <em>увидеться</em></li>
+</ol>
+<h1 id="infinitiivi-täydennyksenä"><span class="header-section-number">1</span> Infinitiivi täydennyksenä</h1>
+<p>Useimmiten infiniitiivissä käytetty verbi esiintyy jonkin toisen verbin täydennyksenä (дополнение) eli on <em>alisteinen</em> jollekin persoonamuotoiselle verbille, niin että aspektin valintaa mietittäessä on otettava huomioon kahden verbin ominaisuudet.</p>
+<p>Tietyissä tapauksissa pääverbin ominaisuuksiin kuuluu, että se yhdistyy toisen aspektin kanssa useammin kuin toisen. Esimerkiksi verbit мешать ja помогать saavat usein täydennyksekseen prosessuaalisuutta kuvaavan imperfektiivisen aspektin verbin, kuten esimerkeissä 2 ja 3</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Он помогал сторожу <em>топить</em> печь, убирал комнаты и очень усердно учился. <span class="citation">(Газданов 1930)</span></li>
+<li>Но сейчас что-то мешало ему <em>сочинять</em>, какая-то внутренняя заноза. <span class="citation">(Грекова 1982)</span></li>
+</ol>
+<p><em>Надеяться</em> puolestaan esiintyy usein perfektiivisen aspektin verbin kanssa:</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Министр по электронной торговле острова Мэн Тим Крейн (Tim Craine) также надеется <em>привлечь</em> офшорный бизнес освобождением от налогов и другими льготами. <span class="citation">(РБК 2004)</span></li>
+</ol>
+<p>On verbejä, joilla infinitiivitäydennyksen aspekti ei ole <em>todennäköisemmin</em> vaan <em>välttämättä</em> joko imperfektiivinen tai perfektiivinen. Seuraavassa on annettu kummankin aspektin osalta yksi esimerkki tällaisista ryhmistä.</p>
+<h2 id="vaihetta-ilmaisevat-verbit"><span class="header-section-number">1.1</span> Vaihetta ilmaisevat verbit</h2>
+<p>Ehkä tunnetuin tälläinen verbiryhmä ovat <em>vaihetta ilmaisevat verbit</em> (фазисные глаголы). Nikunlassin <span class="citation">(2002: 176)</span> mukaan vaihetta ilmaistaessa on loogista, että ainoastaan imperfektiivinen aspekti on mahdollinen: koska perfektiivinen aspekti ilmaisee toiminnan sisäisesti rajattuna ja kokonaisena, se ei anna mahdollisuutta hajottaa toimintaa useammaksi vaiheeksi ja ikään kuin astua verbin kuvaavan kokonaisuuden sisään. Tyypillisiä vaihetta ilmaisevia verbejä ovat esimerkiksi начинать, стать, кончать, продолжать:</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Ситуация там <em>продолжает оставаться</em> достаточно сложной…</li>
+<li>Бабка сейчас ложится спать и требует, чтобы я <em>кончала писать</em> и тоже легла <span class="citation">(Щеглов 2003)</span></li>
+<li>Боялся того, что вот, если бы немцы пришли, как в кино, и всех бы <em>стали убивать</em>, то я бы притворился мёртвым и ни за что бы не шелохнулся, лежал бы, как мёртвый. <span class="citation">(Гришковец 2004)</span></li>
+</ol>
+<h2 id="selkeän-resultatiiviset-verbit"><span class="header-section-number">1.2</span> Selkeän resultatiiviset verbit</h2>
+<p>Sen sijaan monilla <em>selvästi resultatiivisilla</em> verbeillä täydennyksen on edustettava perfektiivistä aspektia. Esimerkkejä tällaisista verbeistä ovat <em>успеть</em> ja <em>удаться</em>:</p>
+<ol start="8" style="list-style-type: decimal">
+<li>Очень рассчитываем на то, что Президенту X. Карзаю <em>удастся укрепить</em> центральное правительство, <em>укрепить</em> военные силы, силы правопорядка <span class="citation">(Путин 2004)</span></li>
+<li>– Так вы уже <em>успели прочитать</em> эти странички?! - воскликнул он, кивнув на раскрытую черную тетрадь. <span class="citation">(www.relgros.su n.d.)</span></li>
+</ol>
+<h1 id="infinitiivi-itsenäisenä"><span class="header-section-number">2</span> Infinitiivi itsenäisenä</h1>
+<p>Infinitiivin käyttöön itsenäisenä verbimuotona (ts. ei toisen verbin täydennyksenä) liittyy monia rajoituksia. On kuitenkin olemassa eräitä tyypillisiä rakenteita, joissa itsenäinen käyttö on mahdollista ja joissa usein jompikumpi aspekteista on tyypillisempi.</p>
+<p>Perfektiivistä aspektia käytetään usein rakenteissa, joissa infinitiivimuoto on osana ehtoa ilmaisevaa sivulausetta:</p>
+<ol start="10" style="list-style-type: decimal">
+<li>Если <em>остановиться</em> на мостике и <em>посмотреть</em> вниз, сразу заметишь огромных карпов, которые плещутся в воде. <span class="citation">(«Даша» 2004)</span></li>
+</ol>
+<p>Vastaava rakenne ovat virkkeet, joiden ensimmäinen lause rakentuu mallin прежде чем + infinitiivi mukaan:</p>
+<ol start="11" style="list-style-type: decimal">
+<li>Прежде чем <em>перейти</em> к рассмотрению конкретных данных о составе суда присяжных, сделаем ряд замечаний общего характера <span class="citation">(Афанасьев 2003)</span></li>
+</ol>
+<p>Sen sijaan rakenteet, joissa ilmaistaan toiminnan käynnistymistä puhehetkellä, vaativat imperfektiivistä aspektia:</p>
+<ol start="12" style="list-style-type: decimal">
+<li>Скоро мне уезжать. <span class="citation">(Rassudova 1984)</span></li>
+<li>Вам отвечать за это. <span class="citation">(Rassudova 1984)</span></li>
+</ol>
+<h1 id="infinitiivi-ilmaistaessa-muuta-kuin-toistuvaa-toimintaa"><span class="header-section-number">3</span> Infinitiivi ilmaistaessa muuta kuin toistuvaa toimintaa</h1>
+<p>Kun infinitiivillä ei viitata toistuvaan toimintaan vaan yksittäisiin tapauksiin, kyseessä on todennäköisimmin perfektiivisen aspektin verbi. Toistuvuuden ja kertaluontoisuuden välinen ero onkin juuri infinitiivimuotojen osalta erityisen tärkeä aspekteja erottava tekijä: esimerkiksi toiminnan tulos on pienemmässä roolissa. Esimerkissä 14 on kuvattu perfektiivisen aspektin infinitiivimuoto yksittäistä toimintaa merkitsevänä:</p>
+<ol start="14" style="list-style-type: decimal">
+<li>В воскресенье мы собираемся <em>сходить</em> на выставку <span class="citation">(Rassudova 1984)</span></li>
+</ol>
+<p>Erityisen selkeästi yksittäisen toiminnan ilmaiseminen perfektiivisen aspektin infinitiivimuodolla näkyy modaalisuutta ilmaisevien predikaattien, kuten <em>надо</em>, <em>можно</em>, ja <em>хотеть</em> kanssa. Pyrkimys ilmaista yksittäisiä toimintoja näissä tapauksissa perfektiivisen aspektin verbeillä johtaa paikoin siihen, että perfektiivistä verbimuotoa A käytetään semanttisesti soveltuvamman imperfektiivisen muodon B sijasta, vaikka A:n ja B:n välinen yhteys olisi kaukana aspektiparista.</p>
+<ol start="15" style="list-style-type: decimal">
+<li>Мне надо <em>поговорить</em> с ним <span class="citation">(Rassudova 1984)</span></li>
+</ol>
+<p>Esimerkissä 15 on käytetty delimitatiivista teonlaatua edustavaa поговорить-verbiä imperfektiivisen говорить-verbin asemesta, vaikka voidaan hyvin selvästi todeta, etteivät говорить ja поговорить ole aspektipareja. Vastaavissa konteksteissa teonlaatujen merkitys laimenee ja verbien päämerkitykseksi nousee yksittäisen toiminnan kuvaaminen. Rassudova <span class="citation">(1984: 132)</span> antaa vielä seuraavat esimerkit:</p>
+<ol start="16" style="list-style-type: decimal">
+<li>Мне надо <em>увидеть</em> в ближайщее время своего научного руководителя.</li>
+<li>Мне еще надо <em>поработать</em>.</li>
+<li>Я хочу <em>прочитать</em> эту книгу</li>
+</ol>
+<p>Perfektiivisen aspektin dominanssi yksittäisiä toimintoja ilmaistaessa tarkoittaa, että esimerkiksi menneessa ajassa tärkeää yleisesti toteavan ja konkreettis-faktisen merkityksen välistä oppositiota ei infinitiivimuotojen osalta käytännössä ole olemassa. Poikkeuksiakin perfektiivisen aspektin hallitsevaan asemaan kuitenkin on.</p>
+<h2 id="tilanteita-joissa-yksittäistä-toimintaa-ilmaistaan-imperfektiivisellä-aspektilla"><span class="header-section-number">3.1</span> Tilanteita, joissa yksittäistä toimintaa ilmaistaan imperfektiivisellä aspektilla</h2>
+<p>Vaikka normaalisti esimerkiksi <em>можно</em>- ja <em>надо</em>-predikaattien kanssa ilmaistavaan kertaluontoiseen toimintaan käytetään perfektiivistä aspektia, imperfektiivinen aspekti tulee kysymykseen, jos verbin kuvaama toiminta tapahtuu tai on käynnistymässä juuri puhehetkellä. Tällaisissa tilanteissa toimintaan liittyy usein myös se nyanssi, että toiminnan suorittaminen on odotettua ja ikään kuin etiketin mukaista:</p>
+<ol start="19" style="list-style-type: decimal">
+<li><ul>
+<li>Можно (уже) <em>наливать</em> чай?</li>
+</ul></li>
+</ol>
+<p>Esimerkissä 19 kysyjä oletettavasti seisoo teepannu kädessä ja haluaa tietää, voiko suorittaa puhehetkeä välittömästi seuraavan, odotuksenmukaisen toiminnan.</p>
+<ol start="20" style="list-style-type: decimal">
+<li>Надо <em>ложиться</em>, уже десять часов. <span class="citation">(Rassudova 1984)</span></li>
+</ol>
+<p>Esimerkissä 20 puhuja katsoo kelloa ja huomaa, että juuri nyt (puhehetkellä), tulisi suorittaa verbin <em>ложиться</em> kuvaama toiminta. Tässä merkityksessä надо/нужно + infinitiivi -rakenteet olisivat usein korvattavissa пора-predikaatilla:</p>
+<ol start="21" style="list-style-type: decimal">
+<li>Библиотека закрывается, надо (пора) <em>сдавать</em> книги!</li>
+</ol>
+<p>Toiminnan linkittyminen puhehetkeen voi tulla kysymyksiin myös erityisen kiireellisissä tilanteissa:</p>
+<ol start="22" style="list-style-type: decimal">
+<li>надо <em>вызывать</em> врача!</li>
+</ol>
+<p>Yleisesti toteava erityismerkitys on infinitiivissä melko harvinainen, mutta se esintyy esimerkiksi tapauksissa, joissa toiminta on jo kertaalleen nimetty ja infinitiivimuotoisella verbillä ainoastaan mainitaan toiminta uudestaan:</p>
+<ol start="23" style="list-style-type: decimal">
+<li>мы должны провести подобный эксперимент. - А когда его <em>проводить</em>? <span class="citation">(Rassudova 1984)</span></li>
+</ol>
+<h2 id="ei-modaalinen-verbi-infinitiivi"><span class="header-section-number">3.2</span> Ei-modaalinen verbi + infinitiivi</h2>
+<p>Seuraavassa tarkastellaan joitakin yksittäisiä tapauksia, joissa infinitiivin pääsanana on jokin muu kuin modaalisuutta ilmaiseva predikaatti.</p>
+<p>Oman yksittäistä toimintaa kuvaavan ryhmänsä muodostavat rakenteet, joissa pääverbinä on usein liikeverbi ja infinitiivimuodossa oleva verbi kuvaa tarkoitusta tai päämäärää. päämäärää. Näissä tapauksissa on monesti läsnä konkreettis-faktisen ja konkreettis-prosessuaalisen erityismerkityksen välinen oppositio, kuten Rassudovan <span class="citation">(1984: 145)</span> esimerkeissä 24–25:</p>
+<ol start="24" style="list-style-type: decimal">
+<li>он приехал сюда <em>изучать</em> экономику края</li>
+<li>он приехал <em>сообщить</em> о результатах</li>
+</ol>
+<p>Imperfektiivisen aspektin voi lisäksi nähdä esiintyvän useammin rakenteissa, jotka eivät ilmaise varsinaista päämäärää, vaan ainoastaan liikettä tai pyrkimystä kohti sitä:</p>
+<ol start="26" style="list-style-type: decimal">
+<li>– Куда идешь? – Иду <em>ужинать.</em></li>
+</ol>
+<p>Tutkitaan vielä seuraavaa Rassudovan <span class="citation">(1984: 146)</span> esittämää kolmen lauseen rypästä:</p>
+<ol start="27" style="list-style-type: decimal">
+<li>Он пошел в магазин <em>купить</em> чего-нибудь на ужин.</li>
+<li>Он пошел <em>покупать</em> новый костюм.</li>
+<li>Он пошел <em>покупать</em> подарки к празднику.</li>
+</ol>
+<p>Esimerkissä 27 infinitiivimuotoinen perfektiivisen aspektin verbi kuvaa toimintaa, <em>jonka jälkeen toiminnan suorittaja aikoo palata takaisin</em>. Ostaminen käsitetään yksittäisenä toimintona, ja infinitiivimuotoisen verbin tulkinnassa painottuu ajatus pääämäärästä. Sen sijaan kahdessa muussa lauseessa infinitiivimuotoinen imperfektiivisen aspektin verbi esittää toiminnan kompleksisempana, niin että sen voi nähdä koostuvan useista osatapahtumista. Painopiste on enemmän pyrkimyksessä kohti päämäärää kuin varsinaisessa päämäärän saavuttamisessa.</p>
+<p>Ei-modaalisten verbien infinitiivitäydennyksistä on vielä syytä listä, että давать-verbin imperatiivimuodolla muodostettavien kehotusten suhteen aspekteilla on seuraava työnjako:</p>
+<ol style="list-style-type: decimal">
+<li>Imperfektiivistä aspektia käytetään, kun давать-verbiin liitetään infinitiivi</li>
+<li>Jos давать-verbiin liittyvä verbi on persoonamuodossa, käytetään perfektiivistä aspektia.</li>
+</ol>
+<ol start="30" style="list-style-type: decimal">
+<li>Давайте придерживаться темы!</li>
+<li>Давайте придержимся темы!</li>
+</ol>
+<h1 id="infinitiivi-ilmaistaessa-toistuvaa-toimintaa"><span class="header-section-number">4</span> Infinitiivi ilmaistaessa toistuvaa toimintaa</h1>
+<p>Kun imperfektiivisen aspektin verbi esiintyy infinitiivissä, tulee toiminnan tulkitseminen toistuvana todennäköisemmäksi verrattuna – kuten edellä todettiin – yleisesti toteavaan, mutta myös konkreettis-prosessuaaliseen merkitykseen. Usein imperfektiivinen infinitiivi ilmaisee habituaalista (puhujalle tyypillistä tai tavaksi muodostunutta/muodostuvaa) toimintaa:</p>
+<ol start="32" style="list-style-type: decimal">
+<li>Так вот, пока память мне не изменяет, я решил <em>делать</em> мемуарные записи об артистах, режиссёрах, писателях, с которыми мне повезло работать и дружить. <span class="citation">(Горин 1998)</span></li>
+<li>учительница настоятельно советовала Нате <em>обращать</em> больше внимания на подопечного <span class="citation">(Гиголашвили 2007)</span></li>
+</ol>
+<p>Toiston merkitys käy luonnollisesti selvemmäksi, jos mukana on toistoa ilmaiseva adverbiaali:</p>
+<ol start="34" style="list-style-type: decimal">
+<li>И конечно, не забывайте почаще <em>менять</em> пароль: как говорят военные, дополнительные организационно-технические меры не помешают. <span class="citation">(Лысак 2003)</span></li>
+</ol>
+<p>Habituaalisuus on läsnä myös tarkasteltaessa <em>принято</em>-predikaatin täydennyksenä toimivia imperfektiivisen aspektin infinitiivimuotoja:</p>
+<ol start="35" style="list-style-type: decimal">
+<li>Везде принято <em>давать</em> чаевые ― 10% от общей суммы <span class="citation">(«Даша» 2004)</span></li>
+<li>Среди адвокатов принято <em>хвалить</em> суд присяжных <span class="citation">(Андреев 2003)</span></li>
+</ol>
+<p>Infinitiivissä ilmaistava toistuvuus on usein selkeimmin tulkittavissa <a href="erityismerkitykset.html#tilaa-suhdetta-tai-ominaisuutta-kuvaava-erityismerkitys">potentiaalis-laadulliseksi erityismerkitykseksi</a> – etenkin verbin <em>уметь</em> ja muiden vastaavien rakenteiden yhteydessä:</p>
+<ol start="37" style="list-style-type: decimal">
+<li>Она совсем не умела <em>готовить</em>, но меня это устраивало, как ни странно <span class="citation">(Ткачева 2003)</span></li>
+<li>Учёный обладает способностью <em>задавать</em> точные вопросы природе, <em>находить</em>, <em>улавливать</em>, <em>понимать</em> ответы на них. <span class="citation">(Гранин 1987)</span></li>
+</ol>
+<h1 id="infinitiivi-ja-kieltomuodot"><span class="header-section-number">5</span> Infinitiivi ja kieltomuodot</h1>
+<p>Infinitiivi ja kieltomuodot ovat erityinen osa-alue siinä suhteessa, että imperfektiivisen aspektin ja kieltomuodon välillä on usein selvä yhteys. Tämä tietyissä tapauksissa havaittava säännönmukaisuus saattaa kuitenkin myös hämätä ajattelemaan, että aina, kun infinitiivi seuraa kieltomuotoista verbiä, infinitiivissä olevan verbin tulee ola imperfektiivistä aspektia. Vaikka tällaista sääntöä ei ole mahdollista muodostaa, voidaan kuitenkin todeta, että oppositio <em>myöntömuoto + perfektiivinen aspekti</em> / <em>kieltomuoto + imperfektiivinen aspekti</em> on olemassa ja toteutuu tietyissä konteksteissa usein.</p>
+<p>Kieltomuotoon liittyvä oppositio ei tavallisesti ohita tai tee tyhjäksi aspektin välisiä peruseroja. Näin ollen esimerkiksi konkreettis-faktisen merkityksen ja rajoittamattoman toiston merkityksen välinen ero säilyy myös kieltomuotoon liittyvissä infinitiiveissä:</p>
+<ol start="39" style="list-style-type: decimal">
+<li>Он не согласился <em>прийти</em> в понедельник</li>
+<li>Он не согласился <em>приходить</em> в понедельник</li>
+</ol>
+<p>Esimerkki 39 ilmaisee kfm-merkityksen mukaisesti yhtä konkreettista, sisäisesti rajattua toimintaa ja esimerkki 40 toistuvaa toimintaa.</p>
+<p>Kielto-I:n ja myöntö-P:n välinen oppositio on selkeimmillään, kun kiellon kohteena ei ole infinitiivin pääsana, vaan infinitiivi itse. Näissä tapauksissa on hyvin epätodennäköistä, että infinitiivimuotoinen verbi edustaisi perfektiivistä aspektia:</p>
+<ol start="41" style="list-style-type: decimal">
+<li>Так, заключая соглашения со своими агентами, система WU настаивает на включении в договор условий о том, что агент обязуется не <em>заключать</em> аналогичные соглашения с другими платёжными системами <span class="citation">(Вопросы_статистики 2004)</span></li>
+<li>А насчёт всего здания мы предпочитаем не <em>загадывать</em> <span class="citation">(Гулина 2003)</span></li>
+<li>Я старался не <em>употреблять</em> слов, которые не были бы понятны второкласснику <span class="citation">(Волос 2001)</span></li>
+</ol>
+<h2 id="nesessiivisyyden-kieltäminen"><span class="header-section-number">5.1</span> Nesessiivisyyden kieltäminen</h2>
+<p><em>Nesessiivisyyden kieltäminen</em> on ainoa alue, jossa kieltomuoto ja imperfektiivisen aspektin infinitiivi ovat täysin säännönomaisesti sidoksissa toisiinsa. Nesessiivisyyden kieltäminen toteutuu ennen kaikkea rakenteissa не + <em>надо</em>, <em>нужно</em>, <em>нельзя</em>, <em>должен</em> (jne.) + inf.</p>
+<ol start="44" style="list-style-type: decimal">
+<li>Не надо <em>забывать</em>, что нефть – невоспроизводимый ресурс, разведанные запасы которого уже почти не растут <span class="citation">(Блант 2003)</span></li>
+<li>Мы твердо убеждены, что клиент не должен <em>переплачивать</em> за раскрученный бренд <span class="citation">(www.lawsynergy.ru n.d.)</span></li>
+<li>Больше не нужно <em>откладывать</em> покупку на потом! <span class="citation">(otzyvytut.ru n.d.)</span></li>
+</ol>
+<p>Huomaa kuitenkin: imperfektiivista aspektia käytetään eksklusiivisesti ainoastaan niissä не + <em>надо-</em>, <em>нужно-</em>, <em>нельзя-</em>, <em>должен-</em> (jne.) + inf -rakenteissa, joissa kielto kohdistuu nimenomaan jonkin toiminnan nesessiivisyyteen. Kun näitä rakenteita käytetään ilmaisemaan muita merkityksiä, myös perfektiivinen aspekti on usein mahdollinen tai jopa ainoa vaihtoehto. Näitä tapauksia käsitellään tarkemmin alempana.</p>
+<p>Nesessiiviisyyteen kohdistuva kielto voidaan saada aikaan myös itsenäisenä esiintyvällä infinitiivimuodolla:</p>
+<ol start="47" style="list-style-type: decimal">
+<li>Не <em>брать</em> с собой такую тяжесть! <span class="citation">(Rassudova 1984)</span></li>
+</ol>
+<p>Imperfektiivisen aspektin käyttöalaa ovat myös tapaukset, joissa läsnä on <em>ainoastaan epäilys</em> jonkin toiminnan pakollisuudesta:</p>
+<ol start="48" style="list-style-type: decimal">
+<li>Зачем <em>писать</em> много о том, чьи взгляды тебе чужды? <span class="citation">(ateism.ru n.d.)</span></li>
+<li>Но у меня возникает вопрос: зачем нам <em>переводить</em> это на платную основу, так и хочется сказать «на коммерческую основу», когда у нас есть немало средств массовой информации, Интернет, где публикуются антикоррупционные расследования с фактами, с анализом, со свидетельствами? <span class="citation">(www.zakonia.ru n.d.)</span></li>
+</ol>
+<h2 id="mahdottomuuden-ilmaiseminen"><span class="header-section-number">5.2</span> Mahdottomuuden ilmaiseminen</h2>
+<p>Siinä missä nesessiivisyyden kieltäminen on imperfektiivisen aspektin tehtävä, kuuluu mahdottomuuden ilmaiseminen selkeästi perfektiivisen aspektin tehtäviin. Vertaa seuraavia esimerkkejä:</p>
+<ol start="50" style="list-style-type: decimal">
+<li>Вам не <em>проходить</em> эту дистанцию</li>
+<li>Вам не <em>пройти</em> эту дистанцию</li>
+</ol>
+<p>Lauseista 50 (imperfektiivinen aspekti) ilmaisee, ettei kulkeminen ole pakollista, ja 51, ettei se ole mahdollista. Lauseiden välinen ero syntyy pelkästään aspektuaalisin keinoin.</p>
+<p>Tavallinen mahdottomuutta ilmaiseva rakenne on <em>нельзя + P</em>. Näissäkin tapauksissa imperfektiivisen aspektin verbi saisi kiellon kohdistumaan nesessiivisyyteen, perfektiivisen aspektin puolestaan mahdollisuuteen sinänsä:</p>
+<ol start="52" style="list-style-type: decimal">
+<li>Другое дело, что на муниципальном уровне нельзя <em>решить</em> межгосударственные вопросы <span class="citation">(Студенников 2004)</span></li>
+<li>Нельзя <em>сказать</em>, что в пьесе Ибсена только одна тема. <span class="citation">(Гулина 2003)</span></li>
+<li>Историю нельзя <em>переписать</em> … -на ваш взгляд, была ли у России политическая альтернатива в 91-м или 93-м? <span class="citation">(Сухова 2003)</span></li>
+</ol>
+<h2 id="не-должен--rakenteen-merkitys-perfektiivisen-aspektin-yhteydessä"><span class="header-section-number">5.3</span> Не должен -rakenteen merkitys perfektiivisen aspektin yhteydessä</h2>
+<p>Venäjää vieraana kielenä opiskelevalle tuottavat usein vaikeuksia tapaukset, joissa puhuja haluaa nesessiivirakenteen avulla ilmaista arvioita siitä, kuinka todennäköistä jokin toiminta on. Siinä, missä suomessa tämän funktion täyttää konditionaalimuotoinen nesessiivirakenne, kuten esimerkissä 55,</p>
+<ol start="55" style="list-style-type: decimal">
+<li>Kallen ei pitäisi myöhästyä. (<em>Sen taustatiedon perusteella, joka minulla Kallesta ja tästä tilanteesta on, pidän epätodennäköisenä, että J. myöhästyisi</em>)</li>
+</ol>
+<p>Venäjässä vastaavien konditionaalirakenteiden käyttö tässä merkityksessä ei kuitenkaan ole luontevaa, vaan merkitystä ilmaistaan <em>не должен + perfektiivisen aspektin infinitiivi</em> -rakenteella:</p>
+<ol start="56" style="list-style-type: decimal">
+<li>Калле не должен <em>опоздать</em></li>
+</ol>
+<p>Tutki myös seuraavia korpusesimerkkejä:</p>
+<ol start="57" style="list-style-type: decimal">
+<li>Всё-таки фельдшер фронтовик опытный и не должен <em>упустить</em> подростка, если бы тот захотел бежать <span class="citation">(Быков 2001)</span></li>
+<li>Рассчитанная номинальная траектория астероида такова, что он не должен <em>столкнуться</em> с Землёй в 2036 году <span class="citation">(Зимина 2009)</span></li>
+</ol>
+</section>
+</article>
+<div class="references">
+<div id="ref-ateism">
+<p>ATEISM.RU (n.d.) Ateism.ru. &lt;<a href="http://ateism.ru/article.htm?no=1267" class="uri">http://ateism.ru/article.htm?no=1267</a>&gt;</p>
+</div>
+<div id="ref-nikunlassi2002">
+<p>NIKUNLASSI, A. 2002. <em>Johdatus venäjän kieleen ja sen tutkimukseen</em>. Helsinki: Finn Lectura.</p>
+</div>
+<div id="ref-otzyvytut">
+<p>OTZYVYTUT.RU (n.d.) Otzyvytut.ru. &lt;<a href="http://otzyvytut.ru/" class="uri">http://otzyvytut.ru/</a>&gt;</p>
+</div>
+<div id="ref-rassudova1984">
+<p>RASSUDOVA, O. 1984. <em>Aspectual usage in modern russian</em>. Moskova: Russky Yazyk.</p>
+</div>
+<div id="ref-www.lawsynergy">
+<p>WWW.LAWSYNERGY.RU (n.d.) Www.lawsynergy.ru. &lt;<a href="http://www.lawsynergy.ru/about_us.html" class="uri">http://www.lawsynergy.ru/about_us.html</a>&gt;</p>
+</div>
+<div id="ref-relgros">
+<p>WWW.RELGROS.SU (n.d.) Www.relgros.su. &lt;<a href="http://www.relgros.su/osn_668_715.html" class="uri">http://www.relgros.su/osn_668_715.html</a>&gt;</p>
+</div>
+<div id="ref-www.zakonia">
+<p>WWW.ZAKONIA.RU (n.d.) Www.zakonia.ru. &lt;<a href="http://www.zakonia.ru/blog/251639" class="uri">http://www.zakonia.ru/blog/251639</a>&gt;</p>
+</div>
+<div id="ref-buduhsee">
+<p>АНДРЕЕВ, А. 2003. Будущее принадлежит нам! <em>«Завтра»</em>.</p>
+</div>
+<div id="ref-afanasev">
+<p>АФАНАСЬЕВ, А. 2003. Суд присяжных в россии. <em>«Отечественные Записки»</em>.</p>
+</div>
+<div id="ref-blant">
+<p>БЛАНТ, М. 2003. Система ценностей и ценность системы. <em>«Еженедельный Журнал»</em>.</p>
+</div>
+<div id="ref-bykov">
+<p>БЫКОВ, В. 2001. <em>Болото</em>.</p>
+</div>
+<div id="ref-nedv">
+<p>ВОЛОС, А. 2001. <em>Недвижимость</em>. Новый Мир.</p>
+</div>
+<div id="ref-vopstat">
+<p>ВОПРОСЫ_СТАТИСТИКИ 2004. Денежные переводы мигрантов – фактор инновационного развития мировой финансовой инфраструктуры. <em>«Вопросы Статистики»</em>.</p>
+</div>
+<div id="ref-gazdan">
+<p>ГАЗДАНОВ, Г.А. 1930. <em>Вечер у клэр / начало романа</em>.</p>
+</div>
+<div id="ref-tshertkol">
+<p>ГИГОЛАШВИЛИ, М. 2007. <em>Чертово колесо</em>.</p>
+</div>
+<div id="ref-gorin">
+<p>ГОРИН, Г. 1998. <em>Григорий горин. иронические мемуары</em>.</p>
+</div>
+<div id="ref-granin">
+<p>ГРАНИН, Д. 1987. <em>Зубр</em>.</p>
+</div>
+<div id="ref-grekova">
+<p>ГРЕКОВА, И. 1982. <em>Знакомые люди</em>.</p>
+</div>
+<div id="ref-grishko">
+<p>ГРИШКОВЕЦ, Е. 2004. <em>ОдноврЕмЕнно</em>.</p>
+</div>
+<div id="ref-gulina">
+<p>ГУЛИНА, А. 2003. Слух к чужой боли. <em>«Богатей»</em>.</p>
+</div>
+<div id="ref-dasha">
+<p>«ДАША» 2004. Польша – добрая соседка: Здесь примут по-домашнему! <em>«Даша»</em>.</p>
+</div>
+<div id="ref-zimina">
+<p>ЗИМИНА, Т. 2009. Вести из институтов, лабораторий. <em>«Наука И Жизнь»</em>.</p>
+</div>
+<div id="ref-stuff">
+<p>ЛЫСАК, Д. 2003. Секретная миссия простого брелка. <em>«Stuff»</em>.</p>
+</div>
+<div id="ref-putin1">
+<p>ПУТИН, В.В. 2004. <em>Заявление для прессы по окончании российско-мексиканских переговоров</em> <em>«Дипломатический вестник»</em>.</p>
+</div>
+<div id="ref-rbk">
+<p>РБК 2004. К офшорному аутсорсингу готова треть мировых компаний.</p>
+</div>
+<div id="ref-studennikov">
+<p>СТУДЕННИКОВ, И.И. 2004. Интервью латвийской газете «телеграф». <em>«Дипломатический Вестник»</em>.</p>
+</div>
+<div id="ref-suhova">
+<p>СУХОВА, С. 2003. Конституция и революция. <em>«Итоги»</em>.</p>
+</div>
+<div id="ref-zdorove">
+<p>ТКАЧЕВА, С. 2003. День влюбленных. <em>«100% Здоровья»</em>.</p>
+</div>
+<div id="ref-sheglov">
+<p>ЩЕГЛОВ, А. 2003. <em>Фаина раневская: Вся жизнь</em>.</p>
+</div>
+</div>
+</body>
+</html>

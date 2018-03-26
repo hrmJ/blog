@@ -1,0 +1,348 @@
+---
+bibliography: ../lahteet.bib
+csl: ../bratislava.csl
+numbersections: true
+---
+
+<article id='topbar'>
+Apekti- ja liikeverbiteoria > Aspekti >
+Aspektuaalisuus ja invariantit merkitykset
+</article>
+
+<article class='container'>
+
+<section class='main'>
+
+
+Johdanto
+========
+
+Suurin osa meistä on epäilemättä törmännyt aspektin käsitteeseen
+(kielitieteellisessä merkityksessä) alkaessaan opiskella venäjää tai muuta
+slaavilaista kieltä, joissa aspektin kieliopillinen kategoria on läsnä. Aspekti
+esiteltiin ehkä sinullekin "vaikeana asiana", jota ei-äidinkielisen puhujan on hankala
+hahmottaa ja joka on slaavilaisten kielten erikoisuus, oikku, jonka kanssa
+joutuu painimaan loppuun asti.
+
+Luonnolliset kielet ovat kuitenkin syntyneet inhimillisen toiminnan ja ihmisen
+ilmaisutarpeen tuloksena. Ne heijastavat ihmisen kognitiivisia  kykyjä, tapoja
+hahmottaa maailmaa. Myös aspektin kategoria on yksi tämän prosessin tuotos:
+ihminen kuvaa puheessaan itsensä tai jonkin muun agentin suorittamia toimintoja
+ja luo -- tavalla tai toisella -- luonnostaan jonkin näkökulman kuvaamaansa
+toimintaan. Sattuu vain olemaan niin, että juuri monissa slaavilaisissa kielissä
+näkökulman luomisesta on kehittynyt oma kieliopillinen kategoriansa. 
+
+Tämän kurssin yhtenä tavoitteena on hälventää epämääräisyyden ja vaikeasti
+tavoitettavuuden peitettä, johon aspekti usein kiedotaan tai kietoutuu.
+Tarkoituksena on löytää käsitteitä ja työkaluja, joilla aspektista voi saada
+otetta ja joilla venäjän verbien käyttäytymistä pystyy selittämään myös muille.
+Kaiken kaikkiaan tarjolla on maksimissaankin pintaraapaisu, joka parhaimmillaan
+johtaa oma-aloitteiseen syventymiseen, kirjallisuuden tutkimiseen ja
+havainnoiintiin.
+
+Aspektuaalisuus ja morfologinen aspektin kategoria
+--------------------------------------------------
+
+Aspektin käsite on mahdollista määritellä monin tavoin. Tavanomainen lavea
+määritelmä on, että se muodostaa näkökulman toimintaan tai tarkemmin sanottuna
+sen rakenteeseen [ks. esim. @nikunlassi2002, 175; @klein1999, 16].
+
+<div class='definition'>
+<div class='defheader'>Aspektin lavea määritelmä</div> 
+Aspekti muodostaa näkökulman toimintaan, tarkemmin sanottuna toiminnan rakenteeseen
+</div>
+
+Tärkeä huomio tähän liittyen on, että tällainen lavea määritelmä ei mitenkään
+voi olla ominaisuus, joka liittyy ainoastaan venäjään, slaavilaisiin kieliin
+tai ylipäätään mihin tahansa yhteen kielten ryhmittymään. Vaikka esimerkiksi
+suomen verbeillä ei ole aspektin kategoriaa, myös suomea puhuttaessa luodaan
+näkökulmia toiminnan rakenteeseen. Mieti seuraavia esimerkkejä:
+
+(@ee_asp1) Janne oli aamulla syönyt puuroa, kun ovikello oli soinut.
+(@ee_asp2) Janne oli juuri syönyt puuron, kun ovikello soi.
+(@ee_asp3) Syödessään puuroa Janne katseli pitkään kaukaisuuteen ja mietiskeli elämää
+(@ee_asp4) Janne oli lopettelemassa puuronsyöntiään, kun hän äkkiä katsahti
+kelloon ja tajusi, että oli mentävä.
+
+Esimerkit @ee_asp1--@ee_asp4 esittelevät monia tapoja, joilla suomessa voidaan
+luoda näkökulmia toiminnan rakenteeseen. Näitä ovat esimerkiksi objektin sija,
+verbien tietyt nominaalimuodot ja tietyn verbilekseemin valitseminen. Kaikilla
+näillä keinoilla ilmaistaan <span class='r'>aspektuaalisuutta[^asp1]</span>, jolla
+tarkoitetaan yleisesti näkökulman luomista toiminnan rakenteeseen. Kun
+siirrytään puhumaan venäjän verbien aspektijärjestelmää,
+puhutaan <span class='r'>morfologisesta aspektista[^asp2]</span> [ks. @bondarko2015, 226].
+Koska venäjän jokainen verbimuoto ilmaisee aspektia, se on venäjässä *kieliopillinen
+kategoria* samoin kuin esimerkiksi aikamuoto. Morfologisen aspektin lisäksi myös
+venäjässä ilmaistaan kuitenkin luonnollisesti aspektuaalisuutta sanan
+laajemmassakin merkityksessä.
+
+Suomen (ja muiden tuntemiesi kielten) aspektuaalisuuden huomioon ottaen auttaa
+usein jäsentämään myös venäjän aspektikategoriaan liittyviä eroja. Tämän vuoksi
+on usein hyödyllistä tehdä kontrastiivista vertailua. Yksinkertaisimmillaan se
+toimii vertaamalla objektin sijaa vaikkapa seuraavien esimerkkien mahdollisissa
+suomenkielisissä vastineissa:
+
+(@ee_kasha1) Янне ел кашу (vrt. esim. @ee_asp1)
+(@ee_kasha2) Янне cел кашу (vrt. esim. @ee_asp2)
+
+[^asp1]: аспектуальность
+[^asp2]: вид
+
+Aspektien invariantit merkitykset
+=================================
+
+Perinteinen näkemys on, että venäjän aspektikategoria jakautuun
+*imperfektiivisen* (jatkossa myös lyhennettynä: I)
+ja *perfektiiviseen* aspektiin (jatkossa myös lyhennettynä: P). Näitä kategorioita kutsutaan aspektin
+<span class='r'>invarianteiksi merkityksiksi</span> erotuksena niiden
+[erityismerkityksistä](erityismerkitykset.html)[^erm]. Invarianttien merkitysten
+määrittely on haastavaa, eikä yksiselitteisen, lyhyen määritelmän antaminen ole
+välttämättä edes mielekästä.  Seuraavassa pureudutaan tarkemmin joihinkin
+mahdollisiin määritelmävaihtoehtoihin. On syytä mainita myös, ettei aspektia
+ole kuitenkaan pakko ajatella vain näiden kahden kategorian ehdoin.
+Kognitiivisessa kielitieteessä on kehitelty myös ajatusta *aspektiklustereista*,
+verbien muodostamista merkitysryppäistä ennemmin kuin kahdesta invariantista
+merkityksestä [ks. @janda2007aspectual].
+
+Imperfektiivisestä ja perfekviivisestä aspekteista voidaan yleisellä tasolla
+todeta, että I on aspektuaalisen opposition *tunnusmerkitön osapuoli*, P
+puolestaan *tunnusmerkillinen*. Tämä tarkoittaa, että I jättää tavallisesti
+tilaa tulkinnalle, on vähemmän spesifi ja siinä mielessä myös vähemmän rajattu,
+niin että sillä on enemmän käyttökonteksteja kuin P:llä. I:n ja P:n voi
+sanoa olevan *privatiivissa oppositiossa keskenään*: oppositiossa on tunnusmerkillinen
+osapuoli (perfektiivinen aspekti), jonka käyttö on tarkemmin rajattua ja joka
+voidaan määritellä tiettyjen piirteiden perusteella sekä tunnusmerkitön
+osapuoli (imperfektiivinen aspekti), joka voidaan määritellä suhteessa
+opposition tunnusmerkilliseen osapuoleen [tarkemmin ks.@forsyth1970, 6-7].
+
+[^erm]: частные видовые значения
+
+Yksinkertaisia määritelmiä
+--------------------------
+
+Tyypillisesti oppikirjoissa aspektin invarianttien merkitysten välinen ero
+määritellään niin, että 
+
+<div class='definition'>
+<div class='defheader'>Määritelmä 1.</div> 
+imperfektiivinen aspekti 
+ilmaisee toiminnan keskeneräisenä, kun taas perfektiivinen loppuun suoritettuna.
+</div>
+
+Tämä määrittelytapa on tavallinen ja  näkyy jo nimityksissä *несовершенный вид*
+ja *совершенный вид*.
+Näin pystytään selittämään esimerkkien @ee_opkirj1 ja @ee_opkirj2 välinen ero:
+
+(@ee_opkirj1) Вчера я читал одну интересную книгу
+(@ee_opkirj2) Вчера я прочитал одну интересную книгу
+
+Määritelmä käy kuitenkin nopeasti ongelmalliseksi, jo esimerkiksi nk.
+[inkoatiivisen teonlaadun]() verbejä tutkittaessa:
+
+(@ee_zasme) Ковальчук о чем-то пошутил с Уодделлом и басисто <span class='r'>засмеялся</span> [@sport1]
+
+On vaikea järkevästi määrittää, mikä toiminta on suoritettu loppuun
+perfektiivisen aspektin засмеяться-verbissä esimerkissä @ee_zasme (nauramisen
+aloittaminen?). Vertaa määritelmän kannalta myös seuraavia lauseita:
+
+(@ee_lop1) Я не помешал вам?
+(@ee_lop2) В ваших словах я почуствовал упрек
+
+Paljon yleispätevämpi on määritelmä 2, jossa olennaista on *toiminnan sisäisen
+rajan* käsite:
+
+<div class='definition' id='tarkempi-maaritelma'>
+<div class='defheader'>Määritelmä 2.</div> 
+Imperfektiivinen ja perfektiivinen aspekti eroavat toisistaan siinä, että
+perfektiivinen aspekti kuvaa toimintaa sisäisesti rajattuna kun taas
+imperfektiivinen aspekti jättää näkokulman toiminnan sisäiseen rakenteeseen
+auki.
+</div>
+
+Perfektiivisen aspektin sisäisestä rajasta seuraa, että toiminta näyttäytyy
+totaalisena (целостный) ja yhtenäisenä toimintana. Pohdi verbiä  исчезнуть
+esimerkissä @ee_sisraj1. On ehkä outoa sanoa, että "katoaminen suoritettiin
+loppuun", mutta järkevämpää ajatella toiminta rajattuna, niin että sitä ei
+tarkastella vain ikään kuin  epämääräisenä usvana, vaan totaalisena tapahtumana,
+jonka rajat voidaan määrittää:
+
+(@ee_sisraj1) Самолет исчез, уходя все дальше за облака [@rassudova1984]
+
+Ajattele myös esimerkkiä @ee_sisraj2.
+
+(@ee_sisraj2) Мы поужинали после noлуночи [@rassudova1984]
+
+Esimerkin @ee_sisraj2 perfektiivinen verbi поужинать ei millään tavoin kuvaa *lopputulosta*.
+Kuitenkin toiminta on rajattua: illallinen kuvataan lauseessa yhtenä
+selvärajaisena tapahtumana, kokonaisuutena.
+
+A. V. Bondarko [-@bondarko2015, 230-231] huomauttaa kuitenkin, ettei sen
+paremmin määritelmän 2 tapainen kuin mikään muukaan *yksittäisen piirteen* tai 
+ominaisuuden pohjalta tehty määritelmä pysty vangitsemaan kaikkia tapauksia tai
+kaikkea olennaista aspektien välisestä erosta. Tämän vuoksi on perusteltua
+pyrkiä määritelmään aspektien invariantit merkitykset suhteessa kokonaiseen joukkoon
+ominaisuuksia, joita aspektit joko edustavat, eivät edusta tai edustavat,
+mutteivät aina. Seuraavassa siirrytään tarkastelemaan näitä ominaisuuksia
+Bondarkon esittämässä muodossa.
+
+Bondarkon Moniselitteisempi määritelmä{#monis-maar}
+--------------------------------------
+
+Bondarkon määritelmän pohjana on aspektien *semanttinen potentiaali* eli se,
+mitä merkityksiä ne kykenevät ilmaisemaan. Nämä merkitykset limittyvät aspektien
+välillä ja useimmissa tapauksissa kumpikin aspekti saattaa vähintäänkin
+tietyissä erikoistapauksissa ilmaista ko. ominaisuutta, vaikka sei olisikaan
+sille tyypillinen. Tältä pohjalta voidaan muodostaa kolmas, lavea määritelmä,
+jokoa on enneminkin ohje määritelmän tekoa varten kuin varsinainen määritelmä:
+
+<div class='definition'>
+<div class='defheader'>Määritelmä 3.</div> 
+Imperfektiivinen ja perfektiivinen aspekti voidaan määritellä sen mukaan, mitkä
+piirteet ovat niille tyypillisiä, mitkä harvinaisia tai mitkä mahdottomia. Ei
+voi yksiselitteisesti väittää, että jompikumpi tai molemmat aspektit ovat vain yhden
+ominaisuuden ilmentymiä, vaan monimutkaisia yhdistelmiä useista eri piirteistä.
+</div>
+
+Bondarko erottelee seuraavat kuusi
+ominaisuutta, joita tässä tarkastellaan hieman mukautettuna:
+
+1. Toiminnan käsittäminen kokonaisuutena (sisäinen raja)
+2. Prosessuaalisuus
+3. Ajallinan lokalisoitavuus
+4. Kesto
+5. Toiminnan äkillinen alkaminen
+6. Toiminnan samanaikaisuus ja peräkkäisyys
+
+Kaikkia mainittuja ominaisuuksia tullaan kurssin aikana käsittelemään, kun
+puhutaan aspektien [erityismerkityksistä](). Ne
+tulevat esille monissa eri yhteyksissä, kun mietitään selitystä jollekin tietylle
+käyttötilanteelle. Tässä on kuitenkin esitetty teoreettisempi koonti siitä,
+miten ominaisuudet jakautuvat imperfektiivisen ja perfektiivisen
+aspektin välillä.
+
+
+### Toiminnan käsittäminen kokonaisuutena (sisäinen raja)
+
+Vaikka toiminnan käsittäminen sisäisesti rajattuna on edellä määritelty
+perfektin aspektin piirteeksi on huomattava, että määritelmässä 2
+imperfektiivinen aspektin ei sanota olevan kykenemätön ilmaisemaan sisäistä
+rajaa vaan ainoastaan, *ettei se ota sisäiseen rakenteeseen kantaa*.
+Toiminta ilmaistaan täysin vaillal sisäistä rajaa esimerkiksi seuraavissa lauseissa:
+
+(@ee_imperf_raja1) Вон он бежит
+(@ee_imperf_raja2) Мы часто так говорим
+(@ee_imperf_raja3) Она хорошо играет на гитаре
+
+Kuitenkin eräissä erikoistapauksissa, esimerkiksi joskus
+käytettäessä nk. historiallista preesensmuotoa, imperfektiivinen aspekti voi
+toimia *neutraalisti* suhteessa toiminnan sisäiseen rajaan, kuten esimerkissä
+@ee_histprees1:
+
+(@ee_histprees1) Затоплю камин, стало прохладно… Вдруг <span class='r'>раздается</span> резкий звонок телефона [@beljak1]
+
+### Prosessuaalisuus
+
+Prosessuaalisuus on jo määritelmän 1 mukaan selvästi imperfektiiviselle
+aspektille tyypillinen piirre. Bondarko esittää kaksi argumenttia sen puolesta, 
+että prosessuaalisuus on perfektiiviselle aspektille mahdoton piirre:
+
+1. Adverbia всё ei voi yhdistää perfektiivisen aspektin verbiin. Vrt:
+
+(@ee_eiperf1)  Он всё бежал [@bondarko2015]
+(@ee_eiperf2) \* Он всё прибежал [@bondarko2015]
+
+2. Perfektiivinen aspekti ei voi ilmaista nykyhetkellä käynnissä olevaa
+   toimintaa, vastata kysymykseen "Что это ты делаешь"
+
+Määritelmän 2 perusteella perfektin kyvyttömyys ilmaista prosessuaalista
+toimintaa on seurausta siitä, ettei kokonaisena esitettyä toimintaa voi pilkkoa
+paloiksi eikä mennä sen sisälle. Tämä johtaa siihen, että perfektiivisen aspektin
+ei-menneen ajan muodot ilmaisevat automaattisesti jotain, mikä tapahtuu
+tulevaisuudessa.
+
+### Ajallinen lokalisoitavuus
+
+Ajallinen lokalisoitavuus on piirre, jolla tarkoitetaan verbin ilmaiseman
+tapahtuman asettamista johonkin ajalliseen kontekstiin: joko suhteessa tiettyyn
+yksittäiseen hetkeen tai epämääräiseen ajankohtaan. Imperfektiiviselle
+aspektille kummatkin näistä lokalisoitavuuden tyypeistä ovat tavallisia, kuten
+esimerkit @ee_lok_imp -- @ee_lok_imp2 osoittavat:
+
+(@ee_lok_imp) Он сейчас волнуется [@bondarko2015]
+(@ee_lok_imp2) Он обычно волнуется [@bondarko2015]
+
+Sen sijaan perfektiivinen aspekti vaatii epämääräisten kiinnekohtien osalta
+erityistä kontekstia. Tavallisesti on mahdotonta sanoa *он часто скажет*, mutta
+esimerkki @ee_lok_perf antaa yhden erityistilanteen, jossa tämä on mahdollista:
+
+(@ee_lok_perf) Он часто скажет что-нибудь, не подумав, а потом жалеет.
+
+### Kesto
+
+Keston ilmaiseminen on tyypillistä imperfektiivisen aspektin verbeille. Tämäkään
+piirre ei kuitenkaan välttämättä ole läsnä aina, kun imperfektiivisen aspektin
+verbejä käytetään, niin kuin esimerkit @ee_impkest--@ee_impkest2 osoittavat:
+
+(@ee_impkest) Ты будешь обедать? [@bondarko2015]
+(@ee_impkest2) Ты читал "Койриен Калевала"?
+
+Toisaalta keston ilmaiseminen ei ole mahdotonta perfektiivisenkään aspektin
+verbeille. Tietyt [teonlaadut]()  (*perduratiiviset* ja *delimitatiiviset*) verbit ilmaisevat 
+käytännössä aina kestoa:
+
+(@ee_perfkest1) Как бы там ни было, они встречались довольно часто, а один раз даже преотлично и весело <span class='r'>просидели</span> целый вечер в ресторане [@dombr]
+(@ee_perfkest2) Мы с Тосио еще с четверть часа <span class='r'>поговорили</span> о причудах природы и необходимости не нарушать в ней равновесия сил.  [@zhemaitis]
+
+### Toiminnan äkillinen alkaminen
+
+Toiminnan äkillisellä alkamisella Bondarko tarkoittaa tilannetta, jossa kuvataan
+toimintaa A, ja tätä vasten kerrotaan toiminnasta B, joka syntyy äkillisesti tai
+odottamattomasti verrattuna A:n kuvaamaan jatkuvaan toimintaan. Tämänkaltaiset
+merkitykset ovat tyypillisempiä perfektiiviselle aspektille, kuten esimerkissä
+@ee_akill_perf1:
+
+(@ee_akill_perf1) Викниксор спускался вниз и что-то мурлыкал. Вдруг он <span class='r'>смолк</span> и <span class='r'>остановился</span>. Японец поднял голову и задрожал.[@belyh]
+
+Kuitenkin myös tämä ominaisuus on imperfektiiviselle aspektille mahdollinen
+historiallisessa preesensissä, kuten esimerkki @ee_histprees1 osoittaa.
+
+### Toiminnan samanaikaisuus tai peräkkäisyys
+
+Perfektiivisen aspektin osalta tyypillisin tapa ilmaista tapahtumien suhteita
+ajassa on, että se kuvaa peräkkäisiä, rajattuja toimintoja; imperfektiivinen
+aspekti puolestaan esittää tavallisesti toiminnat samanaikaisina. Vrt.
+Esimerkkejä @ee_aikasuhteet--@ee_aikasuhteet_v:
+
+(@ee_aikasuhteet) Раньше как было? ― говорят участники «квартета». ― <span class='r'>Собрались</span>, <span class='r'>побратались</span> и <span class='r'>разошлись</span>. А сейчас― <span class='r'>собрались</span> и <span class='r'>подписались</span>, что будем делать то-то и то-то [@izv2]
+(@ee_aikasuhteet_v) Он плясал вокруг него, вопил и кричал, обнимал и целовал его, потом бросался обниматься к нам
+
+Tämänkään ominaisuuden suhteen kuva ei kuitenkaan lopulta ole täysin
+yksiselitteinen. Myös perfektiivinen aspekti voi esimerkiksi [perfektin
+erityismerkityksessä]() kuvata toimintaa joka ei ole peräkkäistä, vaan
+pikemminkin samanaikaista tai vähintäänkin limittäistä:
+
+(@ee_aikasuhteet_poik1) А в общем за год мне показалось все как будто <span class='r'>потолстели</span>, <span class='r'>посытели</span> [@prishv]
+(@ee_aikasuhteet_poik2) Дима! Это ты? Как ты постарел и похудел!
+
+Imperfektiivinen aspekti puolestaan voi joskus, melko spesifeissä konteksteissa,
+ilmaista peräkkäisiä tapahtumia. Yksi tällainen mahdollisuus on tilanteissa,
+joissa kuvataan tapahtumien sarjaa, joka toistuu samanlaisena monta kertaa:
+
+(@ee_aikasuhteet_poik3) Как только попутчик узнавал, что перед ним сидит иностранец, тут же из портфеля (чемодана, сумки et cetera) извлекалась бутылка и начиналась демонстрация этнических стереотипов в форме состязания в питье [@nikol]
+
+### Tiivistetysti
+
+
+Voidaankin todeta, että imperfektiivinen aspekti on todella aspektin
+invarianteista merkityksistä tunnusmerkittömämpi ja sitä kautta käytettävissä
+useammanlaisissa tilanteissa kuin perfektiivinen. I saattaa tilanteesta riippuen
+ilmaista kaikkia edellä lueteltuja merkityspiirteitä, joskin usein hyvin
+tiukasti rajatuissa konteksteissa. I ei myöskään läheskään aina *välttämättä*
+ilmaise edes merkityspiirteitä, jotka ovat sen kannalta kaikkein tyypillisimpiä.
+Sen sijaan perfektiivisen aspektin käyttö on monin paikoin selvärajaisempaa:
+esimerkiksi prosessuaalisuutta se ei ilmaise ollenkaan ja myös keston ja
+lokalisoitavuuden ominaisuudet on rajattu hyvin tarkkoihin erikoistapauksiin.
+
+
+</section>
+</article>

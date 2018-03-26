@@ -1,0 +1,880 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="finnish" xml:lang="finnish">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="../jquery-latest.js"></script>
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/theme/sky.css" id="theme">
+  <style type='text/css'>
+  
+  /* General Demo Style */
+  @import url(http://fonts.googleapis.com/css?family=Lato:300,700);
+  
+  .main {
+  	width: 100%;
+  	max-width: 960px;
+  	padding: 40px;
+  	text-shadow: 0 2px 0 rgba(255,255,255,0.7);
+  }
+  
+  .main p {
+  	font-size: 16px;
+  	line-height: 1.4;
+  	text-align: justify;
+  }
+  
+  .main p:nth-of-type(2){
+  	-moz-column-gap: 20px;
+  	-webkit-column-gap: 20px;
+  	-ms-column-gap: 20px;
+  	-o-column-gap: 20px;
+  	column-gap: 20px;
+  }
+  
+  .main p:nth-of-type(4){
+  	-moz-column-gap: 15px;
+  	-o-column-count: 3;
+  	-o-column-gap: 15px;
+  	-ms-column-count: 3;
+  	-ms-column-gap: 15px;
+  	-webkit-column-gap: 15px;
+  	column-count: 3;
+  	column-gap: 15px;
+  }
+  
+  
+  
+  html *
+  {
+     /*font-family: Arial !important;*/
+  }
+  
+  
+  p.header {
+      font-size: 46px;
+      line-height: 40px;
+      text-align:left;
+      border-bottom: 2px solid black;
+      padding-bottom:5px;
+      margin-bottom:5em;
+  }
+  
+  h1 {
+      font-size: 36px;
+      line-height: 40px;
+  }
+  
+  h2 {
+      font-size: 30px;
+      line-height: 40px;
+  }
+  
+  h3 {
+      font-size: 24px;
+      line-height: 40px;
+  }
+  
+  h4 {
+      font-size: 18px;
+      line-height: 20px;
+  }
+  
+  /* Won't be used here */
+  
+  h5 {
+      font-size: 14px;
+      line-height: 20px;
+  }
+  
+  h6 {
+      font-size: 12px;
+      line-height: 20px;
+  }
+  
+  
+  .main {
+  	counter-reset: section-1, section-2, section-3, section-4;
+  }
+  
+  .main h1 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 36px;
+  	line-height: 40px;
+  	counter-increment: section-1;
+  	counter-reset: section-2 section-3 section-4;
+  }
+  
+  .main h2 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 30px;
+  	line-height: 40px;
+  	counter-increment: section-2;
+  	counter-reset: section-3 section-4;
+  	border-bottom: 1px solid #fff;
+  	box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+  	padding-bottom: 10px;
+  }
+  
+  .main h3 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 24px;
+  	line-height: 40px;
+  	counter-increment: section-3;
+  	counter-reset: section-4;
+  }
+  
+  .main h4 {
+  	margin: 0.8em 0 0.5em 0;
+  	color: #333;
+  	font-weight: normal;
+  	font-family: 'Orienta', sans-serif;
+  	font-size: 18px;
+  	line-height: 20px;
+  	counter-increment: section-4;
+  }
+  
+  a:link{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:active{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:visited{
+  color:#000000;
+  text-decoration:none;
+  }
+  
+  a:hover{
+  color:#000000;
+  text-decoration:underline;
+  }
+  
+  #TOC{
+  position:absolute;
+  width:17%;
+  font-size:89%;
+  margin-top:30px;
+  /*height:70%;*/
+  /*box-shadow: 3px 7px 5px 0px;*/
+  padding:5px;
+  overflow:auto;
+  /*border-radius:10px;
+  border: 1px black dashed;*/
+  }
+  
+  #TOC > ul{
+  list-style-type: none;
+  }
+  
+  
+  #TOC ul
+  {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  }
+  
+  #TOC a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #036;
+  /*width: 9em;*/
+  padding: 3px 12px 3px 8px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: bold;
+  }
+  
+  #TOC a:hover
+  {
+  background-color: #369;
+  color: #FFF;
+  }
+  
+  #TOC li li a
+  {
+  display: block;
+  color: #FFF;
+  background-color: #69C;
+  /*width: 9em;*/
+  padding: 3px 3px 3px 17px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  font-weight: normal;
+  }
+  
+  
+  .container{
+      height: 100%;
+      margin-top: 50px;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 9%;
+      padding-top: 10%;
+      background: white;
+      border-radius:25px;
+      }
+  
+  .references{
+      margin-top: 2%;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      background: white;
+      }
+  
+  
+  
+  #topbar{
+  position:absolute;
+  top:0;
+  left:-20px;
+  /*background:yellow;*/
+  background-color: #C5A05B;
+  margin-bottom:10px;
+  padding-left:25px;
+  /*
+  padding-right:25px;
+  padding-top:5px;
+  */
+  padding-bottom:2px;
+  border-bottom: 1px dashed white;
+  border-right: 1px dashed white;
+  }
+  
+  .r {color:red;}
+  .b {color:blue;}
+  .g {color:grey;}
+  .gre {color:green;}
+  
+  .definition {
+      background: beige;
+      /*background: #DABC83;*/
+      padding-left: 1px;
+      margin-left: 2em;
+      padding-right: 1px;
+  }
+  
+  .defheader{
+      width: 100%;
+      /* padding-right: 10px; */
+      /* margin-right: 10px; */
+      border-bottom: 1px dashed black;
+      background: aliceblue;
+      /*background: #B0D0EC;*/
+  }
+  
+  .definition > p {
+      /* color: red; */
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 1em;
+      font-style: italic;
+  }
+  
+  article.bubble{
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 2em;
+  border-radius: 7px;
+  margin-left: 14px;
+  color:black;
+  }
+  
+  
+  article.bubblenob{
+  float: left;
+  width:30%;
+  }
+  
+  
+  article.mmbubble{
+  text-align: left;
+  border: 2px dotted black;
+  padding: 4px;
+  border-radius: 7px;
+  margin:1%;
+  color:black;
+  }
+  
+  article.nfbubble{
+  font-size:90%;
+  float: left;
+  text-align: left;
+  border: 2px dotted black;
+  padding: 1.5em;
+  border-radius: 7px;
+  margin:4%;
+  box-shadow: 10px 10px 5px #888888;
+  color:black;
+  }
+  
+  article.bgred{background: rgba(222, 184, 135, 0.64);}
+  article.bgblue{background: rgba(100, 149, 237, 0.45);}
+  article.bggreen{background: darkseagreen;}
+  article.bgcyan{background: rgba(255, 215, 0, 0.25);}
+  
+  span#triangle {
+      display: inline-block;
+      margin: 72px;
+      border-right: 24px solid; border-bottom: 24px solid;
+      width: 50px; height: 50px;
+      transform: rotate(-45deg);
+  }
+  
+  span.right-arrow {
+      display: inline-block;
+      position: relative;
+      background: #E8EFED;
+      padding: 3px;
+  }
+  
+  span.right-arrow:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      margin-top: -10px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid #151514;
+  }
+  
+  span.afterarrow {
+      background: rgb(193, 243, 255);
+      margin-left: 9px;
+      padding: 3px;
+  }
+  
+  article#tocmain{
+  background:none;
+  }
+  
+  #topbar a:hover{
+  background-color: #8A6C34;
+  color: #FFF;
+  }
+  
+  #topbar a{
+  padding:3px;
+  color: #FFF;
+  text-decoration: none;
+  /*border-right:1px dashed white;*/
+  }
+  
+  #inlinemenu{
+  padding:0;
+  margin:0;
+  }
+  
+  .inline{
+  display:inline;
+  }
+  
+  #topbar li{list-style-type: none;
+      line-height:130%;
+  }
+  
+  a.dropdown-link { 
+      color:#044264;
+      text-decoration:none; 
+  }
+  
+  ul#quotes-bar-menu {
+      margin: 0; padding: 0;
+      float:left;
+      width: 100%;
+      list-style: none;
+  }
+  
+  ul#quotes-bar-menu li {
+      display:inline;
+      float:left;
+      position:relative;
+      margin:0;
+      padding:7px 15px 7px 0;
+  }
+  
+  /* sub menu class */
+  ul#quotes-bar-menu li .sub-menu {
+      background-color: #C5A05B;
+      display:none;
+      left:0;
+      margin:0;
+      font-size:11;
+      padding:0;
+      position:absolute;
+      top:29px;
+      width:320px;
+      z-index:999;
+  }
+  
+  ul#quotes-bar-menu li .single { 
+      /*width:150px !important;*/
+  }
+  
+  ul#quotes-bar-menu li{
+      color:#fff;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu ul {
+      float:left;
+      list-style:none;
+      display: block;
+      width:205px;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li {
+      width:135px;
+      margin:0; 
+      font-size:11px;
+      padding:1px 1px 0;
+  }
+  
+  ul#quotes-bar-menu li .sub-menu li a { color: white;
+  text-decoration: none;
+  }
+  ul#quotes-bar-menu li .sub-menu li a:hover { text-decoration: none; }
+  
+  
+  .invisible{
+  display:none;
+  }
+  .menubox{
+      background-color: #C5A05B;
+      padding: 0.12em;
+      border: 1px dashed white;
+      padding-left: 0.5em;
+  }
+  
+  
+  #topbar .menulauncher a{
+  border-right: 1px dashed white;
+  padding-right:3px;
+  }
+  
+  .menubox a{
+  width:80%;
+  display:inline-block;
+  margin-bottom:1%;
+  padding:0.2em;
+  cursor: pointer; cursor: hand;
+  font-family: arial;
+  font-size: 12;
+  text-decoration: underline;
+  }
+  </style>
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#inkoatiivinen-начинательный-teonlaatu"><span class="toc-section-number">1</span> Inkoatiivinen (начинательный) teonlaatu</a><ul>
+<li><a href="#muodostaminen"><span class="toc-section-number">1.1</span> Muodostaminen</a></li>
+<li><a href="#esimerkkejä"><span class="toc-section-number">1.2</span> Esimerkkejä</a></li>
+</ul></li>
+<li><a href="#delimitatiivinen-онграничительный-teonlaatu"><span class="toc-section-number">2</span> Delimitatiivinen (онграничительный) teonlaatu</a><ul>
+<li><a href="#muodostaminen-1"><span class="toc-section-number">2.1</span> Muodostaminen</a></li>
+<li><a href="#esimerkkejä-1"><span class="toc-section-number">2.2</span> Esimerkkejä</a></li>
+</ul></li>
+<li><a href="#attenuatiivinen-смягчительный-teonlaatu"><span class="toc-section-number">3</span> Attenuatiivinen (смягчительный) teonlaatu</a><ul>
+<li><a href="#muodostaminen-2"><span class="toc-section-number">3.1</span> Muodostaminen</a></li>
+<li><a href="#esimerkkejä-2"><span class="toc-section-number">3.2</span> Esimerkkejä</a></li>
+</ul></li>
+<li><a href="#diskontinuatiivis-attenuatiivinen-прерывисто-смягчительный-teonlaatu"><span class="toc-section-number">4</span> Diskontinuatiivis-attenuatiivinen (прерывисто-смягчительный) teonlaatu</a><ul>
+<li><a href="#muodostaminen-3"><span class="toc-section-number">4.1</span> Muodostaminen</a></li>
+<li><a href="#esimerkkejä-3"><span class="toc-section-number">4.2</span> Esimerkkejä</a></li>
+</ul></li>
+<li><a href="#resultatiivisten-teonlaatujen-ryhmä-результативные-способы-действия"><span class="toc-section-number">5</span> Resultatiivisten teonlaatujen ryhmä (результативные способы действия)</a><ul>
+<li><a href="#perduratiivinen-пердуративныйдлительно-ограничительный"><span class="toc-section-number">5.1</span> Perduratiivinen (пердуративный/длительно-ограничительный)</a></li>
+<li><a href="#finitiivinen-финитивный"><span class="toc-section-number">5.2</span> Finitiivinen (финитивный)</a></li>
+<li><a href="#saturatiivinen"><span class="toc-section-number">5.3</span> Saturatiivinen</a></li>
+<li><a href="#kumulatiivinen-накопительный"><span class="toc-section-number">5.4</span> Kumulatiivinen (накопительный)</a></li>
+</ul></li>
+<li><a href="#momentaaninen-одноактныйонднократный-teonlaatu"><span class="toc-section-number">6</span> Momentaaninen (одноактный/онднократный) teonlaatu</a><ul>
+<li><a href="#muodostus"><span class="toc-section-number">6.1</span> Muodostus</a></li>
+<li><a href="#esimerkkejä-4"><span class="toc-section-number">6.2</span> Esimerkkejä</a></li>
+</ul></li>
+<li><a href="#distributiivinen-дистрибутивныйраспределительный-teonlaatu"><span class="toc-section-number">7</span> Distributiivinen (дистрибутивный/распределительный) teonlaatu</a><ul>
+<li><a href="#muodostus-1"><span class="toc-section-number">7.1</span> Muodostus</a></li>
+<li><a href="#esimerkkejä-5"><span class="toc-section-number">7.2</span> Esimerkkejä</a></li>
+</ul></li>
+<li><a href="#komitatiivinen-сопроводительныйкомитативный-teonlaatu"><span class="toc-section-number">8</span> Komitatiivinen (сопроводительный/комитативный) teonlaatu</a><ul>
+<li><a href="#muodostus-2"><span class="toc-section-number">8.1</span> Muodostus</a></li>
+<li><a href="#esimerkkejä-6"><span class="toc-section-number">8.2</span> Esimerkkejä</a></li>
+</ul></li>
+</ul>
+</div>
+<article id="topbar">
+<a href='javascript:void(0)' id='menu1' class='menulauncher' >Aspekti- ja liikeverbiteoria |</a>
+<div id="menu1box" class="invisible menubox">
+<p><a href='../index.html'>Sisällys</a> <a href='kurssin_esittely.html'>Kurssin esittely</a> <a href='kurssin_aikataulu.html'>Kurssin aikataulu</a> <a href='https://learning2.uta.fi/course/view.php?id=7339'>Moodle</a></p>
+</div>
+<a href='javascript:void(0)' id='menu2' class='menulauncher' >Aspekti |</a>
+<div id="menu2box" class="invisible menubox">
+<p><a href='invariantit_merkitykset.html'>Aspektuaalisuus ja aspektin invariantit merkitykset</a> <a href='aspektin_muodostus.html'>Aspektin/aspektiparin muodostaminen sekä aspektin valintaan vaikuttavat tekijät</a> <a href='erityismerkitykset.html'>Aspektien erityismerkitykset</a> <a href='teonlaadut.html'>Teonlaadut</a></p>
+</div>
+<a href='javascript:void(0)' id='menu3' class='menulauncher' >Aspektin vaikuttavat tekijät vuorovaikutuksessa |</a>
+<div id="menu3box" class="invisible menubox">
+<p><a href='aspekti_menneen_ajan_verbimuodoilla.html'>Aspekti menneen ajan verbimuodoilla</a> <a href='aspekti_futuurisilla_verbimuodoilla.html'>Aspekti futuurin verbimuodoilla</a> <a href='imperatiivi.html'>Aspekti imperatiivissa</a> <a href='infinitiivi.html'>Aspekti infinitiivissä</a></p>
+</div>
+<a href='javascript:void(0)' id='menu4' class='menulauncher' >Liikeverbiteoria</a>
+<div id="menu4box" class="invisible menubox">
+<p><a href='liikeverbit_johdanto.html'>Johdanto</a> <a href='liikeverbit_prefikseilla.html'>Liikeverbit prefikseillä</a> <a href='Liikeverbit_ja_teonlaatu.html'>Liikeverbit ja teonlaadut</a></p>
+</div>
+<script>
+function showmenu(obj) {
+
+    // .position() uses position relative to the offset parent, 
+    var pos = $(obj).position();
+
+    // .outerWidth() takes into account border and padding.
+    var width = $(obj).outerWidth();
+    var height = $(obj).outerHeight();
+    var menuid = "#" + $(obj).attr('id') + 'box';
+
+    //show the menu directly over the placeholder
+    $(menuid).css({
+        position: "absolute",
+        top: pos.top + height + "px",
+        left: (pos.left) + "px"
+    }).show();
+    
+}
+
+$('.menulauncher').hover(function(event) {showmenu(this); });
+$('.menubox').mouseleave(function(event) {$('.menubox').hide();});
+
+</script>
+</article>
+<article class="container">
+<section class="main">
+<p class="header">
+Teonlaadut
+</p>
+<p>Aspektuaalisuutta tutkittaessa on useimmiten selvityksen kohteena, mitkä ominaisuudet luonnehtivat aspekteja kieliopillisena kategoriana kokonaisuudessaan. Tämän kurssin kuluessa olemme ksysyneet, mitkä ominaisuudet ja piirteet ovat tyypillisiä kummallekin aspektin invarianteista merkityksistä, mitä piirteitä invariantit merkitykset eivät ilmaise ollenkaan ja minkä piirteiden ilmaiseminen on rajoitettua. Olemme myös kiinnittäneet huomiota <em>erityismerkityksiin</em>, tietynlaisiin käyttökonteksteihin, joissa toiset piirteet nousevat hallitsevammiksi kuin toiset.</p>
+<p>Aspektuaalisuutta voidaan kuitenkin tarkastella myös sanatasolla, <em>leksikaalisesti</em>. Yksittäisellä sanalla voi nimittäin olla aspektuaalisia ominaisuuksia, jotka eivät ensisijaisesti johdu siitä, että kyseessä on imperfektiivisen tai perfektiivisen aspektin verbi. Sen sijaan tiettyjen verbien voidaan katsoa muodostavan saman aspektin sisällä ryhmiä, joita yhdistää jokin tietty, esimerkiksi toiminnan ajalliseen kestoon liittyvä ominaisuus. Tällaisia ryhmiä<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> nimitetään <em>teonlaaduiksi</em><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>.</p>
+<p>Teonlaatuja voidaan tutkijasta riippuen erottaa hyvinkin erilaisia määriä. Jotkin analyysit pitäytyvät vain muutamassa teonlaadussa, toiset pyrkivät asettamaan kaikki verbit jäännöksettä johonkin, väljäänkin, semanttiseen ryhmään. Teonlaadut voivat siis olla kokonaisvaltainen lähestymistapa koko verbijärjestelmään, mutta tätä lähtökohtaa ei käytetä tällä kurssilla, vaan käsittelyyn otetaan muutama mahdollisimman selväpiirteinen verbijoukko.</p>
+<p>Tiettyä teonlaatua edustaville verbeille on tyypillistä, etteivät ne muodosta aspektiparia, vaan edustavat ainoastaan esimerkiksi perfektiivistä aspektia. Näin ollen esimerkiksi verbillä <em>постоять</em> ei <em>delimitatiivisen</em> teonlaadun verbinä ole imperfektiivisen aspektin muotoa. Perfektiivisen aspektin teonlaatuja on perinteisesti eroteltu selkeästi useampia kuin imperfektiivisen aspektin teonlaatuja.</p>
+<p>Teonlaadut muodostetaan tavallisimmin liittämällä prefiksi imperfektiivisen aspektin prefiksittömään (tai joissain tapauksissa prefiksilliseen) verbivartaloon (ks. esimerkiksi virkkeen 1 <em>засмеятсья</em>). Harvinaisempi muodostuskeino on liittää suffiksi/suffiksi ja prefiksi imperfektiivisen tai perfektiivisen aspektin verbivartaloon. Teonlaaduista ei voi kuitenkaan tehdä puhtaasti morfologista tai täysin säännönmukaista prosessia: esimerkiksi по-prefiksin liittäminen verbivartaloon voi joko olla tuottamatta minkään teonlaadun verbiä tai tuottaa useita ei teonlaatuja, kuten inkoatiivisen, delimitatiivisen tai attenuatiivisen teonlaadun.</p>
+<ol style="list-style-type: decimal">
+<li>Он <em>засмеялся</em> и сказал : “Вообще-то меня так враги называют”</li>
+</ol>
+<p>Kattavan esityksen laajasta joukosta eri teonlaatuja antaa <span class="citation">(Исаченко 2014: 224-)</span>. Asiaa käsittelevät tällä kurssilla hyödynnetyistä lähteistä myös esimerkiksi <span class="citation">(Nikunlassi 2002: 169–172 (ks. erit. suomenkieliset termit))</span> , <span class="citation">(Rassudova 1984: 20–21)</span> ja <span class="citation">(Bondarko 2005: 226)</span>. Seuraavassa luodaan pääasiassa näiden teosten pohjalta tarkempi katsaus joihinkin merkittävimpiin ja pintapuolisempi kurkistus eräisiin marginaalisempiin teonlaatuihin.</p>
+<h1 id="inkoatiivinen-начинательный-teonlaatu"><span class="header-section-number">1</span> Inkoatiivinen (начинательный) teonlaatu</h1>
+<p>Teonlaaduista ensimmäisenä esitellään yleensä aina inkoatiivinen (myös: ingressiivinen) teonlaatu - mahdollisesti juuri siksi, että kyseessä ovat verbit, jotka ilmaisevat toiminnan <em>alkamista</em>. <strong>Inkoatiivinen teonlaadun verbit ovat aspektiltaan perfektiivisiä</strong>. On myös syytä kiinnittää huomiota siihen, että inkoatiivinen teonlaatu esiintyy vain intransitiiviverbeillä.</p>
+<h2 id="muodostaminen"><span class="header-section-number">1.1</span> Muodostaminen</h2>
+<p>Inkoatiivisen teonlaadun muodostamisessa käytetään useimmiten <em>за</em>-prefiksiä, mutta myös <em>по</em>-prefiksiä ja joskus <em>вз</em>-prefiksiä</p>
+<h2 id="esimerkkejä"><span class="header-section-number">1.2</span> Esimerkkejä</h2>
+<p>Inkoatiivisen teonlaadun verbejä muodostetaan usein muun muassa akustista (2) tai visuaalista (3) aistihavaintoa kuvaavista sanoista:</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Я почти <em>зааплодировал</em>, когда ведущая программы задала очевидный вопрос : “Почему CBC ( а на самом деле , большинство СМИ ) не беспокоятся о том , что они глубоко оскорбляют христиан”</li>
+<li>Постой! ― Глаза её обрадованно <em>засияли.</em> ― Кажется, где-то осталась бутылка коньяку, которую мы с тобой не допили.</li>
+</ol>
+<p>Myös subjektin aktiivista toimintaa kuvaavat verbit ovat tavallisia:</p>
+<ol start="4" style="list-style-type: decimal">
+<li>И судьбой артиста не интересуемся, пока он не <em>запьет</em>, не повесится или в отчаянии не начнет публично перетряхивать постельное белье» <span class="citation">(moskva.bezformata.ru n.d.)</span></li>
+</ol>
+<p>Koska пo-prefiksi on niin produktiivinen, sen avulla muodostettu verbi edustaa inkoatiivista teonlaatua vain harvoin. Joitakin tapauksia kuitenkin on:</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Они <em>полюбили</em> друг друга.</li>
+</ol>
+<p>Esimerkissä 5 полюбить voidaan tulkita nimenomaan rakastamisen alkamiseksi, siis rakastumiseksi. Verbi voisi saada, joskaan ei todennäköisesti, myös päämäärää/kestoa ilmaisevan määreen kuten <em>на всю жизнь</em>.</p>
+<p>Liikeverbeihin on tässä merkityksessä syytä kiinnittää erityistä huomiota. Duratiivisen liikkeen alkamista kuvattaessa käytetään по-prefiksiä, iteratiivisen liikkeen alkamista kuvattaessa puolestaa за-prefiksiä. Huomaa, että vaikka etuliitteelliset iteratiiviset liikeverbit ovat tavallisesti imperfektiivisiä, inkoatiivista teonlaatua edustaessaan ne ovat <em>perfektiivisiä</em></p>
+<ol start="6" style="list-style-type: decimal">
+<li>Больной встал и <em>заходил</em></li>
+<li>Он бросился в море и <em>поплыл</em> к острову Дело</li>
+</ol>
+<p>В(з/с)-prefiksi on inkoatiivisen teonlaadun muodostamisessa harvinainen, ja siihen liittyy usein selkeä ekspressiivinen lisänyanssi, niin että nämä tapaukset tulevat käytännössä yksinomaan puhekielen piiristä <span class="citation">(Исаченко 2014: 230)</span>.</p>
+<ol start="8" style="list-style-type: decimal">
+<li>Тогда боярин Ковшегуб, сидящий в углу харчевни и пьющий сусло , ударил кулаком по столу и <em>вскричал</em> : “Кто есть сей?” <span class="citation">(tramwaj.narod.ru n.d.)</span></li>
+</ol>
+<h1 id="delimitatiivinen-онграничительный-teonlaatu"><span class="header-section-number">2</span> Delimitatiivinen (онграничительный) teonlaatu</h1>
+<p>Delimitatiivinen teonlaatu kuvaa toiminnan <em>ajallisesti rajoitettuna</em>. Toiminta esitetään totaalisena, rajattuna kokonaisuutena, joka kestää vain tietyn ajan. Isachenko <span class="citation">(2014: 235)</span> huomauttaa, että ajallinen rajoittuneisuus on tässä yhteydessä suhteellista: delimitatiivisen verbin, kuten <em>поработать</em>, osoittama konkreettinen ajanjakso voi vaihdella sekunneista vuosiin.</p>
+<h2 id="muodostaminen-1"><span class="header-section-number">2.1</span> Muodostaminen</h2>
+<p>Suurimmassa osassa tapauksia Delimitatiivinen teonlaatu muodostetaan imperfektiivisen aspektin prefiksittömistä verbeistä по-prefiksin avulla. Harvinaisena poikkeuksena voi mainita вз-prefiksin + ну-suffiksin liitettynä дремать-verbiin (torkkua).</p>
+<ol start="9" style="list-style-type: decimal">
+<li>А я, пожалуй, пойду вздремну после обеда. <span class="citation">(literatura1.narod.ru n.d.)</span></li>
+</ol>
+<h2 id="esimerkkejä-1"><span class="header-section-number">2.2</span> Esimerkkejä</h2>
+<p>Hyvin usein delimitatiivisen teonlaadun verbi muodostetaan intransitiiviverbeistä, kuten esimerkeissä 10–12.</p>
+<ol start="10" style="list-style-type: decimal">
+<li>Я <em>постоял</em>, <em>покашлял</em>, вздохнул ― старик всё спал. <span class="citation">(Домбровский 1978)</span></li>
+<li>Каждый должен поставить себе целью – хорошо выполнить работу и получить за нее хорошее вознаграждение. Когда работа кончена, можно <em>повеселиться</em> <span class="citation">(marketingsamara.narod.ru n.d.)</span></li>
+<li>“Большинство спектаклей для детей повсеместно сделаны по железным рецептам” старым казачьим способом “: <em>поговорили</em>, <em>попели</em>, <em>потанцевали.</em> <span class="citation">(сцена 2006)</span></li>
+</ol>
+<p>Delimitatiivinen teonlaatu on tavallinen ja produktiivinen, mutta läheskään kaikista verbeistä muodostus ei silti ole mahdollista. Jos verbin valenssiin kuuluu objekti (toisin sanoen, jos verbi ei voi esiintyä ilman objektia), delimitatiivinen teonlaatu on epätodennäköinen (vrt. esim. <em>любить</em>). Samaten delimitatiivinen teonlaatu on käytännössä mahdoton sellaisilla pysyvää tilaa ilmaisevilla verbeillä kuin <em>иметь</em> ja <em>знать.</em></p>
+<h1 id="attenuatiivinen-смягчительный-teonlaatu"><span class="header-section-number">3</span> Attenuatiivinen (смягчительный) teonlaatu</h1>
+<p>По-etuliite voi rajoittaa toimintaa muussakin kuin ajallisessa mielessä. Tietyt по-prefiksillä tai eräillä muilla prefikseillä muodostetut verbit ilmaisevat toiminnan <em>vähemmän intensiivisenä</em>, ikään kuin lievempänä tai vain laimeasti toteutettuna. Näiden verbien teonlaadun voi analysoida <em>attenuatiiviseksi</em>.</p>
+<h2 id="muodostaminen-2"><span class="header-section-number">3.1</span> Muodostaminen</h2>
+<p>По-prefiksin lisäksi attenuatiivinen teonlaatu muodostetaan joissakin tapauksissi при- tai под-prefikseillä. Huomionarvoista on, että muodostuksen lähtökohtana ovat jo valmiiksi prefiksilliset perfektiivisen aspektin verbit.</p>
+<h2 id="esimerkkejä-2"><span class="header-section-number">3.2</span> Esimerkkejä</h2>
+<p>Esimerkissä 13 по-prefiksi on liitetty привыкнуть-verbiin, jolloin kyse ei ole siitä, että Euroopassa ja Yhdysvalloissa oltaisiin kokonaan totuttu puheena oleviin tapahtumiin, vaan siitä, että “jonkinlaista tottumista on jo havaittavissa”:</p>
+<ol start="13" style="list-style-type: decimal">
+<li>Знаешь, когда играешь в Европе, в Штатах, создается ощущение, что люди <em>попривыкли</em> к такого рода мероприятиям. Здесь же видно, что им все более в новинку. <span class="citation">(www.xdance.ru n.d.)</span></li>
+</ol>
+<p>Esimerkeissä 14 – 15 on kuvattu при- ja под-prefikseillä muodostettuja attenuatiivisia verbejä.</p>
+<ol start="14" style="list-style-type: decimal">
+<li>Трава – сухая, длинная, скользкая, по ней съезжаешь вниз словно по льду. Решили <em>присесть</em> <span class="citation">(www.control-point.ru n.d.)</span></li>
+<li>Как и «Мальва» Горького. Сюжет уже подзабыл , но помню, что сердце разрывалось от восторга. <span class="citation">(www.sinergia-lib.ru n.d.)</span></li>
+</ol>
+<p>Esimerkin 14 <em>присесть</em> on sikäli poikkeuksellinen attenuatiivisen teonlaadun verbi, että se on muodostettu prefiksittömästä perfektiivisen aspektin verbistä. Esimerkin 15 kaltaisia verbejä ei puolestaan Isachenkon <span class="citation">(2014: 240)</span> mukaan voi pitää varsinaisina teonlaatuina, koska niistä voidaan hyvin säännönmukaisesti muodostaa myös aspektipareja (<em>подзабывать</em>).</p>
+<h1 id="diskontinuatiivis-attenuatiivinen-прерывисто-смягчительный-teonlaatu"><span class="header-section-number">4</span> Diskontinuatiivis-attenuatiivinen (прерывисто-смягчительный) teonlaatu</h1>
+<p>Siinä missä attenuatiivinen teonlaatu samoin kuin muut edellä käsitellyt teonlaadut ovat olleet perfektiivisiä, diskontinuatiivis-attenuatiivisen teonlaadun verbit edustavat imperfektiivistä aspektia. Aivan kuten Attenuatiivinen teonlaatu, myös diskontinuatiivis-attenuatiivinen teonlaatu ilmaisee toimintaa alennetulla intensiteetillä, mutta samalla läsnä on ajallinen ulottuvuus: toimintaan liittyy epäsäännöllinen toistuvuus.</p>
+<h2 id="muodostaminen-3"><span class="header-section-number">4.1</span> Muodostaminen</h2>
+<p>Diskontinuatiivis-attenuatiivisen teonlaadun muodostaminen on monimutkaisempaa kuin edellä käsiteltyjen muiden teonlaatujen siinä mielessä, että muodostukseen tarvitaan paitsi prefiksi (по), myös suffiksi (yleensä <em>ива</em> tai <em>ыва</em>).</p>
+<h2 id="esimerkkejä-3"><span class="header-section-number">4.2</span> Esimerkkejä</h2>
+<p>Tyypillisiä diskontinuatiivis-attenuatiivisen teonlaadun verbejä ovat esimerkiksi похрапывать ja посмеиваться.</p>
+<ol start="16" style="list-style-type: decimal">
+<li>В вагоне уже установилась тишина, слышно было, как кто-то уже <em>похрапывал</em> <span class="citation">(6film.ru n.d.)</span></li>
+<li>Они добродушно <em>посмеивались</em>, выходили из рядов и хлопали красногвардейцев по плечу с полунасмешливыми, полувосторженными замечаниями… <span class="citation">(gomora.narod.ru n.d.)</span></li>
+</ol>
+<p>Teonlaatu on kuitenkin produktiivinen, ja myös yksittäistä tilannetta varten muodostetut tyylillisesti värittyneet verbimuodot ovat mahdollisia, kuten esimerkissä 18 verbistä лежать muodostettu полёживать:</p>
+<ol start="18" style="list-style-type: decimal">
+<li>В теплой водичке у самого берега обожают <em>полеживать</em> малоприятные рыбы и морские ежи.</li>
+</ol>
+<h1 id="resultatiivisten-teonlaatujen-ryhmä-результативные-способы-действия"><span class="header-section-number">5</span> Resultatiivisten teonlaatujen ryhmä (результативные способы действия)</h1>
+<p>A. V. Isachenkon <span class="citation">(2014: 242)</span> mukaan kaikkein selkeimmin perfektiivisen aspektin ominaispiirteitä ilmaisevat verbit, jotka edustavat jotakin <em>resultatiivisista teonlaaduista</em>. Tällä Isachenko tarkoittaa joukkoa teonlaatuja, jotka kaikki ilmaisevat jollain tapaa tuloksen saavuttamista. Seuraavaan on lyhyesti koottu merkittävimpiä tästä teonlaatujen ryhmästä</p>
+<h2 id="perduratiivinen-пердуративныйдлительно-ограничительный"><span class="header-section-number">5.1</span> Perduratiivinen (пердуративный/длительно-ограничительный)</h2>
+<p>Perduratiivisen teonlaadun verbit ilmaisevat jonkin prosessin suorittamista loppuun tietyssä ajassa. Perduratiivinen teonlaatu muodostetaan liittämällä prefiksittömään imperfektiivisen aspektin verbiin про-prefiksi.</p>
+<p>Tavallinen perduratiivisessa teonlaadussa esiintyvä verbi on esimerkiksi <em>проспать</em>:</p>
+<ol start="19" style="list-style-type: decimal">
+<li>Как мне потом сказали, <em>проспал</em> я 14 часов <span class="citation">(www.rusvera.mrezha.ru n.d.)</span></li>
+</ol>
+<p>Huomaa kuitnkin, että merkityksessä ‘nukkua pommiin’/‘olla huomaamatta jtkn’ проспать ei edusta perduratiivista teonlaatua:</p>
+<ol start="20" style="list-style-type: decimal">
+<li>Я <em>проспала</em> не потому, что «будильник не прозвенел», а потому, что «я его вечером забыла завести». <span class="citation">(nkozlov.ru n.d.)</span></li>
+</ol>
+<p>Hyvin yleinen perduratiivinen verbi on myös <em>прожить</em>:</p>
+<ol start="21" style="list-style-type: decimal">
+<li>Мы <em>прожили</em> здесь всего пять дней, так мало, но это дни нашей жизни, которые никогда больше не повторятся для нас <span class="citation">(www.markroytman.com n.d.)</span></li>
+</ol>
+<p>Perduratiivinen teonlaatu on kuitenkin produktiivinen ja se voidaan helposti muodostaa monista (erityisesti intransitiivisista) verbeistä:</p>
+<ol start="22" style="list-style-type: decimal">
+<li><em>Проучилась</em> 1 месяц, затем начала самостоятельные передвижения, стало получаться!</li>
+<li>Мы <em>проболтали</em> около часа, и затем я спросил не согласится ли она поужинать сегодня со мной. <span class="citation">(nkozlov.ru n.d.)</span></li>
+</ol>
+<h2 id="finitiivinen-финитивный"><span class="header-section-number">5.2</span> Finitiivinen (финитивный)</h2>
+<p>Finitiivinen teonlaatu painottaa, että toiminta on loppunut. Tämä teonlaatu muodostetaan от-prefiksillä ja on hyvin produktiivinen, mikä näkyy esimerkeistä</p>
+<ol start="24" style="list-style-type: decimal">
+<li>Дети, которые уже <em>отобедали</em>, высыпали во двор, чтобы заняться какими-нибудь играми. <span class="citation">(Искандер 1967)</span></li>
+<li>Ему оставалось <em>отдежурить</em> всего какой-нибудь месяц и ехать в Едо, а теперь он, по милости нашей, сидит полтора года, и Бог знает, сколько времени еще просидит! <span class="citation">(az.lib.ru n.d.)</span></li>
+<li>Я каждый вторник провожу семинар. Обычный профессор пришел, <em>отчитал</em> и ушел. А я должен шесть лет подряд, каждый вторник придумывать что–то новое. <span class="citation">(www.russkie.org n.d.)</span></li>
+</ol>
+<p>Finitiivisen teonlaadun yhteydessä tavataan usein rakennetta от + verbi + своё, jolloin toiminnan kuvataan saavuttaneen sille (puhujan mielestä) kuuluvan tai määrätyn ajan:</p>
+<ol start="27" style="list-style-type: decimal">
+<li>Директор <em>отговорил</em> своё и отошёл от последней витрины. <span class="citation">(Домбровский 1978)</span></li>
+<li>Государственная модель Российской империи <em>отжила</em> свое, социальные противоречия можно было снять только новыми решениями. <span class="citation">(Телицын 2006)</span></li>
+<li>Но Тэтчер <em>отработала</em> свое и ее выкинули на свалку как шестеренку — ее сделали маразматиком не помнящим многое из своей жизни. <span class="citation">(nstarikov.ru n.d.)</span></li>
+</ol>
+<h2 id="saturatiivinen"><span class="header-section-number">5.3</span> Saturatiivinen</h2>
+<p>Saturatiivisen teonlaadun verbit voidaan usein suomentaa lisäämällä verbiin määrite <em>kyllikseen</em>. Kyseessä on toiminta, joka kuvataan joko toistuneena riittävän monta kertaa tai riittävän kauan kestäneenä <span class="citation">(ks. Исаченко 2014: 246)</span>, niin ettei tekijä enää halua tai muusta syystä aio suorittaa toimintaa. Saturatiivinen teonlaatu muodostetaan liittämällä verbiin на-prefiksi sekä ся-suffiksi. Saturatiivinen teonlaatu muodostetaan ainoastaan intransitiivisista verbeistä.</p>
+<ol start="30" style="list-style-type: decimal">
+<li>И не может <em>нахвастаться</em> , какое красивое предложение он ей сделал, и как он её любит, и…и…и… <span class="citation">(eldom2.ru n.d.)</span></li>
+<li>Полдня из Москвы сюда добираюсь. Пересадки, теснота, духота. В Москве тоже с тяжелым рюкзаком по метро <em>натаскаешься</em> – мало не покажется. <span class="citation">(www.relgros.su n.d.)</span></li>
+<li>Довольно <em>нашутились</em> мы, пора и за дело! <span class="citation">(Зарин 1915)</span></li>
+</ol>
+<h2 id="kumulatiivinen-накопительный"><span class="header-section-number">5.4</span> Kumulatiivinen (накопительный)</h2>
+<p>Kumulatiivinen teonlaatu muistuttaa niin muodostukseltaan kuin jossain määrin myös merkitykseltään saturatiivista teonlaatua. Myös kumulatiivinen teonlaatu muodostetaan на-prefiksin avulla, kuitenkin ilman ся-suffiksia. Kumulatiivisen teonlaadun verbit kuvaavat toimintaa, joka saavuttaa (jonkin pidemmän tai lyhyemmän prosessin tuloksena) tietyn pisteen tai, kuten esimerkissä 33, tietyn määrän:</p>
+<ol start="33" style="list-style-type: decimal">
+<li>Такси <em>наездило</em> сто рублей</li>
+</ol>
+<p>Isachenko <span class="citation">(2014: 248)</span> erottaa varsinaiset kumulatiiviset verbit kuten esimerkin 33 <em>наездить</em> partitiivis-kumulatiivisista verbeistä, jotka muodostetaan transitiivisten verbien pohjalta ja saavat täydennyksekseen usein genetiivimuotoisen, määrää ilmaisevan substantiivin:</p>
+<ol start="34" style="list-style-type: decimal">
+<li>Это была ночная работа ― после своего рабочего забойного дня надо было <em>напилить</em> и <em>наколоть</em> дров на сутки <span class="citation">(Шаламов 1954)</span></li>
+<li>Помню где-то на 5-й день <em>навалило</em> снега так, что в гараж было невозможно въехать <span class="citation">(www.superjob.ru n.d.)</span></li>
+</ol>
+<p>Erityisen lähellä saturatiivista merkitystä ovat sellaiset kumulatiiviset verbit, jotka kuvaavat toiminnan määrän täyttymisen kielteisessä valossa. Huomaa, että saturatiivisesta teonlaadusta nämä verbit erottaa muun muassa se, että verbi saa edellä mainitun genetiivimuotoisen täydennyksen eikä esiinny intransitiivisesti:</p>
+<ol start="36" style="list-style-type: decimal">
+<li>Многие руководители делового мира, <em>наслушавшись</em> советов излишне самоуверенных адвокатов, отказывались от переговоров и подавали в суд <span class="citation">(oficery.ru n.d.)</span></li>
+</ol>
+<h1 id="momentaaninen-одноактныйонднократный-teonlaatu"><span class="header-section-number">6</span> Momentaaninen (одноактный/онднократный) teonlaatu</h1>
+<p>Momentaaninen teonlaatu tarkoittaa verbejä, jotka ilmaisevat jonkin monivaiheisen, monesta samanlaisesta liikkeestä koostuvan toiminnan yhden liikkeen eristettynä, yksittäisenä toimintakertana. Tätä merkitystä ilmaistaan myös suomessa verbijohdoksien avulla: esimerkiksi heiluttaa-verbistä voidaan muodostaa momentaaninen verbi <em>heilauttaa</em>, töniä-verbistä <em>tönäistä</em> ja niin edelleen.</p>
+<p>Isachenko <span class="citation">(2014: 253)</span> huomauttaa, että <em>momentaanisuuden</em> käsite on ongelmallinen siinä mielessä, että momentaaniset verbit eivät aina ilmaise tapahtumaa, joka kestäisi vain hetken. Esimerkiksi <em>кутить</em>-verbin (‘juhlia (räväkästi)’) pohjalta voidaan muodostaa momentaaninen <em>кутнуть</em>, mutta yksi juhlimiskerta joka tapauksessa kestäisi enemmän kuin vain yhden hetken. Tässä mielessä venäjänkielinen nimitys <em>однократный</em> on sopivampi.</p>
+<h2 id="muodostus"><span class="header-section-number">6.1</span> Muodostus</h2>
+<p>Tärkein momentaanisen toiminnan muodostuskeino on нуть-suffiksi. On kuitenkin syytä kiinnittää huomiota siihen, etteivät kaikki нуть-suffiksilla muodostetut perfektiivisen aspektin verbit ole teonlaadultaan momentaanisia.</p>
+<h2 id="esimerkkejä-4"><span class="header-section-number">6.2</span> Esimerkkejä</h2>
+<p>Tyypillisiä momentaanisesti esiintyviä verbejä ovat esimerkiksi <em>толкнуть</em>, <em>боднуть</em> (‘puskea’), <em>махнуть</em>, <em>прыгнуть</em> ja <em>зевнуть.</em></p>
+<ol start="37" style="list-style-type: decimal">
+<li>Приговоренный выглядел довольным тем, что выторговал себе меньший срок, и на прощание весело <em>махнул</em> рукой чернокожему блогеру Джорджу Мэппу, который регулярно навещал его в тюрьме <span class="citation">(www.compromat.ru n.d.)</span></li>
+<li>Я едва успел завопить нечто нечленораздельное и что есть силы вцепиться в край люка, как наша машина <em>боднула</em> автобус <span class="citation">(dem-mihailov.ru n.d.)</span></li>
+<li>Он <em>кашлянул</em>, <em>чертыхнулся</em><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>, откинул крючок и предстал перед ними. <span class="citation">(Домбровский 1964)</span></li>
+</ol>
+<h1 id="distributiivinen-дистрибутивныйраспределительный-teonlaatu"><span class="header-section-number">7</span> Distributiivinen (дистрибутивный/распределительный) teonlaatu</h1>
+<p>Distributiivisella teonlaadulla tarkoitetaan verbejä, joiden kuvaama toiminta joko suoritetaan useille objekteille tai on useiden subjektien suorittamaa.</p>
+<h2 id="muodostus-1"><span class="header-section-number">7.1</span> Muodostus</h2>
+<p>Tavallisimmin muodostimena on prefiksittömään imperfektiivisen aspektin verbiin liitettävä пере-suffiksi. On kuitenkin myös по-prefiksillä muodostettavia tapauksia, joskin nämä eroavat hieman merkitykseltään siinä, että пере-suffiksilla muodostettavissa verbeissä on selkeämmin läsnä ajatus siitä, että toiminta suoritetaan kullekin objektille vuoron perään. По-prefiksi liitetään tavallisesti prefiksillisiin imperfektiivisen aspektin verbeihin, kuten <span class="right-arrow">закрывать</span> <span class="afterarrow">позакрывать</span> (ks. esimerkki 43).</p>
+<h2 id="esimerkkejä-5"><span class="header-section-number">7.2</span> Esimerkkejä</h2>
+<p>Distributiivisessa teonlaadussa on kyse melko hienojakoisesta merkitysnyanssista, jonka sanallinen selittäminen tuottaa – kuten edellä olevasta yrityksestä voi havaita – melko kömpelöitäkin parafraaseja (toiminnan suorittaminen useille objekteille). Kyseessä ei kuitenkaan ole mikään erityisen harvinainen verbityyppi, ja etenkin tapauksia, joissa toiminta distributiivisesti suoritetaan kaikille <em>objekteille</em>, on jonkin verran. Niitä myös muodostetaan helposti, joten kyseessä on erityisesti пере-suffiksin osalta produktiivinen verbityyppi.</p>
+<ol start="40" style="list-style-type: decimal">
+<li>Я <em>пересмотрела</em> все январские кинопремьеры <span class="citation">(www.ustudy.ru n.d.)</span></li>
+<li>Например, во время дневного сна малыша не старайтесь <em>перестирать</em> всю одежду – поспите вместе с крохой. <span class="citation">(www.4youngmama.ru n.d.)</span></li>
+<li>За какой-то месяц их знакомства Гриша успел <em>перечинить</em> в доме все краны и поправить покосившиеся двери на шкафах на кухне <span class="citation">(myvektor.ru n.d.)</span></li>
+<li>Если к этому приложить справку с работы о хороших доходах, то банк может пойти навстречу и выдать новый кредит. Следующий шаг – <em>позакрывать</em> все имеющиеся у вас кредитки и погасить все долги по ним <span class="citation">(credit-school.ru n.d.)</span></li>
+</ol>
+<h1 id="komitatiivinen-сопроводительныйкомитативный-teonlaatu"><span class="header-section-number">8</span> Komitatiivinen (сопроводительный/комитативный) teonlaatu</h1>
+<p>Edellä kuvattuja teonlaatuja tarkastellessa voi huomata, että perfektiivisen aspektin verbeillä teonlaatuja on huomattavasti enemmän kuin imperfektiivisen aspektin verbeillä. Imperfektiivistä aspektia edustavista teonlaaduista voidaan kuitenkin vielä mainita esimerkiksi <em>komitatiivinen teonlaatu</em>.</p>
+<p>Komitatiivinen teonlaatu kuvaa toiminnan ikään kuin toissijaisena, toisen toiminnan ohella tapahtuvana toimintana.</p>
+<h2 id="muodostus-2"><span class="header-section-number">8.1</span> Muodostus</h2>
+<p>Komitatiivinen teonlaatu muodostetaan <em>под</em>- ja <em>при</em>-prefiksien sekä imperfektivoivien suffiksien (kuten <em>ива</em>) avulla. On kuitenkin huomattava, että esimerkiksi verbi <em>пригроваривать</em> ei komitatiivisessa teonlaadussa ole verbin <em>приговорить</em> aspektipari, koska näiden kahden verbin leksikaaliset merkitykset eroavat selvästi <span class="citation">(Исаченко 2014: 284)</span>.</p>
+<h2 id="esimerkkejä-6"><span class="header-section-number">8.2</span> Esimerkkejä</h2>
+<ol start="44" style="list-style-type: decimal">
+<li>Он жует резинку и что-то <em>пришептывает</em> в телефонную трубку <span class="citation">(Михаил Гиголашвили» 2007)</span></li>
+<li>Во многих храмах Москвы прихожане стараются <em>подпевать</em> <span class="citation">(www.nsad.ru n.d.)</span></li>
+</ol>
+</section>
+</article>
+<div class="references">
+<div id="ref-film6">
+<p>6FILM.RU (n.d.) 6film.ru. &lt;<a href="http://6film.ru/5700-neobychnaya-poezdka.-chast-2-sluchay.html" class="uri">http://6film.ru/5700-neobychnaya-poezdka.-chast-2-sluchay.html</a>&gt;</p>
+</div>
+<div id="ref-lib">
+<p>AZ.LIB.RU (n.d.) Az.lib.ru. &lt;<a href="http://az.lib.ru/g/goncharow_i_a/text_0084.shtml" class="uri">http://az.lib.ru/g/goncharow_i_a/text_0084.shtml</a>&gt;</p>
+</div>
+<div id="ref-batiukova2005aspectual">
+<p>BATIUKOVA, O. 2005. Aspectual function of russian verbal affixes. <em>Pierrette Bouillon Y Kyoko Kanzaki (Eds.)</em>, 36–45.</p>
+</div>
+<div id="ref-bondarko2015">
+<p>BONDARKO, A. 2005. <em>Теория морфологических категории и аспектологические исследования</em>. Moskova: Jazyki slavjanskoj kultury.</p>
+</div>
+<div id="ref-credit-school">
+<p>CREDIT-SCHOOL.RU (n.d.) Credit-school.ru. &lt;<a href="http://credit-school.ru/spravochnik/kak-ispravit-kreditnuyu-istoriyu.html" class="uri">http://credit-school.ru/spravochnik/kak-ispravit-kreditnuyu-istoriyu.html</a>&gt;</p>
+</div>
+<div id="ref-dem-mihailov">
+<p>DEM-MIHAILOV.RU (n.d.) Dem-mihailov.ru. &lt;<a href="http://dem-mihailov.ru/exo-vojny.html" class="uri">http://dem-mihailov.ru/exo-vojny.html</a>&gt;</p>
+</div>
+<div id="ref-eldom2">
+<p>ELDOM2.RU (n.d.) Eldom2.ru. &lt;<a href="http://eldom2.ru/oksana-strunkina/comment-page-11/" class="uri">http://eldom2.ru/oksana-strunkina/comment-page-11/</a>&gt;</p>
+</div>
+<div id="ref-gomora">
+<p>GOMORA.NAROD.RU (n.d.) Gomora.narod.ru. &lt;<a href="http://gomora.narod.ru/10_dnej.htm" class="uri">http://gomora.narod.ru/10_dnej.htm</a>&gt;</p>
+</div>
+<div id="ref-liter">
+<p>LITERATURA1.NAROD.RU (n.d.) Literatura1.narod.ru. &lt;<a href="http://literatura1.narod.ru/domoviata.htm" class="uri">http://literatura1.narod.ru/domoviata.htm</a>&gt;</p>
+</div>
+<div id="ref-ford">
+<p>MARKETINGSAMARA.NAROD.RU (n.d.) Marketingsamara.narod.ru. &lt;<a href="http://www.marketingsamara.narod.ru/fordnov.htm" class="uri">http://www.marketingsamara.narod.ru/fordnov.htm</a>&gt;</p>
+</div>
+<div id="ref-mosk">
+<p>MOSKVA.BEZFORMATA.RU (n.d.) Moskva.bezformata.ru. &lt;<a href="http://moskva.bezformata.ru/listnews/zakonchil-semki-novogo-filma/28644325/" class="uri">http://moskva.bezformata.ru/listnews/zakonchil-semki-novogo-filma/28644325/</a>&gt;</p>
+</div>
+<div id="ref-myvektor">
+<p>MYVEKTOR.RU (n.d.) Myvektor.ru. &lt;<a href="http://myvektor.ru/psihologija-otnoshenij/sistemno-vektornaya-psixologiya-pro-nasilie/" class="uri">http://myvektor.ru/psihologija-otnoshenij/sistemno-vektornaya-psixologiya-pro-nasilie/</a>&gt;</p>
+</div>
+<div id="ref-nikunlassi2002">
+<p>NIKUNLASSI, A. 2002. <em>Johdatus venäjän kieleen ja sen tutkimukseen</em>. Helsinki: Finn Lectura.</p>
+</div>
+<div id="ref-nkozlov">
+<p>NKOZLOV.RU (n.d.) Nkozlov.ru. &lt;<a href="http://nkozlov.ru/distance/s200/d1131/" class="uri">http://nkozlov.ru/distance/s200/d1131/</a>&gt;</p>
+</div>
+<div id="ref-nstarikov">
+<p>NSTARIKOV.RU (n.d.) Nstarikov.ru. &lt;<a href="http://nstarikov.ru/blog/14024" class="uri">http://nstarikov.ru/blog/14024</a>&gt;</p>
+</div>
+<div id="ref-oficery">
+<p>OFICERY.RU (n.d.) Oficery.ru. &lt;<a href="http://oficery.ru/security/1971" class="uri">http://oficery.ru/security/1971</a>&gt;</p>
+</div>
+<div id="ref-rassudova1984">
+<p>RASSUDOVA, O. 1984. <em>Aspectual usage in modern russian</em>. Moskova: Russky Yazyk.</p>
+</div>
+<div id="ref-tramwaj">
+<p>TRAMWAJ.NAROD.RU (n.d.) Tramwaj.narod.ru. &lt;<a href="http://www.tramwaj.narod.ru/Archive/95-023.htm" class="uri">http://www.tramwaj.narod.ru/Archive/95-023.htm</a>&gt;</p>
+</div>
+<div id="ref-www.4youngmama">
+<p>WWW.4YOUNGMAMA.RU (n.d.) Www.4youngmama.ru. &lt;<a href="http://www.4youngmama.ru/otnosheniya-v-seme/kak-pobedit-poslerodovuyu-depressiyu.htm" class="uri">http://www.4youngmama.ru/otnosheniya-v-seme/kak-pobedit-poslerodovuyu-depressiyu.htm</a>&gt;</p>
+</div>
+<div id="ref-compromat">
+<p>WWW.COMPROMAT.RU (n.d.) Www.compromat.ru. &lt;<a href="http://www.compromat.ru/page_35186.htm" class="uri">http://www.compromat.ru/page_35186.htm</a>&gt;</p>
+</div>
+<div id="ref-controlpoint">
+<p>WWW.CONTROL-POINT.RU (n.d.) Www.control-point.ru. &lt;<a href="http://www.control-point.ru/indoneziya/vulkan-na-yave-bromo-i-tayskie-zhenyi/" class="uri">http://www.control-point.ru/indoneziya/vulkan-na-yave-bromo-i-tayskie-zhenyi/</a>&gt;</p>
+</div>
+<div id="ref-markroytman">
+<p>WWW.MARKROYTMAN.COM (n.d.) Www.markroytman.com. &lt;<a href="http://www.markroytman.com/14.html" class="uri">http://www.markroytman.com/14.html</a>&gt;</p>
+</div>
+<div id="ref-www.nsad">
+<p>WWW.NSAD.RU (n.d.) Www.nsad.ru. &lt;<a href="http://www.nsad.ru//articles/bogosluzhebnye-teksty-dlya-obshhego-narodnogo-peniya-nedelya-17-ya-po-pyatidesyatnice-glas-8-mchch-se769rgiya-i-va769kha-18-20-oktyabrya" class="uri">http://www.nsad.ru//articles/bogosluzhebnye-teksty-dlya-obshhego-narodnogo-peniya-nedelya-17-ya-po-pyatidesyatnice-glas-8-mchch-se769rgiya-i-va769kha-18-20-oktyabrya</a>&gt;</p>
+</div>
+<div id="ref-relgros">
+<p>WWW.RELGROS.SU (n.d.) Www.relgros.su. &lt;<a href="http://www.relgros.su/osn_668_715.html" class="uri">http://www.relgros.su/osn_668_715.html</a>&gt;</p>
+</div>
+<div id="ref-russkie">
+<p>WWW.RUSSKIE.ORG (n.d.) Www.russkie.org. &lt;<a href="http://www.russkie.org/index.php?module=fullitem&amp;id=28068" class="uri">http://www.russkie.org/index.php?module=fullitem&amp;id=28068</a>&gt;</p>
+</div>
+<div id="ref-rusvera">
+<p>WWW.RUSVERA.MREZHA.RU (n.d.) Www.rusvera.mrezha.ru. &lt;<a href="http://www.rusvera.mrezha.ru/558/4.htm" class="uri">http://www.rusvera.mrezha.ru/558/4.htm</a>&gt;</p>
+</div>
+<div id="ref-sinerg">
+<p>WWW.SINERGIA-LIB.RU (n.d.) Www.sinergia-lib.ru. &lt;<a href="http://www.sinergia-lib.ru/index.php?page=kyrbatov_v_y" class="uri">http://www.sinergia-lib.ru/index.php?page=kyrbatov_v_y</a>&gt;</p>
+</div>
+<div id="ref-superjob">
+<p>WWW.SUPERJOB.RU (n.d.) Www.superjob.ru. &lt;<a href="http://www.superjob.ru/research/articles/359/zdes-kuryat/?next=75" class="uri">http://www.superjob.ru/research/articles/359/zdes-kuryat/?next=75</a>&gt;</p>
+</div>
+<div id="ref-www.ustudy">
+<p>WWW.USTUDY.RU (n.d.) Www.ustudy.ru. &lt;<a href="http://www.ustudy.ru/reviews/review/view/id/753" class="uri">http://www.ustudy.ru/reviews/review/view/id/753</a>&gt;</p>
+</div>
+<div id="ref-xdance">
+<p>WWW.XDANCE.RU (n.d.) Www.xdance.ru. &lt;<a href="http://www.xdance.ru/teksty/intervyu/dj-keoki-party-monster-polnoe-dermo-a-ne-film.html" class="uri">http://www.xdance.ru/teksty/intervyu/dj-keoki-party-monster-polnoe-dermo-a-ne-film.html</a>&gt;</p>
+</div>
+<div id="ref-dombr2">
+<p>ДОМБРОВСКИЙ, Ю.О. 1964. <em>Хранитель древностей, часть 1</em>.</p>
+</div>
+<div id="ref-dombr">
+<p>ДОМБРОВСКИЙ, Ю.О. 1978. <em>Факультет ненужных вещей, часть 4</em>.</p>
+</div>
+<div id="ref-zarin">
+<p>ЗАРИН, А.Е. 1915. Живой мертвец.</p>
+</div>
+<div id="ref-isachenko2014">
+<p>ИСАЧЕНКО, А. 2014. <em>Грамматический строй русского языка в сопоставлении с словацким. морфология. часть 1, 2</em>. Litres.</p>
+</div>
+<div id="ref-iskander">
+<p>ИСКАНДЕР, Ф. 1967. <em>Чик чтит обычаи</em>.</p>
+</div>
+<div id="ref-adskrai">
+<p>МИХАИЛ ГИГОЛАШВИЛИ», 2. 2007. Адский рай. <em>Зарубежные Записки</em>.</p>
+</div>
+<div id="ref-ekranits">
+<p>СЦЕНА, Э. и 2006. Экран и сцена.</p>
+</div>
+<div id="ref-telitsyn">
+<p>ТЕЛИЦЫН, В. 2006. Гражданская война: Переосмысливая известное. <em>Знание ― Сила</em>.</p>
+</div>
+<div id="ref-kolimras">
+<p>ШАЛАМОВ, В.Т. 1954. <em>Колымские рассказы</em>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Kysymykseen siitä, ovatko teonlaadut leksikaalinen ominaisuus vai ennemminkin itsenäinen kieliopillinen kategoria, ei ole selvää vastausta (<span class="citation">(ks. Batiukova 2005: 2)</span>) Tässä yhteydessä on nähdäkseni kuitenkin riittävä pitää teonlaatua nimenomaan leksikaalisena kategoriana erotukseksi erityismerkityksistä, jotka ovat aspektin kieliopillisen kategorian kontekstista riippuvaisia realisoitumia.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Способы действия. A.V. Isachenkolla: Совершаемости <span class="citation">(Исаченко 2014)</span>. Huomaa lisäksi kansainvälinen termi <em>Aktionsart.</em><a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>‘kirosi’<a href="#fnref3">↩</a></p></li>
+</ol>
+</div>
+</body>
+</html>

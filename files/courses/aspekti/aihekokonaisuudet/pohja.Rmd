@@ -1,0 +1,17 @@
+---
+bibliography: ../lahteet.bib
+csl: ../bratislava.csl
+numbersections: true
+---
+
+<article id='topbar'>
+Apekti- ja liikeverbiteoria > Aspekti >
+Aspektin sijaintiin vaikuttavat tekijät > Pragmaattiset tekijät > Konteksti > Erityismerkitykset vuorovaikutuksessa muihin tekijöihin 
+</article>
+
+<article class='container'>
+
+<section class='main'>
+
+</section>
+</article>
