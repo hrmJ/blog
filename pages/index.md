@@ -11,5 +11,5 @@
 
 Here are some presentations I've given at various events / courses etc.
 
-- [Vierailu suomen kielen syntaksin kurssilla](../pres/syntaksikurssi.html)
+- [Vierailu suomen kielen syntaksin kurssilla, maaliskuu 2018](../pres/syntaksikurssi.html)
 - [On the research ethics course on March 27, 2018 (University of Tampere)](../pres/tutkimusetiikka.html)
