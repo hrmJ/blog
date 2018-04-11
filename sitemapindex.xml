@@ -22,8 +22,20 @@
   <lastmod>2018-02-03T06:39:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://hrmJ.github.io/blog/categories/ggplot.xml</loc>
+  <lastmod>2018-04-11T09:48:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://hrmJ.github.io/blog/categories/graphics.xml</loc>
+  <lastmod>2018-04-11T09:48:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/lapply.xml</loc>
   <lastmod>2018-02-02T14:23:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://hrmJ.github.io/blog/categories/network.xml</loc>
+  <lastmod>2018-04-11T09:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/onyx-boox.xml</loc>
@@ -35,7 +47,7 @@
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/r.xml</loc>
-  <lastmod>2018-02-02T14:23:00Z</lastmod>
+  <lastmod>2018-04-11T09:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/scanning.xml</loc>
@@ -50,11 +62,15 @@
   <lastmod>2018-02-03T06:39:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://hrmJ.github.io/blog/categories/visualization.xml</loc>
+  <lastmod>2018-04-11T09:48:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://hrmJ.github.io/blog/rss.xml</loc>
-  <lastmod>2018-02-03T06:39:00Z</lastmod>
+  <lastmod>2018-04-11T09:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/sitemap.xml</loc>
-  <lastmod>2018-03-26T10:48:00Z</lastmod>
+  <lastmod>2018-04-11T09:57:00Z</lastmod>
  </sitemap>
 </sitemapindex>
