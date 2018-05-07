@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://hrmJ.github.io/blog/</loc>
-  <lastmod>2018-03-26T10:23:00Z</lastmod>
+  <lastmod>2018-05-07T12:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/2018/</loc>
@@ -15,11 +15,11 @@
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/archive.html</loc>
-  <lastmod>2018-04-11T10:41:00Z</lastmod>
+  <lastmod>2018-05-07T12:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/categories/</loc>
-  <lastmod>2018-04-11T10:41:00Z</lastmod>
+  <lastmod>2018-05-07T12:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/categories/cat_r-receipts/</loc>
@@ -32,6 +32,10 @@
  <url>
   <loc>https://hrmJ.github.io/blog/categories/contrastive-linguistics/</loc>
   <lastmod>2018-01-17T19:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://hrmJ.github.io/blog/categories/dplyr/</loc>
+  <lastmod>2018-05-07T12:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/categories/ebooks/</loc>
@@ -52,6 +56,10 @@
  <url>
   <loc>https://hrmJ.github.io/blog/categories/r/</loc>
   <lastmod>2018-01-17T19:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://hrmJ.github.io/blog/categories/sampling/</loc>
+  <lastmod>2018-05-07T12:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/categories/scanning/</loc>
@@ -240,6 +248,10 @@
  <url>
   <loc>https://hrmJ.github.io/blog/pages/presentations/</loc>
   <lastmod>2018-03-26T10:30:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://hrmJ.github.io/blog/posts/annotating-random-samples-in-r/</loc>
+  <lastmod>2018-05-07T12:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/posts/getting-readable-pdfs-from-scans/</loc>

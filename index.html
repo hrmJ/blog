@@ -10,7 +10,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://hrmJ.github.io/blog/">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/getting-readable-pdfs-from-scans/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/annotating-random-samples-in-r/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -69,7 +69,157 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/getting-readable-pdfs-from-scans/" class="u-url">Getting readable pdfs from scans</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/annotating-random-samples-in-r/" class="u-url">Annotating random samples in R</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Juho Härme
+            </span></p>
+            <p class="dateline"><a href="posts/annotating-random-samples-in-r/" rel="bookmark"><time class="published dt-published" datetime="2018-05-07T14:34:08+03:00" title="2018-05-07 14:34">2018-05-07 14:34</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/annotating-random-samples-in-r/#disqus_thread" data-disqus-identifier="cache/posts/annotating-random-samples-in-r.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>Years ago, when I was still working with my master's thesis, I used to do 
+a lot of manual annotating of data in a spreadsheet software (libreoffice calc, mainly).
+Now that R has firmly become my main tool for doing research, I've been thinking
+about what's the best way to, for instance, manually annotate a small sample
+of sentences from a data frame.</p>
+<h3>Random sampling with dplyr</h3>
+<p>First of all, I must say that during the last couple of months I've grown 
+more and more accustomed to using <a href="https://dplyr.tidyverse.org/">dplyr's</a> piping and data
+manipulation techniques. They have absolutely revolutionized the way I write
+R code nowadays. Here's one typical use case for me that has to do with 
+annotating samples.</p>
+<p>Consider <a href="posts/annotating-random-samples-in-r/" title="/data/headverbs.csv">this dataset</a> consisting of Finnish and Russian verbs:</p>
+<pre class="code literal-block"><span></span><span class="c1"># A tibble: 543 x 2</span>
+<span class="c1"># Groups:   lang [2]</span>
+   lang  headverb
+   <span class="o">&lt;</span>chr<span class="o">&gt;</span> <span class="o">&lt;</span>chr<span class="o">&gt;</span>
+ <span class="m">1</span> fi    saada
+ <span class="m">2</span> fi    tehdä
+ <span class="m">3</span> ru    провести
+ <span class="m">4</span> ru    принять
+ <span class="m">5</span> ru    получить
+ <span class="m">6</span> fi    voittaa
+ <span class="m">7</span> ru    опубликовать
+ <span class="m">8</span> fi    aloittaa
+ <span class="m">9</span> fi    antaa
+<span class="m">10</span> fi    ottaa
+<span class="c1"># ... with 533 more rows</span>
+</pre>
+
+
+<p>If my goal were to take a random sample of these verbs, <em>dplyr</em> offers the
+convenient function <code>sample_n</code>. So I can just do:</p>
+<pre class="code literal-block"><span></span><span class="o">&gt;</span> headverbs <span class="o">%&gt;%</span> sample_n<span class="p">(</span><span class="m">10</span><span class="p">)</span>
+<span class="c1"># A tibble: 10 x 2</span>
+   lang  headverb
+   <span class="o">&lt;</span>chr<span class="o">&gt;</span> <span class="o">&lt;</span>chr<span class="o">&gt;</span>
+ <span class="m">1</span> ru    вынести
+ <span class="m">2</span> ru    приговорить
+ <span class="m">3</span> fi    ampua
+ <span class="m">4</span> ru    пройти
+ <span class="m">5</span> fi    nimittää
+ <span class="m">6</span> ru    сдать
+ <span class="m">7</span> ru    предложить
+ <span class="m">8</span> ru    заказывать
+ <span class="m">9</span> ru    запретить
+<span class="m">10</span> fi    määrätä
+</pre>
+
+
+<p>Even better, using the <code>group_by</code> function, I can first group my data by language
+and then get a sample having <code>n</code> number of instances from both Finnish and Russian:</p>
+<pre class="code literal-block"><span></span><span class="o">&gt;</span> headverbs <span class="o">%&gt;%</span> group_by<span class="p">(</span>lang<span class="p">)</span> <span class="o">%&gt;%</span> sample_n<span class="p">(</span><span class="m">10</span><span class="p">)</span>
+<span class="c1"># A tibble: 20 x 2</span>
+<span class="c1"># Groups:   lang [2]</span>
+   lang  headverb
+   <span class="o">&lt;</span>chr<span class="o">&gt;</span> <span class="o">&lt;</span>chr<span class="o">&gt;</span>
+ <span class="m">1</span> fi    käydä
+ <span class="m">2</span> fi    avata
+ <span class="m">3</span> fi    korottaa
+ <span class="m">4</span> fi    pistää
+ <span class="m">5</span> fi    osoittaa
+ <span class="m">6</span> fi    uudistaa
+ <span class="m">7</span> fi    korjata
+ <span class="m">8</span> fi    kilpailuttaa
+ <span class="m">9</span> fi    todistaa
+<span class="m">10</span> fi    pelata
+<span class="m">11</span> ru    обыграть
+<span class="m">12</span> ru    проиграть
+<span class="m">13</span> ru    представлять
+<span class="m">14</span> ru    опубликовать
+<span class="m">15</span> ru    решить
+<span class="m">16</span> ru    комментировать
+<span class="m">17</span> ru    свести
+<span class="m">18</span> ru    испечь
+<span class="m">19</span> ru    перенести
+<span class="m">20</span> ru    взорвать
+</pre>
+
+
+<h3>Manual annotations</h3>
+<p>Now, in order to make manual annotations possible without leaving R I 
+wrote the following little function:</p>
+<pre class="code literal-block"><span></span>CheckSample_df <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>r<span class="p">,</span> cols_to_show<span class="p">,</span> backup_file<span class="o">=</span><span class="s">"/tmp/backup.txt"</span><span class="p">){</span>
+    content  <span class="o">&lt;-</span> <span class="kp">sapply</span><span class="p">(</span>r<span class="p">[</span>cols_to_show<span class="p">],</span><span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> <span class="kp">paste</span><span class="p">(</span><span class="kp">strwrap</span><span class="p">(</span>x<span class="p">,</span> <span class="m">79</span><span class="p">),</span>collapse<span class="o">=</span><span class="s">"\n"</span><span class="p">))</span>
+    <span class="kp">cat</span><span class="p">(</span><span class="s">"\n\n"</span><span class="p">,</span> <span class="kp">paste</span><span class="p">(</span>cols_to_show<span class="p">,</span>content<span class="p">,</span>sep<span class="o">=</span><span class="s">"\n=====\n"</span><span class="p">,</span>collapse<span class="o">=</span><span class="s">"\n\n"</span><span class="p">),</span><span class="s">"\n\n"</span><span class="p">)</span>
+    def <span class="o">&lt;-</span> <span class="kp">readline</span><span class="p">(</span><span class="s">"\nYour annotation:\n"</span><span class="p">)</span>
+    write_lines<span class="p">(</span><span class="kp">paste0</span><span class="p">(</span>
+                       <span class="kp">paste</span><span class="p">(</span>r<span class="p">[</span>cols_to_show<span class="p">],</span>collapse<span class="o">=</span><span class="s">"|"</span><span class="p">),</span>
+                       <span class="s">"|"</span><span class="p">,</span>def<span class="p">)</span>
+                <span class="p">,</span>backup_file<span class="p">,</span>append<span class="o">=</span><span class="bp">T</span><span class="p">)</span>
+    <span class="kr">return</span><span class="p">(</span>def<span class="p">)</span>
+<span class="p">}</span>
+</pre>
+
+
+<p>The function is designed to be called with <code>apply</code> (for a tutorial cf. e.g
+<a href="https://www.datacamp.com/community/tutorials/r-tutorial-apply-family">here</a>). 
+For the verb dataset above, if
+I wanted to define an additional column describing, e.g., my interpretation of
+the semantic class of each verb, I could do the following:</p>
+<pre class="code literal-block"><span></span>headverbs<span class="o">$</span>semantic_class <span class="o">&lt;-</span> <span class="kp">apply</span><span class="p">(</span>headverbs<span class="p">,</span><span class="m">1</span><span class="p">,</span>CheckSample_df<span class="p">,</span> cols_to_show<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">"lang"</span><span class="p">,</span><span class="s">"headverb"</span><span class="p">))</span>
+</pre>
+
+
+<p>The <code>cols_to_show</code> parameter defines, which columns are shown for the user to
+help with the annotation. The <code>backup_file</code> specifies a file the function copies
+the annotation results. This is a reasonable thing to do especially if you have a
+lot to annotate -- in case of R crashing in the middle of the process, 
+it's nice to have something to use as a basis for data recovery.</p>
+<p>If you're just interested in a simpler version that
+you can use with <code>sapply</code> , the function could be written this way:</p>
+<pre class="code literal-block"><span></span>CheckSample_simple <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>show_this<span class="p">,</span> backup_file<span class="o">=</span><span class="s">"/tmp/backup.txt"</span><span class="p">){</span>
+    <span class="kp">cat</span><span class="p">(</span><span class="s">"\n\n"</span><span class="p">,</span> <span class="kp">paste</span><span class="p">(</span><span class="kp">strwrap</span><span class="p">(</span>show_this<span class="p">,</span> <span class="m">80</span><span class="p">),</span> collapse<span class="o">=</span><span class="s">"\n"</span><span class="p">),</span> <span class="s">"\n\n"</span><span class="p">)</span>
+    def <span class="o">&lt;-</span> <span class="kp">readline</span><span class="p">(</span><span class="s">"Your annotation:"</span><span class="p">)</span>
+    write_lines<span class="p">(</span><span class="kp">paste0</span><span class="p">(</span>show_this<span class="p">,</span><span class="s">"|"</span><span class="p">,</span>def<span class="p">),</span>backup_file<span class="p">,</span>append<span class="o">=</span><span class="bp">T</span><span class="p">)</span>
+    <span class="kr">return</span><span class="p">(</span>def<span class="p">)</span>
+<span class="p">}</span>
+</pre>
+
+
+<h4>Fine-tuning with pbapply</h4>
+<p>One improvement to the aforementioned technique is to get some feedback on how
+you are progressing with the annotation process. A great tool for 
+this is the <a href="https://github.com/psolymos/pbapply">pbapply</a> package. We can
+just turn the previous command into:</p>
+<pre class="code literal-block"><span></span>headverbs<span class="o">$</span>semantic_class <span class="o">&lt;-</span> pbapply<span class="p">(</span>headverbs<span class="p">,</span><span class="m">1</span><span class="p">,</span>CheckSample_df<span class="p">,</span> cols_to_show<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">"lang"</span><span class="p">,</span><span class="s">"headverb"</span><span class="p">))</span>
+</pre>
+
+
+<p>And we get a nice progress bar indicating the work that has already been done
++ an estimate of the time remaining:</p>
+<pre class="code literal-block"><span></span>   <span class="o">|+++++</span>                                             <span class="o">|</span> <span class="m">9</span> % <span class="o">~</span><span class="m">02</span>m <span class="m">22</span>s
+</pre>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/getting-readable-pdfs-from-scans/" class="u-url">Getting readable pdfs from scans</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Juho Härme

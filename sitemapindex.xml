@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/cat_r-receipts.xml</loc>
-  <lastmod>2018-02-02T14:23:00Z</lastmod>
+  <lastmod>2018-05-07T12:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/cat_reading.xml</loc>
@@ -16,6 +16,10 @@
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/contrastive-linguistics.xml</loc>
   <lastmod>2018-02-02T14:23:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://hrmJ.github.io/blog/categories/dplyr.xml</loc>
+  <lastmod>2018-05-07T12:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/ebooks.xml</loc>
@@ -35,7 +39,11 @@
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/r.xml</loc>
-  <lastmod>2018-04-11T10:41:00Z</lastmod>
+  <lastmod>2018-05-07T12:26:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://hrmJ.github.io/blog/categories/sampling.xml</loc>
+  <lastmod>2018-05-07T12:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/scanning.xml</loc>
@@ -51,10 +59,10 @@
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/rss.xml</loc>
-  <lastmod>2018-04-11T10:41:00Z</lastmod>
+  <lastmod>2018-05-07T12:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/sitemap.xml</loc>
-  <lastmod>2018-04-11T10:43:00Z</lastmod>
+  <lastmod>2018-05-07T12:26:00Z</lastmod>
  </sitemap>
 </sitemapindex>

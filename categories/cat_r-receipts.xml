@@ -1,5 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NotSoTechnical (Posts about r receipts)</title><link>https://hrmJ.github.io/blog/</link><description></description><atom:link href="https://hrmJ.github.io/blog/categories/cat_r-receipts.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2018 &lt;a href="mailto:juho.harme@gmail.com"&gt;Juho Härme&lt;/a&gt; </copyright><lastBuildDate>Fri, 02 Feb 2018 14:23:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The setNames + (l)apply pattern</title><link>https://hrmJ.github.io/blog/posts/the-setnames-%2B-lapply-pattern/</link><dc:creator>Juho Härme</dc:creator><description>&lt;div&gt;&lt;p&gt;My research is, most of the time, about the differences and similarities
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NotSoTechnical (Posts about r receipts)</title><link>https://hrmJ.github.io/blog/</link><description></description><atom:link href="https://hrmJ.github.io/blog/categories/cat_r-receipts.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2018 &lt;a href="mailto:juho.harme@gmail.com"&gt;Juho Härme&lt;/a&gt; </copyright><lastBuildDate>Mon, 07 May 2018 12:26:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Annotating random samples in R</title><link>https://hrmJ.github.io/blog/posts/annotating-random-samples-in-r/</link><dc:creator>Juho Härme</dc:creator><description>&lt;div&gt;&lt;p&gt;Years ago, when I was still working with my master's thesis, I used to do 
+a lot of manual annotating of data in a spreadsheet software (libreoffice calc, mainly).
+Now that R has firmly become my main tool for doing research, I've been thinking
+about what's the best way to, for instance, manually annotate a small sample
+of sentences from a data frame.&lt;/p&gt;
+&lt;h3&gt;Random sampling with dplyr&lt;/h3&gt;
+&lt;p&gt;First of all, I must say that during the last couple of months I've grown 
+more and more accustomed to using &lt;a href="https://dplyr.tidyverse.org/"&gt;dplyr's&lt;/a&gt; piping and data
+manipulation techniques. They have absolutely revolutionized the way I write
+R code nowadays. Here's one typical use case for me that has to do with 
+annotating samples.&lt;/p&gt;
+&lt;p&gt;Consider &lt;a href="https://hrmJ.github.io/blog/posts/annotating-random-samples-in-r/" title="/data/headverbs.csv"&gt;this dataset&lt;/a&gt; consisting of Finnish and Russian verbs:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# A tibble: 543 x 2&lt;/span&gt;
+&lt;span class="c1"&gt;# Groups:   lang [2]&lt;/span&gt;
+   lang  headverb
+   &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;chr&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;chr&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+ &lt;span class="m"&gt;1&lt;/span&gt; fi    saada
+ &lt;span class="m"&gt;2&lt;/span&gt; fi    tehdä
+ &lt;span class="m"&gt;3&lt;/span&gt; ru    провести
+ &lt;span class="m"&gt;4&lt;/span&gt; ru    принять
+ &lt;span class="m"&gt;5&lt;/span&gt; ru    получить
+ &lt;span class="m"&gt;6&lt;/span&gt; fi    voittaa
+ &lt;span class="m"&gt;7&lt;/span&gt; ru    опубликовать
+ &lt;span class="m"&gt;8&lt;/span&gt; fi    aloittaa
+ &lt;span class="m"&gt;9&lt;/span&gt; fi    antaa
+&lt;span class="m"&gt;10&lt;/span&gt; fi    ottaa
+&lt;span class="c1"&gt;# ... with 533 more rows&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;If my goal were to take a random sample of these verbs, &lt;em&gt;dplyr&lt;/em&gt; offers the
+convenient function &lt;code&gt;sample_n&lt;/code&gt;. So I can just do:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; headverbs &lt;span class="o"&gt;%&amp;gt;%&lt;/span&gt; sample_n&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;# A tibble: 10 x 2&lt;/span&gt;
+   lang  headverb
+   &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;chr&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;chr&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+ &lt;span class="m"&gt;1&lt;/span&gt; ru    вынести
+ &lt;span class="m"&gt;2&lt;/span&gt; ru    приговорить
+ &lt;span class="m"&gt;3&lt;/span&gt; fi    ampua
+ &lt;span class="m"&gt;4&lt;/span&gt; ru    пройти
+ &lt;span class="m"&gt;5&lt;/span&gt; fi    nimittää
+ &lt;span class="m"&gt;6&lt;/span&gt; ru    сдать
+ &lt;span class="m"&gt;7&lt;/span&gt; ru    предложить
+ &lt;span class="m"&gt;8&lt;/span&gt; ru    заказывать
+ &lt;span class="m"&gt;9&lt;/span&gt; ru    запретить
+&lt;span class="m"&gt;10&lt;/span&gt; fi    määrätä
+&lt;/pre&gt;
+
+
+&lt;p&gt;Even better, using the &lt;code&gt;group_by&lt;/code&gt; function, I can first group my data by language
+and then get a sample having &lt;code&gt;n&lt;/code&gt; number of instances from both Finnish and Russian:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; headverbs &lt;span class="o"&gt;%&amp;gt;%&lt;/span&gt; group_by&lt;span class="p"&gt;(&lt;/span&gt;lang&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;%&amp;gt;%&lt;/span&gt; sample_n&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;# A tibble: 20 x 2&lt;/span&gt;
+&lt;span class="c1"&gt;# Groups:   lang [2]&lt;/span&gt;
+   lang  headverb
+   &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;chr&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;chr&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+ &lt;span class="m"&gt;1&lt;/span&gt; fi    käydä
+ &lt;span class="m"&gt;2&lt;/span&gt; fi    avata
+ &lt;span class="m"&gt;3&lt;/span&gt; fi    korottaa
+ &lt;span class="m"&gt;4&lt;/span&gt; fi    pistää
+ &lt;span class="m"&gt;5&lt;/span&gt; fi    osoittaa
+ &lt;span class="m"&gt;6&lt;/span&gt; fi    uudistaa
+ &lt;span class="m"&gt;7&lt;/span&gt; fi    korjata
+ &lt;span class="m"&gt;8&lt;/span&gt; fi    kilpailuttaa
+ &lt;span class="m"&gt;9&lt;/span&gt; fi    todistaa
+&lt;span class="m"&gt;10&lt;/span&gt; fi    pelata
+&lt;span class="m"&gt;11&lt;/span&gt; ru    обыграть
+&lt;span class="m"&gt;12&lt;/span&gt; ru    проиграть
+&lt;span class="m"&gt;13&lt;/span&gt; ru    представлять
+&lt;span class="m"&gt;14&lt;/span&gt; ru    опубликовать
+&lt;span class="m"&gt;15&lt;/span&gt; ru    решить
+&lt;span class="m"&gt;16&lt;/span&gt; ru    комментировать
+&lt;span class="m"&gt;17&lt;/span&gt; ru    свести
+&lt;span class="m"&gt;18&lt;/span&gt; ru    испечь
+&lt;span class="m"&gt;19&lt;/span&gt; ru    перенести
+&lt;span class="m"&gt;20&lt;/span&gt; ru    взорвать
+&lt;/pre&gt;
+
+
+&lt;h3&gt;Manual annotations&lt;/h3&gt;
+&lt;p&gt;Now, in order to make manual annotations possible without leaving R I 
+wrote the following little function:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;CheckSample_df &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kr"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;r&lt;span class="p"&gt;,&lt;/span&gt; cols_to_show&lt;span class="p"&gt;,&lt;/span&gt; backup_file&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"/tmp/backup.txt"&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+    content  &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;sapply&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;r&lt;span class="p"&gt;[&lt;/span&gt;cols_to_show&lt;span class="p"&gt;],&lt;/span&gt;&lt;span class="kr"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;x&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="kp"&gt;paste&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;strwrap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;x&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;79&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;collapse&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"\n"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="kp"&gt;cat&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"\n\n"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;paste&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;cols_to_show&lt;span class="p"&gt;,&lt;/span&gt;content&lt;span class="p"&gt;,&lt;/span&gt;sep&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"\n=====\n"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;collapse&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"\n\n"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="s"&gt;"\n\n"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    def &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;readline&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"\nYour annotation:\n"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    write_lines&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;paste0&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+                       &lt;span class="kp"&gt;paste&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;r&lt;span class="p"&gt;[&lt;/span&gt;cols_to_show&lt;span class="p"&gt;],&lt;/span&gt;collapse&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"|"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+                       &lt;span class="s"&gt;"|"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;def&lt;span class="p"&gt;)&lt;/span&gt;
+                &lt;span class="p"&gt;,&lt;/span&gt;backup_file&lt;span class="p"&gt;,&lt;/span&gt;append&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;T&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="kr"&gt;return&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;def&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;The function is designed to be called with &lt;code&gt;apply&lt;/code&gt; (for a tutorial cf. e.g
+&lt;a href="https://www.datacamp.com/community/tutorials/r-tutorial-apply-family"&gt;here&lt;/a&gt;). 
+For the verb dataset above, if
+I wanted to define an additional column describing, e.g., my interpretation of
+the semantic class of each verb, I could do the following:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;headverbs&lt;span class="o"&gt;$&lt;/span&gt;semantic_class &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;apply&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;headverbs&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;CheckSample_df&lt;span class="p"&gt;,&lt;/span&gt; cols_to_show&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"lang"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;"headverb"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;The &lt;code&gt;cols_to_show&lt;/code&gt; parameter defines, which columns are shown for the user to
+help with the annotation. The &lt;code&gt;backup_file&lt;/code&gt; specifies a file the function copies
+the annotation results. This is a reasonable thing to do especially if you have a
+lot to annotate -- in case of R crashing in the middle of the process, 
+it's nice to have something to use as a basis for data recovery.&lt;/p&gt;
+&lt;p&gt;If you're just interested in a simpler version that
+you can use with &lt;code&gt;sapply&lt;/code&gt; , the function could be written this way:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;CheckSample_simple &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kr"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;show_this&lt;span class="p"&gt;,&lt;/span&gt; backup_file&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"/tmp/backup.txt"&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+    &lt;span class="kp"&gt;cat&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"\n\n"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;paste&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;strwrap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;show_this&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;80&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; collapse&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"\n"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;"\n\n"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    def &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;readline&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Your annotation:"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    write_lines&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;paste0&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;show_this&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;"|"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;def&lt;span class="p"&gt;),&lt;/span&gt;backup_file&lt;span class="p"&gt;,&lt;/span&gt;append&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;T&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="kr"&gt;return&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;def&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;h4&gt;Fine-tuning with pbapply&lt;/h4&gt;
+&lt;p&gt;One improvement to the aforementioned technique is to get some feedback on how
+you are progressing with the annotation process. A great tool for 
+this is the &lt;a href="https://github.com/psolymos/pbapply"&gt;pbapply&lt;/a&gt; package. We can
+just turn the previous command into:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;headverbs&lt;span class="o"&gt;$&lt;/span&gt;semantic_class &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; pbapply&lt;span class="p"&gt;(&lt;/span&gt;headverbs&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;CheckSample_df&lt;span class="p"&gt;,&lt;/span&gt; cols_to_show&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"lang"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;"headverb"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;And we get a nice progress bar indicating the work that has already been done
++ an estimate of the time remaining:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="o"&gt;|+++++&lt;/span&gt;                                             &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="m"&gt;9&lt;/span&gt; % &lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="m"&gt;02&lt;/span&gt;m &lt;span class="m"&gt;22&lt;/span&gt;s
+&lt;/pre&gt;&lt;/div&gt;</description><category>dplyr</category><category>r</category><category>sampling</category><guid>https://hrmJ.github.io/blog/posts/annotating-random-samples-in-r/</guid><pubDate>Mon, 07 May 2018 11:34:08 GMT</pubDate></item><item><title>The setNames + (l)apply pattern</title><link>https://hrmJ.github.io/blog/posts/the-setnames-%2B-lapply-pattern/</link><dc:creator>Juho Härme</dc:creator><description>&lt;div&gt;&lt;p&gt;My research is, most of the time, about the differences and similarities
 between two languages, Finnish and Russian. Most of the stuff I deal with
 is quantitative by methodology and I tend to have large datasets in 
 the following format:&lt;/p&gt;
