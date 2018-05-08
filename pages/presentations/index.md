@@ -13,6 +13,7 @@ Here are some presentations I've given at various events / courses etc.
 
 ### 2018
 
+- [Kielitieteen päivät 2018](/pres/presentation_ktp.html)
 - [In oslo on April 12, 2018 ](/pres/presentation_oslo_students.html)
 - [In oslo on April 11, 2018 ](/pres/presentation_oslo.html)
 - [On the research ethics course on March 27, 2018 (University of Tampere)](/pres/tutkimusetiikka.html)
