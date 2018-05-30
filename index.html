@@ -10,7 +10,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://hrmJ.github.io/blog/">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/annotating-random-samples-in-r/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/annotating-random-samples-part-2/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -69,7 +69,65 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/annotating-random-samples-in-r/" class="u-url">Annotating random samples in R</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/annotating-random-samples-part-2/" class="u-url">Annotating random samples part 2</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Juho Härme
+            </span></p>
+            <p class="dateline"><a href="posts/annotating-random-samples-part-2/" rel="bookmark"><time class="published dt-published" datetime="2018-05-30T08:25:08+03:00" title="2018-05-30 08:25">2018-05-30 08:25</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/annotating-random-samples-part-2/#disqus_thread" data-disqus-identifier="cache/posts/annotating-random-samples-part-2.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>Just a quick follow-up on the previous post about manually annotating random
+samples. Yesterday I was facing a situation where I had to go and find some
+broader contexts for concordances fetched from a corpus of Finnish newspaper
+texts. These corpora don't allow access for more than a sentence, maximum
+a paragraph at a time, and I needed to look at whole texts. Luckily, I figured
+out that the city library has access to the electronic archives of many of the
+newspapers included in the corpus.</p>
+<p>So, I had a sample of 60 concordances I needed to get the full text for. The
+access to the full texts was provided only through the computers physically
+located in the library --  this meant that  I, sadly, didn't have the
+possibility of working with just R all the time. The easiest solution I came up with 
+was to quickly upload my data set to a Google sheet and then open that sheet 
+in the browser of the PC at the library. Fortunately, there is the nice
+<a href="https://github.com/jennybc/googlesheets">googlesheets</a> library that makes this easy.
+All I had to do, was:</p>
+<pre class="code literal-block"><span></span>devtools<span class="o">::</span>install_github<span class="p">(</span><span class="s">"jennybc/googlesheets"</span><span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>googlesheets<span class="p">)</span>
+</pre>
+
+
+<p>Then I converted an existing data frame (well, a tibble, actually), to a Google sheet by just:</p>
+<pre class="code literal-block"><span></span>samp_gsheet <span class="o">&lt;-</span> gs_new<span class="p">(</span><span class="s">"samp_press_fi"</span><span class="p">,</span>input<span class="o">=</span>samp_press_fi<span class="p">)</span>
+</pre>
+
+
+<p>...where <code>samp_press_fi</code> was the name of my tibble including the samples
+I wanted to get the contexts for. The command first takes you to Google
+authorization page, after which you're good to go. The nice thing about 
+googlesheets is, that after I got the contexts I needed, the data was automatically 
+updated in R by just, for instance:</p>
+<pre class="code literal-block"><span></span><span class="o">&gt;</span> samp_gsheet <span class="o">%&gt;%</span> gs_read
+Accessing worksheet titled <span class="s">'Sheet1'</span><span class="m">.</span>
+Downloading<span class="o">:</span> <span class="m">8.2</span> kB     Parsed with column specification<span class="o">:</span>
+cols<span class="p">(</span>
+  sent <span class="o">=</span> col_character<span class="p">(),</span>
+  sourcetext <span class="o">=</span> col_character<span class="p">(),</span>
+  location3 <span class="o">=</span> col_character<span class="p">(),</span>
+  group <span class="o">=</span> col_character<span class="p">(),</span>
+  context <span class="o">=</span> col_character<span class="p">()</span>
+<span class="p">)</span>
+</pre>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/annotating-random-samples-in-r/" class="u-url">Annotating random samples in R</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Juho Härme

@@ -15,11 +15,11 @@
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/archive.html</loc>
-  <lastmod>2018-05-07T12:26:00Z</lastmod>
+  <lastmod>2018-05-30T05:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/categories/</loc>
-  <lastmod>2018-05-07T12:26:00Z</lastmod>
+  <lastmod>2018-05-30T05:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/categories/cat_r-receipts/</loc>
@@ -40,6 +40,10 @@
  <url>
   <loc>https://hrmJ.github.io/blog/categories/ebooks/</loc>
   <lastmod>2018-02-03T06:27:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://hrmJ.github.io/blog/categories/googlesheets/</loc>
+  <lastmod>2018-05-30T05:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/categories/lapply/</loc>
@@ -252,6 +256,10 @@
  <url>
   <loc>https://hrmJ.github.io/blog/posts/annotating-random-samples-in-r/</loc>
   <lastmod>2018-05-07T12:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://hrmJ.github.io/blog/posts/annotating-random-samples-part-2/</loc>
+  <lastmod>2018-05-30T05:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/posts/getting-readable-pdfs-from-scans/</loc>
