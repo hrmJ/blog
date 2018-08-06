@@ -10,7 +10,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://hrmJ.github.io/blog/">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/annotating-random-samples-part-2/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/app-pick-gscholar/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -69,7 +69,57 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/annotating-random-samples-part-2/" class="u-url">Annotating random samples part 2</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/app-pick-gscholar/" class="u-url">App picks: gscholar, xapers</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Juho Härme
+            </span></p>
+            <p class="dateline"><a href="posts/app-pick-gscholar/" rel="bookmark"><time class="published dt-published" datetime="2018-08-06T12:22:09+03:00" title="2018-08-06 12:22">2018-08-06 12:22</time></a></p>
+                <p class="commentline">
+        
+    <a href="posts/app-pick-gscholar/#disqus_thread" data-disqus-identifier="cache/posts/app-pick-gscholar.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>Just a quick shout-out to <a href="https://github.com/venthur/gscholar">gscholar</a>. 
+Google scholar is, of course, a major part of my workflow in writing
+articles. I especially often use it to quickly grab a bibtex entry for 
+a reference I am using. Well, that process just got a nugde quicker, since
+I found a command line app to search for the bibtex entries.</p>
+<p>It's a python app, so just <code>pip install gscholar</code>. After that, run
+a query, e.g.  <code>gscholar "gelman prior distributions for variance parameters"</code>
+and you'll immediately get a bibtex output, which you can for instance pipe
+further to append to your <code>.bib</code> file. Awesome!</p>
+<p>Here is the output of the example query above:</p>
+<pre class="code literal-block"><span></span>@article{gelman2006prior,
+  title={Prior distributions for variance parameters in hierarchical models (comment on article by Browne and Draper)},
+  author={Gelman, Andrew and others},
+  journal={Bayesian analysis},
+  volume={1},
+  number={3},
+  pages={515--534},
+  year={2006},
+  publisher={International Society for Bayesian Analysis}
+}
+</pre>
+
+
+<p>Another related command line app worth mentioning is
+<a href="https://finestructure.net/xapers/">xapers</a>. It's a tool for indexing all your
+research-related pdfs into one big searchable databes of references. A full
+<code>.bib</code> file can be imported  (just add a <code>file={/pth/to/file.pdf}</code> line to your
+bibtex entries) by running <code>xapers import myrefs.bib</code>. After the import, you
+can search for any string that you remembered occured in some of the references
+(but can't remember which one) by just <code>xapers search 'find this string'</code>. If
+the file was found, just hit enter to open it with your default pdf viewer
+(<a href="https://pwmt.org/projects/zathura/">zathura, right?</a>) and repeat the search
+there to get the page number.</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/annotating-random-samples-part-2/" class="u-url">Annotating random samples part 2</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Juho Härme

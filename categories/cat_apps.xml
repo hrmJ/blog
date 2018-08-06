@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NotSoTechnical (Posts about apps)</title><link>https://hrmJ.github.io/blog/</link><description></description><atom:link href="https://hrmJ.github.io/blog/categories/cat_apps.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2018 &lt;a href="mailto:juho.harme@gmail.com"&gt;Juho Härme&lt;/a&gt; </copyright><lastBuildDate>Mon, 06 Aug 2018 09:35:56 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>App picks: gscholar, xapers</title><link>https://hrmJ.github.io/blog/posts/app-pick-gscholar/</link><dc:creator>Juho Härme</dc:creator><description>&lt;div&gt;&lt;p&gt;Just a quick shout-out to &lt;a href="https://github.com/venthur/gscholar"&gt;gscholar&lt;/a&gt;. 
+Google scholar is, of course, a major part of my workflow in writing
+articles. I especially often use it to quickly grab a bibtex entry for 
+a reference I am using. Well, that process just got a nugde quicker, since
+I found a command line app to search for the bibtex entries.&lt;/p&gt;
+&lt;p&gt;It's a python app, so just &lt;code&gt;pip install gscholar&lt;/code&gt;. After that, run
+a query, e.g.  &lt;code&gt;gscholar "gelman prior distributions for variance parameters"&lt;/code&gt;
+and you'll immediately get a bibtex output, which you can for instance pipe
+further to append to your &lt;code&gt;.bib&lt;/code&gt; file. Awesome!&lt;/p&gt;
+&lt;p&gt;Here is the output of the example query above:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;@article{gelman2006prior,
+  title={Prior distributions for variance parameters in hierarchical models (comment on article by Browne and Draper)},
+  author={Gelman, Andrew and others},
+  journal={Bayesian analysis},
+  volume={1},
+  number={3},
+  pages={515--534},
+  year={2006},
+  publisher={International Society for Bayesian Analysis}
+}
+&lt;/pre&gt;
+
+
+&lt;p&gt;Another related command line app worth mentioning is
+&lt;a href="https://finestructure.net/xapers/"&gt;xapers&lt;/a&gt;. It's a tool for indexing all your
+research-related pdfs into one big searchable databes of references. A full
+&lt;code&gt;.bib&lt;/code&gt; file can be imported  (just add a &lt;code&gt;file={/pth/to/file.pdf}&lt;/code&gt; line to your
+bibtex entries) by running &lt;code&gt;xapers import myrefs.bib&lt;/code&gt;. After the import, you
+can search for any string that you remembered occured in some of the references
+(but can't remember which one) by just &lt;code&gt;xapers search 'find this string'&lt;/code&gt;. If
+the file was found, just hit enter to open it with your default pdf viewer
+(&lt;a href="https://pwmt.org/projects/zathura/"&gt;zathura, right?&lt;/a&gt;) and repeat the search
+there to get the page number.&lt;/p&gt;&lt;/div&gt;</description><category>apps</category><category>citations</category><category>command-line</category><guid>https://hrmJ.github.io/blog/posts/app-pick-gscholar/</guid><pubDate>Mon, 06 Aug 2018 09:22:09 GMT</pubDate></item></channel></rss>

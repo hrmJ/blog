@@ -15,11 +15,19 @@
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/archive.html</loc>
-  <lastmod>2018-05-30T05:27:00Z</lastmod>
+  <lastmod>2018-08-06T09:35:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/categories/</loc>
-  <lastmod>2018-05-30T05:27:00Z</lastmod>
+  <lastmod>2018-08-06T09:35:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://hrmJ.github.io/blog/categories/apps/</loc>
+  <lastmod>2018-08-06T09:35:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://hrmJ.github.io/blog/categories/cat_apps/</loc>
+  <lastmod>2018-08-06T09:35:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/categories/cat_r-receipts/</loc>
@@ -28,6 +36,14 @@
  <url>
   <loc>https://hrmJ.github.io/blog/categories/cat_reading/</loc>
   <lastmod>2018-02-03T06:27:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://hrmJ.github.io/blog/categories/citations/</loc>
+  <lastmod>2018-08-06T09:35:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://hrmJ.github.io/blog/categories/command-line/</loc>
+  <lastmod>2018-08-06T09:35:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/categories/contrastive-linguistics/</loc>
@@ -260,6 +276,10 @@
  <url>
   <loc>https://hrmJ.github.io/blog/posts/annotating-random-samples-part-2/</loc>
   <lastmod>2018-05-30T05:27:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://hrmJ.github.io/blog/posts/app-pick-gscholar/</loc>
+  <lastmod>2018-08-06T09:35:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/posts/getting-readable-pdfs-from-scans/</loc>
