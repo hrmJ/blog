@@ -62,6 +62,10 @@
   <lastmod>2018-05-30T05:27:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://hrmJ.github.io/blog/categories/references-apps.xml</loc>
+  <lastmod>2018-08-08T08:45:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/sampling.xml</loc>
   <lastmod>2018-05-30T05:27:00Z</lastmod>
  </sitemap>
@@ -79,10 +83,10 @@
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/rss.xml</loc>
-  <lastmod>2018-08-06T09:35:00Z</lastmod>
+  <lastmod>2018-08-08T08:45:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/sitemap.xml</loc>
-  <lastmod>2018-08-06T09:35:00Z</lastmod>
+  <lastmod>2018-08-08T08:45:00Z</lastmod>
  </sitemap>
 </sitemapindex>
