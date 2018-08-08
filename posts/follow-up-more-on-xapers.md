@@ -17,6 +17,8 @@ by typing `xapers source2bib URL`,
 e.g. `xapers source2bib doi:10.1214/009053604000001048`.
 
 2. Or, why not, retrieve the paper to the local indexed database right away?
-So, assuming we've found an article on the internet, it is open access
-and has a doi, we can run: `xapers add --source=doi:10.1214/009053604000001048`
-and lo and behold, the paper appears in our database.
+So, assuming we've found an article with a doi on the internet,
+ we can run: `xapers add --source=doi:10.1214/009053604000001048`
+to add the paper to our index. If we also found a downloadable pdf,
+we can specify it 
+as well: `xapers add --source=doi:10.1214/009053604000001048 --file=/tmp/gelman2005.pdf`
