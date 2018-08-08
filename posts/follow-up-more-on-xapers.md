@@ -22,3 +22,7 @@ So, assuming we've found an article with a doi on the internet,
 to add the paper to our index. If we also found a downloadable pdf,
 we can specify it 
 as well: `xapers add --source=doi:10.1214/009053604000001048 --file=/tmp/gelman2005.pdf`
+
+3. To add a paper that was indexed this way to your local bibtex file, you can first use `xapers show`
+to view the entry in xapers and then hit `ALT-B` on the entry. This copies the bibtex entry
+of the paper to clipboard for you to paste it in your .bib file.
