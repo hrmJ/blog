@@ -13,6 +13,7 @@ Here are some presentations I've given at various events / courses etc.
 
 ### 2018
 
+- [In prague on September 24, 2018](/pres/presentation_prague.html)
 - [Kielitieteen päivät 2018](/pres/presentation_ktp.html)
 - [In oslo on April 12, 2018 ](/pres/presentation_oslo_students.html)
 - [In oslo on April 11, 2018 ](/pres/presentation_oslo.html)
