@@ -15,11 +15,11 @@
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/archive.html</loc>
-  <lastmod>2018-08-08T08:45:00Z</lastmod>
+  <lastmod>2018-11-06T11:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/categories/</loc>
-  <lastmod>2018-08-08T08:45:00Z</lastmod>
+  <lastmod>2018-11-06T11:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/categories/apps/</loc>
@@ -32,6 +32,10 @@
  <url>
   <loc>https://hrmJ.github.io/blog/categories/cat_r-receipts/</loc>
   <lastmod>2018-01-17T19:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://hrmJ.github.io/blog/categories/cat_r/</loc>
+  <lastmod>2018-11-06T11:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/categories/cat_reading/</loc>
@@ -72,6 +76,10 @@
  <url>
   <loc>https://hrmJ.github.io/blog/categories/pdf/</loc>
   <lastmod>2018-02-03T06:27:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://hrmJ.github.io/blog/categories/r-rmarkdown-bookdown/</loc>
+  <lastmod>2018-11-06T11:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/categories/r/</loc>
@@ -292,6 +300,10 @@
  <url>
   <loc>https://hrmJ.github.io/blog/posts/getting-readable-pdfs-from-scans/</loc>
   <lastmod>2018-02-03T06:27:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://hrmJ.github.io/blog/posts/setting-up-a-new-bookdown-project/</loc>
+  <lastmod>2018-11-06T11:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://hrmJ.github.io/blog/posts/the-setnames-%2B-lapply-pattern/</loc>

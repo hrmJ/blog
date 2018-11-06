@@ -1,5 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NotSoTechnical</title><link>https://hrmJ.github.io/blog/</link><description>Writing a phd with markdown in the humanities - and other notes from a wannabe developer</description><atom:link href="https://hrmJ.github.io/blog/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2018 &lt;a href="mailto:juho.harme@gmail.com"&gt;Juho Härme&lt;/a&gt; </copyright><lastBuildDate>Wed, 08 Aug 2018 08:54:27 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Follow-up: more on xapers</title><link>https://hrmJ.github.io/blog/posts/follow-up-more-on-xapers/</link><dc:creator>Juho Härme</dc:creator><description>&lt;div&gt;&lt;p&gt;A follow-up on the previous post about gscholar and xapers.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>NotSoTechnical</title><link>https://hrmJ.github.io/blog/</link><description>Writing a phd with markdown in the humanities - and other notes from a wannabe developer</description><atom:link href="https://hrmJ.github.io/blog/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2018 &lt;a href="mailto:juho.harme@gmail.com"&gt;Juho Härme&lt;/a&gt; </copyright><lastBuildDate>Tue, 06 Nov 2018 11:55:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Setting up a new bookdown project</title><link>https://hrmJ.github.io/blog/posts/setting-up-a-new-bookdown-project/</link><dc:creator>Juho Härme</dc:creator><description>&lt;div&gt;&lt;p&gt;I've been excited about writing my research in
+&lt;a href="https://rmarkdown.rstudio.com/"&gt;Rmarkdown&lt;/a&gt; for something like five years now,
+and have written basically all my academic work with it. The biggest project
+was my dissertation thesis, a monograph written entirely in Rmd.
+When writing something that large, or, actually, anything you 
+might want to split into different sections, you should definitely
+check out a recent development in the Rmarkdown universe, namely, the &lt;a href="https://bookdown.org/yihui/bookdown/"&gt;Bookdown&lt;/a&gt;
+package. In this post, I'll go through my basic setup 
+of a new bookdown project.&lt;/p&gt;
+&lt;h2&gt;1. Setting up the project folder&lt;/h2&gt;
+&lt;p&gt;I start with a fresh new folder with the following structure:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;bookdown/
+├── 01-intro.Rmd
+├── aux
+│   ├── preamble.tex
+│   ├── refs.bib
+│   └── utaltl.csl
+├── _bookdown.yml
+└── _output.yml
+&lt;/pre&gt;
+
+
+&lt;p&gt;Bookdown will try to get all the rmd files in the project folder
+and turn them into a single document. To make sure you have the right 
+order of files in the final output, it's safest to prefix the files
+with numbers. &lt;/p&gt;
+&lt;p&gt;The configuration of bookdown is done through the two &lt;a href="https://en.wikipedia.org/wiki/YAML"&gt;yaml&lt;/a&gt;
+files, &lt;code&gt;_bookdown.yml&lt;/code&gt; and'&lt;code&gt;_output.yml&lt;/code&gt; AND with a yaml block
+at the beginning of the first file of the project (in this case, &lt;code&gt;01-intro.Rmd&lt;/code&gt;).&lt;/p&gt;
+&lt;h3&gt;Basic configuration&lt;/h3&gt;
+&lt;p&gt;In a project I recently started, this is what the yaml block 
+in &lt;code&gt;01-intro.Rmd&lt;/code&gt; looks like:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;latexBackend&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;linguex&lt;/span&gt;
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;exampleRefFormat&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="s"&gt;'{}'&lt;/span&gt;
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;title&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="s"&gt;'Last&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;year&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;but&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;not&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;yesterday?&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;Explaining&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;differences&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;in&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;the&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;locations&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;of&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;Finnish&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;and&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;Russian&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;time&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;adverbials&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;using&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;comparable&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;corpora'&lt;/span&gt;
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;author&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;Juho Härme&lt;/span&gt;
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;bibliography&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;aux/refs.bib&lt;/span&gt;
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;link-citations&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;The options &lt;em&gt;latexBackend&lt;/em&gt; and &lt;em&gt;exampleRefFormat&lt;/em&gt; are specific 
+to my projects: they have to do with using linguistic examples
+in the text, which I do with my own fork of a &lt;a href="http://www.pandoc.org/filters.html"&gt;pandoc filter&lt;/a&gt;
+called &lt;a href="https://github.com/hrmJ/pangloss_linguex"&gt;pangloss&lt;/a&gt;. These
+lines should be left out if such a filter is not used.&lt;/p&gt;
+&lt;p&gt;Bibliography management and different outputs, output modification using cls
+or bib(la)tex and all those kinds of factors definitely deserve
+a separate post. For simplicity's sake, here I only
+use the default settings and simply define the location of the &lt;code&gt;.bib&lt;/code&gt;
+file containing my references in the format of a bibtex database.&lt;/p&gt;
+&lt;p&gt;The file &lt;code&gt;_bookdown.yaml&lt;/code&gt; is pretty simple, in this
+project I only have one line:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;delete_merged_file&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;h3&gt;Output configuration&lt;/h3&gt;
+&lt;p&gt;When writing Rmarkdown files, you can specify multiple output
+formats in &lt;code&gt;_output.yml&lt;/code&gt; and if you compile your 
+book with the &lt;a href="https://bookdown.org/yihui/bookdown/new-session.html"&gt;render_book function&lt;/a&gt;,
+without additional arguments, all those output formats will be produced.&lt;/p&gt;
+&lt;p&gt;Here, I have specified two output formats, &lt;em&gt;html&lt;/em&gt; and &lt;em&gt;pdf&lt;/em&gt; (produced with
+latex). The html is something I use when sketching and building the article / book.
+At that stage I usually have the pdf parts commented out. When the work is getting
+closer to be finished, I tend to switch to the pdf output.&lt;/p&gt;
+&lt;p&gt;Here's what my &lt;code&gt;_output.yml&lt;/code&gt; looks like&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;bookdown::gitbook:
+bookdown::pdf_book:
+  toc: true
+  toc_depth: 6
+  includes:
+    in_header: aux/preamble.tex
+  latex_engine: xelatex
+  keep_tex: true
+  pandoc_args:
+    - --filter
+    - pangloss
+    - --filter
+    - pandoc_avm
+&lt;/pre&gt;
+
+
+&lt;h3&gt;Auxiliary files&lt;/h3&gt;
+&lt;p&gt;As can be seen in the folder structure above, I use a separate folder called &lt;em&gt;aux&lt;/em&gt; to store
+my auxiliary files in. These include the bibliography database, possibly some additional pandoc
+filters, cls files and the like. One especially important file is the &lt;code&gt;preamble.tex&lt;/code&gt;, which
+loads all the needed latex packages and adjusts the final document's layout.&lt;/p&gt;
+&lt;h2&gt;Compiling the book&lt;/h2&gt;
+&lt;p&gt;I will probably write something about how to do this in Rstudio later on.
+Here's how the compilation of the book happens in R terminal.&lt;/p&gt;
+&lt;p&gt;First, make sure to (install and) load the bookdown library&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;library&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;bookdown&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Then, just run the &lt;code&gt;r render_book&lt;/code&gt; function by specifying at least one file to be included
+in the book:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;render_book&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"01-intro.Rmd"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;I actually tend to have a separate &lt;code&gt;.Rprofile&lt;/code&gt; file
+which includes all the libraries that need to be loaded
+etc. Place the file in the project's directory and
+you'll have you workspace set up the way you want it.&lt;/p&gt;
+&lt;p&gt;After the compilation, you'll see that
+the final output will end up in a folder called &lt;code&gt;_book&lt;/code&gt;
+which also includes a whole bunch
+of auxiliary files, especially for the gitbook type of html format.
+Here's the structure of my bookdown folder
+after the compilation process:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;bookdown/
+├── 01-intro.Rmd
+├── aux
+│   ├── preamble.tex
+│   ├── refs.bib
+│   └── utaltl.csl
+├── _book
+│   ├── a-real-section.html
+│   ├── introduction.html
+│   ├── libs
+│   │   ├── gitbook-2.6.7
+│   │   │   ├── css
+│   │   │   │   ├── fontawesome
+│   │   │   │   │   └── fontawesome-webfont.ttf
+│   │   │   │   ├── plugin-bookdown.css
+│   │   │   │   ├── plugin-fontsettings.css
+│   │   │   │   ├── plugin-highlight.css
+│   │   │   │   ├── plugin-search.css
+│   │   │   │   └── style.css
+│   │   │   └── js
+│   │   │       ├── app.min.js
+│   │   │       ├── jquery.highlight.js
+│   │   │       ├── lunr.js
+│   │   │       ├── plugin-bookdown.js
+│   │   │       ├── plugin-fontsettings.js
+│   │   │       ├── plugin-search.js
+│   │   │       └── plugin-sharing.js
+│   │   └── jquery-2.2.3
+│   │       └── jquery.min.js
+│   ├── _main.pdf
+│   ├── _main.tex
+│   └── search_index.json
+├── _bookdown.yml
+└── _output.yml
+&lt;/pre&gt;
+
+
+&lt;p&gt;The actual pdf output is the file &lt;code&gt;_book/_main.pdf&lt;/code&gt;. For the html
+output, just pick the  name of the first html file, in this case
+&lt;code&gt;introduction.html&lt;/code&gt;.&lt;/p&gt;&lt;/div&gt;</description><category>r rmarkdown bookdown</category><guid>https://hrmJ.github.io/blog/posts/setting-up-a-new-bookdown-project/</guid><pubDate>Tue, 06 Nov 2018 07:41:26 GMT</pubDate></item><item><title>Follow-up: more on xapers</title><link>https://hrmJ.github.io/blog/posts/follow-up-more-on-xapers/</link><dc:creator>Juho Härme</dc:creator><description>&lt;div&gt;&lt;p&gt;A follow-up on the previous post about gscholar and xapers.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Xapers is also quite useful in getting bibtex entries. If you know
