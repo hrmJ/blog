@@ -7,94 +7,98 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/apps.xml</loc>
-  <lastmod>2018-08-06T09:35:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/cat_apps.xml</loc>
-  <lastmod>2018-08-06T09:35:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://hrmJ.github.io/blog/categories/cat_posts.xml</loc>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/cat_r-receipts.xml</loc>
-  <lastmod>2018-05-30T05:27:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/cat_r.xml</loc>
-  <lastmod>2018-11-06T11:55:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/cat_reading.xml</loc>
-  <lastmod>2018-02-03T06:39:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/citations.xml</loc>
-  <lastmod>2018-08-06T09:35:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/command-line.xml</loc>
-  <lastmod>2018-08-06T09:35:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/contrastive-linguistics.xml</loc>
-  <lastmod>2018-02-02T14:23:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/dplyr.xml</loc>
-  <lastmod>2018-05-07T12:26:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/ebooks.xml</loc>
-  <lastmod>2018-02-03T06:39:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/googlesheets.xml</loc>
-  <lastmod>2018-05-30T05:27:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/lapply.xml</loc>
-  <lastmod>2018-02-02T14:23:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/onyx-boox.xml</loc>
-  <lastmod>2018-02-03T06:39:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/pdf.xml</loc>
-  <lastmod>2018-02-03T06:39:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/r-rmarkdown-bookdown.xml</loc>
-  <lastmod>2018-11-06T11:55:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/r.xml</loc>
-  <lastmod>2018-05-30T05:27:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/references-apps.xml</loc>
-  <lastmod>2018-08-08T08:54:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/sampling.xml</loc>
-  <lastmod>2018-05-30T05:27:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/scanning.xml</loc>
-  <lastmod>2018-02-03T06:39:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/scantailor.xml</loc>
-  <lastmod>2018-02-03T06:39:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/categories/tif.xml</loc>
-  <lastmod>2018-02-03T06:39:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/rss.xml</loc>
-  <lastmod>2018-11-06T11:55:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://hrmJ.github.io/blog/sitemap.xml</loc>
-  <lastmod>2018-11-06T11:55:00Z</lastmod>
+  <lastmod>2019-06-13T13:12:00Z</lastmod>
  </sitemap>
 </sitemapindex>
