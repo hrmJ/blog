@@ -1,0 +1,10 @@
+library(stats)
+library(methods)
+library(scales)
+library(phdR2)
+library(ggplot2)
+library(dplyr)
+library(rmarkdown)
+library(ggthemes)
+
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
