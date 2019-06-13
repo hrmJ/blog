@@ -11,6 +11,11 @@
 
 Here are some presentations I've given at various events / courses etc.
 
+### 2019
+
+- [Lectio praecursoria, June 14, 2019](/pres/lectio_praecursoria/presentation/presentation.html)
+
+
 ### 2018
 
 - [In prague on September 24, 2018](/pres/presentation_prague.html)

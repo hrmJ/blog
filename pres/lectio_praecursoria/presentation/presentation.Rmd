@@ -1,0 +1,171 @@
+---
+title: 'Ajanilmausten sijainnit suomessa ja venäjässä: kvantitatiivinen konstruktiotason näkökulma'
+author: 'Juho Härme'
+date: '14.6.2019'
+output:
+    ioslides_presentation:
+        logo: logo_both.png
+        widescreen: true  
+        includes:
+            after_body: after.html
+            in_header: header.html
+css: pres.css
+---
+
+
+
+---
+
+<div class='glossme'>
+<p>eilen minä puhuin kallen kanssa uudesta työpaikastani. hän oli innoissaan...</p>
+<p>yesterday i talk-imp kalle-gen with new-ela job-ela. he be-imp excited</p>
+<p>yesterday i talked to kalle about my new job. he was excited...</p>
+</div>
+
+---
+
+
+
+```{r}
+
+groups <- d %>% 
+  filter(group %in% c('L1a', 'L5a', 'L5b')) %>% 
+  count(lang, group, location3) %>% 
+  group_by( lang, group) %>% 
+  mutate(fr=n/sum(n)) 
+
+raw <- groups %>% 
+   filter(location3=='S1') %>% 
+   ungroup() %>% 
+   mutate(group=case_when(
+                          group == 'L1a' ~ 'eilen',
+                          group == 'L5b' ~ 'viime viikolla',
+                          group == 'L5a' ~ 'viime vuonna')) %>% 
+   mutate(lang=case_when(
+                          lang == 'fi' ~ 'Finnish',
+                          lang == 'ru' ~ 'Russian')) 
+
+plots <- lapply(c('eilen','viime viikolla','viime vuonna'), function(g){
+
+   return(
+          raw %>%
+            filter(group==g) %>%
+            ggplot(aes(x=lang, y=fr, fill=lang)) +
+            geom_bar(stat="identity" )  +
+            ggtitle(g) +
+            guides(fill=FALSE) +
+            geom_label(aes(label=paste0("n=",n)),color="white") + 
+            xlab("") + ylab("") +
+            theme_economist() + 
+            scale_fill_brewer(palette="Set1") +
+            theme(aspect.ratio = 2/1) +
+            scale_y_continuous(labels = scales::percent, limits=c(0,1.0))
+   )
+})
+
+```
+
+<div class="columncontainer">
+<div class="build">
+```{r fig.width=3, fig.height=5}
+plots[[1]]   
+```
+</div>
+<div class="build">
+```{r fig.width=3, fig.height=5}
+plots[[2]]
+```
+</div>
+<div class="build">
+```{r fig.width=3, fig.height=5}
+plots[[3]]
+```
+</div>
+</div>
+
+---
+
+
+<div class='glossme'>
+<p>Вчера вторая ракетка Открытого чемпионата Франции Мария Шарапова провела свой первый матч на парижских грунтовых кортах.</p>
+<p>Yesterday second-ranked tennis-player open-GEN championship-GEN France-GEN M. S. play-PRET POSS first match PREP parisian clay-PREP courts-PREP</p>
+<p>Yesterday the second-ranked tennis-player at the French Open M. S. played her first match on the clay courts of Paris. </p>
+</div>
+
+<!--
+eilen toinen tennispelaaja avoin-GEN mestaruuskilpailu-GEN Ranska-GEN Marija Šarapova suorittaa-PRET POSS ensimmäinen-ACC ottelu-ACC PREP pariisilaiset-PREP massa-PREP kentät-PREP
+\'[eilen] Ranskan avoimen tennisturnauksen toiseksi sijoitettu pelaaja Marija Šarapova pelasi ensimmäisen ottelunsa Pariisin massakentillä.\'
+-->
+
+---
+
+```{r}
+
+all_locs <- d %>% 
+  filter(group == 'L1a') %>% 
+  filter(subjtype == 'long') %>% 
+  count(location3, lang)%>% 
+  group_by(lang) %>% 
+  mutate(frlong=n/sum(n)*100) %>% 
+  left_join(
+   d %>% 
+    filter(group == 'L1a') %>% 
+    count(location3, lang)%>% 
+    group_by(lang) %>% 
+    mutate(frall=n/sum(n)*100), by="lang")
+
+just_l1  <- d %>% 
+  filter(group == 'L1a', location3=='S1') %>% 
+  count(subjtype, lang) %>% 
+  group_by(lang) %>% 
+  mutate(fr=n/sum(n))
+
+subjplots <- lapply(c('fi','ru'),function(l){
+return (just_l1 %>% 
+        filter(lang==l) %>%
+            ggplot(aes(x=lang,y=fr, fill=subjtype)) + 
+            geom_bar(stat="identity")  +
+            xlab("") + ylab("") +
+            theme_economist() + 
+            scale_fill_brewer(palette="Set1") +
+            theme(aspect.ratio = 2/1) +
+            scale_y_continuous(labels = scales::percent, limits=c(0,1.0)) +
+            geom_label(aes(label=paste0("n=",n)),color="white",position=position_stack(vjust=0.5)))  
+    })
+
+
+pverb1plot <- d %>% 
+  filter(group == 'L1a', location3=='S1') %>% 
+  mutate(hasPverb=case_when(
+                  (headverb %in% L1a_data_for_s2s3$publishverbs$ru$verbi |
+                   headverb %in% L1a_data_for_s2s3$publishverbs$fi$verbi) ~ "yes",
+                  T ~ "no")) %>% 
+  count(hasPverb, lang) %>% 
+  group_by(lang) %>% 
+  mutate(fr=n/sum(n)*100) %>% 
+  ggplot(aes(x=lang,y=fr, fill=hasPverb)) + 
+  geom_bar(stat="identity")  +
+  geom_label(aes(label=paste0("n=",n)),position=position_stack(vjust=0.5))
+
+
+```
+
+
+<div class="columncontainer2">
+<div class="build">
+```{r fig.width=3, fig.height=5}
+subjplots[[1]]   
+```
+</div>
+<div class="build">
+```{r fig.width=3, fig.height=5}
+subjplots[[2]]
+```
+</div>
+</div>
+
+---
+
+<div class='logo_container'>
+<img src='logo_both.png' width="400"/>
+</div>

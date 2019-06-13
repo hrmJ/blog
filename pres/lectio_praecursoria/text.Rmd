@@ -1,0 +1,314 @@
+```{r}
+library(phdR2)
+library(dplyr)
+
+```
+
+
+Mr Custos, Mr Opponent, ladies and gentlemen,
+
+Translation studies is a multi-faceted discipline with a large spectrum of
+different research topics and methods. My own interests have been, frankly, not
+in the absolute mainstream of this field. The focus of my dissertation in
+particular and my work as a researcher in general has not been, for instance,
+translating as a profession or the sociological aspects of working as an
+interpreter, but rather two languages and their differences on the level of
+grammar. It is my conviction that although the work that has been done in
+studying different phenomena surrounding the work of translators is valuable,
+we ought not to forget about the more linguistically oriented work that
+concentrates on the actual substance of translations, that is, the languages
+involved.
+
+The part of linguistics that is especially relevant for translation studies has
+traditionally been called contrastive linguistics, that is the close
+comparison of two or more languages, usually with respect to a certain quality
+or phenomenon.  Conducting  contrastive research -- as well as linguistics in a
+more general sense -- has experienced a rather large shift during the last
+couple of  decades. With the advent of large digitalized collections of texts
+-- usually referred to as *corpora* -- new possibilities have arisen and with
+the available corpora becoming larger and larger in size the nature of these
+possibilities has also changed. With regard to these possibilities
+and their implications to translation studies  there are two
+points I would like to make.
+
+The first point -- which has been true for quite some time -- is that we can
+now work in the direction of moving from observations to generalisations. That
+is, we can more realistically describe linguistic phenomena on the basis of
+real world data, not just by introspection.  The second point is that we can
+also study phenomena that cannot be easily presented  with a set of predefined
+rules -- in general, phenomena that are usually considered fuzzy or hard to get
+a hold on.  One such phenomenon is the theme of my dissertation, the comparison
+of word order in languages where it has traditionally been considered free.
+
+Let me give an illustration of how this works by using one of the questions
+addressed in the dissertation. Imagine a teacher teaching Finnish
+for students whose first language is Russian. A student has written 
+a text -- say, the assignment was to write an email -- with the following
+beginning [SCREEN]:
+
+>Eilen minä puhuin Kallen kanssa uudesta työpaikastani. Hän oli innoissaan...
+
+Now, the teacher might give a comment about the beginning of the email, saying
+something isn't quite right with it. She might say you probably shouldn't put
+the  adverbial in the beginning, although she probably cannot really explain
+why.  Or it might be the case that the teacher cannot even define what it is
+that is not "quite right" with the text. 
+
+Now, with an empirical approach and explicit comparison of two languages we
+can, first of all, find means of explaning why a certain construction does not
+"sound" right even though it is perfectly grammatical.  Secondly, we are able
+to higlight some potential things  you should be looking at when writing in
+your weaker language. That is, we can move the teachers and the learners
+towards using patterns that are known to be idiomatic. Instead of giving them a
+bucket full of lego blocks and instructions on how to attach individual blocks
+to one another we can show them examples of what is already known to look good
+and work and what is used frequently.
+
+```{r}
+
+groups <- d %>% 
+  filter(group %in% c('L1a', 'L5a', 'L5b')) %>% 
+  count(lang, group, location3) %>% 
+  group_by( lang, group) %>% 
+  mutate(fr=100*n/sum(n)) 
+
+ pl <- groups %>% 
+   filter(location3=='S1') %>% 
+   ungroup() %>% 
+   mutate(group=case_when(
+                          group == 'L1a' ~ 'eilen',
+                          group == 'L5b' ~ 'viime viikolla',
+                          group == 'L5a' ~ 'viime vuonna')) %>% 
+   mutate(lang=case_when(
+                          lang == 'fi' ~ 'Finnish',
+                          lang == 'ru' ~ 'Russian')) %>% 
+   ggplot(aes(x=lang, y=fr, fill=lang)) +
+   geom_bar(stat="identity" ) + 
+   geom_label(aes(label=paste0("n=",n))) + 
+   facet_grid( ~group)
+```
+
+```{r}
+pl
+
+```
+
+
+
+
+So, going back to the example on the screen and its connection to my
+dissertation. In one part of the thesis I make a comparison of three Finnish
+and Russian temporal expressions: viime vuonna, viime viiikolla and eilen. It
+turns out that these three have quite different usage patterns in Finnish and
+Russian. If we look at the Russian вчера, we can say that of a total of around
+4000 Russian SVO sentences it is used in the beginning in about 2500 cases (more
+than 60%). Of a total of 3000 Finnnish sentences, on the other hand, only about
+500 (less than 20%) have the adverbial in the beginning.  The difference
+between the languages is more than 40 percents (on the screen).  I will not go
+into the statistical details here. For the purposes of the current
+presentation, suffice it to say that the differences get
+smalller, if we compare "last week" and still smaller if we compare "last
+year.".
+
+So, when we look at sentences in isolation, the interlingual differences tend
+to look rather fuzzy and hard to explain, perhaps to the extent that one begins
+to doubt wether or not there even is any difference at all. Going back to the
+example on the screen, the teacher might not have any good way of describing
+why a particular example with a sentence-initial *eilen* doesn't sound quite
+right in Finnish or why a Russian student would write such a sentence in the
+first place. However, when we take a broader look at the usage of time
+adverbials in a large dataset, we can get clues on what kind of patterns
+are frequent and what are not. Clearly, the usage of vthsera at the beginning
+of the sentence forms a pattern that is not as strongly present in Finnish with
+the Finnish *eilen*. On the other hand, since the differences between Finnish
+and Russian are smaller when it comes to *last week* and especially
+*last year*, we can also discern that the patterns that are more frequent in Russian
+are at least somewhat peculiar to vtshera. Going back to the example, thinking about what is not quite
+right with the student's sentence, the teacher can at least say, that these
+kind of sentences seem to be more typical in Russian than in Finnish and simply
+inform the student that this is a fact he should be aware of when writing in Finnish.
+
+These kind of discoveries, however, pose a challenge to the researcher.
+Finding empirical differences between two languages is, of course, already a
+valuable insight by itself -- an insight that is beneficial from the
+perspective of language learners and, specifically, translators. Having
+knowledge about the frequency of different usage patterns is the type of skill
+that I don't think is discussed enough in translator education and should be
+encouraged. Nonetheless, general observations about the existence of these
+differences can only get us so far: it is another task to try to
+account for *why* it is the case that, for instance, the sentence-initial
+vtshera is so much more frequent in Russian than the sentence-initial eilen in
+Finnish.
+
+In trying to accomplish this task I have found it useful to make a distinction
+between what is sometimes called in the methodological literature direct and
+indirect evidence. The word orders of Finnish and Russian mostly serve
+pragmatic purposes, which means that by, for instance, positioning a time
+expression in location A rather than location B, the speaker or writer
+makes a choice about how to package information and in what tone or style
+he or she wants to deliver the information to his interlocutor or reader.
+The problem is, that these kind of choices are rather difficult to track
+down automatically for statistical analysis. About the only way to get *direct*
+evidence about the information packaging of a sentence would be to have somebody
+manually annotate the data for such notions as topic and focus or the activation
+states of different referents.
+
+One of the hypotheses I make in the dissertation concerning the question
+about why the sentence-inital vtshera is so frequent in Russian is that
+in Russian it is a typical strategy to construct a text by 
+starting a whole sequence with a time adverbial. 
+I have labelled these kind of usage patterns introductory  
+construcions, of which you can see one example on the screen:
+
+> Вчера вторая ракетка Открытого чемпионата Франции Мария Шарапова провела свой первый матч на парижских грунтовых кортах. (RuPress: Советский спорт)
+
+<!--
+eilen toinen tennispelaaja avoin-GEN mestaruuskilpailu-GEN Ranska-GEN Marija Šarapova suorittaa-PRET POSS ensimmäinen-ACC ottelu-ACC PREP pariisilaiset-PREP massa-PREP kentät-PREP
+\'[eilen] Ranskan avoimen tennisturnauksen toiseksi sijoitettu pelaaja Marija Šarapova pelasi ensimmäisen ottelunsa Pariisin massakentillä.\'
+-->
+
+Now if the hypothesis is that these kind of sentences are more typical for
+Russian than for Finnish, how could we characterize them? Clearly, an important
+feature is that since they are located at the beginning of a new sequence --
+usually a whole news story like in this case or some new episode in a narrative
+text -- they should contain words that refer to things new to the reader.  Or,
+to be more precise, they should contain referents that the reader
+is unaware of, that is, not thinking about at the moment of
+reading the sentence. So, one could probably test the hypothesis
+about the prevalence of the introductory construction by
+testing how often a sentence-initial vtshera is accompanied by referents
+that reader is not already thinking about.
+
+This is the crucial methodological point to make. How *can* you test such a
+thing as wether or not a person is probably thinking about a referent at the
+moment of reading a sentence -- especially when trying to analyze large masses
+of texts and not isolated examples? As mentioned, one way would be to have the texts
+annotated, so that someone would actually have read each sentence and then manually
+marked some words as referring to entities a potential reader is not thinking 
+about. That  would, however, be not only tedious, time-consuming and difficult, but also
+rather unreliable. And this is where the usage of indirect evidence 
+can be of great help.
+
+In my thesis I assess the introductory construction hypothesis by looking at
+two kinds of indirect evidence concerning the novelty of the referents in a
+sentence.  First, I analyze the length of subjects: my conclusion is that if a
+subject of a sentence consists of several words (like in the example on the
+screen) it is more likely to be referring to entities that have not yet been
+presented to the reader, whereas when a subject consists of only one word
+(say, if the example would have been just "Sharapova" or even more obviously
+"she") it is probably something that has just been mentioned. Secondly, I take a look 
+at the presence of certain kinds of verbs in a sentence with the assumption
+that words like *publish, announce, declare* and similar give a clue about
+something new being presented to the reader.
+
+When looking at Finnish and Russian examples with eilen or vtshera with the
+help of this kind of indirect evidence, one can make some interesting
+observations that take us further than just the initial finding about there
+being a difference in how often these expressions are used sentence-initally.
+Namely, it does seem to be the case that having a multi-word subject like in
+the example above or a verb like *publish* increases the probability of using
+the sentence-initial location in Russian compared to Finnish.  Again, the
+actual statistical models for testing these differences can be found in the
+thesis, but just as a quick overview let me mention some of the relevant
+percentages: 
+
+```{r}
+
+all_locs <- d %>% 
+  filter(group == 'L1a') %>% 
+  filter(subjtype == 'long') %>% 
+  count(location3, lang)%>% 
+  group_by(lang) %>% 
+  mutate(frlong=n/sum(n)*100) %>% 
+  left_join(
+   d %>% 
+    filter(group == 'L1a') %>% 
+    count(location3, lang)%>% 
+    group_by(lang) %>% 
+    mutate(frall=n/sum(n)*100), by="lang")
+
+just_l1  <- d %>% 
+  filter(group == 'L1a', location3=='S1') %>% 
+  count(subjtype, lang) %>% 
+  group_by(lang) %>% 
+  mutate(fr=n/sum(n)*100)
+
+subjplot <- just_l1 %>% 
+  ggplot(aes(x=lang,y=fr, fill=subjtype)) + 
+  geom_bar(stat="identity")  +
+  geom_label(aes(label=paste0("n=",n)),position=position_stack(vjust=0.5))
+
+
+pverb1plot <- d %>% 
+  filter(group == 'L1a', location3=='S1') %>% 
+  mutate(hasPverb=case_when(
+                  (headverb %in% L1a_data_for_s2s3$publishverbs$ru$verbi |
+                   headverb %in% L1a_data_for_s2s3$publishverbs$fi$verbi) ~ "yes",
+                  T ~ "no")) %>% 
+  count(hasPverb, lang) %>% 
+  group_by(lang) %>% 
+  mutate(fr=n/sum(n)*100) %>% 
+  ggplot(aes(x=lang,y=fr, fill=hasPverb)) + 
+  geom_bar(stat="identity")  +
+  geom_label(aes(label=paste0("n=",n)),position=position_stack(vjust=0.5))
+
+
+```
+
+
+```{r}
+subjplot
+```
+
+```{r}
+pverb1plot
+```
+
+My point here is not, however, to give a detailed description of the findings
+in my disertation, but rather to demonstrate the usefullness of certain kinds
+of empirical approaches in explaining interlingual differences that cannot be
+given clear-cut definitions or boundaries. The location of adverbials of time
+in Finnish and Russian are a prime example of such a case. Looking at these
+kind of phenomena from a birds-eye perspective using large amounts of data and
+trying to establish patterns, probabilities and tendencies is something that I
+think should become an integral part of training tranlators and interpreters
+and other multilingual communicators that are usually dealing with
+a specific pair or some specific pairs of langauges. After all, the argument
+can be made that linguistic knowledge in general is statistical by nature: 
+that is even L1 learners have been shown to be sensitive to frequencies and
+storing in their memory not just information about what a certain
+word or expression is but also about when and how often it is used.
+
+
+
+
+<!-- 
+In coclusion I want to, once again, emphasize, that the contribution
+I am  making with my dissertation ...
+
+...The kind of detailed contastive comparison demonstrated here
+and in the dissertation 
+
+
+[STILL SOMETHING!]
+
+-->
+
+So, in summary, what I have wanted to achieve with my dissertation project (and
+more generally as a researcher) is to collect information about the differences
+between Finnish and Russian. This aim has been quite practical in nature: to
+find out concrete use cases that can be used as a reference when thinking about
+the different possible locations of time expressions. As a result of the
+project I have produced concrete information about how one should change his or
+her ways of constructing discourse and ways of thinking about texts when
+writing or speaking in another language. This is the kind of information I
+myself found valuable when studying and it is my humble wish that the work I
+have produced in the form of the dissertation would become a source of this
+type of knowledege for anyone else working with the same kind of problems.
+
+
+Mr Opponent, I now call upon you to present your critical comments on my
+dissertation.
+
+
+
