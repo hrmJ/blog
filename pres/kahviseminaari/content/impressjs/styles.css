@@ -1,0 +1,21 @@
+.img-grid1{
+  display:grid;
+  grid-template-columns: 900px 300px;
+  grid-template-rows: 400px 450px;
+}
+.numbered-step-container{
+  display:grid;
+  grid-template-columns: 200px auto;
+}
+.numbered-step-container>div:first-child{
+  font-size:10em;
+}
+
+.results{
+  font-size: 2.3em;
+  width: 500px
+}
+
+.results li{
+  margin-bottom:1.3em;
+}
