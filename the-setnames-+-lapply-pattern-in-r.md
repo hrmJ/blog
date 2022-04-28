@@ -1,39 +1,34 @@
-<!--
-.. title: The setNames + (l)apply pattern
-.. slug: the-setnames-+-lapply-pattern
-.. date: 2018-01-13 13:28:19 UTC+02:00
-.. tags: r, lapply, contrastive linguistics
-.. category: r receipts
-.. link: 
-.. description: When comparing two languages, there are certain coding patterns you tend to use so frequently, they become a habit. The setNames + apply combination is certainly one of them.
-.. type: text
--->
+---
+title: The setNames + (l)apply pattern
+slug: the-setnames-+-lapply-pattern
+tags: r, lapply, contrastive linguistics
+type: text
+---
 
 My research is, most of the time, about the differences and similarities
 between two languages, Finnish and Russian. Most of the stuff I deal with
-is quantitative by methodology and I tend to have large datasets in 
+is quantitative by methodology and I tend to have large datasets in
 the following format:
 
-| lang&nbsp;&nbsp; | variable_A&nbsp;&nbsp; | variable_B&nbsp;&nbsp;   | variable_C
-| ---- | ---------- | ------------ | -----------
-| fi   | x          | 12           | category a
-| fi   | x          | 10           | category a
-| fi   | x          | 32           | category b
-| fi   | z          | 51           | category b
-| ru   | x          | 12           | category b
-| ru   | z          | 2            | category a
-| ru   | z          | 88           | category a
-| ru   | x          | 12           | category a
-| fi   | x          | 32           | category b
-| fi   | x          | 32           | category b
-| ru   | x          | 12           | category a
-
+| lang&nbsp;&nbsp; | variable_A&nbsp;&nbsp; | variable_B&nbsp;&nbsp; | variable_C |
+| ---------------- | ---------------------- | ---------------------- | ---------- |
+| fi               | x                      | 12                     | category a |
+| fi               | x                      | 10                     | category a |
+| fi               | x                      | 32                     | category b |
+| fi               | z                      | 51                     | category b |
+| ru               | x                      | 12                     | category b |
+| ru               | z                      | 2                      | category a |
+| ru               | z                      | 88                     | category a |
+| ru               | x                      | 12                     | category a |
+| fi               | x                      | 32                     | category b |
+| fi               | x                      | 32                     | category b |
+| ru               | x                      | 12                     | category a |
 
 &nbsp;
 
 My usual way of getting some quick numbers out of the data for both of the
 languages is to use lists rather than single variables. E.g.
-instead of  having:
+instead of having:
 
 ```r
 
@@ -43,7 +38,6 @@ instead of  having:
 ```
 
 I prefer:
-
 
 ```r
 
@@ -55,11 +49,10 @@ I prefer:
 
 Now I can reference the data in my inline text with `number_of_xyz$fi` and `number_of_xyz$ru`.
 This makes the global namespace less messy and looks more logical, in my opinion, at least.
-There is still one downside to all of this: from the perspective of reproducibility 
+There is still one downside to all of this: from the perspective of reproducibility
 of the code and in order not to break the [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 principle, it would be good to have the members of the list set up inside a loop.
-So I usually end up using  `lapply`, acting on a vector of language codes:
-
+So I usually end up using `lapply`, acting on a vector of language codes:
 
 ```r
 
@@ -71,7 +64,6 @@ So I usually end up using  `lapply`, acting on a vector of language codes:
 
 This still has the downside, that I have to manually set the names of the produced list, i.e.
 
-
 ```r
 
     names(number_of_xyz) <- c("fi","ru")
@@ -80,7 +72,6 @@ This still has the downside, that I have to manually set the names of the produc
 
 which is somewhat annoying. Of course -- in the spirit of DRY, once again -- it's better to have
 the language codes set up as a separate variable beforehand, so that the whole thing becomes
-
 
 ```r
 
@@ -94,10 +85,8 @@ names(number_of_xyz) <- langs
 
 ```
 
-Luckily, some time ago I found at StackOverflow a neater way to do this. The trick is 
+Luckily, some time ago I found at StackOverflow a neater way to do this. The trick is
 to use the `setNames` function:
-
-
 
 ```r
 
@@ -113,6 +102,3 @@ number_of_xyz <- setNames(lapply(langs,function(thislang){
 I almost immediately write `setNames(lang,function(thislang),langs)`. A bit strange, though, that
 it seems like this actually is the most straight-forward of naming the list resulting from
 lapply.
-
-
-

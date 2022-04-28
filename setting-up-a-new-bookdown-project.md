@@ -1,22 +1,17 @@
-<!--
-.. title: Setting up a new bookdown project
-.. slug: setting-up-a-new-bookdown-project
-.. date: 2018-11-06 09:41:26 UTC+02:00
-.. tags: r rmarkdown bookdown
-.. category: r
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Setting up a new bookdown project
+slug: setting-up-a-new-bookdown-project
+tags: r, rmarkdown, bookdown
+---
 
 I've been excited about writing my research in
 [Rmarkdown](https://rmarkdown.rstudio.com/) for something like five years now,
 and have written basically all my academic work with it. The biggest project
 was my dissertation thesis, a monograph written entirely in Rmd.
-When writing something that large, or, actually, anything you 
+When writing something that large, or, actually, anything you
 might want to split into different sections, you should definitely
 check out a recent development in the Rmarkdown universe, namely, the [Bookdown](https://bookdown.org/yihui/bookdown/)
-package. In this post, I'll go through my basic setup 
+package. In this post, I'll go through my basic setup
 of a new bookdown project.
 
 # 1. Setting up the project folder
@@ -32,11 +27,10 @@ I start with a fresh new folder with the following structure:
     ├── _bookdown.yml
     └── _output.yml
 
-
 Bookdown will try to get all the rmd files in the project folder
-and turn them into a single document. To make sure you have the right 
+and turn them into a single document. To make sure you have the right
 order of files in the final output, it's safest to prefix the files
-with numbers. 
+with numbers.
 
 The configuration of bookdown is done through the two [yaml](https://en.wikipedia.org/wiki/YAML)
 files, `_bookdown.yml` and'`_output.yml` AND with a yaml block
@@ -44,21 +38,19 @@ at the beginning of the first file of the project (in this case, `01-intro.Rmd`)
 
 ## Basic configuration
 
-
-In a project I recently started, this is what the yaml block 
+In a project I recently started, this is what the yaml block
 in `01-intro.Rmd` looks like:
-
 
 ```yaml
 latexBackend: linguex
-exampleRefFormat: '{}'
-title: 'Last year but not yesterday? Explaining differences in the locations of Finnish and Russian time adverbials using comparable corpora'
+exampleRefFormat: "{}"
+title: "Last year but not yesterday? Explaining differences in the locations of Finnish and Russian time adverbials using comparable corpora"
 author: Juho Härme
 bibliography: aux/refs.bib
 link-citations: true
 ```
 
-The options *latexBackend* and *exampleRefFormat* are specific 
+The options _latexBackend_ and _exampleRefFormat_ are specific
 to my projects: they have to do with using linguistic examples
 in the text, which I do with my own fork of a [pandoc filter](http://www.pandoc.org/filters.html)
 called [pangloss](https://github.com/hrmJ/pangloss_linguex). These
@@ -73,7 +65,6 @@ file containing my references in the format of a bibtex database.
 The file `_bookdown.yaml` is pretty simple, in this
 project I only have one line:
 
-
 ```
 delete_merged_file: true
 ```
@@ -81,17 +72,16 @@ delete_merged_file: true
 ## Output configuration
 
 When writing Rmarkdown files, you can specify multiple output
-formats in `_output.yml` and if you compile your 
+formats in `_output.yml` and if you compile your
 book with the [render_book function](https://bookdown.org/yihui/bookdown/new-session.html),
 without additional arguments, all those output formats will be produced.
 
-Here, I have specified two output formats, *html* and *pdf* (produced with
+Here, I have specified two output formats, _html_ and _pdf_ (produced with
 latex). The html is something I use when sketching and building the article / book.
 At that stage I usually have the pdf parts commented out. When the work is getting
 closer to be finished, I tend to switch to the pdf output.
 
 Here's what my `_output.yml` looks like
-
 
 ```
 bookdown::gitbook:
@@ -111,14 +101,12 @@ bookdown::pdf_book:
 
 ## Auxiliary files
 
-As can be seen in the folder structure above, I use a separate folder called *aux* to store
+As can be seen in the folder structure above, I use a separate folder called _aux_ to store
 my auxiliary files in. These include the bibliography database, possibly some additional pandoc
 filters, cls files and the like. One especially important file is the `preamble.tex`, which
 loads all the needed latex packages and adjusts the final document's layout.
 
-
 # Compiling the book
-
 
 I will probably write something about how to do this in Rstudio later on.
 Here's how the compilation of the book happens in R terminal.
@@ -131,10 +119,8 @@ library(bookdown)
 
 ```
 
-
 Then, just run the `r render_book` function by specifying at least one file to be included
 in the book:
-
 
 ```r
 
@@ -146,7 +132,6 @@ I actually tend to have a separate `.Rprofile` file
 which includes all the libraries that need to be loaded
 etc. Place the file in the project's directory and
 you'll have you workspace set up the way you want it.
-
 
 After the compilation, you'll see that
 the final output will end up in a folder called `_book`
@@ -190,8 +175,6 @@ after the compilation process:
     ├── _bookdown.yml
     └── _output.yml
 
-
 The actual pdf output is the file `_book/_main.pdf`. For the html
-output, just pick the  name of the first html file, in this case
+output, just pick the name of the first html file, in this case
 `introduction.html`.
-

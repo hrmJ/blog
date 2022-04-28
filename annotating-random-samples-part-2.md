@@ -1,13 +1,9 @@
-<!--
-.. title: Annotating random samples part 2
-.. slug: annotating-random-samples-part-2
-.. date: 2018-05-30 08:25:08 UTC+03:00
-.. tags: r, sampling, googlesheets
-.. category: r receipts
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Annotating random samples part 2
+slug: annotating-random-samples-part-2
+tags: r, sampling, googlesheets
+type: text
+---
 
 Just a quick follow-up on the previous post about manually annotating random
 samples. Yesterday I was facing a situation where I had to go and find some
@@ -19,9 +15,9 @@ newspapers included in the corpus.
 
 So, I had a sample of 60 concordances I needed to get the full text for. The
 access to the full texts was provided only through the computers physically
-located in the library --  this meant that  I, sadly, didn't have the
-possibility of working with just R all the time. The easiest solution I came up with 
-was to quickly upload my data set to a Google sheet and then open that sheet 
+located in the library -- this meant that I, sadly, didn't have the
+possibility of working with just R all the time. The easiest solution I came up with
+was to quickly upload my data set to a Google sheet and then open that sheet
 in the browser of the PC at the library. Fortunately, there is the nice
 [googlesheets](https://github.com/jennybc/googlesheets) library that makes this easy.
 All I had to do, was:
@@ -35,8 +31,6 @@ library(googlesheets)
 
 Then I converted an existing data frame (well, a tibble, actually), to a Google sheet by just:
 
-
-
 ```r
 
 samp_gsheet <- gs_new("samp_press_fi",input=samp_press_fi)
@@ -45,8 +39,8 @@ samp_gsheet <- gs_new("samp_press_fi",input=samp_press_fi)
 
 ...where `samp_press_fi` was the name of my tibble including the samples
 I wanted to get the contexts for. The command first takes you to Google
-authorization page, after which you're good to go. The nice thing about 
-googlesheets is, that after I got the contexts I needed, the data was automatically 
+authorization page, after which you're good to go. The nice thing about
+googlesheets is, that after I got the contexts I needed, the data was automatically
 updated in R by just, for instance:
 
 ```r
@@ -63,8 +57,3 @@ cols(
 )
 
 ```
-
-
-
-
-
